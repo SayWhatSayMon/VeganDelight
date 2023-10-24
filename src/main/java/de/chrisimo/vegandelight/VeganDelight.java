@@ -1,6 +1,8 @@
 package de.chrisimo.vegandelight;
 
 import com.mojang.logging.LogUtils;
+import de.chrisimo.vegandelight.item.ModCreativeTabs;
+import de.chrisimo.vegandelight.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -40,6 +42,9 @@ public class VeganDelight
     public VeganDelight()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
