@@ -1,9 +1,29 @@
 {
+
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.minced_tofu": "Minced Tofu",
-  "item.vegandelight.salt": "Salt",
-  "item.vegandelight.cooked_smoked_tofu_slices": "Cooked Smoked Tofu Slice",
+  "item.vegandelight.tofu_slices": "Tofu Slices",
+  "item.vegandelight.tofish": "Tofish",
+  "item.vegandelight.tofish_slices": "Tofish Slices",
+  "item.vegandelight.tofish_roll": "Tofish Roll",
+  "item.vegandelight.tofu_patty": "Tofu Patty",
 
+
+  "item.vegandelight.smoked_tofish": "Smoked Tofish",
+  "item.vegandelight.smoked_tofish_roll": "Smoked Tofish Roll",
+  "item.vegandelight.smoked_tofu_slices": "Smoked Tofu Slices",
+
+
+  "item.vegandelight.cooked_tofu_slices": "Cooked Tofu Slices",
+  "item.vegandelight.cooked_tofish": "Cooked Tofish",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Cooked Smoked Tofu Slice",
+  "item.vegandelight.": "",
+
+
+  "item.vegandelight.salt": "Salt",
+  "item.vegandelight.soybean": "Soybean",
+  "item.vegandelight.soymilk_bottle": "Soymilk Bottle",
+  "item.vegandelight.soymilk_bucket": "Soymilk Bucket",
 
 
   "creativetab.vegan_tab": "Vegan Delight"
