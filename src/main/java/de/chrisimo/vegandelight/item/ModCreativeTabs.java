@@ -18,6 +18,9 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.vegan_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.TOFU.get());
+                        pOutput.accept(ModItems.SALT.get());
+                        pOutput.accept(ModItems.MINCED_TOFU.get());
+                        pOutput.accept(ModItems.COOKED_SMOKED_TOFU_SLICES.get());
 
                     })
                     .build());

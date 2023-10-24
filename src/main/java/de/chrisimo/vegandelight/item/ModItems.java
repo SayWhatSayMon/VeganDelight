@@ -15,6 +15,15 @@ public class ModItems {
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).build())));
 
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).build())));
+
+    public static final RegistryObject<Item> MINCED_TOFU = ITEMS.register("minced_tofu",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).build())));
+
+    public static final RegistryObject<Item> COOKED_SMOKED_TOFU_SLICES = ITEMS.register("cooked_smoked_tofu_slices",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.4f).build())));
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
