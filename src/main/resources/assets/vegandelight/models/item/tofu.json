@@ -1,3 +1,6 @@
 {
-  "parent": "vegandelight:item/tofu"
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "vegandelight:item/tofu"
+  }
 }
