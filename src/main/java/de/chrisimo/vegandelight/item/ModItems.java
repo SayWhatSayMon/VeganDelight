@@ -23,6 +23,9 @@ public class ModItems {
     public static final RegistryObject<Item> SALT = ITEMS.register("salt",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
+            () -> new Item(new Item.Properties()));
+
     public static final RegistryObject<Item> MINCED_TOFU = ITEMS.register("minced_tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)

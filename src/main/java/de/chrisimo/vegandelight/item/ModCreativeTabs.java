@@ -21,6 +21,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SALT.get());
                         pOutput.accept(ModItems.MINCED_TOFU.get());
                         pOutput.accept(ModItems.COOKED_SMOKED_TOFU_SLICES.get());
+                        pOutput.accept(ModItems.SOYMILK_BUCKET.get());
 
                     })
                     .build());
