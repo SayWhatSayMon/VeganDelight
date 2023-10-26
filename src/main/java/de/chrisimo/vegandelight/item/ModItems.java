@@ -14,29 +14,75 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, VeganDelight.MODID);
 
+    //TOFU
     public static final RegistryObject<Item> TOFU = ITEMS.register("tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)
                     .saturationMod(0.4f)
                     .build())));
-
-    public static final RegistryObject<Item> SALT = ITEMS.register("salt",
-            () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
-            () -> new Item(new Item.Properties()));
-
+    public static final RegistryObject<Item> SMOKED_TOFU = ITEMS.register("smoked_tofu",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationMod(0.4f)
+                    .build())));
+    public static final RegistryObject<Item> TOFU_SLICES = ITEMS.register("tofu_slices",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationMod(0.1f)
+                    .build())));
+    public static final RegistryObject<Item> SMOKED_TOFU_SLICES = ITEMS.register("smoked_tofu_slices",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(1)
+                    .saturationMod(0.1f)
+                    .build())));
+    public static final RegistryObject<Item> COOKED_TOFU_SLICES = ITEMS.register("cooked_tofu_slices",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationMod(0.1f)
+                    .build())));
+    public static final RegistryObject<Item> COOKED_SMOKED_TOFU_SLICES = ITEMS.register("cooked_smoked_tofu_slices",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(3)
+                    .saturationMod(0.1f)
+                    .build())));
     public static final RegistryObject<Item> MINCED_TOFU = ITEMS.register("minced_tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)
                     .saturationMod(0.4f)
                     .build())));
-
-    public static final RegistryObject<Item> COOKED_SMOKED_TOFU_SLICES = ITEMS.register("cooked_smoked_tofu_slices",
+    public static final RegistryObject<Item> TOFU_PATTY = ITEMS.register("tofu_patty",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)
                     .saturationMod(0.4f)
                     .build())));
+    public static final RegistryObject<Item> TOFISH = ITEMS.register("tofish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationMod(0.4f)
+                    .build())));
+    public static final RegistryObject<Item> COOKED_TOFISH = ITEMS.register("cooked_tofish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationMod(0.4f)
+                    .build())));
+    public static final RegistryObject<Item> SMOKED_TOFISH = ITEMS.register("smoked_tofish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationMod(0.4f)
+                    .build())));
+    public static final RegistryObject<Item> COOKED_SMOKED_TOFISH = ITEMS.register("cooked_smoked_tofish",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(5)
+                    .saturationMod(0.4f)
+                    .build())));
+
+
+    //INGREDIENTS
+    public static final RegistryObject<Item> SALT = ITEMS.register("salt",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
+            () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(),

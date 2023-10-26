@@ -14,14 +14,23 @@ public class ModCreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VeganDelight.MODID);
 
     public static final RegistryObject<CreativeModeTab> VEGAN_TAB = CREATIVE_MODE_TABS.register("vegan_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TOFU.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COOKED_TOFISH.get()))
                     .title(Component.translatable("creativetab.vegan_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.TOFU.get());
-                        pOutput.accept(ModItems.SALT.get());
-                        pOutput.accept(ModItems.MINCED_TOFU.get());
+                        pOutput.accept(ModItems.TOFU_SLICES.get());
+                        pOutput.accept(ModItems.COOKED_TOFU_SLICES.get());
+                        pOutput.accept(ModItems.SMOKED_TOFU.get());
+                        pOutput.accept(ModItems.SMOKED_TOFU_SLICES.get());
                         pOutput.accept(ModItems.COOKED_SMOKED_TOFU_SLICES.get());
+                        pOutput.accept(ModItems.MINCED_TOFU.get());
+                        pOutput.accept(ModItems.TOFU_PATTY.get());
+                        pOutput.accept(ModItems.TOFISH.get());
+                        pOutput.accept(ModItems.COOKED_TOFISH.get());
+                        pOutput.accept(ModItems.SMOKED_TOFISH.get());
+                        pOutput.accept(ModItems.COOKED_SMOKED_TOFISH.get());
                         pOutput.accept(ModItems.SOYMILK_BUCKET.get());
+                        pOutput.accept(ModItems.SALT.get());
 
                     })
                     .build());
