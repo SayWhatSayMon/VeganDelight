@@ -1,20 +1,20 @@
 {
   "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bucket"
+  },
   "cookingtime": 200,
   "experience": 1.0,
   "ingredients": [
     {
-      "item": "minecraft:raw_fishes"
+      "item": "vegandelight:soybean"
     },
     {
-      "item": "farmersdelight:tomato_sauce"
-    },
-    {
-      "tag": "forge:crops/onion"
+      "item": "minecraft:water_bucket"
     }
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "farmersdelight:fish_stew"
+    "item": "vegandelight:soymilk_bucket"
   }
 }

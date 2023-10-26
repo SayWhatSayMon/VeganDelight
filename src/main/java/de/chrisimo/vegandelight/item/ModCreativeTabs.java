@@ -31,6 +31,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SMOKED_TOFISH.get());
                         pOutput.accept(ModItems.COOKED_SMOKED_TOFISH.get());
                         pOutput.accept(ModItems.SOYMILK_BUCKET.get());
+                        pOutput.accept(ModItems.SOYMILK_BOTTLE.get());
                         pOutput.accept(ModItems.SALT.get());
 
                         pOutput.accept(ModBlocks.SOYBEAN_BAG.get());

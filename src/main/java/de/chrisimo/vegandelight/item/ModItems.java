@@ -5,6 +5,7 @@ import de.chrisimo.vegandelight.block.ModBlocks;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -82,6 +83,9 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)));
+    public static final RegistryObject<Item> SOYMILK_BOTTLE = ITEMS.register("soymilk_bottle",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean",
