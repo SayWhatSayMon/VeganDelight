@@ -12,6 +12,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.FarmersDelight;
 
 import java.util.function.Supplier;
 
@@ -21,6 +22,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop",
             () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> SOYBEAN_BAG = registerBlock("soybean_bag",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);

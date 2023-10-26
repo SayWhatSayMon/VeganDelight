@@ -1,11 +1,12 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"0": "soybean_bag_side",
-		"1": "soybean_bag_bottom",
-		"2": "soybean_bag_side_tied",
-		"3": "soybean_bag_top",
-		"particle": "soybean_bag_side"
+		"0": "vegandelight:block/soybean_bag_side",
+		"1": "vegandelight:block/soybean_bag_bottom",
+		"2": "vegandelight:block/soybean_bag_side_tied",
+		"3": "vegandelight:block/soybean_bag_top",
+		"particle": "vegandelight:block/soybean_bag_side"
 	},
 	"elements": [
 		{

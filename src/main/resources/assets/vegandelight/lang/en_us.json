@@ -19,7 +19,7 @@
   "item.vegandelight.cooked_tofu_slices": "Cooked Tofu Slices",
   "item.vegandelight.cooked_tofish": "Cooked Tofish",
   "item.vegandelight.cooked_smoked_tofish": "Cooked Smoked Tofish",
-  "item.vegandelight.cooked_smoked_tofu_slices": "Cooked Smoked Tofu Slice",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Cooked Smoked Tofu Slices",
   "item.vegandelight.": "",
 
 
@@ -27,6 +27,9 @@
   "item.vegandelight.soybean": "Soybean",
   "item.vegandelight.soymilk_bottle": "Soymilk Bottle",
   "item.vegandelight.soymilk_bucket": "Soymilk Bucket",
+
+
+  "block.vegandelight.soybean_bag": "Bag of Soybean",
 
 
   "creativetab.vegan_tab": "Vegan Delight"
