@@ -11,6 +11,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.Properties;
+
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, VeganDelight.MODID);
@@ -84,7 +86,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
             () -> new Item(new Item.Properties()
+                    .craftRemainder(Items.BUCKET)
                     .stacksTo(1)));
+
     public static final RegistryObject<Item> SOYMILK_BOTTLE = ITEMS.register("soymilk_bottle",
             () -> new Item(new Item.Properties()));
 
