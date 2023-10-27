@@ -150,11 +150,16 @@ dependencies {
 
     implementation fg.deobf("curse.maven:farmers-delight-398521:${4679319}")
 
+    // compile against the JEI API but do not include it at runtime
+    //deobfProvided "mezz.jei:jei_1.20.1:15.2.0.27:api"
+    // at runtime, use the full JEI jar
+    //runtime "mezz.jei:jei_1.20.1:15.2.0.27"
+
     // Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-    // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
