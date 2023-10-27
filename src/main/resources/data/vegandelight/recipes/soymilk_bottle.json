@@ -11,7 +11,8 @@
   },
   "pattern": [
     "#XX",
-    "XX "
+    "XX ",
+    "   "
   ],
   "result": {
     "count": 4,
