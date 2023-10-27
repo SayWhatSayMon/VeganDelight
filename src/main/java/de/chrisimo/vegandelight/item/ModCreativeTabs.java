@@ -15,7 +15,7 @@ public class ModCreativeTabs {
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VeganDelight.MODID);
 
     public static final RegistryObject<CreativeModeTab> VEGAN_TAB = CREATIVE_MODE_TABS.register("vegan_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.COOKED_TOFISH.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SMOKED_TOFISH_ROLL.get()))
                     .title(Component.translatable("creativetab.vegan_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.TOFU.get());
