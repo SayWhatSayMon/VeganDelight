@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "vegandelight:smoked_tofish"
+    },
+    {
+      "item": "vegandelight:smoked_tofish"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "vegandelight:smoked_tofish_roll"
+  }
+}

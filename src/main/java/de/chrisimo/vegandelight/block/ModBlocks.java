@@ -3,10 +3,14 @@ package de.chrisimo.vegandelight.block;
 import de.chrisimo.vegandelight.VeganDelight;
 import de.chrisimo.vegandelight.block.custom.SoybeanCropBlock;
 import de.chrisimo.vegandelight.item.ModItems;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,6 +26,14 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOYBEAN_CROP = BLOCKS.register("soybean_crop",
             () -> new SoybeanCropBlock(BlockBehaviour.Properties.copy(Blocks.WHEAT).noOcclusion().noCollission()));
+
+    public static final RegistryObject<Block> WILD_SOYBEAN = registerBlock("wild_soybean",
+            () -> new FlowerBlock(() -> MobEffects.LUCK, 5,
+                    BlockBehaviour.Properties.copy(Blocks.ALLIUM).noCollission().noOcclusion()));
+
+    public static final RegistryObject<Block> POTTED_WILD_SOYBEAN = BLOCKS.register("potted_wild_soybean",
+            () -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, ModBlocks.WILD_SOYBEAN,
+                    BlockBehaviour.Properties.copy(Blocks.POTTED_ALLIUM).noOcclusion()));
 
     public static final RegistryObject<Block> SOYBEAN_BAG = registerBlock("soybean_bag",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
