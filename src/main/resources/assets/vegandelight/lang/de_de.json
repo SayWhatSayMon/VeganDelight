@@ -1,0 +1,37 @@
+{
+
+  "item.vegandelight.tofu": "Tofu",
+  "item.vegandelight.minced_tofu": "Tofu Hack",
+  "item.vegandelight.tofu_slices": "Tofu Stücke",
+  "item.vegandelight.tofish": "Tofisch",
+  "item.vegandelight.tofish_slices": "Tofisch Stücke",
+  "item.vegandelight.tofish_roll": "Tofisch Rolle",
+  "item.vegandelight.tofu_patty": "Tofu Patty",
+
+
+
+  "item.vegandelight.smoked_tofu": "Geräucherter Tofu",
+  "item.vegandelight.smoked_tofish": "Geräucherter Tofisch",
+  "item.vegandelight.smoked_tofish_roll": "Geräucherte Tofisch Rolle",
+  "item.vegandelight.smoked_tofu_slices": "Geräucherte Tofu Stücke",
+
+
+  "item.vegandelight.cooked_tofu_slices": "Gekochte Tofu Stücke",
+  "item.vegandelight.cooked_tofish": "Gekochter Tofisch",
+  "item.vegandelight.cooked_smoked_tofish": "Gekochter Geräucherter Tofisch",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Gekochte Geräucherte Tofu Stücke",
+  "item.vegandelight.": "",
+
+
+  "item.vegandelight.salt": "Salz",
+  "item.vegandelight.soybean": "Sojabohne",
+  "item.vegandelight.soymilk_bottle": "Sojamilch Flasche",
+  "item.vegandelight.soymilk_bucket": "Sojamilch Eimer",
+
+
+  "block.vegandelight.soybean_bag": "Sojabohnen Sack",
+  "block.vegandelight.wild_soybean": "Wilde Sojabohne",
+
+
+  "creativetab.vegan_tab": "Vegan Delight"
+}
