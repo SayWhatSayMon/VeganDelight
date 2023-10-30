@@ -12,7 +12,7 @@
       }
     ],
     {
-      "item": "vegandelight:salt"
+      "tag": "forge:salts"
     }
   ],
   "recipe_book_tab": "meals",
