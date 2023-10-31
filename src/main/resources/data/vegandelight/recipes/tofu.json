@@ -11,9 +11,14 @@
         "item": "vegandelight:soymilk_bottle"
       }
     ],
-    {
-      "tag": "forge:salts"
-    }
+    [
+      {
+        "tag": "forge:salts"
+      },
+      {
+        "tag": "forge:salt"
+      }
+    ]
   ],
   "recipe_book_tab": "meals",
   "result": {

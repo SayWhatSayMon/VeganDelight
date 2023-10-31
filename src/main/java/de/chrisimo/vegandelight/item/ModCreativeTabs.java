@@ -18,6 +18,8 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SMOKED_TOFISH_ROLL.get()))
                     .title(Component.translatable("creativetab.vegan_tab"))
                     .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModBlocks.SOYBEAN_BAG.get());
+                        pOutput.accept(ModBlocks.WILD_SOYBEAN.get());
                         pOutput.accept(ModItems.TOFU.get());
                         pOutput.accept(ModItems.TOFU_SLICES.get());
                         pOutput.accept(ModItems.COOKED_TOFU_SLICES.get());
@@ -36,8 +38,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SOYMILK_BOTTLE.get());
                         pOutput.accept(ModItems.SOYBEAN.get());
                         pOutput.accept(ModItems.SALT.get());
-                        pOutput.accept(ModBlocks.SOYBEAN_BAG.get());
-                        pOutput.accept(ModBlocks.WILD_SOYBEAN.get());
 
                         pOutput.accept(ModItems.PASTA_WITH_TOFUBALLS.get());
                         pOutput.accept(ModItems.ROASTED_TOFU_CHOPS.get());
