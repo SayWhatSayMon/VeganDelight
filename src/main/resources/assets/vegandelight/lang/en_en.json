@@ -9,7 +9,6 @@
   "item.vegandelight.tofu_patty": "Tofu Patty",
 
 
-
   "item.vegandelight.smoked_tofu": "Smoked Tofu",
   "item.vegandelight.smoked_tofish": "Smoked Tofish",
   "item.vegandelight.smoked_tofish_roll": "Smoked Tofish Roll",
@@ -27,6 +26,12 @@
   "item.vegandelight.soybean": "Soybean",
   "item.vegandelight.soymilk_bottle": "Soymilk Bottle",
   "item.vegandelight.soymilk_bucket": "Soymilk Bucket",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Pasta with Tofuballs",
+  "item.vegandelight.roasted_tofu_chops": "Roasted Tofu Chops",
+  "item.vegandelight.tofu_burger": "Tofu Burger",
+  "item.vegandelight.tofu_sandwiches": "Tofu Sandwiches",
 
 
   "block.vegandelight.soybean_bag": "Bag of Soybean",

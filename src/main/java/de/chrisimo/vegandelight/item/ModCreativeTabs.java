@@ -38,6 +38,11 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SALT.get());
                         pOutput.accept(ModBlocks.SOYBEAN_BAG.get());
                         pOutput.accept(ModBlocks.WILD_SOYBEAN.get());
+
+                        pOutput.accept(ModItems.PASTA_WITH_TOFUBALLS.get());
+                        pOutput.accept(ModItems.ROASTED_TOFU_CHOPS.get());
+                        pOutput.accept(ModItems.TOFU_BURGER.get());
+                        pOutput.accept(ModItems.TOFU_SANDWICH.get());
                     })
                     .build());
 
