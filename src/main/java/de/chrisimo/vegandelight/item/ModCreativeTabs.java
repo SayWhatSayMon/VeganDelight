@@ -39,10 +39,12 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SOYBEAN.get());
                         pOutput.accept(ModItems.SALT.get());
 
-                        pOutput.accept(ModItems.PASTA_WITH_TOFUBALLS.get());
-                        pOutput.accept(ModItems.ROASTED_TOFU_CHOPS.get());
-                        pOutput.accept(ModItems.TOFU_BURGER.get());
-                        pOutput.accept(ModItems.TOFU_SANDWICH.get());
+                        //pOutput.accept(ModItems.PASTA_WITH_TOFUBALLS.get());
+                        //pOutput.accept(ModItems.ROASTED_TOFU_CHOPS.get());
+                        //pOutput.accept(ModItems.TOFU_BURGER.get());
+                        //pOutput.accept(ModItems.TOFU_SANDWICH.get());
+
+                        pOutput.accept(ModItems.LEATHER_SUBSTITUTE.get());
                     })
                     .build());
 

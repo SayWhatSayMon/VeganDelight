@@ -110,6 +110,9 @@ public class ModItems {
                             .saturationMod(0.1f)
                             .build())));
 
+    public static final RegistryObject<Item> LEATHER_SUBSTITUTE = ITEMS.register("leather_substitute",
+            () -> new Item(new Item.Properties()));
+
 
     //MEALS
     public static final RegistryObject<Item> PASTA_WITH_TOFUBALLS = ITEMS.register("pasta_with_tofuballs",
