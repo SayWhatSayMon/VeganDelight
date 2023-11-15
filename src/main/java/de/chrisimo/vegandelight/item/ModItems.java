@@ -113,33 +113,6 @@ public class ModItems {
     public static final RegistryObject<Item> LEATHER_SUBSTITUTE = ITEMS.register("leather_substitute",
             () -> new Item(new Item.Properties()));
 
-
-    //MEALS
-    public static final RegistryObject<Item> PASTA_WITH_TOFUBALLS = ITEMS.register("pasta_with_tofuballs",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(12)
-                    .saturationMod(0.8f)
-                    .effect(() -> {
-                        return new MobEffectInstance((MobEffect)ModEffects.NOURISHMENT.get(), 3600, 0); }, 1.0F)
-                    .build())));
-    public static final RegistryObject<Item> ROASTED_TOFU_CHOPS = ITEMS.register("roasted_tofu_chops",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(14)
-                    .saturationMod(0.75f)
-                    .effect(() -> {
-                        return new MobEffectInstance((MobEffect) ModEffects.NOURISHMENT.get(), 6000, 0); }, 1.0f)
-                    .build())));
-    public static final RegistryObject<Item> TOFU_BURGER = ITEMS.register("tofu_burger",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(12)
-                    .saturationMod(0.8f)
-                    .build())));
-    public static final RegistryObject<Item> TOFU_SANDWICH = ITEMS.register("tofu_sandwich",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
-                    .nutrition(10)
-                    .saturationMod(0.8f)
-                    .build())));
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }
