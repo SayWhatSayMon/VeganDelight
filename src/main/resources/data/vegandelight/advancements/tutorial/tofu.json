@@ -1,0 +1,40 @@
+{
+  "parent": "vegandelight:tutorial/soymilk",
+  "display": {
+    "icon": {
+      "item": "vegandelight:tofu"
+    },
+    "title": {
+      "text": "A new lifestyle"
+    },
+    "description": {
+      "text": "Cook a tofu"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_tofu": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["vegandelight:tofu"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_tofu"]
+  ],
+  "rewards": {
+    "recipes": [
+      "vegandelight:tofu_slices",
+      "vegandelight:smoked_tofu"
+    ],
+    "experience": 100
+  }
+}

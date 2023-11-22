@@ -1,0 +1,40 @@
+{
+  "parent": "vegandelight:tutorial/root",
+  "display": {
+    "icon": {
+      "item": "vegandelight:soymilk_bucket"
+    },
+    "title": {
+      "text": "A strange liquid"
+    },
+    "description": {
+      "text": "Cook the soybean with water"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_soymilk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["vegandelight:soymilk_bucket"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_soymilk"]
+  ],
+  "rewards": {
+    "recipes": [
+              "vegandelight:tofu",
+              "vegandelight:soymilk_bottle"
+            ],
+    "experience": 100
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "vegandelight:soybean"
+    },
+    "title": {
+      "text": "A strange bean"
+    },
+    "description": {
+      "text": "Get your first soybean"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false,
+    "background": "minecraft:textures/block/cherry_planks.png"
+  },
+  "criteria": {
+    "got_soybean": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["vegandelight:soybean"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_soybean"]
+  ],
+  "rewards": {
+    "recipes": [
+              "vegandelight:soymilk"
+            ],
+    "experience": 100
+  }
+}

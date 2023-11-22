@@ -1,0 +1,40 @@
+{
+  "parent": "vegandelight:tutorial/tofu",
+  "display": {
+    "icon": {
+      "item": "vegandelight:tofu_slices"
+    },
+    "title": {
+      "text": "Slice it"
+    },
+    "description": {
+      "text": "Slice a tofu"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_tofu_slices": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["vegandelight:tofu_slices"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_tofu_slices"]
+  ],
+  "rewards": {
+    "recipes": [
+      "vegandelight:cooked_tofu_slices",
+      "vegandelight:smoked_tofu_slices"
+    ],
+    "experience": 100
+  }
+}

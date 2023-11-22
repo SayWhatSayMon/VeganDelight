@@ -1,0 +1,39 @@
+{
+  "parent": "vegandelight:tutorial/tofu",
+  "display": {
+    "icon": {
+      "item": "vegandelight:smoked_tofu"
+    },
+    "title": {
+      "text": "Smoke it"
+    },
+    "description": {
+      "text": "Smoke a tofu"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "got_smoked_tofu": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["vegandelight:smoked_tofu"]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["got_smoked_tofu"]
+  ],
+  "rewards": {
+    "recipes": [
+      "vegandelight:smoked_tofu_slices"
+    ],
+    "experience": 100
+  }
+}
