@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/soymilk",
+  "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu"
+      "item": "vegandelight:cooked_tofish"
     },
     "title": {
-      "text": "A new lifestyle"
+      "text": "It's less fishy"
     },
     "description": {
-      "text": "Cook a soy milk with salt"
+      "text": "Cook a tofish"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,25 +16,21 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofu": {
+    "got_cooked_tofish": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofu"]
+            "items": ["vegandelight:cooked_tofish"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofu"]
+    ["got_cooked_tofish"]
   ],
   "rewards": {
-    "recipes": [
-      "vegandelight:tofu_slices",
-      "vegandelight:smoked_tofu"
-    ],
     "experience": 100
   }
 }

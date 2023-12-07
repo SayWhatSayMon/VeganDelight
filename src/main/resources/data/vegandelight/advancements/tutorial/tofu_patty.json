@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/soymilk",
+  "parent": "vegandelight:tutorial/minced_tofu",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu"
+      "item": "vegandelight:tofu_patty"
     },
     "title": {
-      "text": "A new lifestyle"
+      "text": "Burger time"
     },
     "description": {
-      "text": "Cook a soy milk with salt"
+      "text": "Cook minced tofu"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,25 +16,21 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofu": {
+    "got_tofu_patty": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofu"]
+            "items": ["vegandelight:tofu_patty"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofu"]
+    ["got_tofu_patty"]
   ],
   "rewards": {
-    "recipes": [
-      "vegandelight:tofu_slices",
-      "vegandelight:smoked_tofu"
-    ],
     "experience": 100
   }
 }

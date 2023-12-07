@@ -20,6 +20,7 @@ public class ModCreativeTabs {
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModBlocks.SOYBEAN_BAG.get());
                         pOutput.accept(ModBlocks.WILD_SOYBEAN.get());
+                        pOutput.accept(ModItems.SILKEN_TOFU.get());
                         pOutput.accept(ModItems.TOFU.get());
                         pOutput.accept(ModItems.TOFU_SLICES.get());
                         pOutput.accept(ModItems.COOKED_TOFU_SLICES.get());

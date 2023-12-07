@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/soymilk",
+  "parent": "vegandelight:tutorial/smoked_tofu",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu"
+      "item": "vegandelight:smoked_tofu_slices"
     },
     "title": {
-      "text": "A new lifestyle"
+      "text": "More slicing"
     },
     "description": {
-      "text": "Cook a soy milk with salt"
+      "text": "Slice a smoked tofu"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,24 +16,23 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofu": {
+    "got_smoked_tofu_slices": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofu"]
+            "items": ["vegandelight:smoked_tofu_slices"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofu"]
+    ["got_smoked_tofu_slices"]
   ],
   "rewards": {
     "recipes": [
-      "vegandelight:tofu_slices",
-      "vegandelight:smoked_tofu"
+      "vegandelight:smoked_tofu_slices"
     ],
     "experience": 100
   }

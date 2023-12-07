@@ -24,6 +24,13 @@ public class ModItems {
                     .nutrition(4)
                     .saturationMod(0.4f)
                     .build())));
+    public static final RegistryObject<Item> SILKEN_TOFU = ITEMS.register("silken_tofu",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationMod(0.4f)
+                    .build())
+                    .craftRemainder(Items.BUCKET)
+                    .stacksTo(16)));
     public static final RegistryObject<Item> SMOKED_TOFU = ITEMS.register("smoked_tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
@@ -101,7 +108,8 @@ public class ModItems {
                     .stacksTo(1)));
 
     public static final RegistryObject<Item> SOYMILK_BOTTLE = ITEMS.register("soymilk_bottle",
-            () -> new Item(new Item.Properties()));
+            () -> new Item(new Item.Properties()
+                    .stacksTo(1)));
 
     public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(),

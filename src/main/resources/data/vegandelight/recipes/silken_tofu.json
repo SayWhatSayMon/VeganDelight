@@ -1,0 +1,35 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "item": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    [
+      {
+        "item": "vegandelight:soymilk_bucket"
+      },
+      {
+        "item": "vegandelight:soymilk_bottle"
+      }
+    ],
+    [
+      {
+        "tag": "forge:salts"
+      },
+      {
+        "tag": "forge:salt"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:water_bucket"
+      }
+    ]
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "vegandelight:silken_tofu"
+  }
+}

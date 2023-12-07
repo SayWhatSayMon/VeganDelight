@@ -2,13 +2,13 @@
   "parent": "vegandelight:tutorial/soymilk",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu"
+      "item": "vegandelight:silken_tofu"
     },
     "title": {
-      "text": "A new lifestyle"
+      "text": "It's so glibbery"
     },
     "description": {
-      "text": "Cook a soy milk with salt"
+      "text": "Cook a soy milk with salt and extra water"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,25 +16,21 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofu": {
+    "got_silken_tofu": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofu"]
+            "items": ["vegandelight:silken_tofu"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofu"]
+    ["got_silken_tofu"]
   ],
   "rewards": {
-    "recipes": [
-      "vegandelight:tofu_slices",
-      "vegandelight:smoked_tofu"
-    ],
     "experience": 100
   }
 }
