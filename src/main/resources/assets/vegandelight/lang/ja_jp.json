@@ -5,22 +5,33 @@
     "item.vegandelight.tofu_slices": "切り分けた豆腐",
     "item.vegandelight.tofish": "トウフィッシュ",
     "item.vegandelight.tofish_slices": "トウフィッシュの切り身",
-    "item.vegandelight.tofish_roll": "トウフィッシュの握り",
+    "item.vegandelight.tofish_roll": "トウフィッシュの握り寿司",
     "item.vegandelight.tofu_patty": "豆腐パティ",
+
     "item.vegandelight.smoked_tofu": "豆腐の燻製",
     "item.vegandelight.smoked_tofish": "トウフィッシュの燻製",
-    "item.vegandelight.smoked_tofish_roll": "トウフィッシュの燻製の握り",
+    "item.vegandelight.smoked_tofish_roll": "トウフィッシュの燻製の握り寿司",
     "item.vegandelight.smoked_tofu_slices": "切り分けた豆腐の燻製",
+
     "item.vegandelight.cooked_tofu_slices": "切り分けた焼き豆腐",
     "item.vegandelight.cooked_tofish": "焼きトウフィッシュ",
     "item.vegandelight.cooked_smoked_tofish": "焼きトウフィッシュの燻製",
     "item.vegandelight.cooked_smoked_tofu_slices": "切り分けた焼き豆腐の燻製",
     "item.vegandelight.": "",
+
     "item.vegandelight.salt": "塩",
     "item.vegandelight.soybean": "大豆",
     "item.vegandelight.soymilk_bottle": "豆乳入り瓶",
     "item.vegandelight.soymilk_bucket": "豆乳入りバケツ",
+    "item.vegandelight.leather_substitute": "代替革",
+
+    "item.vegandelight.pasta_with_tofuballs": "豆腐ボールパスタ",
+    "item.vegandelight.roasted_tofu_chops": "ロースト豆腐チョップ",
+    "item.vegandelight.tofu_burger": "豆腐バーガー",
+    "item.vegandelight.tofu_sandwich": "豆腐サンド",
+
     "block.vegandelight.soybean_bag": "大豆袋",
     "block.vegandelight.wild_soybean": "野生の大豆",
+    
     "creativetab.vegan_tab": "Vegan Delight"
 }
