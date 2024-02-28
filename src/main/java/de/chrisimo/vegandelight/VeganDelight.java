@@ -2,6 +2,8 @@ package de.chrisimo.vegandelight;
 
 import com.mojang.logging.LogUtils;
 import de.chrisimo.vegandelight.block.ModBlocks;
+import de.chrisimo.vegandelight.fluid.ModFluidTypes;
+import de.chrisimo.vegandelight.fluid.ModFluids;
 import de.chrisimo.vegandelight.item.ModCreativeTabs;
 import de.chrisimo.vegandelight.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -48,6 +50,8 @@ public class VeganDelight
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModFluidTypes.register(modEventBus);
+        ModFluids.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

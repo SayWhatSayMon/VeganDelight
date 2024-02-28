@@ -3,20 +3,16 @@ package de.chrisimo.vegandelight.block;
 import de.chrisimo.vegandelight.VeganDelight;
 import de.chrisimo.vegandelight.block.custom.SoybeanCropBlock;
 import de.chrisimo.vegandelight.item.ModItems;
-import net.minecraft.world.effect.MobEffect;
+import de.chrisimo.vegandelight.fluid.ModFluids;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerBlock;
-import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import vectorwing.farmersdelight.FarmersDelight;
 
 import java.util.function.Supplier;
 
@@ -37,6 +33,9 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> SOYBEAN_BAG = registerBlock("soybean_bag",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
+
+    public static final RegistryObject<LiquidBlock> SOYMILK_FLUID_BLOCK = BLOCKS.register("soymilk_fluid_block",
+            () -> new LiquidBlock(ModFluids.SOYMILK_FLUID, BlockBehaviour.Properties.copy(Blocks.WATER)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
