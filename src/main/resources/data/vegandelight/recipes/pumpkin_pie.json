@@ -9,7 +9,8 @@
       "item": "minecraft:sugar"
     },
     {
-      "item": "vegandelight:silken_tofu"
+      "item": "vegandelight:silken_tofu",
+      "item": "vegandelight:applesauce"
     }
   ],
   "result": {

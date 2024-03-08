@@ -12,6 +12,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class ModItems {
@@ -120,6 +121,14 @@ public class ModItems {
 
     public static final RegistryObject<Item> LEATHER_SUBSTITUTE = ITEMS.register("leather_substitute",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> APPLESAUCE = ITEMS.register("applesauce",
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationMod(0.4f)
+                    .build())
+                    .craftRemainder(Items.BOWL)
+                    .stacksTo(16)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
