@@ -109,7 +109,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> SOYMILK_BOTTLE = ITEMS.register("soymilk_bottle",
             () -> new Item(new Item.Properties()
-                    .stacksTo(1)));
+                    .stacksTo(16)));
 
     public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean",
             () -> new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(),
