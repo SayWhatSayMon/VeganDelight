@@ -39,7 +39,7 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SOYMILK_BOTTLE.get());
                         pOutput.accept(ModItems.SOYBEAN.get());
                         pOutput.accept(ModItems.SALT.get());
-
+                        pOutput.accept(ModItems.APPLESAUCE.get());
                         pOutput.accept(ModItems.LEATHER_SUBSTITUTE.get());
                     })
                     .build());
