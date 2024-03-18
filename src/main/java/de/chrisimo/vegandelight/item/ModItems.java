@@ -26,11 +26,11 @@ public class ModItems {
                     .saturationMod(0.4f)
                     .build())));
     public static final RegistryObject<Item> SILKEN_TOFU = ITEMS.register("silken_tofu",
-            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+            () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
                     .saturationMod(0.4f)
                     .build())
-                    .craftRemainder(Items.BUCKET)
+                    .craftRemainder(Items.BOWL)
                     .stacksTo(16)));
     public static final RegistryObject<Item> SMOKED_TOFU = ITEMS.register("smoked_tofu",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
