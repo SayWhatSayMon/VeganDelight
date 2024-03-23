@@ -27,13 +27,16 @@
   "item.vegandelight.soymilk_bottle": "Soymilk Bottle",
   "item.vegandelight.soymilk_bucket": "Soymilk Bucket",
   "item.vegandelight.leather_substitute": "Leather Substitute",
-  "item.vegandelight.applesauce": "Applesauce",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Pasta with Tofuballs",
   "item.vegandelight.roasted_tofu_chops": "Roasted Tofu Chops",
   "item.vegandelight.tofu_burger": "Tofu Burger",
   "item.vegandelight.tofu_sandwich": "Tofu Sandwich",
+
+
+  "item.vegandelight.applesauce": "Applesauce",
+  "fluid_type.vegandelight.applesauce": "Applesauce",
 
 
   "block.vegandelight.soybean_bag": "Bag of Soybean",

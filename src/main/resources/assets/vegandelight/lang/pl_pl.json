@@ -10,7 +10,6 @@
   "item.vegandelight.tofu_patty": "Burger z Tofu",
 
 
-
   "item.vegandelight.smoked_tofu": "Wędzone Tofu",
   "item.vegandelight.smoked_tofish": "Wędzona Tofurybka",
   "item.vegandelight.smoked_tofish_roll": "Sushi z Wędzonej Tofurybki",
@@ -28,13 +27,16 @@
   "item.vegandelight.soymilk_bottle": "Butelka Mleka Sojowego",
   "item.vegandelight.soymilk_bucket": "Wiadro Mleka Sojowego",
   "item.vegandelight.leather_substitute": "Substytut Skóry",
-  "item.vegandelight.applesauce": "Sos Jabłkowy",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Makaron z Klopsami z Tofu",
   "item.vegandelight.roasted_tofu_chops": "Smażone Kotlety z Tofu",
   "item.vegandelight.tofu_burger": "Burger z Tofu",
   "item.vegandelight.tofu_sandwich": "Kanapka z Tofu",
+
+
+  "item.vegandelight.applesauce": "Sos Jabłkowy",
+  "fluid_type.vegandelight.applesauce": "Sos Jabłkowy",
 
 
   "block.vegandelight.soybean_bag": "Torba Soi",

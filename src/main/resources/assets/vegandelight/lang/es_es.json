@@ -27,13 +27,16 @@
   "item.vegandelight.soymilk_bottle": "Frasco de Leche de Soja",
   "item.vegandelight.soymilk_bucket": "Cubo de Leche de Soja",
   "item.vegandelight.leather_substitute": "Sucedáneo de Cuero",
-  "item.vegandelight.applesauce": "Puré de Manzana",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Pasta con Albóndigas de Tofu",
   "item.vegandelight.roasted_tofu_chops": "Chuletas de Tofu Asadas",
   "item.vegandelight.tofu_burger": "Hamburguesa de Tofu",
   "item.vegandelight.tofu_sandwich": "Bocadillo de Tofu",
+
+
+  "item.vegandelight.applesauce": "Puré de Manzana",
+  "fluid_type.vegandelight.applesauce": "Puré de Manzana",
 
 
   "block.vegandelight.soybean_bag": "Bolsa de Soja",

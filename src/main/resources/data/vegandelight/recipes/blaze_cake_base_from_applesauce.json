@@ -1,0 +1,33 @@
+{
+  "type": "create:compacting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_central_kitchen"
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "createaddition"
+      }
+    }
+  ],
+  "ingredients": [
+    {
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": 250
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "create:cinder_flour"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:blaze_cake_base"
+    }
+  ]
+}

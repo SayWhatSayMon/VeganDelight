@@ -23,12 +23,14 @@
     "item.vegandelight.soymilk_bottle": "豆乳入り瓶",
     "item.vegandelight.soymilk_bucket": "豆乳入りバケツ",
     "item.vegandelight.leather_substitute": "代替革",
-    "item.vegandelight.applesauce": "アップルソース",
 
     "item.vegandelight.pasta_with_tofuballs": "豆腐ボールパスタ",
     "item.vegandelight.roasted_tofu_chops": "ロースト豆腐チョップ",
     "item.vegandelight.tofu_burger": "豆腐バーガー",
     "item.vegandelight.tofu_sandwich": "豆腐サンド",
+
+    "item.vegandelight.applesauce": "アップルソース",
+    "fluid_type.vegandelight.applesauce": "アップルソース",
 
     "block.vegandelight.soybean_bag": "大豆袋",
     "block.vegandelight.wild_soybean": "野生の大豆",

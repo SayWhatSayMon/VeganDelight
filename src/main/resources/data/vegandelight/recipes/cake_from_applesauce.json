@@ -1,0 +1,46 @@
+{
+  "type": "create:compacting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_central_kitchen"
+    },
+    {
+      "type": "forge:not",
+      "value": {
+        "type": "forge:mod_loaded",
+        "modid": "createaddition"
+      }
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "forge:flour/wheat"
+    },
+    {
+      "tag": "forge:flour/wheat"
+    },
+    {
+      "tag": "forge:flour/wheat"
+    },
+    {
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": 250
+    },
+    {
+      "fluidTag": "forge:milk",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:cake"
+    }
+  ]
+}
