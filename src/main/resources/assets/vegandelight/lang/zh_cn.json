@@ -1,5 +1,4 @@
 {
-
   "item.vegandelight.tofu": "豆腐",
   "item.vegandelight.silken_tofu": "嫩豆腐",
   "item.vegandelight.minced_tofu": "豆腐碎",
@@ -10,15 +9,18 @@
   "item.vegandelight.tofu_patty": "豆腐饼",
 
 
-
   "item.vegandelight.smoked_tofu": "烟熏豆腐",
   "item.vegandelight.smoked_tofish": "烟熏豆腐鱼",
   "item.vegandelight.smoked_tofish_roll": "烟熏豆腐鱼寿司",
   "item.vegandelight.smoked_tofu_slices": "烟熏豆腐片",
 
 
+  "item.vegandelight.cooked_tofu": "熟豆腐",
   "item.vegandelight.cooked_tofu_slices": "熟豆腐片",
   "item.vegandelight.cooked_tofish": "熟豆腐鱼",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "熟烟熏豆腐",
   "item.vegandelight.cooked_smoked_tofish": "熟烟熏豆腐鱼",
   "item.vegandelight.cooked_smoked_tofu_slices": "熟烟熏豆腐片",
 

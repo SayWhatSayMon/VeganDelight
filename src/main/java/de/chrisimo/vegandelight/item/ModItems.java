@@ -37,6 +37,16 @@ public class ModItems {
                     .nutrition(4)
                     .saturationMod(0.4f)
                     .build())));
+    public static final RegistryObject<Item> COOKED_TOFU = ITEMS.register("cooked_tofu",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationMod(0.4f)
+                    .build())));
+    public static final RegistryObject<Item> COOKED_SMOKED_TOFU = ITEMS.register("cooked_smoked_tofu",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(4)
+                    .saturationMod(0.4f)
+                    .build())));
     public static final RegistryObject<Item> TOFU_SLICES = ITEMS.register("tofu_slices",
             () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)

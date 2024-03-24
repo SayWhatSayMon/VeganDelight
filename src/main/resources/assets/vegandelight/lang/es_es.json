@@ -1,5 +1,4 @@
 {
-
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.silken_tofu": "Silken Tofu",
   "item.vegandelight.minced_tofu": "Tofu Picado",
@@ -16,8 +15,12 @@
   "item.vegandelight.smoked_tofu_slices": "Lonjas de Tofu Ahumado",
 
 
+  "item.vegandelight.cooked_tofu": "Tofu Cocido",
   "item.vegandelight.cooked_tofu_slices": "Lonjas de Tofu Cocidas",
   "item.vegandelight.cooked_tofish": "Pescado Vegano Cocido",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Tofu Ahumado Cocido",
   "item.vegandelight.cooked_smoked_tofish": "Pescado Vegano Ahumado Cocido",
   "item.vegandelight.cooked_smoked_tofu_slices": "Lonjas de Tofu Ahumado Cocidas",
 
