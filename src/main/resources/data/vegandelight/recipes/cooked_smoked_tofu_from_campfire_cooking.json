@@ -1,7 +1,7 @@
 {
   "type": "minecraft:campfire_cooking",
   "category": "food",
-  "cookingtime": 600,
+  "cookingtime": 900,
   "experience": 0.35,
   "ingredient": {
     "item": "vegandelight:smoked_tofu"
