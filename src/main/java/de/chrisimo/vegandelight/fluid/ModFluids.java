@@ -26,6 +26,12 @@ public class ModFluids {
             .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.SOYMILK_FLUID_BLOCK)
             .bucket(ModItems.SOYMILK_BUCKET);
 
+    public static final RegistryObject<FlowingFluid> APPLESAUCE_FLUID = FLUIDS.register("applesauce_fluid",
+            () -> new ForgeFlowingFluid.Source(ModFluids.APPLESAUCE_FLUID_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> APPLESAUCE_FLOWING_FLUID = FLUIDS.register("applesauce",
+            () -> RecipeFluid.create(ModFluids.APPLESAUCE_FLUID_PROPERTIES));
+    public static final ForgeFlowingFluid.Properties APPLESAUCE_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
+            ModFluidTypes.APPLESAUCE_FLUID_TYPE, ModFluids.APPLESAUCE_FLUID, ModFluids.APPLESAUCE_FLOWING_FLUID);
 
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);

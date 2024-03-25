@@ -10,7 +10,6 @@
   "item.vegandelight.tofu_patty": "豆腐饼",
 
 
-
   "item.vegandelight.smoked_tofu": "烟熏豆腐",
   "item.vegandelight.smoked_tofish": "烟熏豆腐鱼",
   "item.vegandelight.smoked_tofish_roll": "烟熏豆腐鱼寿司",
@@ -27,13 +26,16 @@
   "item.vegandelight.soybean": "大豆",
   "item.vegandelight.soymilk_bottle": "豆浆瓶",
   "item.vegandelight.soymilk_bucket": "豆浆桶",
-  "item.vegandelight.applesauce": "苹果酱",
 
 
   "item.vegandelight.pasta_with_tofuballs": "豆腐球意面",
   "item.vegandelight.roasted_tofu_chops": "烤豆腐排",
   "item.vegandelight.tofu_burger": "豆腐汉堡",
   "item.vegandelight.tofu_sandwich": "豆腐三明治",
+
+
+  "item.vegandelight.applesauce": "苹果酱",
+  "fluid_type.vegandelight.applesauce": "苹果酱",
 
 
   "block.vegandelight.soybean_bag": "大豆袋",

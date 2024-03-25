@@ -30,6 +30,9 @@ public class ModFluidTypes {
                 0xA1E038D0, new Vector3f(224f / 255f, 56f / 255f, 208f / 255f), properties));
     }
 
+    public static final RegistryObject<FluidType> APPLESAUCE_FLUID_TYPE = FLUID_TYPES.register(
+            "applesauce", () -> RecipeFluidType.createGloppy(0xEBC065));
+
     public static void register(IEventBus eventBus) {
         FLUID_TYPES.register(eventBus);
     }

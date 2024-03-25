@@ -10,7 +10,6 @@
   "item.vegandelight.tofu_patty": "Tofu Patty",
 
 
-
   "item.vegandelight.smoked_tofu": "Geräucherter Tofu",
   "item.vegandelight.smoked_tofish": "Geräucherter Tofisch",
   "item.vegandelight.smoked_tofish_roll": "Geräucherte Tofisch Rolle",
@@ -28,13 +27,16 @@
   "item.vegandelight.soymilk_bottle": "Sojamilch Flasche",
   "item.vegandelight.soymilk_bucket": "Sojamilch Eimer",
   "item.vegandelight.leather_substitute": "Lederimitat",
-  "item.vegandelight.applesauce": "Apfelsoße",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Nudeln mit Tofubällchen",
   "item.vegandelight.roasted_tofu_chops": "Gebratene Tofu Chops",
   "item.vegandelight.tofu_burger": "Tofu Burger",
   "item.vegandelight.tofu_sandwich": "Tofu Sandwich",
+
+
+  "item.vegandelight.applesauce": "Apfelsoße",
+  "fluid_type.vegandelight.applesauce": "Apfelsoße",
 
 
   "block.vegandelight.soybean_bag": "Sojabohnen Sack",
