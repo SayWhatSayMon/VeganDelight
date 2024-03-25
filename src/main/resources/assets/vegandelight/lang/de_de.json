@@ -1,5 +1,4 @@
 {
-
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.silken_tofu": "Seidentofu",
   "item.vegandelight.minced_tofu": "Tofu Hack",
@@ -16,8 +15,12 @@
   "item.vegandelight.smoked_tofu_slices": "Geräucherte Tofu Stücke",
 
 
+  "item.vegandelight.cooked_tofu": "Gekochter Tofu",
   "item.vegandelight.cooked_tofu_slices": "Gekochte Tofu Stücke",
   "item.vegandelight.cooked_tofish": "Gekochter Tofisch",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Gekochter Geräucherter Tofu",
   "item.vegandelight.cooked_smoked_tofish": "Gekochter Geräucherter Tofisch",
   "item.vegandelight.cooked_smoked_tofu_slices": "Gekochte Geräucherte Tofu Stücke",
 

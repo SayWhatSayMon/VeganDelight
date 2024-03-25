@@ -1,5 +1,4 @@
 {
-
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.silken_tofu": "Jedwabiste Tofu",
   "item.vegandelight.minced_tofu": "Mielone Tofu",
@@ -16,8 +15,12 @@
   "item.vegandelight.smoked_tofu_slices": "Plasterki Wędzonego Tofu",
 
 
+  "item.vegandelight.cooked_tofu": "Pieczone Tofu",
   "item.vegandelight.cooked_tofu_slices": "Pieczone Plasterki Tofu",
   "item.vegandelight.cooked_tofish": "Pieczona Tofurybka",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Pieczone Wędzonego Tofu",
   "item.vegandelight.cooked_smoked_tofish": "Pieczona Wędzona Tofurybka",
   "item.vegandelight.cooked_smoked_tofu_slices": "Pieczone Plasterki Wędzonego Tofu",
 

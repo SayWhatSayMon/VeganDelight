@@ -23,9 +23,11 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.SILKEN_TOFU.get());
                         pOutput.accept(ModItems.TOFU.get());
                         pOutput.accept(ModItems.TOFU_SLICES.get());
+                        pOutput.accept(ModItems.COOKED_TOFU.get());
                         pOutput.accept(ModItems.COOKED_TOFU_SLICES.get());
                         pOutput.accept(ModItems.SMOKED_TOFU.get());
                         pOutput.accept(ModItems.SMOKED_TOFU_SLICES.get());
+                        pOutput.accept(ModItems.COOKED_SMOKED_TOFU.get());
                         pOutput.accept(ModItems.COOKED_SMOKED_TOFU_SLICES.get());
                         pOutput.accept(ModItems.MINCED_TOFU.get());
                         pOutput.accept(ModItems.TOFU_PATTY.get());

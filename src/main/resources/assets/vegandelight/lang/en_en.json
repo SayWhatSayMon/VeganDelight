@@ -1,5 +1,4 @@
 {
-
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.silken_tofu": "Silken Tofu",
   "item.vegandelight.minced_tofu": "Minced Tofu",
@@ -16,8 +15,12 @@
   "item.vegandelight.smoked_tofu_slices": "Smoked Tofu Slices",
 
 
+  "item.vegandelight.cooked_tofu": "Cooked Tofu",
   "item.vegandelight.cooked_tofu_slices": "Cooked Tofu Slices",
   "item.vegandelight.cooked_tofish": "Cooked Tofish",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Cooked Smoked Tofu",
   "item.vegandelight.cooked_smoked_tofish": "Cooked Smoked Tofish",
   "item.vegandelight.cooked_smoked_tofu_slices": "Cooked Smoked Tofu Slices",
 
