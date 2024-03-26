@@ -163,8 +163,8 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     // These are helpful when testing Create interoperability.
-    // runtimeOnly fg.deobf("curse.maven:create-328085:4835191")
-    // runtimeOnly fg.deobf("curse.maven:create-central-kitchen-820977:5132704")
+    runtimeOnly fg.deobf("curse.maven:create-328085:4835191")
+    runtimeOnly fg.deobf("curse.maven:create-central-kitchen-820977:5132704")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar

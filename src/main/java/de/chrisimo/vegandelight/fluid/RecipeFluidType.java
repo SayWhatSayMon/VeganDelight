@@ -16,6 +16,9 @@ public class RecipeFluidType extends FluidType {
     public static final ResourceLocation WATER_STILL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOW = new ResourceLocation("block/water_flow");
 
+    public static final ResourceLocation MILKY_STILL = new ResourceLocation(VeganDelight.MODID, "block/fluid/milky_still");
+    public static final ResourceLocation MILKY_FLOW = new ResourceLocation(VeganDelight.MODID, "block/fluid/milky_flow");
+
     // The "gloppy" texture is grayscale like water, but it also has a few differences:
     //
     //  1) the animation is a bit slower,
@@ -33,6 +36,16 @@ public class RecipeFluidType extends FluidType {
      */
     public static RecipeFluidType createWatery(final int tintColor) {
         return new RecipeFluidType(WATER_STILL, WATER_FLOW, 0xFF000000 | tintColor);
+    }
+
+    /**
+     * Creates a new recipe-only fluid type based on our custom "gloppy" texture and the supplied tint.
+     *
+     * @param tintColor RGB tint of the new fluid type.
+     * @return          A new gloppy fluid type.
+     */
+    public static RecipeFluidType createMilky() {
+        return new RecipeFluidType(MILKY_STILL, MILKY_FLOW, 0);
     }
 
     /**
@@ -75,8 +88,8 @@ public class RecipeFluidType extends FluidType {
             public ResourceLocation getStillTexture() { return stillTexture; }
             @Override
             public ResourceLocation getFlowingTexture() { return flowTexture; }
-            @Override
-            public int getTintColor() { return tintColor; }
+//            @Override
+//            public int getTintColor() { return tintColor; }
         });
     }
 }
