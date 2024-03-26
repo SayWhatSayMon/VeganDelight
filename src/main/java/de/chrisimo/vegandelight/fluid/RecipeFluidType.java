@@ -47,7 +47,7 @@ public class RecipeFluidType extends FluidType {
     public static RecipeFluidType createMilky() {
         return new RecipeFluidType(MILKY_STILL, MILKY_FLOW);
     }
-e
+
     /**
      * Creates a new recipe-only fluid type based on our custom "gloppy" texture.
      *
