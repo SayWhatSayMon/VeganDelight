@@ -16,6 +16,8 @@ public class RecipeFluidType extends FluidType {
     public static final ResourceLocation WATER_STILL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOW = new ResourceLocation("block/water_flow");
 
+    // The "milky" texture is pre-colored per the existing whitish-orangish soymilk textures.
+    // It is also much more opaque than water.
     public static final ResourceLocation MILKY_STILL = new ResourceLocation(VeganDelight.MODID, "block/fluid/milky_still");
     public static final ResourceLocation MILKY_FLOW = new ResourceLocation(VeganDelight.MODID, "block/fluid/milky_flow");
 
@@ -29,33 +31,30 @@ public class RecipeFluidType extends FluidType {
     public static final ResourceLocation GLOPPY_FLOW = new ResourceLocation(VeganDelight.MODID, "block/fluid/gloppy_flow");
 
     /**
-     * Creates a new recipe-only fluid type based on the vanilla water texture and the supplied tint.
+     * Creates a new recipe-only fluid type based on the vanilla water texture.
      *
-     * @param tintColor RGB tint of the new fluid type.
      * @return          A new watery fluid type.
      */
-    public static RecipeFluidType createWatery(final int tintColor) {
-        return new RecipeFluidType(WATER_STILL, WATER_FLOW, 0xFF000000 | tintColor);
+    public static RecipeFluidType createWatery() {
+        return new RecipeFluidType(WATER_STILL, WATER_FLOW);
     }
 
     /**
-     * Creates a new recipe-only fluid type based on our custom "gloppy" texture and the supplied tint.
+     * Creates a new recipe-only fluid type based on our custom "milky" texture.
      *
-     * @param tintColor RGB tint of the new fluid type.
-     * @return          A new gloppy fluid type.
+     * @return          A new milky fluid type.
      */
     public static RecipeFluidType createMilky() {
-        return new RecipeFluidType(MILKY_STILL, MILKY_FLOW, 0);
+        return new RecipeFluidType(MILKY_STILL, MILKY_FLOW);
     }
-
+e
     /**
-     * Creates a new recipe-only fluid type based on our custom "gloppy" texture and the supplied tint.
+     * Creates a new recipe-only fluid type based on our custom "gloppy" texture.
      *
-     * @param tintColor RGB tint of the new fluid type.
      * @return          A new gloppy fluid type.
      */
-    public static RecipeFluidType createGloppy(final int tintColor) {
-        return new RecipeFluidType(GLOPPY_STILL, GLOPPY_FLOW, 0xF0000000 | tintColor);
+    public static RecipeFluidType createGloppy() {
+        return new RecipeFluidType(GLOPPY_STILL, GLOPPY_FLOW);
     }
 
     /**
@@ -63,18 +62,29 @@ public class RecipeFluidType extends FluidType {
      *
      * @param still     Resource for the still fluid texture.
      * @param flow      Resource for the flowing fluid texture.
-     * @param tintColor RGB tint of the new fluid type.
      */
-    private RecipeFluidType(ResourceLocation still, ResourceLocation flow, int tintColor) {
+    private RecipeFluidType(ResourceLocation still, ResourceLocation flow) {
         super(FluidType.Properties.create());
         this.stillTexture = still;
         this.flowTexture = flow;
-        this.tintColor = tintColor;
     }
 
     private final ResourceLocation stillTexture;
     private final ResourceLocation flowTexture;
-    private final int tintColor;
+
+    // Contains the ARGB tint color, or -1 if the texture is not to be tinted.
+    private int tintColor = -1;
+
+    /**
+     * Sets an optional tint color on this recipe type's textures.
+     *
+     * @param tintColor The ARGB tint color to set.
+     * @return          This recipe type, for further building.
+     */
+    public RecipeFluidType tint(int tintColor) {
+        this.tintColor = tintColor;
+        return this;
+    }
 
     /**
      * Inherited method to configure the new fluid type.
@@ -88,8 +98,8 @@ public class RecipeFluidType extends FluidType {
             public ResourceLocation getStillTexture() { return stillTexture; }
             @Override
             public ResourceLocation getFlowingTexture() { return flowTexture; }
-//            @Override
-//            public int getTintColor() { return tintColor; }
+            @Override
+            public int getTintColor() { return tintColor; }
         });
     }
 }

@@ -16,10 +16,9 @@ public class ModFluidTypes {
             DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, VeganDelight.MODID);
 
     public static final RegistryObject<FluidType> SOYMILK_FLUID_TYPE = FLUID_TYPES.register(
-            "soymilk", () -> RecipeFluidType.createMilky());
-
+            "soymilk", RecipeFluidType::createMilky);
     public static final RegistryObject<FluidType> APPLESAUCE_FLUID_TYPE = FLUID_TYPES.register(
-            "applesauce", () -> RecipeFluidType.createGloppy(0xEBC065));
+            "applesauce", () -> RecipeFluidType.createGloppy().tint(0xF0EBC065));
 
     public static void register(IEventBus eventBus) {
         FLUID_TYPES.register(eventBus);
