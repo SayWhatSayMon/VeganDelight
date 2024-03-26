@@ -9,7 +9,7 @@
   ],
   "ingredients": [
     {
-      "item": "vegandelight:soybean"
+      "tag": "forge:crops/soybean"
     },
     {
       "fluid": "minecraft:water",
