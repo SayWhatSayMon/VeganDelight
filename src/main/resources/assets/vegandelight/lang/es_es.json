@@ -27,9 +27,14 @@
 
   "item.vegandelight.salt": "Sal",
   "item.vegandelight.soybean": "Soja",
+  "fluid_type.vegandelight.soymilk": "Leche de Soja",
   "item.vegandelight.soymilk_bottle": "Frasco de Leche de Soja",
   "item.vegandelight.soymilk_bucket": "Cubo de Leche de Soja",
   "item.vegandelight.leather_substitute": "Sucedáneo de Cuero",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Quita un efecto",
+  "farmersdelight.tooltip.soymilk_bucket": "Quita un efecto",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Pasta con Albóndigas de Tofu",

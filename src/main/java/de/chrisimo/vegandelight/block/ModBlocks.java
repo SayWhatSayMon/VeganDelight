@@ -34,9 +34,6 @@ public class ModBlocks {
     public static final RegistryObject<Block> SOYBEAN_BAG = registerBlock("soybean_bag",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL)));
 
-    public static final RegistryObject<LiquidBlock> SOYMILK_FLUID_BLOCK = BLOCKS.register("soymilk_fluid_block",
-            () -> new LiquidBlock(ModFluids.SOYMILK_FLUID, BlockBehaviour.Properties.copy(Blocks.WATER)));
-
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);

@@ -27,9 +27,14 @@
 
   "item.vegandelight.salt": "Salz",
   "item.vegandelight.soybean": "Sojabohne",
+  "fluid_type.vegandelight.soymilk": "Sojamilch",
   "item.vegandelight.soymilk_bottle": "Sojamilch Flasche",
   "item.vegandelight.soymilk_bucket": "Sojamilch Eimer",
   "item.vegandelight.leather_substitute": "Lederimitat",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Löscht einen Statuseffekt",
+  "farmersdelight.tooltip.soymilk_bucket": "Löscht einen Statuseffekt",
 
 
   "item.vegandelight.pasta_with_tofuballs": "Nudeln mit Tofubällchen",

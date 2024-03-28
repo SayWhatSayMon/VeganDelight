@@ -1,0 +1,36 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_central_kitchen"
+    }
+  ],
+  "ingredients": [
+    [
+      {
+        "tag": "forge:salts"
+      },
+      {
+        "tag": "forge:salt"
+      }
+    ],
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    },
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": 250
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "results": [
+    {
+      "item": "vegandelight:silken_tofu"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "create:filling",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_central_kitchen"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "vegandelight:soymilk_bucket"
+    }
+  ]
+}

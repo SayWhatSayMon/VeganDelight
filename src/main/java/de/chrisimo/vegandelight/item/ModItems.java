@@ -2,8 +2,6 @@ package de.chrisimo.vegandelight.item;
 
 import de.chrisimo.vegandelight.VeganDelight;
 import de.chrisimo.vegandelight.block.ModBlocks;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
@@ -13,7 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.registry.ModEffects;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -114,12 +112,13 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
-            () -> new Item(new Item.Properties()
+            () -> new MilkBottleItem(new Item.Properties()
                     .craftRemainder(Items.BUCKET)
                     .stacksTo(1)));
 
     public static final RegistryObject<Item> SOYMILK_BOTTLE = ITEMS.register("soymilk_bottle",
-            () -> new Item(new Item.Properties()
+            () -> new MilkBottleItem(new Item.Properties()
+                    .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
 
     public static final RegistryObject<Item> SOYBEAN = ITEMS.register("soybean",

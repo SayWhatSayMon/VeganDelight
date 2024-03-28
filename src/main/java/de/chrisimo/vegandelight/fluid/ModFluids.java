@@ -1,8 +1,6 @@
 package de.chrisimo.vegandelight.fluid;
 
 import de.chrisimo.vegandelight.VeganDelight;
-import de.chrisimo.vegandelight.item.ModItems;
-import de.chrisimo.vegandelight.block.ModBlocks;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,15 +14,11 @@ public class ModFluids {
             DeferredRegister.create(ForgeRegistries.FLUIDS, VeganDelight.MODID);
 
     public static final RegistryObject<FlowingFluid> SOYMILK_FLUID = FLUIDS.register("soymilk_fluid",
-            () -> new ForgeFlowingFluid.Source(ModFluids.MILK_FLUID_PROPERTIES));
-    public static final RegistryObject<FlowingFluid> FLOWING_SOYMILK_FLUID = FLUIDS.register("flowing_soymilk_fluid",
-            () -> new ForgeFlowingFluid.Flowing(ModFluids.MILK_FLUID_PROPERTIES));
-
-
-    public static final ForgeFlowingFluid.Properties MILK_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
-            ModFluidTypes.SOYMILK_FLUID_TYPE, SOYMILK_FLUID, FLOWING_SOYMILK_FLUID)
-            .slopeFindDistance(2).levelDecreasePerBlock(2).block(ModBlocks.SOYMILK_FLUID_BLOCK)
-            .bucket(ModItems.SOYMILK_BUCKET);
+            () -> new ForgeFlowingFluid.Source(ModFluids.SOYMILK_FLUID_PROPERTIES));
+    public static final RegistryObject<FlowingFluid> SOYMILK_FLOWING_FLUID = FLUIDS.register("soymilk",
+            () -> RecipeFluid.create(ModFluids.SOYMILK_FLUID_PROPERTIES));
+    public static final ForgeFlowingFluid.Properties SOYMILK_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
+            ModFluidTypes.SOYMILK_FLUID_TYPE, ModFluids.SOYMILK_FLUID, ModFluids.SOYMILK_FLOWING_FLUID);
 
     public static final RegistryObject<FlowingFluid> APPLESAUCE_FLUID = FLUIDS.register("applesauce_fluid",
             () -> new ForgeFlowingFluid.Source(ModFluids.APPLESAUCE_FLUID_PROPERTIES));

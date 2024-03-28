@@ -1,0 +1,29 @@
+{
+  "type": "create:compacting",
+  "heatRequirement": "heated",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create_central_kitchen"
+    }
+  ],
+  "ingredients": [
+    [
+      {
+        "tag": "forge:salts"
+      },
+      {
+        "tag": "forge:salt"
+      }
+    ],
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "item": "vegandelight:tofu"
+    }
+  ]
+}
