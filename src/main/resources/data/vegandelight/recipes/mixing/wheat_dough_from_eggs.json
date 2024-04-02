@@ -1,6 +1,5 @@
 {
   "type": "create:mixing",
-  "heatRequirement": "heated",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -9,20 +8,23 @@
   ],
   "ingredients": [
     {
-      "item": "minecraft:apple"
+      "fluidTag": "forge:eggs",
+      "amount": 1000
     },
     {
-      "item": "minecraft:sugar"
+      "tag": "forge:flour/wheat"
     },
     {
-      "fluid": "minecraft:water",
-      "amount": 250
+      "tag": "forge:flour/wheat"
+    },
+    {
+      "tag": "forge:flour/wheat"
     }
   ],
   "results": [
     {
-      "fluid": "vegandelight:applesauce_fluid",
-      "amount": 250
+      "item": "farmersdelight:wheat_dough",
+      "count": 3
     }
   ]
 }
