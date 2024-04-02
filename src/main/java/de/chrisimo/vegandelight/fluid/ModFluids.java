@@ -1,6 +1,7 @@
 package de.chrisimo.vegandelight.fluid;
 
 import de.chrisimo.vegandelight.VeganDelight;
+import de.chrisimo.vegandelight.item.ModItems;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,14 +19,16 @@ public class ModFluids {
     public static final RegistryObject<FlowingFluid> SOYMILK_FLOWING_FLUID = FLUIDS.register("soymilk",
             () -> RecipeFluid.create(ModFluids.SOYMILK_FLUID_PROPERTIES));
     public static final ForgeFlowingFluid.Properties SOYMILK_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
-            ModFluidTypes.SOYMILK_FLUID_TYPE, ModFluids.SOYMILK_FLUID, ModFluids.SOYMILK_FLOWING_FLUID);
+            ModFluidTypes.SOYMILK_FLUID_TYPE, ModFluids.SOYMILK_FLUID, ModFluids.SOYMILK_FLOWING_FLUID)
+                .bucket(ModItems.SOYMILK_BUCKET);
 
     public static final RegistryObject<FlowingFluid> APPLESAUCE_FLUID = FLUIDS.register("applesauce_fluid",
             () -> new ForgeFlowingFluid.Source(ModFluids.APPLESAUCE_FLUID_PROPERTIES));
     public static final RegistryObject<FlowingFluid> APPLESAUCE_FLOWING_FLUID = FLUIDS.register("applesauce",
             () -> RecipeFluid.create(ModFluids.APPLESAUCE_FLUID_PROPERTIES));
     public static final ForgeFlowingFluid.Properties APPLESAUCE_FLUID_PROPERTIES = new ForgeFlowingFluid.Properties(
-            ModFluidTypes.APPLESAUCE_FLUID_TYPE, ModFluids.APPLESAUCE_FLUID, ModFluids.APPLESAUCE_FLOWING_FLUID);
+            ModFluidTypes.APPLESAUCE_FLUID_TYPE, ModFluids.APPLESAUCE_FLUID, ModFluids.APPLESAUCE_FLOWING_FLUID)
+                .bucket(ModItems.APPLESAUCE_BUCKET);
 
     public static void register(IEventBus eventBus) {
         FLUIDS.register(eventBus);
