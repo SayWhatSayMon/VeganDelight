@@ -1,0 +1,55 @@
+{
+  "item.vegandelight.tofu": "Тофу",
+  "item.vegandelight.silken_tofu": "Шёлковый тофу",
+  "item.vegandelight.minced_tofu": "Рубленый тофу",
+  "item.vegandelight.tofu_slices": "Ломтики тофу",
+  "item.vegandelight.tofish": "Веганская рыба",
+  "item.vegandelight.tofish_slices": "Ломтики из веганской рыбы",
+  "item.vegandelight.tofish_roll": "Ролл с веганской рыбой",
+  "item.vegandelight.tofu_patty": "Котлета из тофу",
+
+
+  "item.vegandelight.smoked_tofu": "Копченый тофу",
+  "item.vegandelight.smoked_tofish": "Копчёная веганская рыба",
+  "item.vegandelight.smoked_tofish_roll": "Ролл с копченой веганской рыбой",
+  "item.vegandelight.smoked_tofu_slices": "Ломтики копченого тофу",
+
+
+  "item.vegandelight.cooked_tofu": "Приготовленный тофу",
+  "item.vegandelight.cooked_tofu_slices": "Ломтики приготовленного тофу",
+  "item.vegandelight.cooked_tofish": "Приготовленная веганская рыба",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Приготовленный копчёный тофу",
+  "item.vegandelight.cooked_smoked_tofish": "Приготовленная копчёная веганская рыба",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Ломки приготовленного копченого тофу",
+
+
+  "item.vegandelight.salt": "Соль",
+  "item.vegandelight.soybean": "Соевый боб",
+  "fluid_type.vegandelight.soymilk": "Соевое молоко",
+  "item.vegandelight.soymilk_bottle": "Бутылочка соевого молока",
+  "item.vegandelight.soymilk_bucket": "Ведро соевого молока",
+  "item.vegandelight.leather_substitute": "Заменитель кожи",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Снимает 1 эффект",
+  "farmersdelight.tooltip.soymilk_bucket": "Снимает 1 эффект",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Паста с шариками тофу",
+  "item.vegandelight.roasted_tofu_chops": "Обжаренные отбивные из тофу",
+  "item.vegandelight.tofu_burger": "Бургер с тофу",
+  "item.vegandelight.tofu_sandwich": "Сэндвич с тофу",
+
+
+  "item.vegandelight.applesauce": "Яблочный соус",
+  "fluid_type.vegandelight.applesauce": "Яблочный соус",
+
+
+  "block.vegandelight.soybean_bag": "Мешок соевых бобов",
+  "block.vegandelight.wild_soybean": "Дикая соя",
+
+
+  "creativetab.vegan_tab": "Vegan Delight"
+}
