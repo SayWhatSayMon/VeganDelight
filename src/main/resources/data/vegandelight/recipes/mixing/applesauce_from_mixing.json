@@ -1,6 +1,5 @@
 {
   "type": "create:mixing",
-  "heatRequirement": "heated",
   "conditions": [
     {
       "type": "forge:mod_loaded",
@@ -9,13 +8,20 @@
   ],
   "ingredients": [
     {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
       "fluid": "minecraft:water",
       "amount": 250
     }
   ],
   "results": [
     {
-      "item": "vegandelight:salt"
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": 250
     }
   ]
 }

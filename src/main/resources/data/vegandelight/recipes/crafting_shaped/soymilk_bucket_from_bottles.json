@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "minecraft:bucket"
+    },
+    "X": {
+      "item": "vegandelight:soymilk_bottle"
+    }
+  },
+  "pattern": [
+    "#XX",
+    "XX ",
+    "   "
+  ],
+  "result": {
+    "item": "vegandelight:soymilk_bucket"
+  },
+  "show_notification": true
+}

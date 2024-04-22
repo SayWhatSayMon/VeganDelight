@@ -8,7 +8,7 @@
   ],
   "ingredients": [
     {
-      "fluid": "vegandelight:applesauce_fluid",
+      "fluidTag": "forge:eggs",
       "amount": 1000
     },
     {
@@ -23,7 +23,7 @@
   ],
   "results": [
     {
-      "item": "farmersdelight:wheat_dough",
+      "item": "create:dough",
       "count": 3
     }
   ]

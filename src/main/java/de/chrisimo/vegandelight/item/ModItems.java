@@ -11,6 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class ModItems {
@@ -138,6 +139,14 @@ public class ModItems {
                     .build())
                     .craftRemainder(Items.BOWL)
                     .stacksTo(16)));
+    public static final RegistryObject<Item> APPLESAUCE_BUCKET = ITEMS.register("applesauce_bucket",
+            () -> new DrinkableItem(new Item.Properties()
+                    .food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationMod(0.4f)
+                    .build())
+                    .craftRemainder(Items.BUCKET)
+                    .stacksTo(1)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
