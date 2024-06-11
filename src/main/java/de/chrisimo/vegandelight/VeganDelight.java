@@ -34,7 +34,7 @@ public class VeganDelight
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
-        if (loadFluids()) {
+        if (shouldLoadFluids()) {
             ModFluidTypes.register(modEventBus);
             ModFluids.register(modEventBus);
         }
@@ -43,7 +43,7 @@ public class VeganDelight
         modEventBus.addListener(this::commonSetup);
     }
 
-    private boolean loadFluids()
+    private boolean shouldLoadFluids()
     {
         return ModList.get().isLoaded("create_central_kitchen");
     }
