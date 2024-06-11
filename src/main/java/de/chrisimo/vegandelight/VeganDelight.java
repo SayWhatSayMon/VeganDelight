@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -32,11 +33,19 @@ public class VeganDelight
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModFluidTypes.register(modEventBus);
-        ModFluids.register(modEventBus);
+
+        if (loadFluids()) {
+            ModFluidTypes.register(modEventBus);
+            ModFluids.register(modEventBus);
+        }
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+    }
+
+    private boolean loadFluids()
+    {
+        return ModList.get().isLoaded("create_central_kitchen");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
