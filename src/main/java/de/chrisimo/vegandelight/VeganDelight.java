@@ -7,6 +7,7 @@ import de.chrisimo.vegandelight.fluid.ModFluids;
 import de.chrisimo.vegandelight.item.ModCreativeTabs;
 import de.chrisimo.vegandelight.item.ModItems;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -51,9 +52,11 @@ public class VeganDelight
     public static class ClientModEvents
     {
         @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event)
-        {
-
+        public static void onCommonSetup(FMLCommonSetupEvent event) {
+            event.enqueueWork(() -> {
+                ComposterBlock.COMPOSTABLES.put(ModItems.SOYBEAN.get(), 0.65f); // Adjust the chance as needed
+            });
         }
+
     }
 }
