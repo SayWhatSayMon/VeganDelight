@@ -23,27 +23,22 @@
           "name": "vegandelight:tofu"
         },
         {
-          "rolls": 3,
-          "entries": [
+          "type": "minecraft:item",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 2.0,
-                    "max": 12.0,
-                    "type": "minecraft:uniform"
-                  }
-                }
-              ],
-              "name": "vegandelight:salt"
-            },
-            {
-              "type": "minecraft:empty",
-              "weight": 2
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 12.0,
+                "type": "minecraft:uniform"
+              }
             }
-          ]
+          ],
+          "name": "vegandelight:salt"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 2
         }
       ]
     }
