@@ -1,4 +1,3 @@
-
 {
   "pools": [
     {
@@ -24,42 +23,37 @@
           "name": "vegandelight:tofu"
         },
         {
-          "rolls": 3,
-          "entries": [
+          "type": "minecraft:item",
+          "functions": [
             {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 2.0,
-                    "max": 12.0,
-                    "type": "minecraft:uniform"
-                  }
-                }
-              ],
-              "name": "vegandelight:salt"
-            },
-            {
-              "type": "minecraft:item",
-              "weight": 2,
-              "functions": [
-                {
-                  "function": "minecraft:set_count",
-                  "count": {
-                    "min": 1.0,
-                    "max": 2.0,
-                    "type": "minecraft:uniform"
-                  }
-                }
-              ],
-              "name": "vegandelight:soybean_bag"
-            },
-            {
-              "type": "minecraft:empty",
-              "weight": 2
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2.0,
+                "max": 12.0,
+                "type": "minecraft:uniform"
+              }
             }
-          ]
+          ],
+          "name": "vegandelight:salt"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 2.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "vegandelight:soybean_bag"
+        },
+        {
+          "type": "minecraft:empty",
+          "weight": 2
         }
       ]
     }
