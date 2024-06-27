@@ -46,6 +46,8 @@ public class VeganDelight
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
+
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -55,20 +57,21 @@ public class VeganDelight
         });
     }
 
-    @Mod.EventBusSubscriber(modid = MODID)
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class ModEventSubscriber {
-
-        public ModEventSubscriber() {
-            MinecraftForge.EVENT_BUS.register(this);
-        }
-
         @SubscribeEvent
         public static void onCommonSetup(FMLCommonSetupEvent event) {
             event.enqueueWork(() -> {
                 ComposterBlock.COMPOSTABLES.put(ModItems.SOYBEAN.get(), 0.65f); // Adjust the chance as needed
             });
         }
+    }
 
+    @Mod.EventBusSubscriber(modid = MODID)
+    public static class newSubscriber {
+        public newSubscriber() {
+            MinecraftForge.EVENT_BUS.register(this);
+        }
         @SubscribeEvent
         public static void onVillagerTrades(VillagerTradesEvent event) {
             if (event.getType() == VillagerProfession.FARMER) {
