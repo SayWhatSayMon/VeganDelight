@@ -6,10 +6,17 @@ import de.chrisimo.vegandelight.fluid.ModFluidTypes;
 import de.chrisimo.vegandelight.fluid.ModFluids;
 import de.chrisimo.vegandelight.item.ModCreativeTabs;
 import de.chrisimo.vegandelight.item.ModItems;
+import net.minecraft.world.entity.npc.VillagerProfession;
+import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -18,13 +25,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import java.util.List;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(VeganDelight.MODID)
 public class VeganDelight
 {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "vegandelight";
-    private static final Logger LOGGER = LogUtils.getLogger();
 
     public VeganDelight()
     {
@@ -47,10 +55,13 @@ public class VeganDelight
         });
     }
 
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    @Mod.EventBusSubscriber(modid = MODID)
+    public static class ModEventSubscriber {
+
+        public ModEventSubscriber() {
+            MinecraftForge.EVENT_BUS.register(this);
+        }
+
         @SubscribeEvent
         public static void onCommonSetup(FMLCommonSetupEvent event) {
             event.enqueueWork(() -> {
@@ -58,5 +69,19 @@ public class VeganDelight
             });
         }
 
+        @SubscribeEvent
+        public static void onVillagerTrades(VillagerTradesEvent event) {
+            if (event.getType() == VillagerProfession.FARMER) {
+                List<VillagerTrades.ItemListing> level1Trades = event.getTrades().get(1);
+
+                level1Trades.add((entity, random) -> new MerchantOffer(
+                        new ItemStack(ModItems.SOYBEAN.get(), 18), // Soybean in quantity
+                        new ItemStack(Items.EMERALD, 1), // Resulting Emeralds
+                        12, // Max uses
+                        10, // Villager XP
+                        0.05f // Price multiplier
+                ));
+            }
+        }
     }
 }
