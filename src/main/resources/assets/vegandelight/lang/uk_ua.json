@@ -1,0 +1,56 @@
+{
+  "item.vegandelight.tofu": "Тофу",
+  "item.vegandelight.silken_tofu": "Шовковий тофу",
+  "item.vegandelight.minced_tofu": "Розрізаний тофу",
+  "item.vegandelight.tofu_slices": "Скибочки тофу",
+  "item.vegandelight.tofish": "Веганська риба",
+  "item.vegandelight.tofish_slices": "Скибочки веганської риби",
+  "item.vegandelight.tofish_roll": "Суші з веганської риби",
+  "item.vegandelight.tofu_patty": "Котлета з тофу",
+
+
+  "item.vegandelight.smoked_tofu": "Копчений тофу",
+  "item.vegandelight.smoked_tofish": "Копчена веганська риба",
+  "item.vegandelight.smoked_tofish_roll": "Суші з копченої веганської риби",
+  "item.vegandelight.smoked_tofu_slices": "Скибочки копченого тофу",
+
+
+  "item.vegandelight.cooked_tofu": "Приготовлений тофу",
+  "item.vegandelight.cooked_tofu_slices": "Приготовлені скибочки тофу",
+  "item.vegandelight.cooked_tofish": "Приготовлена веганська риба",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Приготовлений копчений тофу",
+  "item.vegandelight.cooked_smoked_tofish": "Приготовлена копчена веганська риба",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Приготовлені скибочки копченого тофу",
+
+
+  "item.vegandelight.salt": "Сіль",
+  "item.vegandelight.soybean": "Соєві боби",
+  "fluid_type.vegandelight.soymilk": "Соєве молоко",
+  "item.vegandelight.soymilk_bottle": "Пляшка соєвого молока",
+  "item.vegandelight.soymilk_bucket": "Відро соєвого молока",
+  "item.vegandelight.leather_substitute": "Замінник шкіри",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Знімає 1 ефект",
+  "farmersdelight.tooltip.soymilk_bucket": "Знімає 1 ефект",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Паста з кульками тофу",
+  "item.vegandelight.roasted_tofu_chops": "Смажені відбивні з тофу",
+  "item.vegandelight.tofu_burger": "Бургер з тофу",
+  "item.vegandelight.tofu_sandwich": "Сендвіч з тофу",
+
+
+  "item.vegandelight.applesauce": "Яблучний соус",
+  "item.vegandelight.applesauce_bucket": "Відро яблучного соусу",
+  "fluid_type.vegandelight.applesauce": "Яблучний соус",
+
+
+  "block.vegandelight.soybean_bag": "Мішок соєвих бобів",
+  "block.vegandelight.wild_soybean": "Дика соя",
+
+
+  "creativetab.vegan_tab": "Vegan Delight"
+}
