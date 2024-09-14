@@ -10,19 +10,12 @@
   "icon": "assets/vegandelightfabric/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "net.player005.vegandelightfabric.client.VeganDelightClient"
-    ],
     "main": [
       "net.player005.vegandelightfabric.VeganDelight"
     ]
   },
   "mixins": [
-    "vegandelightfabric.mixins.json",
-    {
-      "config": "vegandelightfabric.client.mixins.json",
-      "environment": "client"
-    }
+    "vegandelightfabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
