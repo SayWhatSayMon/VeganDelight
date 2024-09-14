@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "vegandelight:soymilk_bottle"
+    }
+  ],
+  "result": {
+    "item": "vegandelight:soymilk_bucket"
+  },
+  "show_notification": true
+}
