@@ -11,13 +11,9 @@ base {
 }
 
 loom {
-    splitEnvironmentSourceSets()
-
-
     mods {
         "vegandelightfabric" {
             sourceSet sourceSets.main
-            sourceSet sourceSets.client
         }
     }
 }
