@@ -8,17 +8,17 @@
   ],
   "ingredients": [
     {
-      "fluidTag": "forge:eggs",
+      "fluidTag": "c:eggs",
       "amount": 1000
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     }
   ],
   "results": [

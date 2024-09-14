@@ -1,6 +1,5 @@
 {
-  "replace": false,
-  "value": [
-    "vegandelight:soy_beans"
+  "values": [
+    "vegandelight:soybean_crop"
   ]
 }

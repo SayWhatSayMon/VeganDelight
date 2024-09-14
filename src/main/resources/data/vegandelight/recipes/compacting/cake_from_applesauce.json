@@ -10,7 +10,7 @@
   ],
   "ingredients": [
     {
-      "fluidTag": "forge:eggs",
+      "fluidTag": "c:eggs",
       "amount": 250
     },
     {
@@ -20,16 +20,16 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "c:flour/wheat"
     },
     {
-      "fluidTag": "forge:milk",
+      "fluidTag": "c:milk",
       "amount": 1000
     }
   ],
