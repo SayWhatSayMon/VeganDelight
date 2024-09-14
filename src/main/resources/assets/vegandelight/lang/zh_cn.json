@@ -34,6 +34,7 @@
 
   "farmersdelight.tooltip.soymilk_bottle": "清除1个效果",
   "farmersdelight.tooltip.soymilk_bucket": "清除1个效果",
+  "item.vegandelight.leather_substitute": "Leather Substitute",
 
 
   "item.vegandelight.pasta_with_tofuballs": "豆腐球意面",
@@ -51,5 +52,5 @@
   "block.vegandelight.wild_soybean": "野生大豆",
 
 
-  "creativetab.vegan_tab": "纯素乐事"
+  "itemGroup.vegan_delight": "Vegan Delight"
 }

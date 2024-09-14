@@ -45,11 +45,12 @@
 
   "item.vegandelight.applesauce": "Яблочный соус",
   "fluid_type.vegandelight.applesauce": "Яблочный соус",
+  "item.vegandelight.applesauce_bucket": "Applesauce Bucket",
 
 
   "block.vegandelight.soybean_bag": "Мешок соевых бобов",
   "block.vegandelight.wild_soybean": "Дикая соя",
 
 
-  "creativetab.vegan_tab": "Vegan Delight"
+  "itemGroup.vegan_delight": "Vegan Delight"
 }
