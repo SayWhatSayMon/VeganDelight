@@ -9,10 +9,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
+import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
@@ -27,13 +25,13 @@ public class VeganItems {
                     .nutrition(4)
                     .saturationMod(0.4f)
                     .build())));
-    //    public static final Item SILKEN_TOFU = register("silken_tofu",
-//            new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
-//                            .nutrition(4)
-//                            .saturationMod(0.4f)
-//                            .build())
-//                    .craftRemainder(Items.BOWL)
-//                    .stacksTo(16)));
+        public static final Item SILKEN_TOFU = register("silken_tofu",
+            new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(4)
+                            .saturationMod(0.4f)
+                            .build())
+                    .craftRemainder(Items.BOWL)
+                    .stacksTo(16)));
     public static final Item SMOKED_TOFU = register("smoked_tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
@@ -125,12 +123,12 @@ public class VeganItems {
                     .craftRemainder(Items.GLASS_BOTTLE)
                     .stacksTo(16)));
 
-//    public static final Item SOYBEAN = register("soybean",
-//            new ItemNameBlockItem(ModBlocks.SOYBEAN_CROP.get(),
-//                    new Item.Properties().food(new FoodProperties.Builder()
-//                            .nutrition(1)
-//                            .saturationMod(0.1f)
-//                            .build())));
+    public static final Item SOYBEAN = register("soybean",
+            new ItemNameBlockItem(VeganBlocks.SOYBEAN_CROP,
+                    new Item.Properties().food(new FoodProperties.Builder()
+                            .nutrition(1)
+                            .saturationMod(0.1f)
+                            .build())));
 
     public static final Item LEATHER_SUBSTITUTE = register("leather_substitute",
             new Item(new Item.Properties()));
@@ -161,6 +159,7 @@ public class VeganItems {
     public static @NotNull Item register(Item item, String id) {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelight.modID, id);
 
+        assert itemID != null;
         return Registry.register(BuiltInRegistries.ITEM, itemID, item);
     }
 
@@ -191,14 +190,13 @@ public class VeganItems {
                     itemGroup.accept(COOKED_SMOKED_TOFISH);
                     itemGroup.accept(TOFISH_ROLL);
                     itemGroup.accept(SMOKED_TOFISH_ROLL);
-//                    itemGroup.accept(SOYMILK_BUCKET);
-//                    itemGroup.accept(SOYMILK_BOTTLE);
+                    itemGroup.accept(SOYMILK_BUCKET);
+                    itemGroup.accept(SOYMILK_BOTTLE);
 //                    itemGroup.accept(SOYBEAN);
                     itemGroup.accept(SALT);
-//                    itemGroup.accept(APPLESAUCE);
-//                    itemGroup.accept(APPLESAUCE_BUCKET);
-//                    itemGroup.accept(LEATHER_SUBSTITUTE);
+                    itemGroup.accept(APPLESAUCE);
+                    itemGroup.accept(APPLESAUCE_BUCKET);
+                    itemGroup.accept(LEATHER_SUBSTITUTE);
                 });
     }
-
 }
