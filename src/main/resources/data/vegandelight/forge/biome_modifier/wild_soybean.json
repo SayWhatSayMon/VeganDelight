@@ -1,9 +1,0 @@
-{
-  "type": "farmersdelight:add_features_by_filter",
-  "allowed_biomes": "#minecraft:is_overworld",
-  "denied_biomes": "#forge:is_underground",
-  "min_temperature": 0.4,
-  "max_temperature": 0.9,
-  "features": "vegandelight:patch_wild_soybean",
-  "step": "vegetal_decoration"
-}

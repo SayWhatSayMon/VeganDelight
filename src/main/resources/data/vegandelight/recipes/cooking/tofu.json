@@ -13,10 +13,10 @@
     ],
     [
       {
-        "tag": "forge:salts"
+        "tag": "c:salts"
       },
       {
-        "tag": "forge:salt"
+        "tag": "c:salts"
       }
     ]
   ],
