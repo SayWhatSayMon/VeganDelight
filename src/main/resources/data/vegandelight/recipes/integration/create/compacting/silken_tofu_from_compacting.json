@@ -1,6 +1,6 @@
 {
   "type": "create:compacting",
-  "fabric:conditions": [
+  "fabric:load_conditions": [
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
@@ -18,13 +18,20 @@
       }
     ],
     {
+      "fluid": "minecraft:water",
+      "amount": 250
+    },
+    {
       "fluid": "vegandelight:soymilk_fluid",
       "amount": 250
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "results": [
     {
-      "item": "vegandelight:tofu"
+      "item": "vegandelight:silken_tofu"
     }
   ]
 }
