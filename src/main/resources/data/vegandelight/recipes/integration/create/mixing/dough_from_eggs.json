@@ -1,6 +1,6 @@
 {
-  "type": "create:compacting",
-  "fabric:conditions": [
+  "type": "create:mixing",
+  "fabric:load_conditions": [
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
@@ -11,31 +11,22 @@
   "ingredients": [
     {
       "fluidTag": "c:eggs",
-      "amount": 250
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "item": "minecraft:sugar"
-    },
-    {
-      "tag": "c:flour/wheat"
-    },
-    {
-      "tag": "c:flour/wheat"
-    },
-    {
-      "tag": "c:flour/wheat"
-    },
-    {
-      "fluidTag": "c:milk",
       "amount": 1000
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
     }
   ],
   "results": [
     {
-      "item": "minecraft:cake"
+      "item": "create:dough",
+      "count": 3
     }
   ]
 }
