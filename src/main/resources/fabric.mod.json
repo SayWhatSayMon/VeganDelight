@@ -6,7 +6,7 @@
   "description": "",
   "authors": [],
   "contact": {},
-  "license": "MIT",
+  "license": "LGPL",
   "icon": "assets/vegandelightfabric/icon.png",
   "environment": "*",
   "entrypoints": {
