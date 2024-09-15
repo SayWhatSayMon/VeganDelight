@@ -1,6 +1,6 @@
 {
-  "type": "create:compacting",
-  "fabric:conditions": [
+  "type": "create:mixing",
+  "fabric:load_conditions": [
     {
       "condition": "fabric:all_mods_loaded",
       "values": [
@@ -10,19 +10,20 @@
   ],
   "ingredients": [
     {
-      "fluid": "vegandelight:applesauce_fluid",
-      "amount": 250
+      "item": "minecraft:apple"
     },
     {
       "item": "minecraft:sugar"
     },
     {
-      "item": "create:cinder_flour"
+      "fluid": "minecraft:water",
+      "amount": 250
     }
   ],
   "results": [
     {
-      "item": "create:blaze_cake_base"
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": 250
     }
   ]
 }
