@@ -27,7 +27,7 @@
 
   "item.vegandelight.salt": "Соль",
   "item.vegandelight.soybean": "Соевый боб",
-  "fluid_type.vegandelight.soymilk": "Соевое молоко",
+  "block.vegandelight.soymilk": "Соевое молоко",
   "item.vegandelight.soymilk_bottle": "Бутылочка соевого молока",
   "item.vegandelight.soymilk_bucket": "Ведро соевого молока",
   "item.vegandelight.leather_substitute": "Заменитель кожи",
@@ -44,7 +44,7 @@
 
 
   "item.vegandelight.applesauce": "Яблочный соус",
-  "fluid_type.vegandelight.applesauce": "Яблочный соус",
+  "block.vegandelight.applesauce": "Яблочный соус",
   "item.vegandelight.applesauce_bucket": "Applesauce Bucket",
 
 

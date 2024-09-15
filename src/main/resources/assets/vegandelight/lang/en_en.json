@@ -27,7 +27,7 @@
 
   "item.vegandelight.salt": "Salt",
   "item.vegandelight.soybean": "Soybean",
-  "fluid_type.vegandelight.soymilk": "Soymilk",
+  "block.vegandelight.soymilk": "Soymilk",
   "item.vegandelight.soymilk_bottle": "Soymilk Bottle",
   "item.vegandelight.soymilk_bucket": "Soymilk Bucket",
   "item.vegandelight.leather_substitute": "Leather Substitute",
@@ -45,7 +45,7 @@
 
   "item.vegandelight.applesauce": "Applesauce",
   "item.vegandelight.applesauce_bucket": "Applesauce Bucket",
-  "fluid_type.vegandelight.applesauce": "Applesauce",
+  "block.vegandelight.applesauce": "Applesauce",
 
 
   "block.vegandelight.soybean_bag": "Bag of Soybean",

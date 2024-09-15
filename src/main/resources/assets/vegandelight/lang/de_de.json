@@ -27,7 +27,7 @@
 
   "item.vegandelight.salt": "Salz",
   "item.vegandelight.soybean": "Sojabohne",
-  "fluid_type.vegandelight.soymilk": "Sojamilch",
+  "block.vegandelight.soymilk": "Sojamilch",
   "item.vegandelight.soymilk_bottle": "Sojamilch-Flasche",
   "item.vegandelight.soymilk_bucket": "Sojamilch-Eimer",
   "item.vegandelight.leather_substitute": "Lederimitat",
@@ -38,14 +38,14 @@
 
 
   "item.vegandelight.pasta_with_tofuballs": "Nudeln mit Tofubällchen",
-  "item.vegandelight.roasted_tofu_chops": "Gebratene Tofu Chops",
+  "item.vegandelight.roasted_tofu_chops": "Gebratene Tofu-Chops",
   "item.vegandelight.tofu_burger": "Tofu-Burger",
   "item.vegandelight.tofu_sandwich": "Tofu-Sandwich",
 
 
-  "item.vegandelight.applesauce": "Apfelsoße",
-  "item.vegandelight.applesauce_bucket": "Eimer mit Apfelsoße",
-  "fluid_type.vegandelight.applesauce": "Apfelsoße",
+  "item.vegandelight.applesauce": "Apfelmus",
+  "item.vegandelight.applesauce_bucket": "Eimer mit Apfelmus",
+  "block.vegandelight.applesauce": "Apfelmus",
 
 
   "block.vegandelight.soybean_bag": "Sack mit Sojabohnen",
