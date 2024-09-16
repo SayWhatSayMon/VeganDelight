@@ -10,9 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class VeganFluids {
 
-//    public static final Fluid SOYMILK_FLUID = RecipeFluidTypeNew.createMilky("soymilk", VeganItems.SOYMILK_BUCKET);
-//    public static final Fluid APPLESAUCE_FLUID = RecipeFluidTypeNew.createGloppy("applesauce", VeganItems.APPLESAUCE_BUCKET);
-
     public static final SimpleFlowableFluid.Properties SOYMILK_FLUID_PROPERTIES =
             new SimpleFlowableFluid.Properties(() -> VeganFluids.SOYMILK_FLUID, () -> VeganFluids.SOYMILK_FLOWING_FLUID);
     public static final Fluid SOYMILK_FLUID =
