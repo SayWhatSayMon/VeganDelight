@@ -12,6 +12,9 @@
   "entrypoints": {
     "main": [
       "net.player005.vegandelightfabric.VeganDelight"
+    ],
+    "client": [
+      "net.player005.vegandelightfabric.client.VeganDelightClient"
     ]
   },
   "mixins": [
