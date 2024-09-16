@@ -18,7 +18,6 @@ import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class VeganItems {
 
-
     //TOFU
     public static final Item TOFU = register("tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
@@ -149,6 +148,7 @@ public class VeganItems {
                     .craftRemainder(Items.BUCKET)
                     .stacksTo(1)));
 
+    @SuppressWarnings("DataFlowIssue")
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY =
             ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.tryBuild(VeganDelight.modID, "vegan_ingredients"));
     public static final CreativeModeTab VEGAN_ITEM_TAB = FabricItemGroup.builder()
@@ -156,24 +156,20 @@ public class VeganItems {
             .title(Component.translatable("itemGroup.vegan_delight"))
             .build();
 
-    public static @NotNull Item register(Item item, String id) {
+    public static @NotNull Item register(String id, Item item) {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelight.modID, id);
 
         assert itemID != null;
         return Registry.register(BuiltInRegistries.ITEM, itemID, item);
     }
 
-    public static @NotNull Item register(String id, Item item) {
-        return register(item, id);
-    }
-
     public static void initialize() {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VEGAN_ITEMS_KEY, VEGAN_ITEM_TAB);
         ItemGroupEvents.modifyEntriesEvent(VEGAN_ITEMS_KEY)
                 .register((itemGroup) -> {
-//                    itemGroup.accept(ModBlocks.SOYBEAN_BAG.get());
-//                    itemGroup.accept(ModBlocks.WILD_SOYBEAN);
-//                    itemGroup.accept(SILKEN_TOFU);
+//                    itemGroup.accept(VeganBlocks.SOYBEAN_BAG);
+//                    itemGroup.accept(VeganBlocks.WILD_SOYBEAN);
+                    itemGroup.accept(SILKEN_TOFU);
                     itemGroup.accept(TOFU);
                     itemGroup.accept(TOFU_SLICES);
                     itemGroup.accept(COOKED_TOFU);
@@ -192,7 +188,7 @@ public class VeganItems {
                     itemGroup.accept(SMOKED_TOFISH_ROLL);
                     itemGroup.accept(SOYMILK_BUCKET);
                     itemGroup.accept(SOYMILK_BOTTLE);
-//                    itemGroup.accept(SOYBEAN);
+                    itemGroup.accept(SOYBEAN);
                     itemGroup.accept(SALT);
                     itemGroup.accept(APPLESAUCE);
                     itemGroup.accept(APPLESAUCE_BUCKET);
