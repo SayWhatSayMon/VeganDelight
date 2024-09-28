@@ -10,7 +10,7 @@
   ],
   "ingredients": [
     {
-      "tag": "c:crops/soybean"
+      "tag": "c:crops/soybeans"
     },
     {
       "fluid": "minecraft:water",

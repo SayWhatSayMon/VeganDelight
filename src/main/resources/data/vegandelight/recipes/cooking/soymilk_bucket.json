@@ -7,7 +7,7 @@
   "experience": 1.0,
   "ingredients": [
     {
-      "tag": "c:crops/soybean"
+      "tag": "c:crops/soybeans"
     },
     {
       "item": "minecraft:water_bucket"

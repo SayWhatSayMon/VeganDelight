@@ -18,7 +18,7 @@
       "item": "minecraft:bucket"
     },
     {
-      "fluid": "vegandelight:applesauce_fluid",
+      "fluid": "vegandelight:applesauce",
       "amount": 1000
     }
   ]

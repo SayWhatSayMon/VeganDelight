@@ -3,22 +3,22 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "c:foods/berries"
     },
     {
-      "item": "minecraft:honey_bottle"
+      "tag": "c:foods/berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "c:foods/berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "c:foods/berries"
     },
     {
-      "item": "vegandelight:smoked_tofu"
+      "tag": "c:foods/berries"
     },
     {
-      "item": "minecraft:sweet_berries"
+      "tag": "c:foods/berries"
     },
     {
       "item": "farmersdelight:cooked_rice"

@@ -13,7 +13,7 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "fluid": "vegandelight:soymilk",
       "amount": 250
     }
   ],
