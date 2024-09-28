@@ -1,12 +1,13 @@
 {
   "type": "minecraft:crafting_shapeless",
-  "category": "building",
+  "category": "misc",
   "ingredients": [
     {
       "item": "minecraft:bucket"
     },
     {
-      "item": "vegandelight:applesauce"
+      "item": "vegandelight:applesauce",
+      "count": 4
     }
   ],
   "result": {
