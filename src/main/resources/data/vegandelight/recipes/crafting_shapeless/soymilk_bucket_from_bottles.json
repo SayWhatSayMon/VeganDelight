@@ -6,8 +6,16 @@
       "item": "minecraft:bucket"
     },
     {
-      "item": "vegandelight:soymilk_bottle",
-      "count": 4
+      "item": "vegandelight:soymilk_bottle"
+    },
+    {
+      "item": "vegandelight:soymilk_bottle"
+    },
+    {
+      "item": "vegandelight:soymilk_bottle"
+    },
+    {
+      "item": "vegandelight:soymilk_bottle"
     }
   ],
   "result": {

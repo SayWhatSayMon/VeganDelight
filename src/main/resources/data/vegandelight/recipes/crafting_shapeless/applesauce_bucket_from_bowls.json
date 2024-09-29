@@ -6,8 +6,16 @@
       "item": "minecraft:bucket"
     },
     {
-      "item": "vegandelight:applesauce",
-      "count": 4
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
     }
   ],
   "result": {
