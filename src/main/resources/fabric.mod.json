@@ -7,7 +7,7 @@
   "authors": [],
   "contact": {},
   "license": "LGPL",
-  "icon": "assets/vegandelightfabric/icon.png",
+  "icon": "assets/vegandelight/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -17,9 +17,6 @@
       "net.player005.vegandelightfabric.client.VeganDelightClient"
     ]
   },
-  "mixins": [
-    "vegandelightfabric.mixins.json"
-  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
