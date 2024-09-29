@@ -6,8 +6,16 @@
       "item": "vegandelight:soymilk_bucket"
     },
     {
-      "item": "minecraft:glass_bottle",
-      "count": 4
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
     }
   ],
   "result": {

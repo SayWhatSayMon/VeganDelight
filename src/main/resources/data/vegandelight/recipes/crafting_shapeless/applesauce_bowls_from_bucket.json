@@ -6,8 +6,16 @@
       "item": "vegandelight:applesauce_bucket"
     },
     {
-      "item": "minecraft:bowl",
-      "count": 4
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "minecraft:bowl"
     }
   ],
   "result": {
