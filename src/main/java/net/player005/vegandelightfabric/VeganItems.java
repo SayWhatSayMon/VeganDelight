@@ -13,10 +13,12 @@ import net.minecraft.world.item.*;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class VeganItems {
+
+//    public static final Item TEST_FLUID_BUCKET = register("test_fluid_bucket", new BucketItem(TestFluid.Still.INSTANCE, new Item.Properties()));
+
 
     //TOFU
     public static final Item TOFU = register("tofu",
@@ -24,7 +26,7 @@ public class VeganItems {
                     .nutrition(4)
                     .saturationMod(0.4f)
                     .build())));
-        public static final Item SILKEN_TOFU = register("silken_tofu",
+    public static final Item SILKEN_TOFU = register("silken_tofu",
             new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(4)
                             .saturationMod(0.4f)
@@ -113,9 +115,11 @@ public class VeganItems {
             new Item(new Item.Properties()));
 
     public static final Item SOYMILK_BUCKET = register("soymilk_bucket",
-            new MilkBottleItem(new Item.Properties()
-                    .craftRemainder(Items.BUCKET)
-                    .stacksTo(1)));
+            new BucketItem(
+                    VeganFluids.SOYMILK,
+                    new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
+            )
+    );
 
     public static final Item SOYMILK_BOTTLE = register("soymilk_bottle",
             new MilkBottleItem(new Item.Properties()
@@ -140,13 +144,11 @@ public class VeganItems {
                     .craftRemainder(Items.BOWL)
                     .stacksTo(16)));
     public static final Item APPLESAUCE_BUCKET = register("applesauce_bucket",
-            new DrinkableItem(new Item.Properties()
-                    .food(new FoodProperties.Builder()
-                            .nutrition(2)
-                            .saturationMod(0.4f)
-                            .build())
-                    .craftRemainder(Items.BUCKET)
-                    .stacksTo(1)));
+            new BucketItem(
+                    VeganFluids.APPLESAUCE,
+                    new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
+            )
+    );
 
     @SuppressWarnings("DataFlowIssue")
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY =
@@ -167,8 +169,8 @@ public class VeganItems {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VEGAN_ITEMS_KEY, VEGAN_ITEM_TAB);
         ItemGroupEvents.modifyEntriesEvent(VEGAN_ITEMS_KEY)
                 .register((itemGroup) -> {
-//                    itemGroup.accept(VeganBlocks.SOYBEAN_BAG);
-//                    itemGroup.accept(VeganBlocks.WILD_SOYBEAN);
+                    itemGroup.accept(VeganBlocks.SOYBEAN_BAG);
+                    itemGroup.accept(VeganBlocks.WILD_SOYBEAN);
                     itemGroup.accept(SILKEN_TOFU);
                     itemGroup.accept(TOFU);
                     itemGroup.accept(TOFU_SLICES);
