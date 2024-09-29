@@ -11,10 +11,10 @@
   "ingredients": [
     [
       {
-        "tag": "c:salts"
+        "tag": "c:foods/salts"
       },
       {
-        "tag": "c:salts"
+        "tag": "c:foods/salts"
       }
     ],
     {
