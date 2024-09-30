@@ -1,0 +1,25 @@
+{
+  "type": "create:filling",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "fluid": "vegandelight:applesauce",
+      "amount": 1000
+    }
+  ],
+  "results": [
+    {
+      "item": "vegandelight:applesauce"
+    }
+  ]
+}
