@@ -4,6 +4,16 @@
 This is an addon for Farmer's Delight (recommended version/port: [Farmer's Delight refabricated](https://github.com/MehVahdJukaar/FarmersDelightRefabricated)).
 It adds several new items, for example soybeans, tofu, tofu patties to make vegan burgers, silken tofu and applesauce as egg alternatives, as well as many custom recipes to be able to make almost all food from vegan ingredients.
 
+### This mod adds:
+ - **Soybeans and wild soybeans** as a basis for most vegan food
+ - **Tofu** (+ cooked and smoked variants) as a replacement for different raw and cooked meat types
+ - **Silken Tofu** and **Applesauce** as a replacement for eggs
+ - **Tofish** (+ cooked and smoked variants) to replace different raw and cooked fishes
+ - **soymilk** for replacing cow's milk
+ - **leather substitute** as... well, a substitute for leather
+
+As well as many more items and compatibility with the create mod for easy automation!
+
 ## Credits:
  - [@SayWhatSayMon](https://github.com/SayWhatSayMon) for creating Vegan Delight
  - [@vectorwing](https://github.com/vectorwing) for making Farmer's Delight
