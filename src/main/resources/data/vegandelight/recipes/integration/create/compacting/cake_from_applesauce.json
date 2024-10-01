@@ -11,7 +11,7 @@
   "ingredients": [
     {
       "fluidTag": "c:eggs",
-      "amount": 250
+      "amount": 20250
     },
     {
       "item": "minecraft:sugar"
@@ -30,7 +30,7 @@
     },
     {
       "fluidTag": "c:milk",
-      "amount": 1000
+      "amount": 81000
     }
   ],
   "results": [

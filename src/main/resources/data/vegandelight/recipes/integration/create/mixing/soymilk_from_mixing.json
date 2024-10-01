@@ -14,13 +14,13 @@
     },
     {
       "fluid": "minecraft:water",
-      "amount": 250
+      "amount": 20250
     }
   ],
   "results": [
     {
       "fluid": "vegandelight:soymilk_fluid",
-      "amount": 250
+      "amount": 20250
     }
   ]
 }

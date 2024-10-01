@@ -19,11 +19,11 @@
     ],
     {
       "fluid": "minecraft:water",
-      "amount": 250
+      "amount": 20250
     },
     {
       "fluid": "vegandelight:soymilk",
-      "amount": 250
+      "amount": 20250
     },
     {
       "item": "minecraft:bowl"
