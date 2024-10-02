@@ -22,7 +22,7 @@ public class VeganDelight implements ModInitializer {
 
 
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
-        ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN, 0.65f);
+        ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
     }
 
     private void registerTrades() {
