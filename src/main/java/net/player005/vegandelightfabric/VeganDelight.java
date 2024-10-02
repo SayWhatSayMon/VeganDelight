@@ -32,5 +32,11 @@ public class VeganDelight implements ModInitializer {
                         new ItemStack(Items.EMERALD, 1),
                         12, 5, 0.05f
                 )));
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.LEATHERWORKER, 4,
+                (factories) -> factories.add((trader, random) -> new MerchantOffer(
+                        new ItemStack(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
+                        new ItemStack(Items.EMERALD, 1),
+                        12, 15, 0.1f
+                )));
     }
 }
