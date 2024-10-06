@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.player005.vegandelightfabric.VeganDelight;
+import net.player005.vegandelightfabric.VeganDelightMod;
 import net.player005.vegandelightfabric.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
@@ -48,7 +48,7 @@ public class VeganBlocks {
             );
 
     public static @NotNull Block register(Block block, String name, boolean registerItem) {
-        ResourceLocation id = ResourceLocation.tryBuild(VeganDelight.modID, name);
+        ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
 
         assert id != null;
 
