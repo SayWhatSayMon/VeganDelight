@@ -17,9 +17,6 @@ import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class VeganItems {
 
-//    public static final Item TEST_FLUID_BUCKET = register("test_fluid_bucket", new BucketItem(TestFluid.Still.INSTANCE, new Item.Properties()));
-
-
     //TOFU
     public static final Item TOFU = register("tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
