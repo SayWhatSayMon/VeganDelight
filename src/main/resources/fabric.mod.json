@@ -11,7 +11,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.player005.vegandelightfabric.VeganDelight"
+      "net.player005.vegandelightfabric.VeganDelightFabric"
     ],
     "client": [
       "net.player005.vegandelightfabric.client.VeganDelightClient"

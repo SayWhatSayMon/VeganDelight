@@ -149,14 +149,14 @@ public class VeganItems {
 
     @SuppressWarnings("DataFlowIssue")
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY =
-            ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.tryBuild(VeganDelight.modID, "vegan_ingredients"));
+            ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.tryBuild(VeganDelightMod.modID, "vegan_ingredients"));
     public static final CreativeModeTab VEGAN_ITEM_TAB = FabricItemGroup.builder()
             .icon(() -> new ItemStack(SMOKED_TOFISH_ROLL))
             .title(Component.translatable("itemGroup.vegan_delight"))
             .build();
 
     public static @NotNull Item register(String id, Item item) {
-        ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelight.modID, id);
+        ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelightMod.modID, id);
 
         assert itemID != null;
         return Registry.register(BuiltInRegistries.ITEM, itemID, item);

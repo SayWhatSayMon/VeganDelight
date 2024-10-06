@@ -48,7 +48,7 @@ public class VeganFluids {
     }
 
     public static @NotNull Fluid register(Fluid fluid, String name) {
-        ResourceLocation id = ResourceLocation.tryBuild(VeganDelight.modID, name);
+        ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
         assert id != null;
 
         return Registry.register(BuiltInRegistries.FLUID, id, fluid);
