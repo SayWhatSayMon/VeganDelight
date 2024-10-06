@@ -47,12 +47,6 @@ public class VeganBlocks {
                     "applesauce", false
             );
 
-//    public static final Block TEST_FLUID =
-//            register(
-//                    new LiquidBlock(TestFluid.Flowing.INSTANCE, BlockBehaviour.Properties.copy(Blocks.WATER)),
-//                    "test_fluid", false
-//            );
-
     public static @NotNull Block register(Block block, String name, boolean registerItem) {
         ResourceLocation id = ResourceLocation.tryBuild(VeganDelight.modID, name);
 
