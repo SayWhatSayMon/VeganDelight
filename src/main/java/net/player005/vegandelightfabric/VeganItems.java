@@ -1,7 +1,5 @@
 package net.player005.vegandelightfabric;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +8,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.ItemLike;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
@@ -17,7 +16,7 @@ import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class VeganItems {
 
-    //TOFU
+    // TOFU
     public static final Item TOFU = register("tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
@@ -107,7 +106,7 @@ public class VeganItems {
                     .build())));
 
 
-    //INGREDIENTS
+    // INGREDIENTS
     public static final Item SALT = register("salt",
             new Item(new Item.Properties()));
 
@@ -147,13 +146,23 @@ public class VeganItems {
             )
     );
 
+    public static ItemLike[] all = {
+            VeganBlocks.SOYBEAN_BAG, VeganBlocks.WILD_SOYBEAN, SILKEN_TOFU, TOFU, TOFU_SLICES, COOKED_TOFU,
+            COOKED_TOFU_SLICES, SMOKED_TOFU, SMOKED_TOFU_SLICES, COOKED_SMOKED_TOFU, COOKED_SMOKED_TOFU_SLICES,
+            MINCED_TOFU, TOFU_PATTY, TOFISH, COOKED_TOFISH, SMOKED_TOFISH, COOKED_SMOKED_TOFISH, TOFISH_ROLL,
+            SMOKED_TOFISH_ROLL, SOYMILK_BUCKET, SOYMILK_BOTTLE, SOYBEAN, SALT, APPLESAUCE, APPLESAUCE_BUCKET,
+            LEATHER_SUBSTITUTE
+    };
+
+
     @SuppressWarnings("DataFlowIssue")
-    public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY =
-            ResourceKey.create(Registries.CREATIVE_MODE_TAB, ResourceLocation.tryBuild(VeganDelightMod.modID, "vegan_ingredients"));
-    public static final CreativeModeTab VEGAN_ITEM_TAB = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(SMOKED_TOFISH_ROLL))
-            .title(Component.translatable("itemGroup.vegan_delight"))
-            .build();
+    public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY = ResourceKey.create(
+            Registries.CREATIVE_MODE_TAB,
+            ResourceLocation.tryBuild(VeganDelightMod.modID, "vegan_ingredients")
+    );
+
+    public static final CreativeModeTab VEGAN_ITEM_TAB = VeganDelightMod.platform
+            .registerItemTab(new ItemStack(SMOKED_TOFISH_ROLL), Component.translatable("itemGroup.vegan_delight"), all);
 
     public static @NotNull Item register(String id, Item item) {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelightMod.modID, id);
@@ -164,34 +173,5 @@ public class VeganItems {
 
     public static void initialize() {
         Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VEGAN_ITEMS_KEY, VEGAN_ITEM_TAB);
-        ItemGroupEvents.modifyEntriesEvent(VEGAN_ITEMS_KEY)
-                .register((itemGroup) -> {
-                    itemGroup.accept(VeganBlocks.SOYBEAN_BAG);
-                    itemGroup.accept(VeganBlocks.WILD_SOYBEAN);
-                    itemGroup.accept(SILKEN_TOFU);
-                    itemGroup.accept(TOFU);
-                    itemGroup.accept(TOFU_SLICES);
-                    itemGroup.accept(COOKED_TOFU);
-                    itemGroup.accept(COOKED_TOFU_SLICES);
-                    itemGroup.accept(SMOKED_TOFU);
-                    itemGroup.accept(SMOKED_TOFU_SLICES);
-                    itemGroup.accept(COOKED_SMOKED_TOFU);
-                    itemGroup.accept(COOKED_SMOKED_TOFU_SLICES);
-                    itemGroup.accept(MINCED_TOFU);
-                    itemGroup.accept(TOFU_PATTY);
-                    itemGroup.accept(TOFISH);
-                    itemGroup.accept(COOKED_TOFISH);
-                    itemGroup.accept(SMOKED_TOFISH);
-                    itemGroup.accept(COOKED_SMOKED_TOFISH);
-                    itemGroup.accept(TOFISH_ROLL);
-                    itemGroup.accept(SMOKED_TOFISH_ROLL);
-                    itemGroup.accept(SOYMILK_BUCKET);
-                    itemGroup.accept(SOYMILK_BOTTLE);
-                    itemGroup.accept(SOYBEAN);
-                    itemGroup.accept(SALT);
-                    itemGroup.accept(APPLESAUCE);
-                    itemGroup.accept(APPLESAUCE_BUCKET);
-                    itemGroup.accept(LEATHER_SUBSTITUTE);
-                });
     }
 }
