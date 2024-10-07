@@ -1,10 +1,14 @@
 package net.player005.vegandelightfabric;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
+import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 
 public class VeganDelightMod {
@@ -19,10 +23,20 @@ public class VeganDelightMod {
         VeganFluids.initialise();
         VeganBlocks.initialise();
 
+        registerBiomeModifers();
         registerTrades();
 
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
+    }
+
+    private static void registerBiomeModifers() {
+        platform.registerBiomeModifier(0.4f, 0.9f,
+                platform.overworldBiomeTag(),
+                platform.undergroundBiomeTag(),
+                GenerationStep.Decoration.VEGETAL_DECORATION,
+                ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation("vegandelight:patch_wild_soybean"))
+        );
     }
 
     private static void registerTrades() {
