@@ -10,7 +10,7 @@ import net.player005.vegandelightfabric.blocks.VeganBlocks;
 public class VeganDelightMod {
 
     public static String modID = "vegandelight";
-    private static VeganDelightPlatform platform;
+    public static VeganDelightPlatform platform;
 
     public static void initialize(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
