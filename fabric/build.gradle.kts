@@ -19,7 +19,7 @@ repositories {
         name = "Greenhouse Maven"
         url = uri("https://repo.greenhouse.house/releases/")
     }
-    maven ("https://mvn.devos.one/releases/") // Porting Lib
+    maven("https://mvn.devos.one/releases/") // Porting Lib
     maven("https://maven.jamieswhiteshirt.com/libs-release") { // Reach Entity Attributes (Required by Porting Lib)
         content {
             includeGroup("com.jamieswhiteshirt")
@@ -67,7 +67,13 @@ tasks {
         inputs.property("version", project.version)
 
         filesMatching("fabric.mod.json") {
-            expand(mapOf("version" to project.version))
+            expand(
+                mapOf(
+                    "version" to project.version,
+                    "loader_version" to FABRIC_LOADER_VERSION,
+                    "minecraft_version" to MINECRAFT_VERSION,
+                )
+            )
         }
     }
 
