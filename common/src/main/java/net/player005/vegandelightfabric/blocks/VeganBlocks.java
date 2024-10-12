@@ -37,13 +37,13 @@ public class VeganBlocks {
 
     public static final Block SOYMILK =
             register(
-                    new LiquidBlock(VeganFluids.FLOWING_SOYMILK, BlockBehaviour.Properties.copy(Blocks.WATER)),
+                    new LiquidBlock(VeganFluids.FLOWING_SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
                     "soymilk", false
             );
 
     public static final Block APPLESAUCE =
             register(
-                    new LiquidBlock(VeganFluids.FLOWING_APPLESAUCE, BlockBehaviour.Properties.copy(Blocks.WATER)),
+                    new LiquidBlock(VeganFluids.FLOWING_APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
                     "applesauce", false
             );
 
