@@ -6,6 +6,7 @@ plugins {
 
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
+val PARCHMENT_MC_VERSION: String by rootProject.extra
 
 val FABRIC_LOADER_VERSION: String by rootProject.extra
 val FABRIC_API_VERSION: String by rootProject.extra
@@ -84,13 +85,17 @@ tasks {
 
 dependencies {
     minecraft("com.mojang:minecraft:${MINECRAFT_VERSION}")
-    mappings(loom.officialMojangMappings())
+    mappings(loom.layered {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
+    })
 
     modImplementation("net.fabricmc:fabric-loader:${FABRIC_LOADER_VERSION}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${FABRIC_API_VERSION}")
 
     modImplementation("vectorwing:FarmersDelight:${FDRF_VERSION}") {
         exclude("net.fabricmc")
+        exclude("io.github.fabricators_of_create.Porting-Lib")
     }
 
     compileOnly(project(":common"))

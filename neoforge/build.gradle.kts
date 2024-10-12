@@ -11,19 +11,40 @@ val MOD_NAME: String by rootProject.extra
 val MINECRAFT_VERSION: String by rootProject.extra
 val MINECRAFT_VERSION_RANGE: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
+val PARCHMENT_MC_VERSION: String by rootProject.extra
 
 val NEOFORGE_VERSION: String by rootProject.extra
 val NEOFORGE_VERSION_RANGE: String by rootProject.extra
+
+val FD_NEO_VERSION: String by rootProject.extra
 
 version = MOD_VERSION
 group = "net.player005.vegandelightfabric"
 
 repositories {
     mavenLocal()
+
+    exclusiveContent {
+        forRepository {
+            maven("https://api.modrinth.com/maven") {
+                name = "Modrinth"
+            }
+        }
+        filter {
+            includeGroup("maven.modrinth")
+        }
+    }
 }
 
 base {
     archivesName = MOD_ID
+}
+
+subsystems {
+    parchment {
+        minecraftVersion = PARCHMENT_MC_VERSION
+        mappingsVersion = PARCHMENT_VERSION
+    }
 }
 
 tasks.jar {
@@ -50,7 +71,7 @@ runs {
     }
 
     create("data") {
-        programArguments.addAll("--mod", "vegandelight", "--all", "--output", file("src/generated/resources/").getAbsolutePath(), "--existing", file("src/main/resources/").getAbsolutePath())
+        arguments.addAll("--mod", "vegandelight", "--all", "--output", file("src/generated/resources/").getAbsolutePath(), "--existing", file("src/main/resources/").getAbsolutePath())
     }
 }
 
@@ -65,6 +86,8 @@ tasks.named("compileTestJava").configure {
 dependencies {
     implementation("net.neoforged:neoforge:${NEOFORGE_VERSION}")
     compileOnly(project.project(":common").sourceSets.main.get().output)
+
+    implementation("maven.modrinth:farmers-delight:$FD_NEO_VERSION")
 }
 
 

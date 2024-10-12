@@ -6,6 +6,7 @@ plugins {
 
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
+val PARCHMENT_MC_VERSION: String by rootProject.extra
 
 val FDRF_VERSION: String by rootProject.extra
 
@@ -26,10 +27,14 @@ dependencies {
     minecraft("com.mojang:minecraft:${MINECRAFT_VERSION}")
     mappings(loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-${MINECRAFT_VERSION}:$PARCHMENT_VERSION@zip")
+        parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
     })
 
     modCompileOnly("vectorwing:FarmersDelight:$FDRF_VERSION") {
         isTransitive = false
     }
+}
+
+tasks.configureEach {
+    group = null
 }
