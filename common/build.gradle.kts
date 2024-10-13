@@ -11,9 +11,9 @@ val PARCHMENT_MC_VERSION: String by rootProject.extra
 val FDRF_VERSION: String by rootProject.extra
 
 repositories {
-    maven("https://maven.parchmentmc.org/")
+    maven("https://maven.parchmentmc.org/") // parchment mappings
 
-    maven {
+    maven { // FD refabricated
         name = "Greenhouse Maven"
         url = uri("https://repo.greenhouse.house/releases/")
     }
