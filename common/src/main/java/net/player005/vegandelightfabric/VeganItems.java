@@ -20,89 +20,89 @@ public class VeganItems {
     public static final Item TOFU = register("tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item SILKEN_TOFU = register("silken_tofu",
             new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(4)
-                            .saturationMod(0.4f)
+                            .saturationModifier(0.4f)
                             .build())
                     .craftRemainder(Items.BOWL)
                     .stacksTo(16)));
     public static final Item SMOKED_TOFU = register("smoked_tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item COOKED_TOFU = register("cooked_tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item COOKED_SMOKED_TOFU = register("cooked_smoked_tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(4)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item TOFU_SLICES = register("tofu_slices",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item SMOKED_TOFU_SLICES = register("smoked_tofu_slices",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item COOKED_TOFU_SLICES = register("cooked_tofu_slices",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item COOKED_SMOKED_TOFU_SLICES = register("cooked_smoked_tofu_slices",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item MINCED_TOFU = register("minced_tofu",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item TOFU_PATTY = register("tofu_patty",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(2)
-                    .saturationMod(0.1f)
+                    .saturationModifier(0.1f)
                     .build())));
     public static final Item TOFISH = register("tofish",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(3)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item COOKED_TOFISH = register("cooked_tofish",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(3)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item SMOKED_TOFISH = register("smoked_tofish",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(3)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item COOKED_SMOKED_TOFISH = register("cooked_smoked_tofish",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(3)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item TOFISH_ROLL = register("tofish_roll",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
     public static final Item SMOKED_TOFISH_ROLL = register("smoked_tofish_roll",
             new Item(new Item.Properties().food(new FoodProperties.Builder()
                     .nutrition(5)
-                    .saturationMod(0.4f)
+                    .saturationModifier(0.4f)
                     .build())));
 
 
@@ -126,7 +126,7 @@ public class VeganItems {
             new ItemNameBlockItem(VeganBlocks.SOYBEAN_CROP,
                     new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(1)
-                            .saturationMod(0.1f)
+                            .saturationModifier(0.1f)
                             .build())));
 
     public static final Item LEATHER_SUBSTITUTE = register("leather_substitute",
@@ -135,7 +135,7 @@ public class VeganItems {
     public static final Item APPLESAUCE = register("applesauce",
             new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
                             .nutrition(2)
-                            .saturationMod(0.4f)
+                            .saturationModifier(0.4f)
                             .build())
                     .craftRemainder(Items.BOWL)
                     .stacksTo(16)));

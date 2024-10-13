@@ -6,6 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -35,20 +36,20 @@ public class VeganDelightMod {
                 platform.overworldBiomeTag(),
                 platform.undergroundBiomeTag(),
                 GenerationStep.Decoration.VEGETAL_DECORATION,
-                ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation("vegandelight:patch_wild_soybean"))
+                ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.parse("vegandelight:patch_wild_soybean"))
         );
     }
 
     private static void registerTrades() {
         platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
                 (trader, random) -> new MerchantOffer(
-                        new ItemStack(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
+                        new ItemCost(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
                         new ItemStack(Items.EMERALD, 1),
                         12, 5, 0.05f
                 ));
         platform.registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
                 (trader, random) -> new MerchantOffer(
-                        new ItemStack(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
+                        new ItemCost(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
                         new ItemStack(Items.EMERALD, 1),
                         12, 15, 0.1f
                 ));

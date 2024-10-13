@@ -34,8 +34,8 @@ public class VeganDelightClient implements ClientModInitializer {
                 VeganFluids.APPLESAUCE,
                 VeganFluids.FLOWING_APPLESAUCE,
                 new SimpleFluidRenderHandler(
-                        new ResourceLocation("vegandelight:block/applesauce_still"),
-                        new ResourceLocation("vegandelight:block/applesauce_flow")
+                        ResourceLocation.parse("vegandelight:block/applesauce_still"),
+                        ResourceLocation.parse("vegandelight:block/applesauce_flow")
                 )
         );
 
@@ -43,8 +43,8 @@ public class VeganDelightClient implements ClientModInitializer {
                 VeganFluids.SOYMILK,
                 VeganFluids.FLOWING_SOYMILK,
                 new SimpleFluidRenderHandler(
-                        new ResourceLocation("vegandelight:block/milky_still"),
-                        new ResourceLocation("vegandelight:block/milky_flow")
+                        ResourceLocation.parse("vegandelight:block/milky_still"),
+                        ResourceLocation.parse("vegandelight:block/milky_flow")
                 )
         );
 

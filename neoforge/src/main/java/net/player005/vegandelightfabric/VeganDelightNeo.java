@@ -14,8 +14,8 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
@@ -27,35 +27,31 @@ import java.util.List;
 public class VeganDelightNeo {
     public static IEventBus eventBus;
 
-    public VeganDelightNeo(IEventBus eventBus) {
+    public VeganDelightNeo(@NotNull IEventBus eventBus) {
         VeganDelightNeo.eventBus = eventBus;
+        eventBus.addListener(VeganDelightNeo::onVillagerTrades);
 
         VeganDelightMod.initialize(new VDNeoforgePlatform());
     }
 
-    @Mod.EventBusSubscriber(modid = "vegandelight")
-    public static class EventSubscriber {
-        public EventSubscriber() {
-            NeoForge.EVENT_BUS.register(this);
-        }
+    @SubscribeEvent
+    public static void onVillagerTrades(VillagerTradesEvent event) {
+        for (VillagerTrade trade : VDNeoforgePlatform.registeredTrades) {
+            if (event.getType() == trade.profession) {
+                var levelTrades = event.getTrades().get(trade.level);
 
-        public static void onVillagerTrades(VillagerTradesEvent event) {
-            for (VillagerTrade trade : VDNeoforgePlatform.registeredTrades) {
-                if (event.getType() == trade.profession) {
-                    var levelTrades = event.getTrades().get(trade.level);
-
-                    levelTrades.add(trade.itemListing);
-                }
+                levelTrades.add(trade.itemListing);
             }
         }
     }
+
 
     public static class VDNeoforgePlatform implements VeganDelightPlatform {
         public static final List<VillagerTrade> registeredTrades = new ArrayList<>();
 
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
-            return TagKey.create(Registries.BIOME, new ResourceLocation("c:underground"));
+            return TagKey.create(Registries.BIOME, ResourceLocation.parse("c:underground"));
         }
 
         @Override
@@ -80,7 +76,6 @@ public class VeganDelightNeo {
 
         @Override
         public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied, GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
-            // biome modifiers are loaded via file in forge/neoforge
         }
     }
 

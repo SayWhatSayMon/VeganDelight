@@ -85,11 +85,15 @@ tasks.named("compileTestJava").configure {
 
 dependencies {
     implementation("net.neoforged:neoforge:${NEOFORGE_VERSION}")
-    compileOnly(project.project(":common").sourceSets.main.get().output)
+
+    implementation(project.project(":common").sourceSets.getByName("main").output)
 
     implementation("maven.modrinth:farmers-delight:$FD_NEO_VERSION")
 }
 
+tasks.jar {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 
 // NeoGradle compiles the game, but we don't want to add our common code to the game's code
 val notNeoTask: (Task) -> Boolean = { it: Task -> !it.name.startsWith("neo") && !it.name.startsWith("compileService") }

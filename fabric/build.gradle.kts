@@ -14,7 +14,7 @@ val FABRIC_API_VERSION: String by rootProject.extra
 val FDRF_VERSION: String by rootProject.extra
 
 repositories {
-    maven("https://maven.parchmentmc.org/")
+    maven("https://maven.parchmentmc.org/") // Parchment mappings
 
     maven { // Farmer's Delight Refabricated
         name = "Greenhouse Maven"
@@ -80,6 +80,16 @@ tasks {
 
     jar {
         from(rootDir.resolve("LICENSE.md"))
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    }
+
+    named("compileTestJava").configure {
+        enabled = false
+    }
+
+    named("test").configure {
+        enabled = false
     }
 }
 
@@ -98,5 +108,5 @@ dependencies {
         exclude("io.github.fabricators_of_create.Porting-Lib")
     }
 
-    compileOnly(project(":common"))
+    implementation(project.project(":common").sourceSets.getByName("main").output)
 }
