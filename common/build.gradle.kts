@@ -19,10 +19,6 @@ repositories {
     }
 }
 
-base {
-    archivesName.set("vegan-delight-fabric-${MINECRAFT_VERSION}")
-}
-
 dependencies {
     minecraft("com.mojang:minecraft:${MINECRAFT_VERSION}")
     mappings(loom.layered {

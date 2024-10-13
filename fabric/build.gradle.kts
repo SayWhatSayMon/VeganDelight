@@ -1,9 +1,3 @@
-plugins {
-    id("java")
-    id("idea")
-    id("fabric-loom") version "1.7.3"
-}
-
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
 val PARCHMENT_MC_VERSION: String by rootProject.extra
@@ -12,6 +6,13 @@ val FABRIC_LOADER_VERSION: String by rootProject.extra
 val FABRIC_API_VERSION: String by rootProject.extra
 
 val FDRF_VERSION: String by rootProject.extra
+
+
+plugins {
+    id("java")
+    id("idea")
+    id("fabric-loom") version "1.7.3"
+}
 
 repositories {
     maven("https://maven.parchmentmc.org/") // Parchment mappings
@@ -31,10 +32,6 @@ repositories {
             excludeGroup("io.github.fabricators_of_create")
         }
     }
-}
-
-base {
-    archivesName.set("vegan-delight-fabric-${MINECRAFT_VERSION}")
 }
 
 loom {
@@ -60,6 +57,8 @@ tasks {
         source(project(":common").sourceSets.main.get().allSource)
     }
 
+    remapJar.get().destinationDirectory = rootDir.resolve("build").resolve("libs")
+
     javadoc { source(project(":common").sourceSets.main.get().allJava) }
 
     processResources {
@@ -76,12 +75,6 @@ tasks {
                 )
             )
         }
-    }
-
-    jar {
-        from(rootDir.resolve("LICENSE.md"))
-
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     named("compileTestJava").configure {

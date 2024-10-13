@@ -18,9 +18,6 @@ val NEOFORGE_VERSION_RANGE: String by rootProject.extra
 
 val FD_NEO_VERSION: String by rootProject.extra
 
-version = MOD_VERSION
-group = "net.player005.vegandelightfabric"
-
 repositories {
     mavenLocal()
 
@@ -36,10 +33,6 @@ repositories {
     }
 }
 
-base {
-    archivesName = MOD_ID
-}
-
 subsystems {
     parchment {
         minecraftVersion = PARCHMENT_MC_VERSION
@@ -53,15 +46,6 @@ tasks {
         val main = project.project(":common").sourceSets.getByName("main")
         from(main.output.classesDirs)
         from(main.output.resourcesDir)
-
-        // add license file to jar
-        from(rootDir.resolve("LICENSE.md"))
-
-        // put jar in /build/libs instead of /neoforge/build/jars
-        destinationDirectory = rootDir.resolve("build").resolve("libs")
-
-        // required because apparently some classes are duplicated
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
     }
 
     named("compileTestJava").configure {
