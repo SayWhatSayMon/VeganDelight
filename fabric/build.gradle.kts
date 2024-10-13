@@ -49,7 +49,6 @@ loom {
             runDir("run")
         }
     }
-    splitEnvironmentSourceSets()
 }
 
 tasks {

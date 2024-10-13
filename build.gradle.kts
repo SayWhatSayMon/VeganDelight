@@ -8,7 +8,7 @@ val PARCHMENT_MC_VERSION by extra { "1.21" }
 val PARCHMENT_VERSION by extra { "2024.07.28" }
 
 val NEOFORGE_VERSION by extra { "21.1.68" }
-val NEOFORGE_VERSION_RANGE by extra { "*" }
+val NEOFORGE_VERSION_RANGE by extra { "[21.1,)" }
 val FD_NEO_VERSION by extra { "1.21.1-1.2.4a" }
 
 val FDRF_VERSION by extra { "1.21-2.1.9+refabricated" }

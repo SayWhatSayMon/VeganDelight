@@ -79,9 +79,8 @@ tasks {
             "mod_authors" to "Player005, SayWhatSayMon",
             "mod_description" to ""
         )
-        inputs.properties(replaceProperties)
 
-        filesMatching("META-INF/mods.toml") {
+        filesMatching("META-INF/neoforge.mods.toml") {
             expand(replaceProperties)
         }
     }
