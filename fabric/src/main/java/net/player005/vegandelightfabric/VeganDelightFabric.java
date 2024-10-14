@@ -23,7 +23,7 @@ public class VeganDelightFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        VeganDelightMod.initialize(new VeganDelightFabricPlatform());
+        VeganDelightMod.initializeAll(new VeganDelightFabricPlatform());
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {

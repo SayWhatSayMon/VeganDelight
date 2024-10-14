@@ -17,18 +17,23 @@ public class VeganDelightMod {
     public static String modID = "vegandelight";
     public static VeganDelightPlatform platform;
 
-    public static void initialize(VeganDelightPlatform platform) {
-        VeganDelightMod.platform = platform;
-
-        VeganItems.initialize();
-        VeganFluids.initialise();
-        VeganBlocks.initialise();
-
+    public static void initialize() {
         registerBiomeModifers();
         registerTrades();
 
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
+    }
+
+    public static void initializeAll(VeganDelightPlatform platform) {
+        initPlatform(platform);
+
+        VeganItems.initialise();
+        VeganFluids.initialise();
+        VeganBlocks.initialise();
+        VeganCreativeTab.initialise();
+
+        initialize();
     }
 
     private static void registerBiomeModifers() {
@@ -53,5 +58,14 @@ public class VeganDelightMod {
                         new ItemStack(Items.EMERALD, 1),
                         12, 15, 0.1f
                 ));
+    }
+
+
+    public static VeganDelightPlatform getPlatform() {
+        return platform;
+    }
+
+    public static void initPlatform(VeganDelightPlatform platform) {
+        VeganDelightMod.platform = platform;
     }
 }
