@@ -17,11 +17,13 @@ plugins {
 repositories {
     maven("https://maven.parchmentmc.org/") // Parchment mappings
 
-    maven { // Farmer's Delight Refabricated
+    maven("https://repo.greenhouse.house/releases/") { // Farmer's Delight Refabricated
         name = "Greenhouse Maven"
-        url = uri("https://repo.greenhouse.house/releases/")
     }
-    maven("https://mvn.devos.one/releases/") // Porting Lib
+    // maven("https://mvn.devos.one/releases/") // Porting Lib // not officially released for 1.21 yet
+    maven("https://repo.greenhouse.house/snapshots/") { // Temporary Porting Lib Fork for 1.21
+        name = "Greenhouse Maven (Snapshots)"
+    }
     maven("https://maven.jamieswhiteshirt.com/libs-release") { // Reach Entity Attributes (Required by Porting Lib)
         content {
             includeGroup("com.jamieswhiteshirt")
@@ -29,7 +31,7 @@ repositories {
     }
     maven("https://jitpack.io/") { // Fabric ASM
         content {
-            excludeGroup("io.github.fabricators_of_create")
+            excludeGroup("io.github.fabricators_of_create.Porting-Lib")
         }
     }
 }
@@ -97,7 +99,7 @@ dependencies {
 
     modImplementation("vectorwing:FarmersDelight:${FDRF_VERSION}") {
         exclude("net.fabricmc")
-        exclude("io.github.fabricators_of_create.Porting-Lib")
+        // exclude("io.github.fabricators_of_create.Porting-Lib")
     }
 
     implementation(project.project(":common").sourceSets.getByName("main").output)
