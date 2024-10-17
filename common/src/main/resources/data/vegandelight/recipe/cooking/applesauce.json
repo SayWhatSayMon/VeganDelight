@@ -5,6 +5,7 @@
   },
   "cookingtime": 200,
   "experience": 1.0,
+  "recipe_book_tab": "meals",
   "ingredients": [
     [
       {
@@ -22,7 +23,6 @@
       }
     ]
   ],
-  "recipe_book_tab": "meals",
   "result": {
     "id": "vegandelight:applesauce"
   }

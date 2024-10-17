@@ -2,6 +2,7 @@
   "type": "farmersdelight:cooking",
   "cookingtime": 600,
   "experience": 1.0,
+  "recipe_book_tab": "misc",
   "ingredients": [
     {
       "item": "minecraft:coal"
