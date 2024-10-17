@@ -1,6 +1,7 @@
 {
   "values": [
-    "#c:foods/raw_fishes/cod",
+    "#c:foods/raw_cod",
+    "#c:foods/raw_salmon",
     "vegandelight:smoked_tofish"
   ]
 }
