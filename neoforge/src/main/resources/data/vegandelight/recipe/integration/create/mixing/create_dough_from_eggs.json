@@ -1,0 +1,30 @@
+{
+  "type": "create:mixing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "fluidTag": "c:egg",
+      "amount": 1000
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
+    }
+  ],
+  "results": [
+    {
+      "item": "create:dough",
+      "count": 3
+    }
+  ]
+}

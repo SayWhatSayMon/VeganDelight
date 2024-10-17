@@ -1,0 +1,24 @@
+{
+  "type": "create:mixing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "tag": "c:crops/soybeans"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": 250
+    }
+  ]
+}

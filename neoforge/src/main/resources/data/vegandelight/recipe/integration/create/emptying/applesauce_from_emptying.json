@@ -1,0 +1,23 @@
+{
+  "type": "create:emptying",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "vegandelight:applesauce"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": 250
+    }
+  ]
+}

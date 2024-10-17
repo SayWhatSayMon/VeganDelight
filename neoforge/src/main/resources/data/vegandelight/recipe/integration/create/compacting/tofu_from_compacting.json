@@ -1,0 +1,28 @@
+{
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    [
+      {
+        "tag": "c:foods/salts"
+      },
+      {
+        "tag": "c:foods/salts"
+      }
+    ],
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": 250
+    }
+  ],
+  "results": [
+    {
+      "item": "vegandelight:tofu"
+    }
+  ]
+}
