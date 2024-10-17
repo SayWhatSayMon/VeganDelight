@@ -90,7 +90,10 @@ runs {
     configureEach {
         modSource(project.sourceSets.main.get())
     }
-    create("client") { }
+    create("client") {
+        client()
+        shouldExportToIDE(true)
+    }
 }
 
 dependencies {

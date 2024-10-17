@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric;
 
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -12,18 +13,13 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
-import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.RegisterEvent;
-import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,8 +73,7 @@ public class VeganDelightNeo {
 
         @Override
         public CreativeModeTab registerItemTab(ItemStack icon, @NotNull Component title, ItemLike... items) {
-            var tabDeferredRegister = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, VeganDelightMod.modID);
-            var tab = tabDeferredRegister.register(VeganDelightMod.modID, () -> CreativeModeTab.builder()
+            return Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, VeganDelightMod.modID, CreativeModeTab.builder()
                     .icon(() -> icon)
                     .title(title)
                     .displayItems((parameters, output) -> {
@@ -86,8 +81,6 @@ public class VeganDelightNeo {
                             output.accept(item);
                         }
                     }).build());
-            tabDeferredRegister.register(VeganDelightNeo.eventBus);
-            return tab.get();
         }
 
         @Override
