@@ -1,0 +1,29 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    [
+      {
+        "item": "minecraft:apple"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:sugar"
+      }
+    ],
+    [
+      {
+        "item": "minecraft:water_bucket"
+      }
+    ]
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "vegandelight:applesauce"
+  }
+}

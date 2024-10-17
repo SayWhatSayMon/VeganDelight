@@ -1,0 +1,24 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    [
+      {
+        "item": "vegandelight:soymilk_bucket"
+      },
+      {
+        "item": "vegandelight:soymilk_bottle"
+      }
+    ],
+    [
+      {
+        "tag": "c:foods/salts"
+      }
+    ]
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "vegandelight:tofu"
+  }
+}

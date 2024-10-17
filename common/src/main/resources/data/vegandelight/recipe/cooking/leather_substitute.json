@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "tag": "c:mushrooms"
+    },
+    {
+      "item": "farmersdelight:straw"
+    },
+    {
+      "item": "farmersdelight:tree_bark"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "id": "vegandelight:leather_substitute"
+  }
+}

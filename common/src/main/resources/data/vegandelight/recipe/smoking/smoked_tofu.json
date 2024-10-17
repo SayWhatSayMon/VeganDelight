@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "cookingtime": 150,
+  "experience": 0.35,
+  "ingredient": {
+    "item": "vegandelight:tofu"
+  },
+  "result": {
+    "id": "vegandelight:smoked_tofu"
+  }
+}

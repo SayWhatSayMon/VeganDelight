@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "tag": "c:foods/berries"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "minecraft:bowl"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "result": {
+    "id": "farmersdelight:honey_glazed_ham_block"
+  }
+}

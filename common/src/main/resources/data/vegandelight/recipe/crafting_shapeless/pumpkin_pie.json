@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:pumpkin"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "vegandelight:silken_tofu"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    }
+  ],
+  "result": {
+    "id": "minecraft:pumpkin_pie"
+  }
+}

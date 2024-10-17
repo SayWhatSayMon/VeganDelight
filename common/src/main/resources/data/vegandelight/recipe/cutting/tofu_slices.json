@@ -1,0 +1,19 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "vegandelight:tofu"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 2,
+        "id": "vegandelight:tofu_slices"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "c:tools/knives"
+  }
+}
