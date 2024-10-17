@@ -4,7 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.TagKey;
@@ -29,7 +29,7 @@ public class VeganDelightFabric implements ModInitializer {
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
-            return ConventionalBiomeTags.UNDERGROUND;
+            return ConventionalBiomeTags.IS_UNDERGROUND;
         }
 
         @Override
