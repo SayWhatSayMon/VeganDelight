@@ -1,13 +1,13 @@
 {
   "conditions": [
     {
-      "type": "forge:mod_loaded",
+      "type": "neoforge:mod_loaded",
       "modid": "create"
     },
     {
-      "type": "forge:not",
+      "type": "neoforge:not",
       "value": {
-        "type": "forge:mod_loaded",
+        "type": "neoforge:mod_loaded",
         "modid": "createaddition"
       }
     }
@@ -25,13 +25,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "neoforge:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "neoforge:flour/wheat"
     },
     {
-      "tag": "forge:flour/wheat"
+      "tag": "neoforge:flour/wheat"
     },
     {
       "fluidTag": "c:milk",
