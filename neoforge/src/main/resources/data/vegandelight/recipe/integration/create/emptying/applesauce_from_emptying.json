@@ -1,11 +1,11 @@
 {
-  "type": "create:emptying",
-  "conditions": [
+  "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "create"
     }
   ],
+  "type": "create:emptying",
   "ingredients": [
     {
       "item": "vegandelight:applesauce"

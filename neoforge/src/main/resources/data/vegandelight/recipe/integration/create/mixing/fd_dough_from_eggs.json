@@ -1,11 +1,11 @@
 {
-  "type": "create:mixing",
   "neoforge:conditions": [
     {
       "type": "neoforge:mod_loaded",
       "modid": "create"
     }
   ],
+  "type": "create:mixing",
   "ingredients": [
     {
       "fluidTag": "c:egg",
