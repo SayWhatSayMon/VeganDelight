@@ -7,21 +7,15 @@
   "experience": 1.0,
   "recipe_book_tab": "meals",
   "ingredients": [
-    [
-      {
-        "item": "minecraft:apple"
-      }
-    ],
-    [
-      {
-        "item": "minecraft:sugar"
-      }
-    ],
-    [
-      {
-        "item": "minecraft:water_bucket"
-      }
-    ]
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:water_bucket"
+    }
   ],
   "result": {
     "id": "vegandelight:applesauce"
