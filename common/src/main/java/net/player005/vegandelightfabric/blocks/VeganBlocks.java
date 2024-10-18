@@ -62,4 +62,6 @@ public class VeganBlocks {
 
     public static void initialise() {
     }
+
+    public static final Block[] allBlocks = {SOYBEAN_BAG, WILD_SOYBEAN};
 }

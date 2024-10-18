@@ -4,8 +4,10 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.item.BucketItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.Items;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
@@ -143,12 +145,11 @@ public class VeganItems {
             )
     );
 
-    public static ItemLike[] all = { // TODO
-            /*VeganBlocks.SOYBEAN_BAG, VeganBlocks.WILD_SOYBEAN, */SILKEN_TOFU, TOFU, TOFU_SLICES, COOKED_TOFU,
-            COOKED_TOFU_SLICES, SMOKED_TOFU, SMOKED_TOFU_SLICES, COOKED_SMOKED_TOFU, COOKED_SMOKED_TOFU_SLICES,
-            MINCED_TOFU, TOFU_PATTY, TOFISH, COOKED_TOFISH, SMOKED_TOFISH, COOKED_SMOKED_TOFISH, TOFISH_ROLL,
-            SMOKED_TOFISH_ROLL, SOYMILK_BUCKET, SOYMILK_BOTTLE, SOYBEAN, SALT, APPLESAUCE, APPLESAUCE_BUCKET,
-            LEATHER_SUBSTITUTE
+    public static Item[] allItems = {
+            SILKEN_TOFU, TOFU, TOFU_SLICES, COOKED_TOFU, COOKED_TOFU_SLICES, SMOKED_TOFU, SMOKED_TOFU_SLICES,
+            COOKED_SMOKED_TOFU, COOKED_SMOKED_TOFU_SLICES, MINCED_TOFU, TOFU_PATTY, TOFISH, COOKED_TOFISH,
+            SMOKED_TOFISH, COOKED_SMOKED_TOFISH, TOFISH_ROLL, SMOKED_TOFISH_ROLL, SOYMILK_BUCKET, SOYMILK_BOTTLE,
+            SOYBEAN, SALT, APPLESAUCE, APPLESAUCE_BUCKET, LEATHER_SUBSTITUTE
     };
 
 

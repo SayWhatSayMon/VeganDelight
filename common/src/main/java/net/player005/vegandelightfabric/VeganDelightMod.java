@@ -11,32 +11,29 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import org.jetbrains.annotations.NotNull;
 
 public class VeganDelightMod {
 
     public static String modID = "vegandelight";
-    public static VeganDelightPlatform platform;
 
-    public static void initialize() {
-        registerBiomeModifers();
-        registerTrades();
-
+    public static void registerCompostables() {
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
     }
 
-    public static void initializeAll(VeganDelightPlatform platform) {
-        initPlatform(platform);
-
+    public static void initialiseAll(VeganDelightPlatform platform) {
         VeganItems.initialise();
         VeganFluids.initialise();
         VeganBlocks.initialise();
-        VeganCreativeTab.initialise();
+        VeganCreativeTab.register();
 
-        initialize();
+        registerBiomeModifers(platform);
+        registerTrades(platform);
+        registerCompostables();
     }
 
-    private static void registerBiomeModifers() {
+    public static void registerBiomeModifers(@NotNull VeganDelightPlatform platform) {
         platform.registerBiomeModifier(0.4f, 0.9f,
                 platform.overworldBiomeTag(),
                 platform.undergroundBiomeTag(),
@@ -45,7 +42,7 @@ public class VeganDelightMod {
         );
     }
 
-    private static void registerTrades() {
+    public static void registerTrades(@NotNull VeganDelightPlatform platform) {
         platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
                 (trader, random) -> new MerchantOffer(
                         new ItemCost(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
@@ -60,12 +57,4 @@ public class VeganDelightMod {
                 ));
     }
 
-
-    public static VeganDelightPlatform getPlatform() {
-        return platform;
-    }
-
-    public static void initPlatform(VeganDelightPlatform platform) {
-        VeganDelightMod.platform = platform;
-    }
 }
