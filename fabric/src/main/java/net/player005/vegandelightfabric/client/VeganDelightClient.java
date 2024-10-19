@@ -6,7 +6,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
-import net.player005.vegandelightfabric.VeganFluids;
+import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 
 public class VeganDelightClient implements ClientModInitializer {

@@ -11,6 +11,7 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 
 public class VeganDelightMod {

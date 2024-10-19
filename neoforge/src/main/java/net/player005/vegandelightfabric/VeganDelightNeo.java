@@ -16,6 +16,7 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

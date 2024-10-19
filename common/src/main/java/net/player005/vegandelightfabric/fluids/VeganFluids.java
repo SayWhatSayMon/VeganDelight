@@ -1,4 +1,4 @@
-package net.player005.vegandelightfabric;
+package net.player005.vegandelightfabric.fluids;
 
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -6,8 +6,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
+import net.player005.vegandelightfabric.VeganDelightMod;
+import net.player005.vegandelightfabric.VeganItems;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
-import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
 import org.jetbrains.annotations.NotNull;
 
 public class VeganFluids {

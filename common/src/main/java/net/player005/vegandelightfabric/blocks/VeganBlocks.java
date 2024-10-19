@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.player005.vegandelightfabric.VeganDelightMod;
-import net.player005.vegandelightfabric.VeganFluids;
+import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
