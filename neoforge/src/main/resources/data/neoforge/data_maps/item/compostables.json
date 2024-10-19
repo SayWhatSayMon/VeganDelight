@@ -1,0 +1,10 @@
+{
+  "values": {
+    "vegandelight:soybean": {
+      "chance": 0.45
+    },
+    "vegandelight:wild_soybean": {
+      "chance": 0.65
+    }
+  }
+}

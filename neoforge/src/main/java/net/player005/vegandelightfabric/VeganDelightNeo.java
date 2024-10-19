@@ -15,7 +15,6 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
-import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +37,6 @@ public class VeganDelightNeo {
             event.register(BuiltInRegistries.ITEM.key(), helper -> VeganItems.initialise());
             event.register(BuiltInRegistries.CREATIVE_MODE_TAB.key(), helper -> VeganCreativeTab.register());
             event.register(BuiltInRegistries.FLUID.key(), helper -> VeganFluids.initialise());
-            event.register(NeoForgeDataMaps.COMPOSTABLES.registryKey(), helper -> VeganDelightMod.registerCompostables());
         });
     }
 
