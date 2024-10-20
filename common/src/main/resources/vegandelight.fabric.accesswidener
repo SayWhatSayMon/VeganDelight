@@ -1,5 +1,8 @@
 accessWidener v2 named
 
+# IMPORTANT:
+# when adding to this, make sure to also check if access transformers are required for neoforge too
+
 accessible class net/minecraft/world/item/crafting/Ingredient$Value
 accessible class net/minecraft/world/item/crafting/Ingredient$ItemValue
 accessible class net/minecraft/world/item/crafting/Ingredient$TagValue
