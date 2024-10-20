@@ -104,4 +104,8 @@ dependencies {
     implementation("maven.modrinth:farmers-delight:$FD_NEO_VERSION")
 }
 
+accessTransformers {
+    file("src/main/resources/META-INF/accesstransformer.cfg")
+}
+
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)

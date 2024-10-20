@@ -13,6 +13,8 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
@@ -38,6 +40,11 @@ public class VeganDelightNeo {
             event.register(BuiltInRegistries.ITEM.key(), helper -> VeganItems.initialise());
             event.register(BuiltInRegistries.CREATIVE_MODE_TAB.key(), helper -> VeganCreativeTab.register());
             event.register(BuiltInRegistries.FLUID.key(), helper -> VeganFluids.initialise());
+        });
+
+        NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event -> {
+            VeganDelightMod.registerSubstitutes();
+            RecipeManipulation.load(event.getServer().getRecipeManager());
         });
     }
 
