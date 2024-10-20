@@ -1,35 +1,34 @@
 {
   "item.vegandelight.tofu": "Tofu",
   "item.vegandelight.silken_tofu": "Seidentofu",
-  "item.vegandelight.minced_tofu": "Tofu Hack",
-  "item.vegandelight.tofu_slices": "Tofu Stücke",
+  "item.vegandelight.minced_tofu": "Tofu-Hack",
+  "item.vegandelight.tofu_slices": "Tofustücke",
   "item.vegandelight.tofish": "Tofisch",
-  "item.vegandelight.tofish_slices": "Tofisch Stücke",
-  "item.vegandelight.tofish_roll": "Tofisch Rolle",
-  "item.vegandelight.tofu_patty": "Tofu Patty",
+  "item.vegandelight.tofish_slices": "Tofisch-Stücke",
+  "item.vegandelight.tofish_roll": "Tofisch-Rolle",
+  "item.vegandelight.tofu_patty": "Tofu-Patty",
 
 
   "item.vegandelight.smoked_tofu": "Geräucherter Tofu",
   "item.vegandelight.smoked_tofish": "Geräucherter Tofisch",
-  "item.vegandelight.smoked_tofish_roll": "Geräucherte Tofisch Rolle",
-  "item.vegandelight.smoked_tofu_slices": "Geräucherte Tofu Stücke",
+  "item.vegandelight.smoked_tofish_roll": "Geräucherte Tofisch-Rolle",
+  "item.vegandelight.smoked_tofu_slices": "Geräucherte Tofustücke",
 
 
   "item.vegandelight.cooked_tofu": "Gekochter Tofu",
-  "item.vegandelight.cooked_tofu_slices": "Gekochte Tofu Stücke",
+  "item.vegandelight.cooked_tofu_slices": "Gekochte Tofustücke",
   "item.vegandelight.cooked_tofish": "Gekochter Tofisch",
 
 
   "item.vegandelight.cooked_smoked_tofu": "Gekochter Geräucherter Tofu",
   "item.vegandelight.cooked_smoked_tofish": "Gekochter Geräucherter Tofisch",
-  "item.vegandelight.cooked_smoked_tofu_slices": "Gekochte Geräucherte Tofu Stücke",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Gekochte Geräucherte Tofustücke",
 
 
   "item.vegandelight.salt": "Salz",
   "item.vegandelight.soybean": "Sojabohne",
-  "fluid_type.vegandelight.soymilk": "Sojamilch",
-  "item.vegandelight.soymilk_bottle": "Sojamilch Flasche",
-  "item.vegandelight.soymilk_bucket": "Sojamilch Eimer",
+  "item.vegandelight.soymilk_bottle": "Sojamilchflasche",
+  "item.vegandelight.soymilk_bucket": "Eimer mit Sojamilch",
   "item.vegandelight.leather_substitute": "Lederimitat",
 
 
@@ -38,19 +37,19 @@
 
 
   "item.vegandelight.pasta_with_tofuballs": "Nudeln mit Tofubällchen",
-  "item.vegandelight.roasted_tofu_chops": "Gebratene Tofu Chops",
-  "item.vegandelight.tofu_burger": "Tofu Burger",
-  "item.vegandelight.tofu_sandwich": "Tofu Sandwich",
+  "item.vegandelight.roasted_tofu_chops": "Gebratene Tofu-Chops",
+  "item.vegandelight.tofu_burger": "Tofu-Burger",
+  "item.vegandelight.tofu_sandwich": "Tofu-Sandwich",
 
 
-  "item.vegandelight.applesauce": "Apfelsoße",
-  "item.vegandelight.applesauce_bucket": "Apfelsoße Eimer",
-  "fluid_type.vegandelight.applesauce": "Apfelsoße",
+  "item.vegandelight.applesauce": "Apfelmus",
+  "item.vegandelight.applesauce_bucket": "Eimer mit Apfelmus",
+  "fluid_type.vegandelight.applesauce": "Apfelmus",
 
 
-  "block.vegandelight.soybean_bag": "Sojabohnen Sack",
+  "block.vegandelight.soybean_bag": "Sack mit Sojabohnen",
   "block.vegandelight.wild_soybean": "Wilde Sojabohne",
-
+  "fluid_type.vegandelight.soymilk": "Sojamilch",
 
   "creativetab.vegan_tab": "Vegan Delight"
 }
