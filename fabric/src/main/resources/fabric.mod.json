@@ -20,7 +20,7 @@
   "mixins": [
     "vegandelight.mixins.json"
   ],
-  "accessWidener" : "vegandelight.accesswidener",
+  "accessWidener" : "vegandelight.fabric.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",

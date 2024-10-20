@@ -20,7 +20,7 @@ repositories {
 }
 
 loom {
-    accessWidenerPath = file("src/main/resources/vegandelight.accesswidener")
+    accessWidenerPath = file("src/main/resources/vegandelight.fabric.accesswidener")
 }
 
 dependencies {

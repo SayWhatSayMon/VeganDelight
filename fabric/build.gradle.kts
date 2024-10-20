@@ -52,7 +52,7 @@ loom {
         }
     }
 
-    accessWidenerPath = file("../common/src/main/resources/vegandelight.accesswidener")
+    accessWidenerPath = file("../common/src/main/resources/vegandelight.fabric.accesswidener")
 }
 
 tasks {
