@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:bucket"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    },
+    {
+      "item": "vegandelight:applesauce"
+    }
+  ],
+  "result": {
+    "item": "vegandelight:applesauce_bucket"
+  },
+  "show_notification": true
+}
