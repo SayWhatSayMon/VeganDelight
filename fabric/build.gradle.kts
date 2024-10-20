@@ -51,6 +51,8 @@ loom {
             runDir("run")
         }
     }
+
+    accessWidenerPath = file("../common/src/main/resources/vegandelight.accesswidener")
 }
 
 tasks {

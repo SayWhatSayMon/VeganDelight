@@ -19,12 +19,17 @@ repositories {
     }
 }
 
+loom {
+    accessWidenerPath = file("src/main/resources/vegandelight.accesswidener")
+}
+
 dependencies {
     minecraft("com.mojang:minecraft:${MINECRAFT_VERSION}")
     mappings(loom.layered {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
     })
+    compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
 
     modCompileOnly("vectorwing:FarmersDelight:$FDRF_VERSION") {
         isTransitive = false

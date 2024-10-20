@@ -2,6 +2,7 @@ package net.player005.vegandelightfabric;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.minecraft.resources.ResourceKey;
@@ -18,6 +19,11 @@ public class VeganDelightFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         VeganDelightMod.initialiseAll(new VeganDelightFabricPlatform());
+
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeManipulation.load(server.getRecipeManager()));
+        ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) ->
+                RecipeManipulation.load(server.getRecipeManager())
+        );
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {

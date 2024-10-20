@@ -13,10 +13,13 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VeganDelightMod {
 
     public static String modID = "vegandelight";
+    public static final Logger logger = LoggerFactory.getLogger(modID);
 
     public static void registerCompostables() {
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
@@ -32,6 +35,11 @@ public class VeganDelightMod {
         registerBiomeModifers(platform);
         registerTrades(platform);
         registerCompostables();
+        registerSubstitutes();
+    }
+
+    public static void registerSubstitutes() {
+        RecipeManipulation.registerSubstitute(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
     }
 
     public static void registerBiomeModifers(@NotNull VeganDelightPlatform platform) {
