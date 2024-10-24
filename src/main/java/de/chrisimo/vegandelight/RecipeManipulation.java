@@ -41,7 +41,7 @@ public class RecipeManipulation {
     }
 
     /**
-     * checks if a substitute should be registered for an ingredient.
+     * checks if a substitute should be registered for an ingredient and applies the modification if so.
      * returns true if the ingredient was changed
      */
     private static boolean modifyIngredient(@NotNull Ingredient ingredient, Item item, Ingredient.Value substitute) {
