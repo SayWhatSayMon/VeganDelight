@@ -31,12 +31,8 @@ public class RecipeManipulation {
 
             for (Ingredient ingredient : ingredients) {
                 registeredSubstitutes.forEach((item, substitute) -> {
-                    for (ItemStack stack : ingredient.getItems()) {
-                        if (stack.is(item) && !substitute.getItems().contains(item.getDefaultInstance())) {
-                            addSubstitute(ingredient, substitute);
-                            ingredientsChanged.getAndIncrement();
-                        }
-                    }
+                    var wasChanged = modifyIngredient(ingredient, item, substitute);
+                    if (wasChanged) ingredientsChanged.getAndIncrement();
                 });
             }
         }
@@ -44,10 +40,35 @@ public class RecipeManipulation {
         logger.info("Modified {} recipe ingredients", ingredientsChanged);
     }
 
+    /**
+     * checks if a substitute should be registered for an ingredient.
+     * returns true if the ingredient was changed
+     */
+    private static boolean modifyIngredient(@NotNull Ingredient ingredient, Item item, Ingredient.Value substitute) {
+        for (ItemStack stack : ingredient.getItems()) {
+            if (stack.is(item) && !isSubstituteAlreadyUsable(ingredient, substitute)) {
+                addSubstitute(ingredient, substitute);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * returns if the substitute can already be used for an ingredient
+     */
+    private static boolean isSubstituteAlreadyUsable(Ingredient ingredient, @NotNull Ingredient.Value substitute) {
+        for (ItemStack item : substitute.getItems()) {
+            if (ingredient.test(item)) return true;
+        }
+        return false;
+    }
+
     private static void addSubstitute(@NotNull Ingredient ingredient, Ingredient.Value substitute) {
         ingredient.values = Arrays.copyOf(ingredient.values, ingredient.values.length + 1);
         ingredient.values[ingredient.values.length - 1] = substitute;
 
+        // set minecraft's cached values to null to recalculate the values
         ingredient.stackingIds = null;
         ingredient.itemStacks = null;
     }
