@@ -1,7 +1,6 @@
 package de.chrisimo.vegandelight;
 
 import net.minecraft.core.NonNullList;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -61,7 +60,4 @@ public class RecipeManipulation {
         registerSubstitute(item, new Ingredient.ItemValue(new ItemStack(substitute)));
     }
 
-    public static void registerSubstitute(Item item, TagKey<Item> substitute) {
-        registerSubstitute(item, new Ingredient.TagValue(substitute));
-    }
 }
