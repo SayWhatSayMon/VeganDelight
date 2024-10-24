@@ -32,7 +32,7 @@ public class RecipeManipulation {
             for (Ingredient ingredient : ingredients) {
                 registeredSubstitutes.forEach((item, substitute) -> {
                     for (ItemStack stack : ingredient.getItems()) {
-                        if (stack.is(item)) {
+                        if (stack.is(item) && !substitute.getItems().contains(item.getDefaultInstance())) {
                             addSubstitute(ingredient, substitute);
                             ingredientsChanged.getAndIncrement();
                         }
