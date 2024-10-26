@@ -16,8 +16,10 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 
@@ -75,6 +77,26 @@ public class VeganDelightNeo {
 
         @Override
         public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied, GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
+        }
+
+        @Override
+        public SimpleFlowableFluid createStillFluid(SimpleFlowableFluid.Properties properties) {
+            return new SimpleFlowableFluid.Flowing(properties) {
+                @Override
+                public @NotNull FluidType getFluidType() {
+                    return new FluidType(FluidType.Properties.create());
+                }
+            };
+        }
+
+        @Override
+        public SimpleFlowableFluid createFlowingFluid(SimpleFlowableFluid.Properties properties) {
+            return new SimpleFlowableFluid.Flowing(properties) {
+                @Override
+                public @NotNull FluidType getFluidType() {
+                    return new FluidType(FluidType.Properties.create());
+                }
+            };
         }
     }
 

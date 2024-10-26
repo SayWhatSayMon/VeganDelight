@@ -12,6 +12,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 
 public class VeganDelightFabric implements ModInitializer {
@@ -27,6 +28,16 @@ public class VeganDelightFabric implements ModInitializer {
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
+        @Override
+        public SimpleFlowableFluid createStillFluid(SimpleFlowableFluid.Properties properties) {
+            return new SimpleFlowableFluid.Still(properties);
+        }
+
+        @Override
+        public SimpleFlowableFluid createFlowingFluid(SimpleFlowableFluid.Properties properties) {
+            return new SimpleFlowableFluid.Flowing(properties);
+        }
+
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
             return ConventionalBiomeTags.IS_UNDERGROUND;

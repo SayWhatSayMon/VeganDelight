@@ -9,6 +9,8 @@ import net.player005.vegandelightfabric.VeganDelightMod;
 import net.player005.vegandelightfabric.VeganItems;
 import org.jetbrains.annotations.NotNull;
 
+import static net.player005.vegandelightfabric.VeganDelightMod.platform;
+
 public class VeganFluids {
 
     public static final SimpleFlowableFluid.Properties APPLESAUCE_FLUID_PROPERTIES =
@@ -21,9 +23,9 @@ public class VeganFluids {
                     .bucket(() -> VeganItems.APPLESAUCE_BUCKET);
 
     public static final Fluid APPLESAUCE =
-            register(new SimpleFlowableFluid.Still(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "applesauce");
+            register(platform.createStillFluid(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "applesauce");
     public static final FlowingFluid FLOWING_APPLESAUCE = (FlowingFluid)
-            register(new SimpleFlowableFluid.Flowing(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "flowing_applesauce");
+            register(platform.createFlowingFluid(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "flowing_applesauce");
 
 
     public static final SimpleFlowableFluid.Properties SOYMILK_FLUID_PROPERTIES =
@@ -36,17 +38,16 @@ public class VeganFluids {
                     .bucket(() -> VeganItems.SOYMILK_BUCKET);
 
     public static final Fluid SOYMILK =
-            register(new SimpleFlowableFluid.Still(VeganFluids.SOYMILK_FLUID_PROPERTIES), "soymilk");
+            register(platform.createStillFluid(VeganFluids.SOYMILK_FLUID_PROPERTIES), "soymilk");
     public static final FlowingFluid FLOWING_SOYMILK = (FlowingFluid)
-            register(new SimpleFlowableFluid.Flowing(VeganFluids.SOYMILK_FLUID_PROPERTIES), "flowing_soymilk");
+            register(platform.createFlowingFluid(VeganFluids.SOYMILK_FLUID_PROPERTIES), "flowing_soymilk");
 
 
     public static void initialise() {
     }
 
     public static @NotNull Fluid register(Fluid fluid, String name) {
-        ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
-        assert id != null;
+        ResourceLocation id = ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name);
 
         return Registry.register(BuiltInRegistries.FLUID, id, fluid);
     }
