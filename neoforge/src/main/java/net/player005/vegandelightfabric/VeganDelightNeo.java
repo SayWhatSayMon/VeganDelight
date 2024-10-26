@@ -31,9 +31,9 @@ public class VeganDelightNeo {
     public VeganDelightNeo(@NotNull IEventBus eventBus) {
         VeganDelightNeo.eventBus = eventBus;
 
-        VeganDelightPlatform platform = new VDNeoforgePlatform();
-        VeganDelightMod.registerBiomeModifers(platform);
-        VeganDelightMod.registerTrades(platform);
+        VeganDelightMod.platform = new VDNeoforgePlatform();
+        VeganDelightMod.registerBiomeModifers();
+        VeganDelightMod.registerTrades();
 
         eventBus.<RegisterEvent>addListener(event -> {
             event.register(BuiltInRegistries.BLOCK.key(), helper -> VeganBlocks.initialise());

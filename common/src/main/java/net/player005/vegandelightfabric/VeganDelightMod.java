@@ -12,7 +12,6 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
-import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -20,6 +19,7 @@ public class VeganDelightMod {
 
     public static String modID = "vegandelight";
     public static final Logger logger = LoggerFactory.getLogger(modID);
+    public static VeganDelightPlatform platform;
 
     public static void registerCompostables() {
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
@@ -27,13 +27,15 @@ public class VeganDelightMod {
     }
 
     public static void initialiseAll(VeganDelightPlatform platform) {
+        VeganDelightMod.platform = platform;
+
         VeganItems.initialise();
         VeganFluids.initialise();
         VeganBlocks.initialise();
         VeganCreativeTab.register();
 
-        registerBiomeModifers(platform);
-        registerTrades(platform);
+        registerBiomeModifers();
+        registerTrades();
         registerCompostables();
         registerSubstitutes();
     }
@@ -42,7 +44,7 @@ public class VeganDelightMod {
         RecipeManipulation.registerSubstitute(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
     }
 
-    public static void registerBiomeModifers(@NotNull VeganDelightPlatform platform) {
+    public static void registerBiomeModifers() {
         platform.registerBiomeModifier(0.4f, 0.9f,
                 platform.overworldBiomeTag(),
                 platform.undergroundBiomeTag(),
@@ -51,7 +53,7 @@ public class VeganDelightMod {
         );
     }
 
-    public static void registerTrades(@NotNull VeganDelightPlatform platform) {
+    public static void registerTrades() {
         platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
                 (trader, random) -> new MerchantOffer(
                         new ItemCost(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
