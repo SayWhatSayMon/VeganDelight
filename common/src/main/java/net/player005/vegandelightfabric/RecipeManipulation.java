@@ -7,7 +7,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +16,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RecipeManipulation {
     private static final Map<Item, Ingredient.Value> registeredSubstitutes = new HashMap<>();
 
-    static void load(@NotNull RecipeManager recipeManager) {
+    static void load(RecipeManager recipeManager) {
         var allRecipes = recipeManager.getRecipes();
 
         VeganDelightMod.logger.info("Scanning {} recipes for modification", allRecipes.size());
@@ -41,11 +40,13 @@ public class RecipeManipulation {
         VeganDelightMod.logger.info("Modified {} recipe ingredients", ingredientsChanged);
     }
 
-    private static void addSubstitute(@NotNull Ingredient ingredient, Ingredient.Value substitute) {
+    private static void addSubstitute(Ingredient ingredient, Ingredient.Value substitute) {
         ingredient.values = Arrays.copyOf(ingredient.values, ingredient.values.length + 1);
         ingredient.values[ingredient.values.length - 1] = substitute;
 
         ingredient.stackingIds = null;
+        // idea complains about this for some reason
+        //noinspection DataFlowIssue
         ingredient.itemStacks = null;
     }
 
