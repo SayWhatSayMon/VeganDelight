@@ -3,12 +3,10 @@ package net.player005.vegandelightfabric.fluids;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.player005.vegandelightfabric.VeganDelightMod;
 import net.player005.vegandelightfabric.VeganItems;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 
 public class VeganFluids {
@@ -20,8 +18,7 @@ public class VeganFluids {
                     .flowSpeed(2)
                     .levelDecreasePerBlock(2)
                     .tickRate(50)
-                    .bucket(() -> VeganItems.APPLESAUCE_BUCKET)
-                    .block(() -> (LiquidBlock) VeganBlocks.APPLESAUCE);
+                    .bucket(() -> VeganItems.APPLESAUCE_BUCKET);
 
     public static final Fluid APPLESAUCE =
             register(new SimpleFlowableFluid.Still(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "applesauce");
@@ -36,8 +33,7 @@ public class VeganFluids {
                     .flowSpeed(5)
                     .levelDecreasePerBlock(1)
                     .tickRate(5)
-                    .bucket(() -> VeganItems.SOYMILK_BUCKET)
-                    .block(() -> (LiquidBlock) VeganBlocks.SOYMILK);
+                    .bucket(() -> VeganItems.SOYMILK_BUCKET);
 
     public static final Fluid SOYMILK =
             register(new SimpleFlowableFluid.Still(VeganFluids.SOYMILK_FLUID_PROPERTIES), "soymilk");

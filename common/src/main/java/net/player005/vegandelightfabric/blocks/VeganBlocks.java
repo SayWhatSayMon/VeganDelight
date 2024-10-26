@@ -9,10 +9,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.player005.vegandelightfabric.VeganDelightMod;
-import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
@@ -35,17 +33,17 @@ public class VeganBlocks {
 
     public static final Block SOYBEAN_BAG = register(new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), "soybean_bag", true);
 
-    public static final Block SOYMILK =
-            register(
-                    new LiquidBlock(VeganFluids.FLOWING_SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
-                    "soymilk", false
-            );
-
-    public static final Block APPLESAUCE =
-            register(
-                    new LiquidBlock(VeganFluids.FLOWING_APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
-                    "applesauce", false
-            );
+//    public static final Block SOYMILK =
+//            register(
+//                    new LiquidBlock(VeganFluids.FLOWING_SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
+//                    "soymilk", false
+//            );
+//
+//    public static final Block APPLESAUCE =
+//            register(
+//                    new LiquidBlock(VeganFluids.FLOWING_APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
+//                    "applesauce", false
+//            );
 
     public static @NotNull Block register(Block block, String name, boolean registerItem) {
         ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);

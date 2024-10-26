@@ -19,11 +19,6 @@ public class VeganDelightClient implements ClientModInitializer {
                 VeganBlocks.WILD_SOYBEAN, VeganBlocks.SOYBEAN_CROP, VeganBlocks.POTTED_WILD_SOYBEAN
         );
 
-        // allow fluids to be translucent
-        BlockRenderLayerMap.INSTANCE.putBlocks(
-                RenderType.translucent(),
-                VeganBlocks.SOYMILK, VeganBlocks.APPLESAUCE
-        );
         BlockRenderLayerMap.INSTANCE.putFluids(
                 RenderType.translucent(),
                 VeganFluids.SOYMILK, VeganFluids.FLOWING_SOYMILK,

@@ -4,14 +4,13 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
-import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 public class VeganItems {
@@ -111,8 +110,7 @@ public class VeganItems {
             new Item(new Item.Properties()));
 
     public static final Item SOYMILK_BUCKET = register("soymilk_bucket",
-            new BucketItem(
-                    VeganFluids.SOYMILK,
+            new MilkBottleItem(
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
             )
     );
@@ -140,9 +138,14 @@ public class VeganItems {
                     .craftRemainder(Items.BOWL)
                     .stacksTo(16)));
     public static final Item APPLESAUCE_BUCKET = register("applesauce_bucket",
-            new BucketItem(
-                    VeganFluids.APPLESAUCE,
-                    new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
+            new DrinkableItem(
+                    new Item.Properties()
+                            .food(new FoodProperties.Builder()
+                                    .nutrition(2)
+                                    .saturationModifier(0.4f)
+                                    .build())
+                            .craftRemainder(Items.BUCKET)
+                            .stacksTo(1)
             )
     );
 
