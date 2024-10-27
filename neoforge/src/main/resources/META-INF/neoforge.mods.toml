@@ -8,6 +8,7 @@ issueTrackerURL="https://github.com/Player005/VeganDelightFabric/issues" #option
 modId="${mod_id}" #mandatory
 version="${mod_version}" #mandatory
 displayName="${mod_name}" #mandatory
+logoFile = "assets/vegandelight/icon.png"
 
 authors="${mod_authors}" #optional
 description='''${mod_description}'''
