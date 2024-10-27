@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
 val PARCHMENT_MC_VERSION: String by rootProject.extra
