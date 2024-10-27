@@ -1,6 +1,5 @@
 package net.player005.vegandelightfabric;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -28,20 +27,21 @@ import java.util.List;
 
 @Mod("vegandelight")
 public class VeganDelightNeo {
+
     public static IEventBus eventBus;
 
     public VeganDelightNeo(@NotNull IEventBus eventBus) {
         VeganDelightNeo.eventBus = eventBus;
-
         VeganDelightMod.platform = new VDNeoforgePlatform();
+
         VeganDelightMod.registerBiomeModifers();
         VeganDelightMod.registerTrades();
 
         eventBus.<RegisterEvent>addListener(event -> {
-            event.register(BuiltInRegistries.BLOCK.key(), helper -> VeganBlocks.initialise());
-            event.register(BuiltInRegistries.ITEM.key(), helper -> VeganItems.initialise());
-            event.register(BuiltInRegistries.CREATIVE_MODE_TAB.key(), helper -> VeganCreativeTab.register());
-            event.register(BuiltInRegistries.FLUID.key(), helper -> VeganFluids.initialise());
+            event.register(Registries.BLOCK, helper -> VeganBlocks.initialise());
+            event.register(Registries.ITEM, helper -> VeganItems.initialise());
+            event.register(Registries.CREATIVE_MODE_TAB, helper -> VeganCreativeTab.register());
+            event.register(Registries.FLUID, helper -> VeganFluids.initialise());
         });
 
         NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event -> {
