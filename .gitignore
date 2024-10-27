@@ -2,3 +2,5 @@
 neoforge/runs/
 */build/
 */.gradle/
+.idea/modules/
+.idea/modules.xml
