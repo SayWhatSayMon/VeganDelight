@@ -47,6 +47,10 @@ subprojects {
     base {
         archivesName = "vegan-delight-${project.name}-${MINECRAFT_VERSION}"
     }
+
+    dependencies {
+        compileOnly("org.jetbrains:annotations:26.0.1")
+    }
 }
 
 tasks.jar {
