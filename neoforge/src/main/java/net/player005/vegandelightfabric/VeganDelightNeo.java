@@ -9,12 +9,14 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
+import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
@@ -80,23 +82,35 @@ public class VeganDelightNeo {
         }
 
         @Override
-        public SimpleFlowableFluid createStillFluid(SimpleFlowableFluid.Properties properties) {
-            return new SimpleFlowableFluid.Flowing(properties) {
-                @Override
-                public @NotNull FluidType getFluidType() {
-                    return new FluidType(FluidType.Properties.create());
-                }
-            };
+        public Fluid createStillFluid(SimpleFlowableFluid.@NotNull Properties properties) {
+            return new BaseFlowingFluid.Source(
+                    new BaseFlowingFluid.Properties(
+                            () -> new FluidType(FluidType.Properties.create()),
+                            properties.still,
+                            properties.flowing
+                    )
+                            .levelDecreasePerBlock(properties.getLevelDecreasePerBlock())
+                            .bucket(properties.getBucket())
+                            .tickRate(properties.getTickRate())
+                            .block(properties.getBlock())
+                            .slopeFindDistance(properties.getFlowSpeed())
+            );
         }
 
         @Override
-        public SimpleFlowableFluid createFlowingFluid(SimpleFlowableFluid.Properties properties) {
-            return new SimpleFlowableFluid.Flowing(properties) {
-                @Override
-                public @NotNull FluidType getFluidType() {
-                    return new FluidType(FluidType.Properties.create());
-                }
-            };
+        public Fluid createFlowingFluid(SimpleFlowableFluid.@NotNull Properties properties) {
+            return new BaseFlowingFluid.Flowing(
+                    new BaseFlowingFluid.Properties(
+                            () -> new FluidType(FluidType.Properties.create()),
+                            properties.still,
+                            properties.flowing
+                    )
+                            .levelDecreasePerBlock(properties.getLevelDecreasePerBlock())
+                            .bucket(properties.getBucket())
+                            .tickRate(properties.getTickRate())
+                            .block(properties.getBlock())
+                            .slopeFindDistance(properties.getFlowSpeed())
+            );
         }
     }
 

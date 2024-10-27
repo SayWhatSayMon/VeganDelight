@@ -152,8 +152,8 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     public static class Properties {
-        private final Supplier<? extends Fluid> still;
-        private final Supplier<? extends Fluid> flowing;
+        public final Supplier<? extends Fluid> still;
+        public final Supplier<? extends Fluid> flowing;
         private Supplier<? extends Item> bucket;
         private Supplier<? extends LiquidBlock> block;
         private int flowSpeed = 4;
@@ -194,6 +194,30 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
         public Properties tickRate(int tickRate) {
             this.tickRate = tickRate;
             return this;
+        }
+
+        public Supplier<? extends Item> getBucket() {
+            return bucket;
+        }
+
+        public Supplier<? extends LiquidBlock> getBlock() {
+            return block;
+        }
+
+        public int getFlowSpeed() {
+            return flowSpeed;
+        }
+
+        public int getLevelDecreasePerBlock() {
+            return levelDecreasePerBlock;
+        }
+
+        public float getBlastResistance() {
+            return blastResistance;
+        }
+
+        public int getTickRate() {
+            return tickRate;
         }
     }
 }

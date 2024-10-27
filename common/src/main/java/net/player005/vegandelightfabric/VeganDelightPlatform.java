@@ -8,6 +8,7 @@ import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.material.Fluid;
 import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
 
 public interface VeganDelightPlatform {
@@ -22,7 +23,7 @@ public interface VeganDelightPlatform {
     void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
                                GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier);
 
-    SimpleFlowableFluid createStillFluid(SimpleFlowableFluid.Properties properties);
+    Fluid createStillFluid(SimpleFlowableFluid.Properties properties);
 
-    SimpleFlowableFluid createFlowingFluid(SimpleFlowableFluid.Properties properties);
+    Fluid createFlowingFluid(SimpleFlowableFluid.Properties properties);
 }
