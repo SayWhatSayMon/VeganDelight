@@ -17,6 +17,7 @@ public class RecipeManipulation {
     private static final Map<Item, Ingredient.Value> registeredSubstitutes = new HashMap<>();
 
     static void load(RecipeManager recipeManager) {
+        var startTime = System.nanoTime();
         var allRecipes = recipeManager.getRecipes();
 
         VeganDelightMod.logger.info("Scanning {} recipes for modification", allRecipes.size());
@@ -37,7 +38,8 @@ public class RecipeManipulation {
             }
         }
 
-        VeganDelightMod.logger.info("Modified {} recipe ingredients", ingredientsChanged);
+        long totalTimeMS = (System.nanoTime() - startTime) / 1_000_000;
+        VeganDelightMod.logger.info("Modified {} recipe ingredients in {}ms", ingredientsChanged, totalTimeMS);
     }
 
     private static void addSubstitute(Ingredient ingredient, Ingredient.Value substitute) {
