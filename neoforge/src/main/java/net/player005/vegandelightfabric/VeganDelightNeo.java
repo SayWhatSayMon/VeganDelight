@@ -142,12 +142,12 @@ public class VeganDelightNeo {
                 consumer.accept(new IClientFluidTypeExtensions() {
                     @Override
                     public ResourceLocation getStillTexture() {
-                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name + "_still");
+                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still");
                     }
 
                     @Override
                     public ResourceLocation getFlowingTexture() {
-                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name + "_flowing");
+                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing");
                     }
                 });
             }
