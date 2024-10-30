@@ -46,7 +46,7 @@ public class RecipeManipulation {
 
         ingredient.stackingIds = null;
         // idea complains about this for some reason
-        //noinspection DataFlowIssue
+        // noinspection DataFlowIssue
         ingredient.itemStacks = null;
     }
 

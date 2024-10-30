@@ -35,19 +35,21 @@ public class VeganBlocks {
 
     public static final Block SOYBEAN_BAG = register(new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), "soybean_bag", true);
 
-    public static final Block SOYMILK =
+    public static final LiquidBlock SOYMILK =
             register(
-                    new LiquidBlock(VeganFluids.FLOWING_SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
+                    new LiquidBlock(VeganFluids.SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {
+                    },
                     "soymilk", false
             );
 
-    public static final Block APPLESAUCE =
+    public static final LiquidBlock APPLESAUCE =
             register(
-                    new LiquidBlock(VeganFluids.FLOWING_APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {},
+                    new LiquidBlock(VeganFluids.APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) {
+                    },
                     "applesauce", false
             );
 
-    public static @NotNull Block register(Block block, String name, boolean registerItem) {
+    public static @NotNull <T extends Block> T register(T block, String name, boolean registerItem) {
         ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
 
         assert id != null;

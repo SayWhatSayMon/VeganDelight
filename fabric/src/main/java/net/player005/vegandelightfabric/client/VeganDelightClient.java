@@ -21,13 +21,13 @@ public class VeganDelightClient implements ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putFluids(
                 RenderType.translucent(),
-                VeganFluids.SOYMILK, VeganFluids.FLOWING_SOYMILK,
-                VeganFluids.APPLESAUCE, VeganFluids.FLOWING_APPLESAUCE
+                VeganFluids.SOYMILK, VeganFluids.SOYMILK,
+                VeganFluids.APPLESAUCE, VeganFluids.APPLESAUCE
         );
 
         FluidRenderHandlerRegistry.INSTANCE.register(
                 VeganFluids.APPLESAUCE,
-                VeganFluids.FLOWING_APPLESAUCE,
+                VeganFluids.APPLESAUCE,
                 new SimpleFluidRenderHandler(
                         ResourceLocation.parse("vegandelight:block/applesauce_still"),
                         ResourceLocation.parse("vegandelight:block/applesauce_flow")
@@ -36,7 +36,7 @@ public class VeganDelightClient implements ClientModInitializer {
 
         FluidRenderHandlerRegistry.INSTANCE.register(
                 VeganFluids.SOYMILK,
-                VeganFluids.FLOWING_SOYMILK,
+                VeganFluids.SOYMILK,
                 new SimpleFluidRenderHandler(
                         ResourceLocation.parse("vegandelight:block/milky_still"),
                         ResourceLocation.parse("vegandelight:block/milky_flow")
