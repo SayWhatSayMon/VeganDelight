@@ -19,6 +19,7 @@ public class VeganDelightMod {
 
     public static String modID = "vegandelight";
     public static final Logger logger = LoggerFactory.getLogger(modID);
+    @SuppressWarnings("NotNullFieldNotInitialized")
     public static VeganDelightPlatform platform;
 
     public static void registerCompostables() {

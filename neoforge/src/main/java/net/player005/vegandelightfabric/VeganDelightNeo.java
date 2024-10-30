@@ -45,7 +45,6 @@ public class VeganDelightNeo {
 
         VeganDelightMod.registerBiomeModifers();
         VeganDelightMod.registerTrades();
-//        VeganFluids.initialise();
 
         eventBus.<RegisterEvent>addListener(event -> {
             event.register(Registries.BLOCK, helper -> VeganBlocks.initialise());
@@ -121,7 +120,7 @@ public class VeganDelightNeo {
                     ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
                     stillRef.get());
             Registry.register(BuiltInRegistries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name + "_flowing"),
+                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                     flowingRef.get());
 
 //            var fluidRegister = DeferredRegister.create(Registries.FLUID, VeganDelightMod.modID);
