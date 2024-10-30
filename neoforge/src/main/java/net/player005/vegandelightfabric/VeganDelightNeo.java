@@ -12,7 +12,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -26,7 +25,6 @@ import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
-import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import org.jetbrains.annotations.NotNull;
 
@@ -92,22 +90,6 @@ public class VeganDelightNeo {
         }
 
         @Override
-        public Fluid createStillFluid(SimpleFlowableFluid.@NotNull Properties properties) {
-            return new BaseFlowingFluid.Source(
-                    new BaseFlowingFluid.Properties(
-                            () -> new FluidType(FluidType.Properties.create().descriptionId("vegandelight.block.soymilk")),
-                            properties.still,
-                            properties.flowing
-                    )
-                            .levelDecreasePerBlock(properties.getLevelDecreasePerBlock())
-                            .bucket(properties.getBucket())
-                            .tickRate(properties.getTickRate())
-                            .block(properties.getBlock())
-                            .slopeFindDistance(properties.getFlowSpeed())
-            );
-        }
-
-        @Override
         public FlowingFluid registerFluids(final String name, final @NotNull FluidProperties properties) {
 
             var fluidType = createFluidType(name);
@@ -150,21 +132,6 @@ public class VeganDelightNeo {
             return flowingRef.get();
         }
 
-        @Override
-        public Fluid createFlowingFluid(SimpleFlowableFluid.@NotNull Properties properties) {
-            return new BaseFlowingFluid.Flowing(
-                    new BaseFlowingFluid.Properties(
-                            () -> new FluidType(FluidType.Properties.create()),
-                            properties.still,
-                            properties.flowing
-                    )
-                            .levelDecreasePerBlock(properties.getLevelDecreasePerBlock())
-                            .bucket(properties.getBucket())
-                            .tickRate(properties.getTickRate())
-                            .block(properties.getBlock())
-                            .slopeFindDistance(properties.getFlowSpeed())
-            );
-        }
     }
 
     private static @NotNull FluidType createFluidType(String name) {

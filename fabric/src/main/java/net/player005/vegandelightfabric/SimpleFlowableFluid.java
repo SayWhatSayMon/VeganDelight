@@ -1,7 +1,7 @@
 // This class was copied from porting lib (https://github.com/Fabricators-of-Create/Porting-Lib)
 // and is licensed under LGPL v2.1
 
-package net.player005.vegandelightfabric.fluids;
+package net.player005.vegandelightfabric;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,6 +20,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
+import net.player005.vegandelightfabric.fluids.FluidProperties;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,15 +38,17 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     private final float blastResistance;
     private final int tickRate;
 
-    protected SimpleFlowableFluid(Properties properties) {
-        this.flowing = properties.flowing;
-        this.still = properties.still;
-        this.bucket = properties.bucket;
-        this.block = properties.block;
-        this.flowSpeed = properties.flowSpeed;
-        this.levelDecreasePerBlock = properties.levelDecreasePerBlock;
-        this.blastResistance = properties.blastResistance;
-        this.tickRate = properties.tickRate;
+    protected SimpleFlowableFluid(@NotNull FluidProperties properties,
+                                  Supplier<? extends Fluid> flowing,
+                                  Supplier<? extends Fluid> still) {
+        this.flowing = flowing;
+        this.still = still;
+        this.bucket = properties.bucket();
+        this.block = properties.block();
+        this.flowSpeed = properties.slopeFindDistance();
+        this.levelDecreasePerBlock = properties.levelDecreasePerBlock();
+        this.blastResistance = properties.explosionResistance();
+        this.tickRate = properties.tickRate();
     }
 
     @Override
@@ -64,7 +67,7 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     @Override
-    protected void beforeDestroyingBlock(@NotNull LevelAccessor world, @NotNull BlockPos pos, BlockState state) {
+    protected void beforeDestroyingBlock(@NotNull LevelAccessor world, @NotNull BlockPos pos, @NotNull BlockState state) {
         BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
         Block.dropResources(state, world, pos, blockEntity);
     }
@@ -113,8 +116,8 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     public static class Flowing extends SimpleFlowableFluid {
-        public Flowing(Properties properties) {
-            super(properties);
+        public Flowing(FluidProperties properties, Supplier<? extends Fluid> flowing, Supplier<? extends Fluid> still) {
+            super(properties, flowing, still);
             registerDefaultState(getStateDefinition().any().setValue(LEVEL, 7));
         }
 
@@ -125,7 +128,7 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
         }
 
         @Override
-        public int getAmount(FluidState state) {
+        public int getAmount(@NotNull FluidState state) {
             return state.getValue(LEVEL);
         }
 
@@ -136,8 +139,8 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     public static class Still extends SimpleFlowableFluid {
-        public Still(Properties properties) {
-            super(properties);
+        public Still(FluidProperties properties, Supplier<? extends Fluid> flowing, Supplier<? extends Fluid> still) {
+            super(properties, flowing, still);
         }
 
         @Override
@@ -148,76 +151,6 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
         @Override
         public boolean isSource(@NotNull FluidState state) {
             return true;
-        }
-    }
-
-    public static class Properties {
-        public final Supplier<? extends Fluid> still;
-        public final Supplier<? extends Fluid> flowing;
-        private Supplier<? extends Item> bucket;
-        private Supplier<? extends LiquidBlock> block;
-        private int flowSpeed = 4;
-        private int levelDecreasePerBlock = 1;
-        private float blastResistance = 1;
-        private int tickRate = 5;
-
-        public Properties(Supplier<? extends Fluid> still, Supplier<? extends Fluid> flowing) {
-            this.still = still;
-            this.flowing = flowing;
-        }
-
-        public Properties bucket(Supplier<? extends Item> bucket) {
-            this.bucket = bucket;
-            return this;
-        }
-
-        public Properties block(Supplier<? extends LiquidBlock> block) {
-            this.block = block;
-            return this;
-        }
-
-        public Properties flowSpeed(int flowSpeed) {
-            this.flowSpeed = flowSpeed;
-            return this;
-        }
-
-        public Properties levelDecreasePerBlock(int levelDecreasePerBlock) {
-            this.levelDecreasePerBlock = levelDecreasePerBlock;
-            return this;
-        }
-
-        public Properties blastResistance(float blastResistance) {
-            this.blastResistance = blastResistance;
-            return this;
-        }
-
-        public Properties tickRate(int tickRate) {
-            this.tickRate = tickRate;
-            return this;
-        }
-
-        public Supplier<? extends Item> getBucket() {
-            return bucket;
-        }
-
-        public Supplier<? extends LiquidBlock> getBlock() {
-            return block;
-        }
-
-        public int getFlowSpeed() {
-            return flowSpeed;
-        }
-
-        public int getLevelDecreasePerBlock() {
-            return levelDecreasePerBlock;
-        }
-
-        public float getBlastResistance() {
-            return blastResistance;
-        }
-
-        public int getTickRate() {
-            return tickRate;
         }
     }
 }

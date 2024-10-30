@@ -5,15 +5,21 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.player005.vegandelightfabric.fluids.SimpleFlowableFluid;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.player005.vegandelightfabric.fluids.FluidProperties;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class VeganDelightFabric implements ModInitializer {
 
@@ -28,14 +34,25 @@ public class VeganDelightFabric implements ModInitializer {
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
-        @Override
-        public SimpleFlowableFluid createStillFluid(SimpleFlowableFluid.Properties properties) {
-            return new SimpleFlowableFluid.Still(properties);
-        }
 
         @Override
-        public SimpleFlowableFluid createFlowingFluid(SimpleFlowableFluid.Properties properties) {
-            return new SimpleFlowableFluid.Flowing(properties);
+        public FlowingFluid registerFluids(String name, FluidProperties properties) {
+            var flowingRef = new AtomicReference<FlowingFluid>();
+            var stillRef = new AtomicReference<FlowingFluid>();
+
+            flowingRef.set(Registry.register(
+                    BuiltInRegistries.FLUID,
+                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name + "_flowing"),
+                    new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
+            ));
+
+            stillRef.set(Registry.register(
+                    BuiltInRegistries.FLUID,
+                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                    new SimpleFlowableFluid.Still(properties, flowingRef::get, stillRef::get)
+            ));
+
+            return flowingRef.get();
         }
 
         @Override
