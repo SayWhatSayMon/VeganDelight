@@ -44,19 +44,16 @@ public class VeganDelightFabric implements ModInitializer {
             final var flowingRef = new AtomicReference<FlowingFluid>();
             final var stillRef = new AtomicReference<FlowingFluid>();
 
-            final var flowing_id = ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name);
-            final var still_id = ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name);
-
             final var flowing = Registry.register(
                     BuiltInRegistries.FLUID,
-                    flowing_id,
+                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                     new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
             );
             flowingRef.set(flowing);
 
             final var still = Registry.register(
                     BuiltInRegistries.FLUID,
-                    still_id,
+                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
                     new SimpleFlowableFluid.Still(properties, flowingRef::get, stillRef::get)
             );
             stillRef.set(still);
