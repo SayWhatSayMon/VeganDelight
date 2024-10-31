@@ -16,6 +16,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
@@ -31,7 +32,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Consumer;
 
 @Mod("vegandelight")
 public class VeganDelightNeo {
@@ -108,10 +108,6 @@ public class VeganDelightNeo {
             flowingRef.set(new BaseFlowingFluid.Flowing(fluidProperties));
             stillRef.set(new BaseFlowingFluid.Source(fluidProperties));
 
-//            var typeRegister = DeferredRegister.create(NeoForgeRegistries.FLUID_TYPES, VeganDelightMod.modID);
-//            typeRegister.register(name, () -> fluidType);
-//            typeRegister.register(VeganDelightNeo.eventBus);
-
             Registry.register(NeoForgeRegistries.FLUID_TYPES,
                     ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
                     fluidType);
@@ -123,11 +119,6 @@ public class VeganDelightNeo {
                     ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                     flowingRef.get());
 
-//            var fluidRegister = DeferredRegister.create(Registries.FLUID, VeganDelightMod.modID);
-//            fluidRegister.register(name, stillRef::get);
-//            fluidRegister.register(name + "_flowing", flowingRef::get);
-//            fluidRegister.register(VeganDelightNeo.eventBus);
-
             return flowingRef.get();
         }
 
@@ -135,23 +126,22 @@ public class VeganDelightNeo {
 
     private static @NotNull FluidType createFluidType(String name) {
         var properties = FluidType.Properties.create();
-        return new FluidType(properties) {
-            @SuppressWarnings("removal")
-            @Override
-            public void initializeClient(@NotNull Consumer<IClientFluidTypeExtensions> consumer) {
-                consumer.accept(new IClientFluidTypeExtensions() {
-                    @Override
-                    public ResourceLocation getStillTexture() {
-                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still");
-                    }
+        var fluidType = new FluidType(properties);
 
-                    @Override
-                    public ResourceLocation getFlowingTexture() {
-                        return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing");
-                    }
-                });
+        var clientFluidExtensions = new IClientFluidTypeExtensions() {
+            @Override
+            public ResourceLocation getStillTexture() {
+                return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still");
+            }
+
+            @Override
+            public ResourceLocation getFlowingTexture() {
+                return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing");
             }
         };
+        VeganDelightNeo.eventBus.<RegisterClientExtensionsEvent>addListener(event -> event.registerFluidType(clientFluidExtensions, fluidType));
+
+        return fluidType;
     }
 
     public record VillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing) {
