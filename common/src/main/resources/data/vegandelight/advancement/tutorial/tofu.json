@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/root",
+  "parent": "vegandelight:tutorial/soymilk",
   "display": {
     "icon": {
-      "item": "vegandelight:soymilk_bucket"
+      "id": "vegandelight:tofu"
     },
     "title": {
-      "text": "A strange liquid"
+      "text": "A new lifestyle"
     },
     "description": {
-      "text": "Cook the soybean with water"
+      "text": "Cook a soy milk with salt"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,25 +16,25 @@
     "hidden": false
   },
   "criteria": {
-    "got_soymilk": {
+    "got_tofu": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:soymilk_bucket"]
+            "items": ["vegandelight:tofu"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_soymilk"]
+    ["got_tofu"]
   ],
   "rewards": {
     "recipes": [
-              "vegandelight:tofu",
-              "vegandelight:soymilk_bottle"
-            ],
+      "vegandelight:tofu_slices",
+      "vegandelight:smoked_tofu"
+    ],
     "experience": 100
   }
 }

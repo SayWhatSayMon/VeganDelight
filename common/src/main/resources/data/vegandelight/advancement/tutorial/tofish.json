@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/minced_tofu",
+  "parent": "vegandelight:tutorial/tofu_slices",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu_patty"
+      "id": "vegandelight:tofish"
     },
     "title": {
-      "text": "Burger time"
+      "text": "It's fishy"
     },
     "description": {
-      "text": "Cook minced tofu"
+      "text": "Craft tofu slices with kelp"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,19 +16,19 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofu_patty": {
+    "got_tofish": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofu_patty"]
+            "items": ["vegandelight:tofish"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofu_patty"]
+    ["got_tofish"]
   ],
   "rewards": {
     "experience": 100

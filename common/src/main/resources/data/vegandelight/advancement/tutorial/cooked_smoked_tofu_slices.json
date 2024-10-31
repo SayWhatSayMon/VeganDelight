@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/tofu_slices",
+  "parent": "vegandelight:tutorial/smoked_tofu_slices",
   "display": {
     "icon": {
-      "item": "vegandelight:tofish"
+      "id": "vegandelight:cooked_smoked_tofu_slices"
     },
     "title": {
-      "text": "It's fishy"
+      "text": "More cooking"
     },
     "description": {
-      "text": "Craft tofu slices with kelp"
+      "text": "Cook a smoked tofu slice"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,21 +16,24 @@
     "hidden": false
   },
   "criteria": {
-    "got_tofish": {
+    "got_cooked_smoked_tofu_slices": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:tofish"]
+            "items": ["vegandelight:cooked_smoked_tofu_slices"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_tofish"]
+    ["got_cooked_smoked_tofu_slices"]
   ],
   "rewards": {
+    "recipes": [
+      "vegandelight:cooked_smoked_tofu_slices"
+    ],
     "experience": 100
   }
 }

@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/tofu_slices",
+  "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "item": "vegandelight:minced_tofu"
+      "id": "vegandelight:cooked_tofish"
     },
     "title": {
-      "text": "It's even smaller"
+      "text": "It's less fishy"
     },
     "description": {
-      "text": "Slice a tofu slice"
+      "text": "Cook a tofish"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,19 +16,19 @@
     "hidden": false
   },
   "criteria": {
-    "got_minced_tofu": {
+    "got_cooked_tofish": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:minced_tofu"]
+            "items": ["vegandelight:cooked_tofish"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_minced_tofu"]
+    ["got_cooked_tofish"]
   ],
   "rewards": {
     "experience": 100

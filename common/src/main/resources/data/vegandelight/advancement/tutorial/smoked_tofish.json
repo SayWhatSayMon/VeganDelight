@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/smoked_tofu_slices",
+  "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "item": "vegandelight:cooked_smoked_tofu_slices"
+      "id": "vegandelight:smoked_tofish"
     },
     "title": {
-      "text": "More cooking"
+      "text": "It's even more fishy"
     },
     "description": {
-      "text": "Cook a smoked tofu slice"
+      "text": "Smoke a tofish"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,24 +16,21 @@
     "hidden": false
   },
   "criteria": {
-    "got_cooked_smoked_tofu_slices": {
+    "got_smoked_tofish": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:cooked_smoked_tofu_slices"]
+            "items": ["vegandelight:smoked_tofish"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_cooked_smoked_tofu_slices"]
+    ["got_smoked_tofish"]
   ],
   "rewards": {
-    "recipes": [
-      "vegandelight:cooked_smoked_tofu_slices"
-    ],
     "experience": 100
   }
 }

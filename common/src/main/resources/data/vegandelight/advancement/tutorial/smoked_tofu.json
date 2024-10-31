@@ -1,39 +1,39 @@
 {
+  "parent": "vegandelight:tutorial/tofu",
   "display": {
     "icon": {
-      "item": "vegandelight:soybean"
+      "id": "vegandelight:smoked_tofu"
     },
     "title": {
-      "text": "A strange bean"
+      "text": "Smoke it"
     },
     "description": {
-      "text": "Get your first soybean"
+      "text": "Smoke a tofu"
     },
     "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
-    "hidden": false,
-    "background": "minecraft:textures/block/cherry_planks.png"
+    "hidden": false
   },
   "criteria": {
-    "got_soybean": {
+    "got_smoked_tofu": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:soybean"]
+            "items": ["vegandelight:smoked_tofu"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_soybean"]
+    ["got_smoked_tofu"]
   ],
   "rewards": {
     "recipes": [
-              "vegandelight:soymilk"
-            ],
+      "vegandelight:smoked_tofu_slices"
+    ],
     "experience": 100
   }
 }

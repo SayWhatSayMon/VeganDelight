@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/tofu_slices",
+  "parent": "vegandelight:tutorial/root",
   "display": {
     "icon": {
-      "item": "vegandelight:cooked_tofu_slices"
+      "id": "vegandelight:soymilk_bucket"
     },
     "title": {
-      "text": "Cook it again?"
+      "text": "A strange liquid"
     },
     "description": {
-      "text": "Cook tofu slices"
+      "text": "Cook the soybean with water"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,21 +16,25 @@
     "hidden": false
   },
   "criteria": {
-    "got_cooked_tofu_slices": {
+    "got_soymilk": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:cooked_tofu_slices"]
+            "items": ["vegandelight:soymilk_bucket"]
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_cooked_tofu_slices"]
+    ["got_soymilk"]
   ],
   "rewards": {
+    "recipes": [
+              "vegandelight:tofu",
+              "vegandelight:soymilk_bottle"
+            ],
     "experience": 100
   }
 }

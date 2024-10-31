@@ -1,14 +1,14 @@
 {
-  "parent": "vegandelight:tutorial/tofish",
+  "parent": "vegandelight:tutorial/minced_tofu",
   "display": {
     "icon": {
-      "item": "vegandelight:smoked_tofish"
+      "id": "vegandelight:tofu_patty"
     },
     "title": {
-      "text": "It's even more fishy"
+      "text": "Burger time"
     },
     "description": {
-      "text": "Smoke a tofish"
+      "text": "Cook minced tofu"
     },
     "frame": "task",
     "show_toast": true,
@@ -16,19 +16,19 @@
     "hidden": false
   },
   "criteria": {
-    "got_smoked_tofish": {
+    "got_tofu_patty": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "items": ["vegandelight:smoked_tofish"]
+            "items": "vegandelight:tofu_patty"
           }
         ]
       }
     }
   },
   "requirements": [
-    ["got_smoked_tofish"]
+    ["got_tofu_patty"]
   ],
   "rewards": {
     "experience": 100
