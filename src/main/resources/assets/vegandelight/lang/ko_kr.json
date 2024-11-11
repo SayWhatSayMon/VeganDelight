@@ -1,0 +1,47 @@
+{
+  "item.vegandelight.tofu": "두부",
+  "item.vegandelight.silken_tofu": "연두부",
+  "item.vegandelight.minced_tofu": "다진 두부",
+  "item.vegandelight.tofu_slices": "두부 조각",
+  "item.vegandelight.tofish": "두부생선",
+  "item.vegandelight.tofish_slices": "두부생선 조각",
+  "item.vegandelight.tofish_roll": "두부생선 초밥",
+  "item.vegandelight.tofu_patty": "두부 패티",
+
+  "item.vegandelight.smoked_tofu": "훈제 두부",
+  "item.vegandelight.smoked_tofish": "훈제 두부생선",
+  "item.vegandelight.smoked_tofish_roll": "훈제 두부생선 초밥",
+  "item.vegandelight.smoked_tofu_slices": "훈제 두부 조각",
+
+  "item.vegandelight.cooked_tofu": "구운 두부",
+  "item.vegandelight.cooked_tofu_slices": "구운 두부 조각",
+  "item.vegandelight.cooked_tofish": "구운 두부생선",
+
+  "item.vegandelight.cooked_smoked_tofu": "구운 훈제 두부",
+  "item.vegandelight.cooked_smoked_tofish": "구운 훈제 두부생선",
+  "item.vegandelight.cooked_smoked_tofu_slices": "구운 훈제 두부 조각",
+
+  "item.vegandelight.salt": "소금",
+  "item.vegandelight.soybean": "콩",
+  "fluid_type.vegandelight.soymilk": "두유",
+  "item.vegandelight.soymilk_bottle": "두유 병",
+  "item.vegandelight.soymilk_bucket": "두유 양동이",
+  "item.vegandelight.leather_substitute": "대체 가죽",
+
+  "farmersdelight.tooltip.soymilk_bottle": "효과를 1개 제거합니다",
+  "farmersdelight.tooltip.soymilk_bucket": "효과를 1개 제거합니다",
+
+  "item.vegandelight.pasta_with_tofuballs": "두부볼 파스타",
+  "item.vegandelight.roasted_tofu_chops": "구운 두부",
+  "item.vegandelight.tofu_burger": "두부 버거",
+  "item.vegandelight.tofu_sandwich": "두부 샌드위치",
+
+  "item.vegandelight.applesauce": "사과 소스",
+  "item.vegandelight.applesauce_bucket": "사과 소스 양동이",
+  "fluid_type.vegandelight.applesauce": "사과 소스",
+
+  "block.vegandelight.soybean_bag": "콩 자루",
+  "block.vegandelight.wild_soybean": "야생 콩",
+
+  "creativetab.vegan_tab": "Vegan Delight"
+}
