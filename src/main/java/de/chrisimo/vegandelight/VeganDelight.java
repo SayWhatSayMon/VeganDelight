@@ -19,6 +19,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -41,13 +42,21 @@ public class VeganDelight
         ModCreativeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-        ModFluidTypes.register(modEventBus);
-        ModFluids.register(modEventBus);
+
+        if (shouldLoadFluids()) {
+            ModFluidTypes.register(modEventBus);
+            ModFluids.register(modEventBus);
+        }
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    private boolean shouldLoadFluids()
+    {
+        return ModList.get().isLoaded("create_central_kitchen");
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
