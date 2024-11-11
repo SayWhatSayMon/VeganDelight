@@ -1,18 +1,22 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "key": {
-    "#": {
+  "ingredients": [
+    {
       "item": "vegandelight:soymilk_bucket"
     },
-    "X": {
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
       "item": "minecraft:glass_bottle"
     }
-  },
-  "pattern": [
-    "#XX",
-    "XX ",
-    "   "
   ],
   "result": {
     "count": 4,
