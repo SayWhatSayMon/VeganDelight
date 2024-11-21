@@ -1,6 +1,5 @@
 package de.chrisimo.vegandelight;
 
-import com.mojang.logging.LogUtils;
 import de.chrisimo.vegandelight.block.ModBlocks;
 import de.chrisimo.vegandelight.fluid.ModFluidTypes;
 import de.chrisimo.vegandelight.fluid.ModFluids;
@@ -14,16 +13,15 @@ import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.event.village.VillagerTradesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.slf4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -85,6 +83,12 @@ public class VeganDelight
                         0.05f // Price multiplier
                 ));
             }
+        }
+
+        @SubscribeEvent
+        public static void onRecipesLoaded(@NotNull ServerStartingEvent event) {
+            RecipeManipulation.registerSubstitute(Items.LEATHER, ModItems.LEATHER_SUBSTITUTE.get());
+            RecipeManipulation.load(event.getServer().getRecipeManager());
         }
     }
 }
