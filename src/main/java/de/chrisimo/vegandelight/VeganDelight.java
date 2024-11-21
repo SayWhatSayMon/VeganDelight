@@ -48,21 +48,13 @@ public class VeganDelight
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
+    private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.WILD_SOYBEAN.getId(), ModBlocks.POTTED_WILD_SOYBEAN);
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.WILD_SOYBEAN.getId(),
+                    ModBlocks.POTTED_WILD_SOYBEAN);
+            ComposterBlock.COMPOSTABLES.put(ModItems.SOYBEAN.get(), 0.65f); // Adjust the chance as needed
+            RatsCompat.init();
         });
-    }
-
-    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
-    public static class ModEventSubscriber {
-        @SubscribeEvent
-        public static void onCommonSetup(FMLCommonSetupEvent event) {
-            event.enqueueWork(() -> {
-                ComposterBlock.COMPOSTABLES.put(ModItems.SOYBEAN.get(), 0.65f); // Adjust the chance as needed
-            });
-        }
     }
 
     @Mod.EventBusSubscriber(modid = MODID)
@@ -70,6 +62,7 @@ public class VeganDelight
         public newSubscriber() {
             MinecraftForge.EVENT_BUS.register(this);
         }
+
         @SubscribeEvent
         public static void onVillagerTrades(VillagerTradesEvent event) {
             if (event.getType() == VillagerProfession.FARMER) {
