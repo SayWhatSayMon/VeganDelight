@@ -23,6 +23,8 @@ public class VeganDelightMod {
         VeganFluids.initialise();
         VeganBlocks.initialise();
 
+        RatsCompat.initialise();
+
         registerBiomeModifers();
         registerTrades();
         registerRecipeModifiers();
