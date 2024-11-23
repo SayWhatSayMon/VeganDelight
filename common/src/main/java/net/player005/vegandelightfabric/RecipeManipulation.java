@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric;
 
+import com.google.common.base.Stopwatch;
 import net.minecraft.core.NonNullList;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -17,7 +18,7 @@ public class RecipeManipulation {
     private static final Map<Item, Ingredient.Value> registeredSubstitutes = new HashMap<>();
 
     static void load(RecipeManager recipeManager) {
-        var startTime = System.nanoTime();
+        var stopwatch = Stopwatch.createStarted();
         var allRecipes = recipeManager.getRecipes();
 
         VeganDelightMod.logger.info("Scanning {} recipes for modification", allRecipes.size());
@@ -38,8 +39,7 @@ public class RecipeManipulation {
             }
         }
 
-        long totalTimeMS = (System.nanoTime() - startTime) / 1_000_000;
-        VeganDelightMod.logger.info("Modified {} recipe ingredients in {}ms", ingredientsChanged, totalTimeMS);
+        VeganDelightMod.logger.info("Modified {} recipe ingredients in {}", ingredientsChanged, stopwatch);
     }
 
     private static void addSubstitute(Ingredient ingredient, Ingredient.Value substitute) {
