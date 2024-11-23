@@ -22,6 +22,11 @@
       <option name="url" value="file:$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
     <remote-repository>
+      <option name="id" value="LoomLocalRemappedMods" />
+      <option name="name" value="LoomLocalRemappedMods" />
+      <option name="url" value="file:$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="LoomGlobalMinecraft" />
       <option name="name" value="LoomGlobalMinecraft" />
       <option name="url" value="file:$USER_HOME$/.gradle/caches/fabric-loom/minecraftMaven/" />
@@ -30,6 +35,11 @@
       <option name="id" value="LoomGlobalMinecraft" />
       <option name="name" value="LoomGlobalMinecraft" />
       <option name="url" value="file:$USER_HOME$/.gradle/caches/fabric-loom/minecraftMaven/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="LoomLocalMinecraft" />
+      <option name="name" value="LoomLocalMinecraft" />
+      <option name="url" value="file:$PROJECT_DIR$/.gradle/loom-cache/minecraftMaven/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="LoomLocalMinecraft" />
@@ -117,19 +127,9 @@
       <option name="url" value="file:$USER_HOME$/.m2/repository/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="LoomLocalRemappedMods" />
-      <option name="name" value="LoomLocalRemappedMods" />
-      <option name="url" value="file:/var/home/wendelin/IdeaProjects/VeganDelightFabric/.gradle/loom-cache/remapped_mods/" />
-    </remote-repository>
-    <remote-repository>
       <option name="id" value="LoomGlobalMinecraft" />
       <option name="name" value="LoomGlobalMinecraft" />
-      <option name="url" value="file:/var/home/wendelin/.gradle/caches/fabric-loom/minecraftMaven/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="LoomLocalMinecraft" />
-      <option name="name" value="LoomLocalMinecraft" />
-      <option name="url" value="file:/var/home/wendelin/IdeaProjects/VeganDelightFabric/.gradle/loom-cache/minecraftMaven/" />
+      <option name="url" value="file:$PROJECT_DIR$/../../.gradle/caches/fabric-loom/minecraftMaven/" />
     </remote-repository>
   </component>
 </project>

@@ -22,10 +22,9 @@ public class VeganCreativeTab {
         Collections.addAll(allItemLike, VeganItems.allItems);
     }
 
-    @SuppressWarnings("DataFlowIssue")
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY = ResourceKey.create(
             Registries.CREATIVE_MODE_TAB,
-            ResourceLocation.tryBuild(VeganDelightMod.modID, "vegan_ingredients")
+            ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_ingredients")
     );
 
     public static void register() {
