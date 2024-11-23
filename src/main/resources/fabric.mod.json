@@ -14,9 +14,9 @@
       "net.player005.vegandelightfabric.VeganDelightFabric"
     ],
     "client": [
-      "net.player005.vegandelightfabric.client.VeganDelightClient"
     ]
   },
+  "accessWidener" : "vegandelight.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
