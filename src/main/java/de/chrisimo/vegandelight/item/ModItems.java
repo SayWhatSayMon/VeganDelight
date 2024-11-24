@@ -6,6 +6,7 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.MilkBucketItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -113,7 +114,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> SOYMILK_BUCKET = ITEMS.register("soymilk_bucket",
-            () -> new MilkBottleItem(new Item.Properties()
+            () -> new MilkBucketItem(new Item.Properties()
                     .craftRemainder(Items.BUCKET)
                     .stacksTo(1)));
 
