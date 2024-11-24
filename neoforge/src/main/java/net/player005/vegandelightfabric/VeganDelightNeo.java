@@ -14,7 +14,9 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
@@ -57,6 +59,8 @@ public class VeganDelightNeo {
             VeganDelightMod.registerSubstitutes();
             RecipeManipulation.load(event.getServer().getRecipeManager());
         });
+
+        eventBus.addListener(FMLCommonSetupEvent.class, event -> RatsCompat.init());
     }
 
     @SubscribeEvent
@@ -80,12 +84,14 @@ public class VeganDelightNeo {
         }
 
         @Override
-        public void registerVillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing) {
+        public void registerVillagerTrade(VillagerProfession profession, int level,
+                                          VillagerTrades.ItemListing itemListing) {
             registeredTrades.add(new VillagerTrade(profession, level, itemListing));
         }
 
         @Override
-        public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied, GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
+        public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
+                                          GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
         }
 
         @Override
@@ -120,6 +126,11 @@ public class VeganDelightNeo {
                     flowingRef.get());
 
             return flowingRef.get();
+        }
+
+        @Override
+        public boolean isModLoaded(String name) {
+            return ModList.get().isLoaded(name);
         }
 
     }

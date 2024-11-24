@@ -35,6 +35,8 @@ public class VeganDelightMod {
         VeganBlocks.initialise();
         VeganCreativeTab.register();
 
+        RatsCompat.init();
+
         registerBiomeModifers();
         registerTrades();
         registerCompostables();

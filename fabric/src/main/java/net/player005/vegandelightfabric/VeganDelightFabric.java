@@ -37,6 +37,10 @@ public class VeganDelightFabric implements ModInitializer {
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
+        @Override
+        public boolean isModLoaded(String name) {
+            return FabricLoader.getInstance().isModLoaded(name);
+        }
 
         @Override
         public FlowingFluid registerFluids(String name, FluidProperties properties) {

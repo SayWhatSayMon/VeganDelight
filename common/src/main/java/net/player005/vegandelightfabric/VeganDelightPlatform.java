@@ -24,4 +24,6 @@ public interface VeganDelightPlatform {
                                GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier);
 
     FlowingFluid registerFluids(String name, FluidProperties properties);
+
+    boolean isModLoaded(String name);
 }
