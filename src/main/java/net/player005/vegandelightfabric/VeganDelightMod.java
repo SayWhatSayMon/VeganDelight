@@ -25,9 +25,14 @@ public class VeganDelightMod {
 
         registerBiomeModifers();
         registerTrades();
+        registerRecipeModifiers();
 
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
+    }
+
+    private static void registerRecipeModifiers() {
+        RecipeManipulation.registerSubstitute(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
     }
 
     private static void registerBiomeModifers() {
