@@ -36,5 +36,5 @@ Join our [Discord](https://discord.gg/RPTb6wXktx) or create an Issue on [GitHub
 And for great Server hostings visit [Kinetic Hosting](https://billing.kinetichosting.net/aff.php?aff=642)!
 
 <p align="center">
-  <img src="https://i.imgur.io/sZhQZIv_d.webp?maxwidth=640&shape=thumb&fidelity=medium" />
+  <img src="https://media.forgecdn.net/attachments/description/928290/description_6557be4d-b2d2-4841-bca0-d44c393653f3.png" />
 </p>
