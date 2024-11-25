@@ -23,6 +23,7 @@ As well as many advancements, more items and recipes and compatibility with the 
 Credits:
 --------
 
+*   [@SayWhatSayMon](https://modrinth.com/user/SayWhatSayMon) for creating and developping this great mod
 *   [@Player005](https://www.curseforge.com/linkout?remoteUrl=https://modrinth.com/user/Player005) for doing an awesome job working on this mod
 *   [@ladenedge](https://www.curseforge.com/linkout?remoteUrl=https://github.com/ladenedge) for previous updates
 *   [@vectorwing](https://www.curseforge.com/linkout?remoteUrl=https://modrinth.com/user/vectorwing) for making Farmer's Delight
