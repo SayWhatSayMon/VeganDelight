@@ -1,5 +1,6 @@
 {
   "values": [
-    "vegandelight:soymilk_bucket"
+    "#forge:milk/milk",
+    "#forge:milk/milk_bottle"
   ]
 }
