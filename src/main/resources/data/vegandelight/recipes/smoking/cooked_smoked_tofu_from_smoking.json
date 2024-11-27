@@ -4,7 +4,7 @@
   "cookingtime": 150,
   "experience": 0.35,
   "ingredient": {
-    "item": "vegandelight:smoked_tofu"
+    "item": "vegandelight:cooked_tofu"
   },
   "result": "vegandelight:cooked_smoked_tofu"
 }
