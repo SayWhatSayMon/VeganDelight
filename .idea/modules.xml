@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelight.main.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelight.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.client.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/IdeaProjects.VeganDelightFabric.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/VeganDelight.client.iml" filepath="$PROJECT_DIR$/.idea/modules/VeganDelight.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/885898669/VeganDelightFabric.client.iml" filepath="$PROJECT_DIR$/.idea/modules/885898669/VeganDelightFabric.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VeganDelightFabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/VeganDelightFabric.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VeganDelightFabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/VeganDelightFabric.test.iml" />
