@@ -7,10 +7,10 @@
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
           <set>
-            <option value="/var/home/wendelin/IdeaProjects/VeganDelightFabric" />
-            <option value="/var/home/wendelin/IdeaProjects/VeganDelightFabric/common" />
-            <option value="/var/home/wendelin/IdeaProjects/VeganDelightFabric/fabric" />
-            <option value="/var/home/wendelin/IdeaProjects/VeganDelightFabric/neoforge" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/fabric" />
+            <option value="$PROJECT_DIR$/neoforge" />
           </set>
         </option>
       </GradleProjectSettings>
