@@ -1,11 +1,9 @@
 
 {
-  "bookshelf:load_conditions": [
+  "conditions": [
     {
-      "type": "bookshelf:item_exists",
-      "values": [
-        "vegandelight:soybean"
-      ]
+      "type": "forge:mod_loaded",
+      "modid": "botanypots"
     }
   ],
   "type": "botanypots:crop",
