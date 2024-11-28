@@ -1,1 +1,11 @@
+*/run/
 /run/
+*/runs/
+*/build/
+*/.gradle/
+
+.idea/modules/
+.idea/modules.xml
+.idea/shelf/
+.idea/workspace.xml
+.idea/runConfigurations
