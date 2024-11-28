@@ -1,7 +1,11 @@
 */run/
-neoforge/runs/
+/run/
+*/runs/
 */build/
 */.gradle/
+
 .idea/modules/
 .idea/modules.xml
-/run/
+.idea/shelf/
+.idea/workspace.xml
+.idea/runConfigurations
