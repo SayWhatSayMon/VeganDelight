@@ -24,9 +24,9 @@ Credits:
 --------
 
 *   [@SayWhatSayMon](https://modrinth.com/user/SayWhatSayMon) for creating and developing this great mod
-*   [@Player005](https://www.curseforge.com/linkout?remoteUrl=https://modrinth.com/user/Player005) for doing an awesome job working on this mod
-*   [@ladenedge](https://www.curseforge.com/linkout?remoteUrl=https://github.com/ladenedge) for previous updates
-*   [@vectorwing](https://www.curseforge.com/linkout?remoteUrl=https://modrinth.com/user/vectorwing) for making Farmer's Delight
+*   [@Player005](https://modrinth.com/user/Player005) for doing an awesome job working on this mod
+*   [@ladenedge](https://github.com/ladenedge) for previous updates
+*   [@vectorwing](https://modrinth.com/user/vectorwing) for making Farmer's Delight
 *   Mojang for making this awesome game!
 
 If you find any bugs or have suggestions for improvements:
