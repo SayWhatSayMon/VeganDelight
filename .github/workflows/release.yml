@@ -28,6 +28,9 @@ jobs:
         with:
           cache-read-only: false
 
+      - name: Make gradle wrapper executable
+        run: chmod +x ./gradlew
+
       - name: Execute Gradle build
         run: ./gradlew build
 
