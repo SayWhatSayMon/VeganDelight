@@ -1,21 +1,16 @@
-# Action copied from sodium - https://github.com/CaffeineMC/sodium-fabric/blob/dev/.github/workflows/build-commit.yml
-# -> made by Jellysquid and protected under the polyform shield license
+name: Build and Release
 
-name: Java CI with Gradle
-
-on: [ push, pull_request ]
+on:
+  release:
+    types:
+      - published
 
 jobs:
   build:
-
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
-
     steps:
-      - name: Extract current branch name
-        shell: bash
-        # bash pattern expansion to grab branch name without slashes
-        run: ref="${GITHUB_REF#refs/heads/}" && echo "branch=${ref////-}" >> $GITHUB_OUTPUT
-        id: ref
       - name: Checkout sources
         uses: actions/checkout@v4
 
@@ -36,8 +31,20 @@ jobs:
       - name: Execute Gradle build
         run: ./gradlew build
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+      - name: Upload artifacts to Modrinth and Curseforge
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          name: vegan-delight-fabric-artifacts-${{ steps.ref.outputs.branch }}
-          path: build/libs/*.jar
+          modrinth-id: Na8nA0jA
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          curseforge-id: 928290
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: build/libs/!(*-@(dev|sources|all)).jar
+          game-versions: ">=1.20"
+
+          version-type: release
+          loaders: fabric quilt
+          version-resolver: latest
