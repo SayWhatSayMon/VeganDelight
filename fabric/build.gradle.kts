@@ -1,5 +1,8 @@
 @file:Suppress("UnstableApiUsage")
 
+import net.fabricmc.loom.task.RemapJarTask
+
+
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
 val PARCHMENT_MC_VERSION: String by rootProject.extra
@@ -81,6 +84,15 @@ tasks {
             )
         }
     }
+
+    // put all artifacts in the right directory
+    withType<Jar> {
+        destinationDirectory = rootDir.resolve("build").resolve("libs_fabric")
+    }
+    withType<RemapJarTask> {
+        destinationDirectory = rootDir.resolve("build").resolve("libs_fabric")
+    }
+
 
     named("compileTestJava").configure {
         enabled = false

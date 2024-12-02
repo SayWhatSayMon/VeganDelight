@@ -1,5 +1,5 @@
 val MOD_ID by extra { "vegandelight" }
-val MOD_VERSION by extra { "1.1.1" }
+val MOD_VERSION by extra { "1.4.0" }
 val MOD_NAME by extra { "Vegan Delight" }
 
 val MINECRAFT_VERSION by extra { "1.21.1" }

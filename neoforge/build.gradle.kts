@@ -48,6 +48,11 @@ tasks {
         from(main.output.resourcesDir)
     }
 
+    // put all artifacts in the right directory
+    withType<Jar> {
+        destinationDirectory = rootDir.resolve("build").resolve("libs_neoforge")
+    }
+
     named("compileTestJava").configure {
         enabled = false
     }
