@@ -43,7 +43,6 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: build/libs/!(*-@(dev|sources|all)).jar
-          game-versions: ">=1.20"
 
           version-type: release
           loaders: forge
