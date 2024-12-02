@@ -42,7 +42,7 @@ jobs:
           curseforge-id: 928290
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: build/libs_forge/!(*-@(dev|sources|all)).jar
+          files: build/libs_neoforge/!(*-@(dev|sources|all)).jar
           game-versions: ">=1.21"
 
           version-type: release
