@@ -46,12 +46,10 @@ jobs:
           game-versions: ">=1.21"
 
           version-type: release
-          loaders: forge
+          loaders: neoforge
           version-resolver: latest
         
-          dependencies: |
-            farmers-delight-refabricated
-            farmers-delight-fabric(incompatible)
+          dependencies: farmers-delight
 
       - name: Upload fabric artifacts to Modrinth and GitHub
         uses: Kir-Antipov/mc-publish@v3.3
@@ -63,7 +61,7 @@ jobs:
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          files: build/libs_forge/!(*-@(dev|sources|all)).jar
+          files: build/libs_fabric/!(*-@(dev|sources|all)).jar
           
           version-type: release
           loaders: fabric quilt
