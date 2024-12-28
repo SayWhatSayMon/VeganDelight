@@ -22,7 +22,6 @@ public interface RecipeFilter {
      * The main (and only) method of a RecipeFilter
      *
      * @param recipe         the given recipe to test
-     * @param registryAccess
      * @return if the test was successful
      */
     boolean shouldApply(RecipeHolder<?> recipe, HolderLookup.Provider registryAccess);
@@ -46,14 +45,14 @@ public interface RecipeFilter {
     /**
      * Returns a recipe filter that filters for recipes that create the given result item.
      */
-    static RecipeFilter resultItemIs(Item item) { // TODO registry access
+    static RecipeFilter resultItemIs(Item item) {
         return (recipe, registryAccess) -> recipe.value().getResultItem(registryAccess).is(item);
     }
 
     /**
      * Returns a recipe filter that filters for recipes that create a result item contained in the given tag.
      */
-    static RecipeFilter resultItemIs(TagKey<Item> itemTag) { // TODO registry access
+    static RecipeFilter resultItemIs(TagKey<Item> itemTag) {
         return (recipe, registryAccess) -> recipe.value().getResultItem(registryAccess).is(itemTag);
     }
 
