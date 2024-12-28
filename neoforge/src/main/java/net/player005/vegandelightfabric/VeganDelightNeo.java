@@ -29,7 +29,7 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeManipulation;
+import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -58,7 +58,7 @@ public class VeganDelightNeo {
 
         NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event -> {
             VeganDelightMod.registerSubstitutes();
-            RecipeManipulation.load(event.getServer().getRecipeManager());
+            RecipeModification.init(event.getServer().getRecipeManager());
         });
 
         eventBus.addListener(FMLCommonSetupEvent.class, event -> RatsCompat.init());

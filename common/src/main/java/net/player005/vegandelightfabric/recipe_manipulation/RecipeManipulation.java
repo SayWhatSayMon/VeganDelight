@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
+@Deprecated(forRemoval = true)
 public class RecipeManipulation {
     private static final Map<Item, Ingredient.Value> registeredSubstitutes = new HashMap<>();
 

@@ -14,8 +14,8 @@ import java.util.List;
 /**
  * A helper class for modifying recipes easily.
  *
- * @see RecipeModification#registerModifier(IRecipeModifier)
- * @see IRecipeModifier
+ * @see RecipeModification#registerModifier(RecipeModifier)
+ * @see RecipeModifier
  */
 public class ModificationHelper {
 

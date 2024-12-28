@@ -4,6 +4,10 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import org.apache.commons.lang3.time.StopWatch;
+import org.jetbrains.annotations.ApiStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,18 +16,20 @@ import java.util.function.Consumer;
 /**
  * The main class for recipe modifications, containing some utility methods.
  *
- * @see #registerModifier(IRecipeModifier)
+ * @see #registerModifier(RecipeModifier)
  * @see #removeRecipe(RecipeHolder)
  * @see #forAllRecipes(Consumer)
  */
 public abstract class RecipeModification {
+
+    private static final Logger logger = LoggerFactory.getLogger(RecipeModification.class);
 
     private static final NonNullList<Consumer<RecipeManager>> recipeManagerCallbacks = NonNullList.create();
     private static final NonNullList<Consumer<RecipeHolder<?>>> recipeIterationCallbacks = NonNullList.create();
     private static final Map<RecipeFilter, Consumer<RecipeHolder<?>>> filteredRecipeCallbacks = new HashMap<>();
 
     private static final NonNullList<ResourceLocation> toRemove = NonNullList.create();
-    private static final NonNullList<IRecipeModifier> modifiers = NonNullList.create();
+    private static final NonNullList<RecipeModifier> modifiers = NonNullList.create();
 
     /**
      * This method can be used to have some code be executed when the server is starting, right before
@@ -74,25 +80,28 @@ public abstract class RecipeModification {
     }
 
     /**
-     * Registers a {@link IRecipeModifier} to be applied when loading recipes.
+     * Registers a {@link RecipeModifier} to be applied when loading recipes.
      */
-    public static void registerModifier(IRecipeModifier recipeModifier) {
+    public static void registerModifier(RecipeModifier recipeModifier) {
         modifiers.add(recipeModifier);
     }
 
     /**
      * Internal method that should be called on every datapack reload.
-     * Initialises all registered {@link IRecipeModifier}s, calls all {@link #onRecipeInit(Consumer)}
+     * Initialises all registered {@link RecipeModifier}s, calls all {@link #onRecipeInit(Consumer)}
      * callbacks and removes recipes registered for removal using {@link #removeRecipe(RecipeHolder)}
      */
-    static void init(RecipeManager recipeManager) {
+    @ApiStatus.Internal
+    public static void init(RecipeManager recipeManager) {
         for (Consumer<RecipeManager> recipeManagerCallback : recipeManagerCallbacks) {
             recipeManagerCallback.accept(recipeManager);
         }
 
+        var timer = StopWatch.createStarted();
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
             mainRecipeLoop(recipeHolder, recipeManager);
         }
+        logger.info("Recipe modification done in {}", timer);
     }
 
     // Internal function that's called for all recipes
@@ -110,7 +119,7 @@ public abstract class RecipeModification {
         }
 
         // apply recipe modifiers
-        for (IRecipeModifier modifier : modifiers) {
+        for (RecipeModifier modifier : modifiers) {
             if (!modifier.getFilter().shouldApply(recipeHolder, registryAccess)) continue;
             var helper = new ModificationHelper(recipeHolder);
             modifier.apply(recipeHolder.value(), helper);

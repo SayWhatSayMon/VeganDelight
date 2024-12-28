@@ -7,9 +7,9 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * A recipe modifier.
- * To use this, implement and call {@link RecipeModification#registerModifier(IRecipeModifier)}.
+ * To use this, implement and call {@link RecipeModification#registerModifier(RecipeModifier)}.
  */
-public interface IRecipeModifier {
+public interface RecipeModifier {
     /**
      * An optional identifier of this modifier.
      */
@@ -27,5 +27,5 @@ public interface IRecipeModifier {
      * The main method to implement, which modifies the given recipe by using the methods of the given
      * {@link ModificationHelper}
      */
-    void apply(Recipe<?> recipe, ModificationHelper batch);
+    void apply(Recipe<?> recipe, ModificationHelper helper);
 }
