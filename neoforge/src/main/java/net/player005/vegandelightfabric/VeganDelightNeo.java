@@ -29,6 +29,7 @@ import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
+import net.player005.vegandelightfabric.recipe_manipulation.RecipeManipulation;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

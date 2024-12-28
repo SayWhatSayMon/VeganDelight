@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
+import net.player005.vegandelightfabric.recipe_manipulation.RecipeManipulation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

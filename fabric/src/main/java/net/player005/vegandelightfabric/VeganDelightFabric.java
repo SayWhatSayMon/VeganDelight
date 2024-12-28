@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.client.VeganDelightClient;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
+import net.player005.vegandelightfabric.recipe_manipulation.RecipeManipulation;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 
 import java.util.concurrent.atomic.AtomicReference;

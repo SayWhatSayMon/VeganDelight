@@ -1,4 +1,4 @@
-package net.player005.vegandelightfabric;
+package net.player005.vegandelightfabric.recipe_manipulation;
 
 import com.google.common.base.Stopwatch;
 import net.minecraft.core.NonNullList;
@@ -8,6 +8,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
+import net.player005.vegandelightfabric.VeganDelightMod;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -17,7 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class RecipeManipulation {
     private static final Map<Item, Ingredient.Value> registeredSubstitutes = new HashMap<>();
 
-    static void load(RecipeManager recipeManager) {
+    public static void load(RecipeManager recipeManager) {
         var stopwatch = Stopwatch.createStarted();
         var allRecipes = recipeManager.getRecipes();
 
