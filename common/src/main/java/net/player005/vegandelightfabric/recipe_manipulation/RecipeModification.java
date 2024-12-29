@@ -1,10 +1,10 @@
 package net.player005.vegandelightfabric.recipe_manipulation;
 
+import com.google.common.base.Stopwatch;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
-import org.apache.commons.lang3.time.StopWatch;
 import org.jetbrains.annotations.ApiStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -97,7 +97,7 @@ public abstract class RecipeModification {
             recipeManagerCallback.accept(recipeManager);
         }
 
-        var timer = StopWatch.createStarted();
+        var timer = Stopwatch.createStarted();
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
             mainRecipeLoop(recipeHolder, recipeManager);
         }
