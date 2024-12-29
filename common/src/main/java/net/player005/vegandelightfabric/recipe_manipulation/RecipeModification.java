@@ -98,39 +98,37 @@ public abstract class RecipeModification {
         }
 
         var timer = Stopwatch.createStarted();
+        var modified = 0;
+
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
-            mainRecipeLoop(recipeHolder, recipeManager);
-        }
-        logger.info("Recipe modification done in {}", timer);
-    }
+            var registryAccess = recipeManager.registries;
 
-    // Internal function that's called for all recipes
-    private static void mainRecipeLoop(final RecipeHolder<?> recipeHolder,
-                                       final RecipeManager recipeManager) {
-        var registryAccess = recipeManager.registries;
+            // call registered callbacks
+            for (Consumer<RecipeHolder<?>> recipeIterationCallback : recipeIterationCallbacks) {
+                recipeIterationCallback.accept(recipeHolder);
+            }
 
-        // call registered callbacks
-        for (Consumer<RecipeHolder<?>> recipeIterationCallback : recipeIterationCallbacks) {
-            recipeIterationCallback.accept(recipeHolder);
-        }
+            for (Map.Entry<RecipeFilter, Consumer<RecipeHolder<?>>> entry : filteredRecipeCallbacks.entrySet()) {
+                if (entry.getKey().shouldApply(recipeHolder, registryAccess)) entry.getValue().accept(recipeHolder);
+            }
 
-        for (Map.Entry<RecipeFilter, Consumer<RecipeHolder<?>>> entry : filteredRecipeCallbacks.entrySet()) {
-            if (entry.getKey().shouldApply(recipeHolder, registryAccess)) entry.getValue().accept(recipeHolder);
-        }
+            // apply recipe modifiers
+            for (RecipeModifier modifier : modifiers) {
+                if (!modifier.getFilter().shouldApply(recipeHolder, registryAccess)) continue;
+                var helper = new ModificationHelper(recipeHolder);
+                modifier.apply(recipeHolder.value(), helper);
+                modified++;
+            }
 
-        // apply recipe modifiers
-        for (RecipeModifier modifier : modifiers) {
-            if (!modifier.getFilter().shouldApply(recipeHolder, registryAccess)) continue;
-            var helper = new ModificationHelper(recipeHolder);
-            modifier.apply(recipeHolder.value(), helper);
-        }
-
-        for (ResourceLocation id : toRemove) {
-            if (recipeHolder.id().equals(id)) {
-                // remove recipe from both maps stored in RecipeManager
-                recipeManager.getRecipes().remove(recipeHolder); // remove from RecipeManager#byName
-                recipeManager.getOrderedRecipes().remove(recipeHolder); // remove from RecipeManager#byType
+            for (ResourceLocation id : toRemove) {
+                if (recipeHolder.id().equals(id)) {
+                    // remove recipe from both maps stored in RecipeManager
+                    recipeManager.getRecipes().remove(recipeHolder); // remove from RecipeManager#byName
+                    recipeManager.getOrderedRecipes().remove(recipeHolder); // remove from RecipeManager#byType
+                }
             }
         }
+        logger.info("Modified {} recipes in {}", modified, timer);
     }
+
 }
