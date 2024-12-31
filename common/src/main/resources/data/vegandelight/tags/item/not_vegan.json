@@ -1,0 +1,25 @@
+{
+  "values": [
+    "#c:foods/raw_meat",
+    "#c:foods/cooked_meat",
+    "#c:foods/raw_fish",
+    "#c:foods/cooked_fish",
+    "#c:eggs",
+    "#c:foods/milk",
+    "#c:buckets/milk",
+    "#c:buckets/entity_water",
+    "#c:leathers",
+    "#c:storage_blocks/bone_meal",
+    "#c:slime_balls",
+
+    "#minecraft:wool",
+    "#minecraft:wool_carpets",
+    "minecraft:rotten_flesh",
+    "minecraft:bone",
+    "minecraft:bone_meal",
+    "minecraft:string",
+    "minecraft:honey",
+    "minecraft:ink",
+    "minecraft:spider_eye"
+  ]
+}
