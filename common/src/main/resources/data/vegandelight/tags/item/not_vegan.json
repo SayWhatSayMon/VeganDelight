@@ -6,6 +6,7 @@
     "#c:foods/cooked_fish",
     "#c:eggs",
     "#c:foods/milk",
+    "#c:foods/honey",
     "#c:buckets/milk",
     "#c:buckets/entity_water",
     "#c:leathers",
@@ -18,8 +19,9 @@
     "minecraft:bone",
     "minecraft:bone_meal",
     "minecraft:string",
-    "minecraft:honey",
-    "minecraft:ink",
+    "minecraft:ink_sac",
+    "minecraft:rabbit_hide",
+    "minecraft:honeycomb",
     "minecraft:spider_eye"
   ]
 }
