@@ -29,7 +29,7 @@ public abstract class RecipeModification {
     private static final Map<RecipeFilter, Consumer<RecipeHolder<?>>> filteredRecipeCallbacks = new HashMap<>();
 
     private static final NonNullList<ResourceLocation> toRemove = NonNullList.create();
-    private static final NonNullList<RecipeModifier> modifiers = NonNullList.create();
+    private static NonNullList<RecipeModifier> modifiers = NonNullList.create();
 
     /**
      * This method can be used to have some code be executed when the server is starting, right before
@@ -131,4 +131,8 @@ public abstract class RecipeModification {
         logger.info("Modified {} recipes in {}", modified, timer);
     }
 
+    @ApiStatus.Internal
+    static void updateModifiers(NonNullList<RecipeModifier> modifiers) {
+        RecipeModification.modifiers = modifiers;
+    }
 }
