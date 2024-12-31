@@ -6,12 +6,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
+import net.player005.vegandelightfabric.recipe_manipulation.*;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,7 +47,17 @@ public class VeganDelightMod {
     }
 
     public static void registerSubstitutes() {
-        RecipeManipulation.registerSubstitute(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
+        RecipeModification.registerModifier(new RecipeModifier() {
+            @Override
+            public @NotNull RecipeFilter getFilter() {
+                return RecipeFilter.acceptsIngredient(Items.LEATHER.getDefaultInstance());
+            }
+
+            @Override
+            public void apply(Recipe<?> recipe, ModificationHelper helper) {
+                helper.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
+            }
+        });
     }
 
     public static void registerBiomeModifers() {

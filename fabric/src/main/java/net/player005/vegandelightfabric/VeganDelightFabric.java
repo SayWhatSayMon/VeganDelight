@@ -20,6 +20,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.client.VeganDelightClient;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
+import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -30,9 +31,9 @@ public class VeganDelightFabric implements ModInitializer {
     public void onInitialize() {
         VeganDelightMod.initialiseAll(new VeganDelightFabricPlatform());
 
-        ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeManipulation.load(server.getRecipeManager()));
+        ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeModification.init(server.getRecipeManager()));
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) ->
-                RecipeManipulation.load(server.getRecipeManager())
+                RecipeModification.init(server.getRecipeManager())
         );
     }
 

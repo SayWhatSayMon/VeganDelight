@@ -9,6 +9,7 @@ accessible class net/minecraft/world/item/crafting/Ingredient$TagValue
 accessible method net/minecraft/world/item/crafting/Ingredient$ItemValue <init> (Lnet/minecraft/world/item/ItemStack;)V
 accessible method net/minecraft/world/item/crafting/Ingredient$TagValue <init> (Lnet/minecraft/tags/TagKey;)V
 
+accessible field net/minecraft/world/item/crafting/RecipeManager registries Lnet/minecraft/core/HolderLookup$Provider;
 accessible field net/minecraft/world/item/crafting/Ingredient itemStacks [Lnet/minecraft/world/item/ItemStack;
 accessible field net/minecraft/world/item/crafting/Ingredient stackingIds Lit/unimi/dsi/fastutil/ints/IntList;
 accessible field net/minecraft/world/item/crafting/Ingredient values [Lnet/minecraft/world/item/crafting/Ingredient$Value;
