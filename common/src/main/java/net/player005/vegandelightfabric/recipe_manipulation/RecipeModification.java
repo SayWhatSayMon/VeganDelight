@@ -37,7 +37,7 @@ public abstract class RecipeModification {
     private static final NonNullList<ResourceLocation> toRemove = NonNullList.create();
     private static NonNullList<RecipeModifier> modifiers = NonNullList.create();
 
-    private static @UnknownNullability ImmutableMultimap<Item, Recipe<?>> recipesByResult;
+    private static @UnknownNullability ImmutableMultimap<Item, RecipeHolder<?>> recipesByResult;
 
     private static @UnknownNullability RecipeManager recipeManager;
 
@@ -112,10 +112,10 @@ public abstract class RecipeModification {
         var timer = Stopwatch.createStarted();
         var modified = 0;
 
-        var byResultBuilder = ImmutableMultimap.<Item, Recipe<?>>builder();
+        var byResultBuilder = ImmutableMultimap.<Item, RecipeHolder<?>>builder();
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
             var result = recipeHolder.value().getResultItem(getRegistryAccess());
-            byResultBuilder.put(result.getItem(), recipeHolder.value());
+            byResultBuilder.put(result.getItem(), recipeHolder);
         }
         recipesByResult = byResultBuilder.build();
 
@@ -179,7 +179,7 @@ public abstract class RecipeModification {
      *
      * @see #getRecipesByResult(Item)
      */
-    public static ImmutableMultimap<Item, Recipe<?>> getRecipesByResult() {
+    public static ImmutableMultimap<Item, RecipeHolder<?>> getRecipesByResult() {
         return recipesByResult;
     }
 
@@ -190,7 +190,7 @@ public abstract class RecipeModification {
      *
      * @see #getRecipesByResult()
      */
-    public static ImmutableCollection<Recipe<?>> getRecipesByResult(Item resultItem) {
+    public static ImmutableCollection<RecipeHolder<?>> getRecipesByResult(Item resultItem) {
         return recipesByResult.get(resultItem);
     }
 }
