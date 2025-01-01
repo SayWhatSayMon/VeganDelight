@@ -1,11 +1,17 @@
 package net.player005.vegandelightfabric.recipe_manipulation;
 
 import com.google.common.base.Stopwatch;
+import com.google.common.collect.ImmutableCollection;
+import com.google.common.collect.ImmutableMultimap;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.NonNullList;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeManager;
 import org.jetbrains.annotations.ApiStatus;
+import org.jetbrains.annotations.UnknownNullability;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +36,10 @@ public abstract class RecipeModification {
 
     private static final NonNullList<ResourceLocation> toRemove = NonNullList.create();
     private static NonNullList<RecipeModifier> modifiers = NonNullList.create();
+
+    private static @UnknownNullability ImmutableMultimap<Item, Recipe<?>> recipesByResult;
+
+    private static @UnknownNullability RecipeManager recipeManager;
 
     /**
      * This method can be used to have some code be executed when the server is starting, right before
@@ -93,12 +103,21 @@ public abstract class RecipeModification {
      */
     @ApiStatus.Internal
     public static void init(RecipeManager recipeManager) {
+        RecipeModification.recipeManager = recipeManager;
+
         for (Consumer<RecipeManager> recipeManagerCallback : recipeManagerCallbacks) {
             recipeManagerCallback.accept(recipeManager);
         }
 
         var timer = Stopwatch.createStarted();
         var modified = 0;
+
+        var byResultBuilder = ImmutableMultimap.<Item, Recipe<?>>builder();
+        for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
+            var result = recipeHolder.value().getResultItem(getRegistryAccess());
+            byResultBuilder.put(result.getItem(), recipeHolder.value());
+        }
+        recipesByResult = byResultBuilder.build();
 
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
             var registryAccess = recipeManager.registries;
@@ -134,5 +153,44 @@ public abstract class RecipeModification {
     @ApiStatus.Internal
     static void updateModifiers(NonNullList<RecipeModifier> modifiers) {
         RecipeModification.modifiers = modifiers;
+    }
+
+    /**
+     * Returns the Minecraft server's {@link RecipeManager} saved by this class - might be {@code null} in some cases
+     * (when the game is not fully initialised yet). <p>Safe to call after the {@link #onRecipeInit(Consumer)} callbacks
+     * were called
+     */
+    public static @UnknownNullability RecipeManager getRecipeManager() {
+        return recipeManager;
+    }
+
+    /**
+     * Returns the {@link RecipeManager}s registry access (a {@link HolderLookup.Provider}) -
+     * might be {@code null} in some cases (see {@link #getRecipeManager()} docs)
+     */
+    public static HolderLookup.@UnknownNullability Provider getRegistryAccess() {
+        return recipeManager.registries;
+    }
+
+    /**
+     * Get an (immutable) multimap from the result item to the recipes creating that item.
+     * Can only be called after recipe initialisation (i.e. after {@link #onRecipeInit(Consumer)}
+     * callbacks were called).
+     *
+     * @see #getRecipesByResult(Item)
+     */
+    public static ImmutableMultimap<Item, Recipe<?>> getRecipesByResult() {
+        return recipesByResult;
+    }
+
+    /**
+     * Returns all recipes that create the given result item.
+     * Can only be called after recipe initialisation (i.e. after {@link #onRecipeInit(Consumer)}
+     * callbacks were called).
+     *
+     * @see #getRecipesByResult()
+     */
+    public static ImmutableCollection<Recipe<?>> getRecipesByResult(Item resultItem) {
+        return recipesByResult.get(resultItem);
     }
 }
