@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
+import net.player005.vegandelightfabric.labels.VeganDataComponents;
 import net.player005.vegandelightfabric.recipe_manipulation.*;
 import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
@@ -37,6 +38,7 @@ public class VeganDelightMod {
         VeganFluids.initialise();
         VeganBlocks.initialise();
         VeganCreativeTab.register();
+        VeganDataComponents.initialise();
 
         RatsCompat.init();
 
