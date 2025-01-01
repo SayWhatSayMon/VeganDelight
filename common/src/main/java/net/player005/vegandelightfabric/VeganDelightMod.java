@@ -13,16 +13,14 @@ import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
+import net.player005.vegandelightfabric.labels.LabelUtils;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
 import net.player005.vegandelightfabric.recipe_manipulation.*;
 import org.jetbrains.annotations.NotNull;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class VeganDelightMod {
 
     public static String modID = "vegandelight";
-    public static final Logger logger = LoggerFactory.getLogger(modID);
     @SuppressWarnings("NotNullFieldNotInitialized")
     public static VeganDelightPlatform platform;
 
@@ -40,6 +38,7 @@ public class VeganDelightMod {
         VeganCreativeTab.register();
         VeganDataComponents.initialise();
 
+        RecipeModification.onRecipeInit(LabelUtils::init);
         RatsCompat.init();
 
         registerBiomeModifers();
@@ -85,5 +84,4 @@ public class VeganDelightMod {
                         12, 15, 0.1f
                 ));
     }
-
 }

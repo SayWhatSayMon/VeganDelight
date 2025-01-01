@@ -4,7 +4,9 @@
   "package": "net.player005.vegandelightfabric.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [],
-  "client": [],
+  "client": [
+    "ItemMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

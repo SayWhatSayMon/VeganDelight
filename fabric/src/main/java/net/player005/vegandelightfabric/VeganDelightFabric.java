@@ -84,7 +84,8 @@ public class VeganDelightFabric implements ModInitializer {
         }
 
         @Override
-        public void registerVillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing) {
+        public void registerVillagerTrade(VillagerProfession profession, int level,
+                                          VillagerTrades.ItemListing itemListing) {
             TradeOfferHelper.registerVillagerOffers(profession, level, (factories) -> factories.add(itemListing));
         }
     }
