@@ -32,6 +32,7 @@ dependencies {
         parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
     })
     compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1")!!)
 
     modCompileOnly("vectorwing:FarmersDelight:$FDRF_VERSION") {
         isTransitive = false
