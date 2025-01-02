@@ -103,22 +103,22 @@ public abstract class RecipeModification {
     @ApiStatus.Internal
     public static void init(RecipeManager recipeManager) {
         RecipeModification.recipeManager = recipeManager;
-
         var timer = Stopwatch.createStarted();
-        for (Consumer<RecipeManager> recipeManagerCallback : recipeManagerCallbacks) {
-            recipeManagerCallback.accept(recipeManager);
-        }
-        logger.debug("Executed {} recipe callbacks in {}", recipeManagerCallbacks.size(), timer);
-
-        timer.reset().start();
 
         var byResultBuilder = ImmutableMultimap.<Item, RecipeHolder<?>>builder();
         for (RecipeHolder<?> recipeHolder : recipeManager.getRecipes()) {
             var result = recipeHolder.value().getResultItem(getRegistryAccess());
             byResultBuilder.put(result.getItem(), recipeHolder);
         }
+
         recipesByResult = byResultBuilder.build();
         logger.debug("Built recipe by result map for {} recipes in {}", recipeManager.getRecipes().size(), timer);
+        timer.reset().start();
+
+        for (Consumer<RecipeManager> recipeManagerCallback : recipeManagerCallbacks) {
+            recipeManagerCallback.accept(recipeManager);
+        }
+        logger.debug("Executed {} recipe callbacks in {}", recipeManagerCallbacks.size(), timer);
 
         timer.reset().start();
         var modified = 0;
@@ -131,7 +131,7 @@ public abstract class RecipeModification {
                 recipeIterationCallback.accept(recipeHolder);
             }
 
-            for (Map.Entry<RecipeFilter, Consumer<RecipeHolder<?>>> entry : filteredRecipeCallbacks.entrySet()) {
+            for (var entry : filteredRecipeCallbacks.entrySet()) {
                 if (entry.getKey().shouldApply(recipeHolder, registryAccess)) entry.getValue().accept(recipeHolder);
             }
 
