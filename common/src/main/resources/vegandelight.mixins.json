@@ -3,10 +3,10 @@
   "minVersion": "0.8",
   "package": "net.player005.vegandelightfabric.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [],
-  "client": [
-    "ItemMixin"
+  "mixins": [
+    "ItemStackMixin"
   ],
+  "client": [],
   "server": [],
   "injectors": {
     "defaultRequire": 1
