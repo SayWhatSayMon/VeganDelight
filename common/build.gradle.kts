@@ -9,6 +9,7 @@ plugins {
 val MINECRAFT_VERSION: String by rootProject.extra
 val PARCHMENT_VERSION: String by rootProject.extra
 val PARCHMENT_MC_VERSION: String by rootProject.extra
+val FABRIC_LOADER_VERSION: String by rootProject.extra
 
 val FDRF_VERSION: String by rootProject.extra
 
@@ -31,6 +32,7 @@ dependencies {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
     })
+    modImplementation("net.fabricmc:fabric-loader:${FABRIC_LOADER_VERSION}")
     compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
     implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1")!!)
 
