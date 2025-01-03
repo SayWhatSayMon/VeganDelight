@@ -93,8 +93,8 @@ public class ModificationHelper {
      * Under the hood, this just calls {@link #replaceIngredientValues(Ingredient, Ingredient.Value[])}
      * to copy the data from the new ingredient to the existing one.
      */
-    public void replaceIngredient(Ingredient old, Ingredient neew) {
-        replaceIngredientValues(old, neew.values);
+    public void replaceIngredient(Ingredient old, Ingredient newIngredient) {
+        replaceIngredientValues(old, newIngredient.values);
     }
 
     /**
