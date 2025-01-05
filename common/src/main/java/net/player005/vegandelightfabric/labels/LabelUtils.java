@@ -1,7 +1,5 @@
 package net.player005.vegandelightfabric.labels;
 
-import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
-import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -11,14 +9,16 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class LabelUtils {
 
     /**
-     * A map of items to whether they are vegan or not.
+     * A set of items that are not vegan.
      */
-    public static final Object2BooleanMap<Item> veganFromRecipes = new Object2BooleanOpenHashMap<>();
+    public static final Set<Item> nonVeganItems = new HashSet<>();
 
     public static VeganStatus isVegan(ItemStack itemStack) {
         var component = itemStack.getComponents().get(VeganDataComponents.vegan);
@@ -27,9 +27,7 @@ public class LabelUtils {
         if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
         if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
 
-        return veganFromRecipes.containsKey(itemStack.getItem()) ?
-                VeganStatus.fromBoolean(veganFromRecipes.getBoolean(itemStack.getItem())) :
-                VeganStatus.UNKNOWN;
+        return nonVeganItems.contains(itemStack.getItem()) ? VeganStatus.NOT_VEGAN : VeganStatus.UNKNOWN;
     }
 
     public static void init(RecipeManager recipeManager) {
@@ -59,7 +57,7 @@ public class LabelUtils {
                 }
 
                 if (vegan == VeganStatus.NOT_VEGAN) {
-                    veganFromRecipes.put(item, false);
+                    nonVeganItems.add(item);
                     return false;
                 }
             }
