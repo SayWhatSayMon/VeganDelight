@@ -20,15 +20,6 @@ public class ItemStackMixin {
     @Inject(method = "getTooltipLines", at = @At("RETURN"))
     private void injectLabels(Item.TooltipContext tooltipContext, Player player, TooltipFlag tooltipFlag,
                               CallbackInfoReturnable<List<Component>> cir) {
-        cir.getReturnValue().add(
-                Component.literal(LabelUtils.isVegan((ItemStack) (Object) this).name()).setStyle(Style.EMPTY
-                        .withColor(0x008c44)
-                        .withItalic(true)
-                        .withBold(true)
-                )
-        );
-        cir.getReturnValue().add( // TODO: remove
-                Component.literal("Show Label: " + LabelUtils.shouldRenderTooltip((ItemStack) (Object) this))
-        );
+        cir.getReturnValue().addAll(List.of(LabelUtils.getTooltipTextDebug((ItemStack) (Object) this)));
     }
 }

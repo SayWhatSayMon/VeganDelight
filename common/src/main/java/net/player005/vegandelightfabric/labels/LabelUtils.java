@@ -1,24 +1,20 @@
 package net.player005.vegandelightfabric.labels;
 
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.ApiStatus;
-import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class LabelUtils {
 
-    /**
-     * A set of items that are not vegan.
-     */
-    public static final Set<Item> nonVeganItems = new HashSet<>();
+    private static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
 
     public static VeganStatus isVegan(ItemStack itemStack) {
         var component = itemStack.getComponents().get(VeganDataComponents.vegan);
@@ -27,47 +23,80 @@ public class LabelUtils {
         if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
         if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
 
-        return nonVeganItems.contains(itemStack.getItem()) ? VeganStatus.NOT_VEGAN : VeganStatus.UNKNOWN;
+        return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
     }
 
     public static void init(RecipeManager recipeManager) {
-        var alreadyTraversed = new ArrayList<Recipe<?>>(recipeManager.getRecipes().size());
-        RecipeModification.forAllRecipes(recipeHolder -> scanRecipeRecursively(
-                recipeHolder.value().getResultItem(RecipeModification.getRegistryAccess()).getItem(),
-                recipeHolder,
-                alreadyTraversed)
-        );
+        for (Item item : BuiltInRegistries.ITEM) {
+            scanRecipesRecursively(item, new ArrayList<>());
+        }
     }
 
-    @Contract(mutates = "param3")
-    private static boolean scanRecipeRecursively(final Item item, final RecipeHolder<?> recipeHolder,
-                                                 final List<Recipe<?>> alreadyTraversed) {
-        final var recipe = recipeHolder.value();
-        alreadyTraversed.add(recipe);
+    private static VeganStatus scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
+        alreadyTraversed.add(item);
+        final var recipes = RecipeModification.getRecipesByResult(item);
 
+        var hadVeganRecipes = false;
+        var hadNonVeganRecipes = false;
+
+        for (RecipeHolder<?> recipeHolder : recipes) {
+            if (recipeNotVegan(alreadyTraversed, recipeHolder.value())) hadNonVeganRecipes = true;
+            else hadVeganRecipes = true;
+        }
+
+        var result = VeganStatus.VEGAN;
+        if (hadNonVeganRecipes) result = VeganStatus.NOT_VEGAN;
+        if (hadVeganRecipes == hadNonVeganRecipes) result = VeganStatus.UNKNOWN;
+
+        veganFromRecipes.put(item, result);
+        return result;
+    }
+
+    private static boolean recipeNotVegan(List<Item> alreadyTraversed, Recipe<?> recipe) {
         for (var ingredient : recipe.getIngredients()) {
             for (var itemStack : ingredient.getItems()) {
                 var vegan = isVegan(itemStack);
 
                 if (vegan == VeganStatus.UNKNOWN) {
-                    for (RecipeHolder<?> otherRecipe : RecipeModification.getRecipesByResult(itemStack.getItem())) {
-                        if (!alreadyTraversed.contains(otherRecipe.value()))
-                            vegan = scanRecipeRecursively(itemStack.getItem(), otherRecipe, alreadyTraversed) ? VeganStatus.VEGAN : VeganStatus.NOT_VEGAN;
-                    }
+                    var unknownItem = itemStack.getItem();
+                    if (!alreadyTraversed.contains(unknownItem))
+                        vegan = scanRecipesRecursively(unknownItem, alreadyTraversed);
                 }
 
                 if (vegan == VeganStatus.NOT_VEGAN) {
-                    nonVeganItems.add(item);
-                    return false;
+                    return true;
                 }
             }
         }
-
-        return true;
+        return false;
     }
 
-    public static boolean shouldRenderTooltip(ItemStack itemStack) {
+    private static boolean shouldRenderTooltip(ItemStack itemStack) {
         return itemStack.has(VeganDataComponents.vegan) && !itemStack.is(VeganTags.vegan);
+    }
+
+    public static Component[] getTooltipText(ItemStack itemStack) {
+        if (!shouldRenderTooltip(itemStack)) return new Component[0];
+        return new Component[]{
+                Component.literal("Vegan").setStyle(Style.EMPTY
+                        .withColor(0x008c44)
+                        .withItalic(true)
+                        .withBold(true)
+                )
+        };
+    }
+
+    public static Component[] getTooltipTextDebug(ItemStack itemStack) {
+        return new Component[]{
+                Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(Style.EMPTY
+                        .withColor(0x008c44)
+                        .withItalic(true)
+                        .withBold(true)
+                ),
+                Component.literal("Show label: " + shouldRenderTooltip(itemStack)).setStyle(Style.EMPTY
+                        .withItalic(true)
+                )
+        };
     }
 
     public enum VeganStatus {
@@ -107,7 +136,6 @@ public class LabelUtils {
         for (var i = 0; i < recipeInput.size(); i++) {
             var item = recipeInput.getItem(i);
             if (isVegan(item) == VeganStatus.NOT_VEGAN) {
-                System.out.println(item);
                 result.applyComponents(VeganDataComponents.setIsNotVegan);
                 return;
             }
