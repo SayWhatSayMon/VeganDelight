@@ -2,10 +2,9 @@ package net.player005.vegandelightfabric.labels;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeHolder;
-import net.minecraft.world.item.crafting.RecipeManager;
+import net.minecraft.world.item.crafting.*;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
+import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
@@ -97,5 +96,31 @@ public class LabelUtils {
             if (bool) return VEGAN;
             else return NOT_VEGAN;
         }
+    }
+
+    @ApiStatus.Internal
+    public static void modifyRecipeResult(Recipe<?> recipe, ItemStack result) {
+        for (Ingredient ingredient : recipe.getIngredients()) {
+            for (ItemStack item : ingredient.getItems()) {
+                if (isVegan(item) == VeganStatus.NOT_VEGAN) {
+                    result.applyComponents(VeganDataComponents.setIsNotVegan);
+                    return;
+                }
+            }
+        }
+        result.applyComponents(VeganDataComponents.setIsVegan);
+    }
+
+    @ApiStatus.Internal
+    public static void modifyRecipeResult(RecipeInput recipeInput, ItemStack result) {
+        for (var i = 0; i < recipeInput.size(); i++) {
+            var item = recipeInput.getItem(i);
+            if (isVegan(item) == VeganStatus.NOT_VEGAN) {
+                System.out.println(item);
+                result.applyComponents(VeganDataComponents.setIsNotVegan);
+                return;
+            }
+        }
+        result.applyComponents(VeganDataComponents.setIsVegan);
     }
 }
