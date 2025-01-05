@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class RecipeMixin {
 
     @Inject(method = "getResultItem", at = @At("RETURN"))
-    public void getResultItem(CallbackInfoReturnable<ItemStack> cir) {
+    public void resultItemPreview(CallbackInfoReturnable<ItemStack> cir) {
         LabelUtils.modifyRecipeResult((Recipe<?>) this, cir.getReturnValue());
     }
 

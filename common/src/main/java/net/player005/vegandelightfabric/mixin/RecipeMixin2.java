@@ -23,7 +23,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class RecipeMixin2 {
 
     @SuppressWarnings("MixinAnnotationTarget")
-    @Inject(at = @At("RETURN"), target = {@Desc(value = "assemble", args = {RecipeInput.class, net.minecraft.core.HolderLookup.Provider.class}, ret = ItemStack.class)})
+    @Inject(at = @At("RETURN"), target = @Desc(value = "assemble", args =
+            {RecipeInput.class, net.minecraft.core.HolderLookup.Provider.class}, ret = ItemStack.class))
     public void modifyAssemble(CallbackInfoReturnable<ItemStack> cir, @Local(argsOnly = true) RecipeInput recipeInput) {
         LabelUtils.modifyRecipeResult(recipeInput, cir.getReturnValue());
     }
