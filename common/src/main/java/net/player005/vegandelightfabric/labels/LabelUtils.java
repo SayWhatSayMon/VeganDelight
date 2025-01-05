@@ -1,5 +1,7 @@
 package net.player005.vegandelightfabric.labels;
 
+import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
+import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.*;
@@ -9,13 +11,14 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class LabelUtils {
 
-    public static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
+    /**
+     * A map of items to whether they are vegan or not.
+     */
+    public static final Object2BooleanMap<Item> veganFromRecipes = new Object2BooleanOpenHashMap<>();
 
     public static VeganStatus isVegan(ItemStack itemStack) {
         var component = itemStack.getComponents().get(VeganDataComponents.vegan);
@@ -24,7 +27,9 @@ public class LabelUtils {
         if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
         if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
 
-        return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
+        return veganFromRecipes.containsKey(itemStack.getItem()) ?
+                VeganStatus.fromBoolean(veganFromRecipes.getBoolean(itemStack.getItem())) :
+                VeganStatus.UNKNOWN;
     }
 
     public static void init(RecipeManager recipeManager) {
@@ -36,11 +41,6 @@ public class LabelUtils {
         );
     }
 
-    /**
-     * Scans a recipe recursively to determine if it is vegan.
-     *
-     * @return true if the recipe is not vegan, false if it is vegan
-     */
     @Contract(mutates = "param3")
     private static boolean scanRecipeRecursively(final Item item, final RecipeHolder<?> recipeHolder,
                                                  final List<Recipe<?>> alreadyTraversed) {
@@ -54,19 +54,18 @@ public class LabelUtils {
                 if (vegan == VeganStatus.UNKNOWN) {
                     for (RecipeHolder<?> otherRecipe : RecipeModification.getRecipesByResult(itemStack.getItem())) {
                         if (!alreadyTraversed.contains(otherRecipe.value()))
-                            vegan = scanRecipeRecursively(itemStack.getItem(), otherRecipe, alreadyTraversed) ? VeganStatus.NOT_VEGAN : VeganStatus.VEGAN;
+                            vegan = scanRecipeRecursively(itemStack.getItem(), otherRecipe, alreadyTraversed) ? VeganStatus.VEGAN : VeganStatus.NOT_VEGAN;
                     }
                 }
 
                 if (vegan == VeganStatus.NOT_VEGAN) {
-                    veganFromRecipes.put(item, VeganStatus.NOT_VEGAN);
-                    return true;
+                    veganFromRecipes.put(item, false);
+                    return false;
                 }
             }
         }
 
-        veganFromRecipes.put(item, VeganStatus.VEGAN);
-        return false;
+        return true;
     }
 
     public static boolean shouldRenderTooltip(ItemStack itemStack) {
