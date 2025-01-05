@@ -36,15 +36,16 @@ public class LabelUtils {
         );
     }
 
+    /**
+     * Scans a recipe recursively to determine if it is vegan.
+     *
+     * @return true if the recipe is not vegan, false if it is vegan
+     */
     @Contract(mutates = "param3")
-    private static VeganStatus scanRecipeRecursively(final Item item, final RecipeHolder<?> recipeHolder,
-                                                     final List<Recipe<?>> alreadyTraversed) {
+    private static boolean scanRecipeRecursively(final Item item, final RecipeHolder<?> recipeHolder,
+                                                 final List<Recipe<?>> alreadyTraversed) {
         final var recipe = recipeHolder.value();
         alreadyTraversed.add(recipe);
-
-        var hadNonVeganIngredients = false;
-        var hadUnknownIngredients = false;
-        var hadVeganIngredients = false;
 
         for (var ingredient : recipe.getIngredients()) {
             for (var itemStack : ingredient.getItems()) {
@@ -53,26 +54,19 @@ public class LabelUtils {
                 if (vegan == VeganStatus.UNKNOWN) {
                     for (RecipeHolder<?> otherRecipe : RecipeModification.getRecipesByResult(itemStack.getItem())) {
                         if (!alreadyTraversed.contains(otherRecipe.value()))
-                            vegan = scanRecipeRecursively(itemStack.getItem(), otherRecipe, alreadyTraversed);
+                            vegan = scanRecipeRecursively(itemStack.getItem(), otherRecipe, alreadyTraversed) ? VeganStatus.NOT_VEGAN : VeganStatus.VEGAN;
                     }
                 }
 
-                switch (vegan) {
-                    case NOT_VEGAN -> hadNonVeganIngredients = true;
-                    case UNKNOWN -> hadUnknownIngredients = true;
-                    case VEGAN -> hadVeganIngredients = true;
+                if (vegan == VeganStatus.NOT_VEGAN) {
+                    veganFromRecipes.put(item, VeganStatus.NOT_VEGAN);
+                    return true;
                 }
             }
         }
 
-        var status = VeganStatus.UNKNOWN;
-        if (hadVeganIngredients && !hadNonVeganIngredients && !hadUnknownIngredients)
-            status = VeganStatus.VEGAN;
-        if (hadNonVeganIngredients)
-            status = VeganStatus.NOT_VEGAN;
-
-        veganFromRecipes.put(item, status);
-        return status;
+        veganFromRecipes.put(item, VeganStatus.VEGAN);
+        return false;
     }
 
     public static boolean shouldRenderTooltip(ItemStack itemStack) {
