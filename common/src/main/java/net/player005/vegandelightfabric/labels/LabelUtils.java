@@ -72,7 +72,8 @@ public class LabelUtils {
     }
 
     private static boolean shouldRenderTooltip(ItemStack itemStack) {
-        return itemStack.has(VeganDataComponents.vegan) && !itemStack.is(VeganTags.vegan);
+        return itemStack.has(VeganDataComponents.vegan) && !itemStack.is(VeganTags.vegan) &&
+                itemStack.getComponents().has(VeganDataComponents.containsSubstitutes);
     }
 
     public static Component[] getTooltipText(ItemStack itemStack) {
@@ -137,7 +138,9 @@ public class LabelUtils {
             var item = recipeInput.getItem(i);
             if (isVegan(item) == VeganStatus.NOT_VEGAN) {
                 result.applyComponents(VeganDataComponents.setIsNotVegan);
-                return;
+            }
+            if (item.is(VeganTags.vegan_alternative)) {
+                result.applyComponents(VeganDataComponents.setContainsSubstitutes);
             }
         }
         result.applyComponents(VeganDataComponents.setIsVegan);
