@@ -1,7 +1,6 @@
 package net.player005.vegandelightfabric.mixin;
 
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.Style;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -20,6 +19,6 @@ public class ItemStackMixin {
     @Inject(method = "getTooltipLines", at = @At("RETURN"))
     private void injectLabels(Item.TooltipContext tooltipContext, Player player, TooltipFlag tooltipFlag,
                               CallbackInfoReturnable<List<Component>> cir) {
-        cir.getReturnValue().addAll(List.of(LabelUtils.getTooltipText((ItemStack) (Object) this)));
+        LabelUtils.addTooltipLines((ItemStack) (Object) this, cir.getReturnValue());
     }
 }

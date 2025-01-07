@@ -82,28 +82,22 @@ public class LabelUtils {
                 itemStack.getComponents().has(VeganDataComponents.containsSubstitutes);
     }
 
-    public static Component[] getTooltipText(ItemStack itemStack) {
-        if (!shouldRenderTooltip(itemStack)) return new Component[0];
-        return new Component[]{
-                Component.literal("Vegan").setStyle(Style.EMPTY
-                        .withColor(0x008c44)
-                        .withItalic(true)
-                        .withBold(true)
-                )
-        };
+    public static void addTooltipLines(ItemStack itemStack, List<Component> tooltip) {
+        if (!shouldRenderTooltip(itemStack)) return;
+        tooltip.add(1, Component.literal("Vegan").setStyle(Style.EMPTY
+                .withColor(0x008c44)
+                .withItalic(true)
+                .withBold(true)
+        ));
     }
 
-    public static Component[] getTooltipTextDebug(ItemStack itemStack) {
-        return new Component[]{
-                Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(Style.EMPTY
-                        .withColor(0x008c44)
-                        .withItalic(true)
-                        .withBold(true)
-                ),
-                Component.literal("Show label: " + shouldRenderTooltip(itemStack)).setStyle(Style.EMPTY
-                        .withItalic(true)
-                )
-        };
+    public static void addTooltipLinesDebug(ItemStack itemStack, List<Component> tooltip) {
+        tooltip.add(1, Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(Style.EMPTY
+                .withColor(0x008c44)
+                .withItalic(true)
+                .withBold(true)
+        ));
+        tooltip.add(2, Component.literal("Show label: " + shouldRenderTooltip(itemStack)));
     }
 
     public enum VeganStatus {
