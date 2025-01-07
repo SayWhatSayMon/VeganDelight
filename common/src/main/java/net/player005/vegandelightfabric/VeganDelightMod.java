@@ -38,7 +38,7 @@ public class VeganDelightMod {
         VeganCreativeTab.register();
         VeganDataComponents.initialise();
 
-        RecipeModification.onRecipeInit(LabelUtils::init);
+        RecipeModification.onRecipeInit(recipeManager -> LabelUtils.init());
         RatsCompat.init();
 
         registerBiomeModifers();

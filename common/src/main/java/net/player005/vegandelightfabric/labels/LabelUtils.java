@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric.labels;
 
+import com.google.common.base.Stopwatch;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -9,6 +10,7 @@ import net.minecraft.world.item.crafting.*;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -26,10 +28,14 @@ public class LabelUtils {
         return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
     }
 
-    public static void init(RecipeManager recipeManager) {
+    @ApiStatus.Internal
+    public static void init() {
+        var timer = Stopwatch.createStarted();
         for (Item item : BuiltInRegistries.ITEM) {
-            scanRecipesRecursively(item, new ArrayList<>());
+            scanRecipesRecursively(item, new ArrayList<>(BuiltInRegistries.ITEM.size()));
         }
+        LoggerFactory.getLogger("VeganDelight")
+                .info("Scanned {} items for vegan recipes in {}", BuiltInRegistries.ITEM.size(), timer);
     }
 
     private static VeganStatus scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
