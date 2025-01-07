@@ -20,6 +20,6 @@ public class ItemStackMixin {
     @Inject(method = "getTooltipLines", at = @At("RETURN"))
     private void injectLabels(Item.TooltipContext tooltipContext, Player player, TooltipFlag tooltipFlag,
                               CallbackInfoReturnable<List<Component>> cir) {
-        cir.getReturnValue().addAll(List.of(LabelUtils.getTooltipTextDebug((ItemStack) (Object) this)));
+        cir.getReturnValue().addAll(List.of(LabelUtils.getTooltipText((ItemStack) (Object) this)));
     }
 }
