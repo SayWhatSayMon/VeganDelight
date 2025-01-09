@@ -6,10 +6,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FlowerPotBlock;
-import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.player005.vegandelightfabric.VeganDelightMod;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
@@ -33,7 +30,8 @@ public class VeganBlocks {
                     "potted_wild_soybean", false
             );
 
-    public static final Block SOYBEAN_BAG = register(new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), "soybean_bag", true);
+    public static final Block SOYBEAN_BAG
+            = register(new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)), "soybean_bag", true);
 
     public static final LiquidBlock SOYMILK =
             register(
@@ -62,8 +60,7 @@ public class VeganBlocks {
         return Registry.register(BuiltInRegistries.BLOCK, id, block);
     }
 
-    public static void initialise() {
-    }
+    public static void initialise() {}
 
     public static final Block[] allBlocks = {SOYBEAN_BAG, WILD_SOYBEAN};
 }

@@ -9,19 +9,23 @@
           "children": [
             {
               "type": "minecraft:item",
+              "name": "vegandelight:wild_soybean",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "c:shears"
+                    "items": "#c:tools/shear"
                   }
                 }
-              ],
-              "name": "vegandelight:wild_soybean"
+              ]
             },
             {
               "type": "minecraft:item",
+              "name": "vegandelight:soybean",
               "functions": [
+                {
+                  "function": "minecraft:explosion_decay"
+                },
                 {
                   "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
@@ -29,12 +33,8 @@
                   "parameters": {
                     "bonusMultiplier": 2
                   }
-                },
-                {
-                  "function": "minecraft:explosion_decay"
                 }
-              ],
-              "name": "vegandelight:soybean"
+              ]
             }
           ]
         }
