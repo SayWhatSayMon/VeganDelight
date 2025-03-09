@@ -18,6 +18,12 @@
     }
   ],
   "result": {
-    "id": "minecraft:honey_bottle"
+    "id": "minecraft:honey_bottle",
+    "components": {
+      "minecraft:item_name": "{\"translate\":\"item.vegandelight.agave_syrup\"}",
+      "minecraft:lore": [
+        "[\"\",{\"text\":\"Replaces \",\"italic\":true,\"color\":\"dark_gray\"},{\"translate\":\"item.minecraft.honey_bottle\",\"italic\":true,\"color\":\"gray\"},{\"text\":\" in recipes.\",\"italic\":true,\"color\":\"dark_gray\"}]"
+      ]
+    }
   }
 }
