@@ -9,10 +9,10 @@
   "item.vegandelight.tofu_patty": "Котлета из тофу",
 
 
-  "item.vegandelight.smoked_tofu": "Копченый тофу",
+  "item.vegandelight.smoked_tofu": "Копчёный тофу",
   "item.vegandelight.smoked_tofish": "Копчёная веганская рыба",
-  "item.vegandelight.smoked_tofish_roll": "Ролл с копченой веганской рыбой",
-  "item.vegandelight.smoked_tofu_slices": "Ломтики копченого тофу",
+  "item.vegandelight.smoked_tofish_roll": "Ролл с копчёной веганской рыбой",
+  "item.vegandelight.smoked_tofu_slices": "Ломтики копчёного тофу",
 
 
   "item.vegandelight.cooked_tofu": "Приготовленный тофу",
@@ -22,7 +22,7 @@
 
   "item.vegandelight.cooked_smoked_tofu": "Приготовленный копчёный тофу",
   "item.vegandelight.cooked_smoked_tofish": "Приготовленная копчёная веганская рыба",
-  "item.vegandelight.cooked_smoked_tofu_slices": "Ломки приготовленного копченого тофу",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Ломки приготовленного копчёного тофу",
 
 
   "item.vegandelight.salt": "Соль",
@@ -51,5 +51,5 @@
   "block.vegandelight.wild_soybean": "Дикая соя",
 
 
-  "creativetab.vegan_tab": "Vegan Delight"
+  "creativetab.vegan_tab": "Веганский Восторг"
 }
