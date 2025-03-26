@@ -7,7 +7,7 @@
         "vegandelight:applesauce"
       ],
       "empty": "minecraft:bowl",
-      "capacity": "BOWL"
+      "capacity": 1
     },
     {
       "filled": [
