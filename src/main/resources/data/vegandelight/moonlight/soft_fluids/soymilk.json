@@ -1,0 +1,32 @@
+{
+  "containers": [
+    {
+      "filled": [
+        "vegandelight:soymilk_bottle"
+      ],
+      "empty": "minecraft:glass_bottle",
+      "capacity": "BOTTLE"
+    },
+    {
+      "filled": [
+        "vegandelight:soymilk_bucket"
+      ],
+      "fill_sound": "minecraft:item.bucket.fill",
+      "empty_sound": "minecraft:item.bucket.empty",
+      "empty": "minecraft:bucket",
+      "capacity": "BUCKET"
+    }
+  ],
+  "equivalent_fluids": [
+    "vegandelight:soymilk_fluid"
+  ],
+  "flowing_texture": "vegandelight:block/fluid/milky_still",
+  "food": {
+    "divider": "BUCKET",
+    "item": "vegandelight:soymilk_bucket"
+  },
+  "still_texture": "vegandelight:block/fluid/milky_still",
+  "tint_method": "no_tint",
+  "translation_key": "fluid_type.vegandelight.soymilk",
+  "use_texture_from": "vegandelight:soymilk_fluid"
+}
