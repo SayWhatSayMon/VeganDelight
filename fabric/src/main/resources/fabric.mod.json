@@ -1,14 +1,11 @@
 {
   "schemaVersion": 1,
-  "id": "vegandelight",
-  "version": "${version}",
-  "name": "Vegan Delight",
-  "description": "",
-  "authors": [],
-  "contact": {},
-  "license": "LGPL",
+  "id": "${mod_id}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "version": "${mod_version}",
+  "license": "${mod_license}",
   "icon": "assets/vegandelight/icon.png",
-  "environment": "*",
   "entrypoints": {
     "main": [
       "net.player005.vegandelightfabric.VeganDelightFabric"
@@ -20,11 +17,10 @@
   "mixins": [
     "vegandelight.mixins.json"
   ],
-  "accessWidener" : "vegandelight.fabric.accesswidener",
+  "accessWidener": "vegandelight.fabric.accesswidener",
   "depends": {
-    "fabricloader": ">=${loader_version}",
-    "fabric": "*",
+    "minecraft": "${mc_versions_fabric}",
     "farmersdelight": "*",
-    "minecraft": "${minecraft_version}"
+    "fabric": "*"
   }
 }

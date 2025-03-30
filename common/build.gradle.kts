@@ -1,46 +1,45 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id("java")
-    id("idea")
-    id("fabric-loom") version "1.7.3"
+    id("fabric-loom") version ("1.10-SNAPSHOT")
 }
 
-val MINECRAFT_VERSION: String by rootProject.extra
-val PARCHMENT_VERSION: String by rootProject.extra
-val PARCHMENT_MC_VERSION: String by rootProject.extra
-val FABRIC_LOADER_VERSION: String by rootProject.extra
-
-val FDRF_VERSION: String by rootProject.extra
-
 repositories {
-    maven("https://maven.parchmentmc.org/") // parchment mappings
-
     maven { // FD refabricated
         name = "Greenhouse Maven"
         url = uri("https://repo.greenhouse.house/releases/")
     }
 }
 
-loom {
-    accessWidenerPath = file("src/main/resources/vegandelight.fabric.accesswidener")
-}
-
 dependencies {
-    minecraft("com.mojang:minecraft:${MINECRAFT_VERSION}")
+    minecraft("com.mojang:minecraft:${rootProject.properties["minecraft_version"]}")
     mappings(loom.layered {
         officialMojangMappings()
-        parchment("org.parchmentmc.data:parchment-$PARCHMENT_MC_VERSION:$PARCHMENT_VERSION@zip")
+        parchment("org.parchmentmc.data:parchment-${rootProject.properties["parchment_version"]}@zip")
     })
-    modImplementation("net.fabricmc:fabric-loader:${FABRIC_LOADER_VERSION}")
-    compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
-    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1")!!)
 
-    modCompileOnly("vectorwing:FarmersDelight:$FDRF_VERSION") {
+    // mixin extras is included by default in both fabric and neoforge (no additional dependency required)
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.5")!!)
+
+    compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
+    modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
+
+
+    modCompileOnly("vectorwing:FarmersDelight:${rootProject.properties["fdrf_version"]}") {
         isTransitive = false
     }
 }
 
-tasks.configureEach {
-    group = null
+loom {
+    accessWidenerPath = file("src/main/resources/vegandelight.fabric.accesswidener")
+
+    mixin {
+        useLegacyMixinAp = false
+    }
+}
+
+// don't generate jar files for the common code
+tasks {
+    jar { enabled = false }
+    remapJar { enabled = false }
 }

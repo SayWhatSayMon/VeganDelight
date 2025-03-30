@@ -1,10 +1,10 @@
+rootProject.name = "VeganDelight"
+
 pluginManagement {
     repositories {
-        maven("https://maven.fabricmc.net/") {
-            name = "Fabric"
-        }
-        gradlePluginPortal()
+        maven("https://maven.fabricmc.net/")
         maven("https://maven.neoforged.net/releases")
+        gradlePluginPortal()
     }
 }
 
