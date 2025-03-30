@@ -1,0 +1,23 @@
+{
+  "load_conditions": [
+    {
+      "condition": "mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:emptying",
+  "ingredients": [
+    {
+      "item": "vegandelight:soymilk_bottle"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:glass_bottle"
+    },
+    {
+      "fluid": "vegandelight:soymilk_fluid",
+      "amount": "250_millibuckets"
+    }
+  ]
+}

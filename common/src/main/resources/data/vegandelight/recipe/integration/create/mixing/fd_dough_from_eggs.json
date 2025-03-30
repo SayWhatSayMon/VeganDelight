@@ -1,0 +1,30 @@
+{
+  "load_conditions": [
+    {
+      "condition": "mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "fluidTag": "c:egg",
+      "amount": "1000_millibuckets"
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
+    },
+    {
+      "tag": "c:flour/wheat"
+    }
+  ],
+  "results": [
+    {
+      "item": "farmersdelight:wheat_dough",
+      "count": 3
+    }
+  ]
+}

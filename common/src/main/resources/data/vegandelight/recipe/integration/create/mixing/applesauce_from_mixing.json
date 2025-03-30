@@ -1,0 +1,27 @@
+{
+  "load_conditions": [
+    {
+      "condition": "mod_loaded",
+      "modid": "create"
+    }
+  ],
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "fluid": "minecraft:water",
+      "amount": "250_millibuckets"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "vegandelight:applesauce_fluid",
+      "amount": "250_millibuckets"
+    }
+  ]
+}

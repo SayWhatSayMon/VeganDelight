@@ -1,0 +1,50 @@
+{
+  "load_conditions": [
+    {
+      "condition": "and",
+      "values": [
+        {
+          "condition": "mod_loaded",
+          "modid": "create"
+        },
+        {
+          "not": {
+            "type": "mod_loaded",
+            "modid": "createaddition"
+          }
+        }
+      ]
+    }
+  ],
+  "type": "create:compacting",
+  "ingredients": [
+    {
+      "fluidTag": "c:egg",
+      "amount": "250_millibuckets"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "tag": "neoforge:flour/wheat"
+    },
+    {
+      "tag": "neoforge:flour/wheat"
+    },
+    {
+      "tag": "neoforge:flour/wheat"
+    },
+    {
+      "fluidTag": "c:milk",
+      "amount": "1000_millibuckets"
+    }
+  ],
+  "results": [
+    {
+      "item": "minecraft:cake"
+    }
+  ]
+}
