@@ -33,11 +33,12 @@ public class VeganDelightFabric implements ModInitializer {
 
         ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeModification.init(server.getRecipeManager()));
         ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) ->
-                RecipeModification.init(server.getRecipeManager())
+            RecipeModification.init(server.getRecipeManager())
         );
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
+
         @Override
         public boolean isModLoaded(String name) {
             return FabricLoader.getInstance().isModLoaded(name);
@@ -50,16 +51,16 @@ public class VeganDelightFabric implements ModInitializer {
             final var stillRef = new AtomicReference<FlowingFluid>();
 
             final var flowing = Registry.register(
-                    BuiltInRegistries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
-                    new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
+                BuiltInRegistries.FLUID,
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
+                new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
             );
             flowingRef.set(flowing);
 
             final var still = Registry.register(
-                    BuiltInRegistries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
-                    new SimpleFlowableFluid.Still(properties, flowingRef::get, stillRef::get)
+                BuiltInRegistries.FLUID,
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                new SimpleFlowableFluid.Still(properties, flowingRef::get, stillRef::get)
             );
             stillRef.set(still);
 
@@ -79,8 +80,8 @@ public class VeganDelightFabric implements ModInitializer {
         public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
                                           GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
             BiomeModifications.addFeature(
-                    new ModBiomeModifiers.FDBiomeSelector(minTemp, maxTemp, allowed, denied),
-                    step, modifier);
+                new ModBiomeModifiers.FDBiomeSelector(minTemp, maxTemp, allowed, denied),
+                step, modifier);
         }
 
         @Override

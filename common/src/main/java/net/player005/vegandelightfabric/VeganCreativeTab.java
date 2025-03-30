@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class VeganCreativeTab {
+
     public static final List<ItemLike> allItemLike = new ArrayList<>();
 
     static {
@@ -23,23 +24,23 @@ public class VeganCreativeTab {
     }
 
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY = ResourceKey.create(
-            Registries.CREATIVE_MODE_TAB,
-            ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_ingredients")
+        Registries.CREATIVE_MODE_TAB,
+        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_ingredients")
     );
 
     public static void register() {
         Registry.register(
-                BuiltInRegistries.CREATIVE_MODE_TAB,
-                VEGAN_ITEMS_KEY,
-                CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
-                        .icon(VeganItems.SMOKED_TOFISH_ROLL::getDefaultInstance)
-                        .title(Component.translatable("itemGroup.vegan_delight"))
-                        .displayItems((parameters, output) -> {
-                            for (ItemLike item : allItemLike) {
-                                output.accept(item);
-                            }
-                        })
-                        .build()
+            BuiltInRegistries.CREATIVE_MODE_TAB,
+            VEGAN_ITEMS_KEY,
+            CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
+                .icon(VeganItems.SMOKED_TOFISH_ROLL::getDefaultInstance)
+                .title(Component.translatable("itemGroup.vegan_delight"))
+                .displayItems((parameters, output) -> {
+                    for (ItemLike item : allItemLike) {
+                        output.accept(item);
+                    }
+                })
+                .build()
         );
     }
 }

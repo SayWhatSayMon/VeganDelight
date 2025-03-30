@@ -28,5 +28,4 @@ public class RecipeMixin2 {
     public void modifyAssemble(CallbackInfoReturnable<ItemStack> cir, @Local(argsOnly = true) RecipeInput recipeInput) {
         LabelUtils.modifyRecipeResult(recipeInput, cir.getReturnValue());
     }
-
 }

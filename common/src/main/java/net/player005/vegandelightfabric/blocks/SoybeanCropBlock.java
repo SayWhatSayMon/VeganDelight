@@ -11,8 +11,10 @@ import net.player005.vegandelightfabric.VeganItems;
 import org.jetbrains.annotations.NotNull;
 
 public class SoybeanCropBlock extends CropBlock {
+
     public static final int MAX_AGE = 7;
     public static final IntegerProperty AGE = BlockStateProperties.AGE_7;
+
     public SoybeanCropBlock(Properties properties) {
         super(properties);
     }
@@ -36,5 +38,4 @@ public class SoybeanCropBlock extends CropBlock {
     protected void createBlockStateDefinition(StateDefinition.@NotNull Builder<Block, BlockState> pBuilder) {
         pBuilder.add(AGE);
     }
-
 }

@@ -27,6 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.function.Supplier;
 
 public abstract class SimpleFlowableFluid extends FlowingFluid {
+
     private final Supplier<? extends Fluid> flowing;
     private final Supplier<? extends Fluid> still;
     @Nullable
@@ -67,7 +68,8 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     @Override
-    protected void beforeDestroyingBlock(@NotNull LevelAccessor world, @NotNull BlockPos pos, @NotNull BlockState state) {
+    protected void beforeDestroyingBlock(@NotNull LevelAccessor world, @NotNull BlockPos pos,
+                                         @NotNull BlockState state) {
         BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
         Block.dropResources(state, world, pos, blockEntity);
     }
@@ -88,7 +90,8 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     @Override
-    protected boolean canBeReplacedWith(@NotNull FluidState state, @NotNull BlockGetter world, @NotNull BlockPos pos, @NotNull Fluid fluid, @NotNull Direction direction) {
+    protected boolean canBeReplacedWith(@NotNull FluidState state, @NotNull BlockGetter world, @NotNull BlockPos pos,
+                                        @NotNull Fluid fluid, @NotNull Direction direction) {
         return direction == Direction.DOWN && !isSame(fluid);
     }
 
@@ -116,6 +119,7 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     public static class Flowing extends SimpleFlowableFluid {
+
         public Flowing(FluidProperties properties, Supplier<? extends Fluid> flowing, Supplier<? extends Fluid> still) {
             super(properties, flowing, still);
             registerDefaultState(getStateDefinition().any().setValue(LEVEL, 7));
@@ -139,6 +143,7 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     public static class Still extends SimpleFlowableFluid {
+
         public Still(FluidProperties properties, Supplier<? extends Fluid> flowing, Supplier<? extends Fluid> still) {
             super(properties, flowing, still);
         }

@@ -16,5 +16,4 @@ public abstract class EntityMixin {
     private void markEntityDroppedItemsAsNotVegan(ItemStack stack, CallbackInfoReturnable<ItemEntity> cir) {
         stack.applyComponents(VeganDataComponents.setIsNotVegan);
     }
-
 }

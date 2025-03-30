@@ -77,6 +77,7 @@ public class VeganDelightNeo {
 
 
     public static class VDNeoforgePlatform implements VeganDelightPlatform {
+
         public static final List<VillagerTrade> registeredTrades = new ArrayList<>();
 
         @Override
@@ -105,26 +106,26 @@ public class VeganDelightNeo {
             var stillRef = new AtomicReference<BaseFlowingFluid.Source>();
 
             var fluidProperties = new BaseFlowingFluid.Properties(() -> fluidType, stillRef::get, flowingRef::get)
-                    .block(properties.block())
-                    .bucket(properties.bucket())
-                    .levelDecreasePerBlock(properties.levelDecreasePerBlock())
-                    .explosionResistance(properties.explosionResistance())
-                    .tickRate(properties.tickRate())
-                    .slopeFindDistance(properties.slopeFindDistance());
+                .block(properties.block())
+                .bucket(properties.bucket())
+                .levelDecreasePerBlock(properties.levelDecreasePerBlock())
+                .explosionResistance(properties.explosionResistance())
+                .tickRate(properties.tickRate())
+                .slopeFindDistance(properties.slopeFindDistance());
 
             flowingRef.set(new BaseFlowingFluid.Flowing(fluidProperties));
             stillRef.set(new BaseFlowingFluid.Source(fluidProperties));
 
             Registry.register(NeoForgeRegistries.FLUID_TYPES,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
-                    fluidType);
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                fluidType);
 
             Registry.register(BuiltInRegistries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
-                    stillRef.get());
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                stillRef.get());
             Registry.register(BuiltInRegistries.FLUID,
-                    ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
-                    flowingRef.get());
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
+                flowingRef.get());
 
             return flowingRef.get();
         }
@@ -156,6 +157,5 @@ public class VeganDelightNeo {
         return fluidType;
     }
 
-    public record VillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing) {
-    }
+    public record VillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing) { }
 }

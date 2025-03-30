@@ -6,13 +6,19 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class LabelUtils {
 
@@ -35,7 +41,7 @@ public class LabelUtils {
             scanRecipesRecursively(item, new ArrayList<>(BuiltInRegistries.ITEM.size()));
         }
         LoggerFactory.getLogger("VeganDelight")
-                .info("Scanned {} items for vegan recipes in {}", BuiltInRegistries.ITEM.size(), timer);
+            .info("Scanned {} items for vegan recipes in {}", BuiltInRegistries.ITEM.size(), timer);
     }
 
     private static VeganStatus scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
@@ -79,12 +85,13 @@ public class LabelUtils {
 
     private static boolean shouldRenderTooltip(ItemStack itemStack) {
         return itemStack.has(VeganDataComponents.vegan) && !itemStack.is(VeganTags.vegan) &&
-                itemStack.getComponents().has(VeganDataComponents.containsSubstitutes);
+            itemStack.getComponents().has(VeganDataComponents.containsSubstitutes);
     }
 
     public static void addTooltipLines(ItemStack itemStack, List<Component> tooltip) {
         if (!shouldRenderTooltip(itemStack)) return;
-        tooltip.add(1, Component.literal("Vegan").setStyle(Style.EMPTY
+        tooltip.add(1, Component.literal("Vegan").setStyle(
+            Style.EMPTY
                 .withColor(0x008c44)
                 .withItalic(true)
                 .withBold(true)
@@ -92,7 +99,8 @@ public class LabelUtils {
     }
 
     public static void addTooltipLinesDebug(ItemStack itemStack, List<Component> tooltip) {
-        tooltip.add(1, Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(Style.EMPTY
+        tooltip.add(1, Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(
+            Style.EMPTY
                 .withColor(0x008c44)
                 .withItalic(true)
                 .withBold(true)

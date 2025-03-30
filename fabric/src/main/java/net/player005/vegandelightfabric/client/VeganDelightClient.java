@@ -12,12 +12,13 @@ import net.player005.vegandelightfabric.blocks.VeganBlocks;
 
 public class VeganDelightClient implements ClientModInitializer {
 
-    public static void registerFluidRenderers(String name, SimpleFlowableFluid.Still still, SimpleFlowableFluid.Flowing flowing) {
+    public static void registerFluidRenderers(String name, SimpleFlowableFluid.Still still,
+                                              SimpleFlowableFluid.Flowing flowing) {
         FluidRenderHandlerRegistry.INSTANCE.register(
-                still, flowing, new SimpleFluidRenderHandler(
-                        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still"),
-                        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing")
-                )
+            still, flowing, new SimpleFluidRenderHandler(
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still"),
+                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing")
+            )
         );
 
         BlockRenderLayerMap.INSTANCE.putFluids(RenderType.translucent(), flowing, still);
@@ -27,8 +28,8 @@ public class VeganDelightClient implements ClientModInitializer {
     public void onInitializeClient() {
         // Add crops to cutout render layer to make transparency work
         BlockRenderLayerMap.INSTANCE.putBlocks(
-                RenderType.cutout(),
-                VeganBlocks.WILD_SOYBEAN, VeganBlocks.SOYBEAN_CROP, VeganBlocks.POTTED_WILD_SOYBEAN
+            RenderType.cutout(),
+            VeganBlocks.WILD_SOYBEAN, VeganBlocks.SOYBEAN_CROP, VeganBlocks.POTTED_WILD_SOYBEAN
         );
     }
 }

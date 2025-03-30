@@ -9,11 +9,11 @@ import net.player005.vegandelightfabric.VeganDelightMod;
 public class VeganTags {
 
     public static final TagKey<Item> vegan_alternative = TagKey.create(Registries.ITEM,
-            ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_alternative"));
+        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_alternative"));
 
     public static final TagKey<Item> vegan = TagKey.create(Registries.ITEM,
-            ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan"));
+        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan"));
 
     public static final TagKey<Item> not_vegan = TagKey.create(Registries.ITEM,
-            ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "not_vegan"));
+        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "not_vegan"));
 }

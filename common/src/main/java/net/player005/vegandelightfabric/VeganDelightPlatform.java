@@ -12,6 +12,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 
 public interface VeganDelightPlatform {
+
     TagKey<Biome> undergroundBiomeTag();
 
     default TagKey<Biome> overworldBiomeTag() {

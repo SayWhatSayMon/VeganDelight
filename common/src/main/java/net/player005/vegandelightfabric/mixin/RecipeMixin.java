@@ -21,5 +21,4 @@ public abstract class RecipeMixin {
     public void resultItemPreview(CallbackInfoReturnable<ItemStack> cir) {
         LabelUtils.modifyRecipeResult((Recipe<?>) this, cir.getReturnValue());
     }
-
 }
