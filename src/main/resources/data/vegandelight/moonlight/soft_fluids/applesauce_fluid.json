@@ -1,0 +1,33 @@
+{
+  "id":"vegandelight:applesauce_fluid",
+  "color": "#f0ebc0",
+  "containers": [
+    {
+      "filled": [
+        "vegandelight:applesauce"
+      ],
+      "empty": "minecraft:bowl",
+      "capacity": 1
+    },
+    {
+      "filled": [
+        "vegandelight:applesauce_bucket"
+      ],
+      "fill_sound": "minecraft:item.bucket.fill",
+      "empty_sound": "minecraft:item.bucket.empty",
+      "empty": "minecraft:bucket",
+      "capacity": "BUCKET"
+    }
+  ],
+  "equivalent_fluids": [
+    "vegandelight:applesauce_fluid"
+  ],
+  "flowing_texture": "vegandelight:block/fluid/gloppy_still",
+  "food": {
+    "divider": "BUCKET",
+    "item": "vegandelight:applesauce_bucket"
+  },
+  "still_texture": "vegandelight:block/fluid/gloppy_still",
+  "translation_key": "fluid_type.vegandelight.applesauce",
+  "use_texture_from": "vegandelight:applesauce_fluid"
+}
