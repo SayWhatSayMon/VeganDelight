@@ -1,27 +1,30 @@
 {
-  "item.vegandelight.tofu": "豆腐",
-  "item.vegandelight.silken_tofu": "絹ごし豆腐",
-  "item.vegandelight.minced_tofu": "豆腐のひき肉",
-  "item.vegandelight.tofu_slices": "切り分けた豆腐",
-  "item.vegandelight.tofish": "トウフィッシュ",
-  "item.vegandelight.tofish_slices": "トウフィッシュの切り身",
-  "item.vegandelight.tofish_roll": "トウフィッシュの握り寿司",
-  "item.vegandelight.tofu_patty": "豆腐パティ",    "item.vegandelight.smoked_tofu": "豆腐の燻製",
+    "item.vegandelight.tofu": "豆腐",
+    "item.vegandelight.silken_tofu": "絹ごし豆腐",
+    "item.vegandelight.minced_tofu": "豆腐のひき肉",
+    "item.vegandelight.tofu_slices": "切り分けた豆腐",
+    "item.vegandelight.tofish": "トウフィッシュ",
+    "item.vegandelight.tofish_slices": "トウフィッシュの切り身",
+    "item.vegandelight.tofish_roll": "トウフィッシュの握り寿司",
+    "item.vegandelight.tofu_patty": "豆腐パティ",
 
 
-  "item.vegandelight.smoked_tofish": "トウフィッシュの燻製",
-  "item.vegandelight.smoked_tofish_roll": "トウフィッシュの燻製の握り寿司",
-  "item.vegandelight.smoked_tofu_slices": "切り分けた豆腐の燻製",
+    "item.vegandelight.smoked_tofu": "豆腐の燻製",
+    "item.vegandelight.smoked_tofish": "トウフィッシュの燻製",
+    "item.vegandelight.smoked_tofish_roll": "トウフィッシュの燻製の握り寿司",
+    "item.vegandelight.smoked_tofu_slices": "切り分けた豆腐の燻製",
 
 
-  "item.vegandelight.cooked_tofu": "焼き豆腐",
-  "item.vegandelight.cooked_tofu_slices": "切り分けた焼き豆腐",
-  "item.vegandelight.cooked_tofish": "焼きトウフィッシュ",
+    "item.vegandelight.cooked_tofu": "焼き豆腐",
+    "item.vegandelight.cooked_tofu_slices": "切り分けた焼き豆腐",
+    "item.vegandelight.cooked_tofish": "焼きトウフィッシュ",
+    "item.vegandelight.raw_seitan": "生セイタン",
+    "item.vegandelight.cooked_seitan": "調理済みセイタン",
 
 
-  "item.vegandelight.cooked_smoked_tofu": "燻製焼き豆腐",
-  "item.vegandelight.cooked_smoked_tofish": "焼きトウフィッシュの燻製",
-  "item.vegandelight.cooked_smoked_tofu_slices": "切り分けた焼き豆腐の燻製",
+    "item.vegandelight.cooked_smoked_tofu": "燻製焼き豆腐",
+    "item.vegandelight.cooked_smoked_tofish": "焼きトウフィッシュの燻製",
+    "item.vegandelight.cooked_smoked_tofu_slices": "切り分けた焼き豆腐の燻製",
 
 
   "item.vegandelight.salt": "塩",
