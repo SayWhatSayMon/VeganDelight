@@ -1,0 +1,14 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "vegandelight:raw_seitan"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "vegandelight:cooked_seitan"
+  }
+}

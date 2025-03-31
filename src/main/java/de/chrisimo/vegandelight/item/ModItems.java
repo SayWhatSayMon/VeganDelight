@@ -108,6 +108,18 @@ public class ModItems {
                     .saturationMod(0.4f)
                     .build())));
 
+    public static final RegistryObject<Item> RAW_SEITAN = ITEMS.register("raw_seitan",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationMod(0.1f)
+                    .build())));
+
+    public static final RegistryObject<Item> COOKED_SEITAN = ITEMS.register("cooked_seitan",
+            () -> new Item(new Item.Properties().food(new FoodProperties.Builder()
+                    .nutrition(2)
+                    .saturationMod(0.1f)
+                    .build())));
+
 
     //INGREDIENTS
     public static final RegistryObject<Item> SALT = ITEMS.register("salt",

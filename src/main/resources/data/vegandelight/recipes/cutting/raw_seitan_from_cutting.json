@@ -1,0 +1,16 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "farmersdelight:wheat_dough"
+    }
+  ],
+  "result": [
+    {
+      "item": "vegandelight:raw_seitan"
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:water_bottle"
+  }
+}
