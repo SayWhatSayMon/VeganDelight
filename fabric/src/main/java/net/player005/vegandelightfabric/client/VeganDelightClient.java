@@ -8,7 +8,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.player005.vegandelightfabric.SimpleFlowableFluid;
 import net.player005.vegandelightfabric.VeganDelightMod;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.VeganBlocks;
 
 public class VeganDelightClient implements ClientModInitializer {
 
@@ -29,7 +29,7 @@ public class VeganDelightClient implements ClientModInitializer {
         // Add crops to cutout render layer to make transparency work
         BlockRenderLayerMap.INSTANCE.putBlocks(
             RenderType.cutout(),
-            VeganBlocks.WILD_SOYBEAN, VeganBlocks.SOYBEAN_CROP, VeganBlocks.POTTED_WILD_SOYBEAN
+            VeganBlocks.WILD_SOYBEAN.value(), VeganBlocks.SOYBEAN_CROP.value(), VeganBlocks.POTTED_WILD_SOYBEAN.value()
         );
     }
 }

@@ -2,15 +2,15 @@ package net.player005.vegandelightfabric.fluids;
 
 import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.VeganItems;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.VeganBlocks;
 
 import static net.player005.vegandelightfabric.VeganDelightMod.platform;
 
 public class VeganFluids {
 
     public static final FluidProperties APPLESAUCE_PROPERTIES = new FluidProperties(
-        () -> VeganBlocks.APPLESAUCE,
-        () -> VeganItems.APPLESAUCE_BUCKET,
+        () -> VeganBlocks.APPLESAUCE.value(),
+        () -> VeganItems.APPLESAUCE_BUCKET.value(),
         2,
         100,
         50,
@@ -20,8 +20,8 @@ public class VeganFluids {
     public static final FlowingFluid APPLESAUCE = platform.registerFluids("applesauce", APPLESAUCE_PROPERTIES);
 
     public static final FluidProperties SOYMILK_PROPERTIES = new FluidProperties(
-        () -> VeganBlocks.SOYMILK,
-        () -> VeganItems.SOYMILK_BUCKET,
+        () -> VeganBlocks.SOYMILK.value(),
+        () -> VeganItems.SOYMILK_BUCKET.value(),
         1,
         100,
         5,

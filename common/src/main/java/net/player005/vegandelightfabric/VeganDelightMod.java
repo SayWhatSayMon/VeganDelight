@@ -11,7 +11,6 @@ import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.labels.LabelUtils;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
@@ -28,8 +27,8 @@ public class VeganDelightMod {
     public static VeganDelightPlatform platform;
 
     public static void registerCompostables() {
-        ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
-        ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
+        ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN.value(), 0.45f);
+        ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.value().asItem(), 0.65f);
     }
 
     public static void initialiseAll(VeganDelightPlatform platform) {
@@ -59,7 +58,7 @@ public class VeganDelightMod {
 
             @Override
             public void apply(Recipe<?> recipe, ModificationHelper helper) {
-                helper.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE);
+                helper.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE.value());
             }
         });
     }
@@ -76,13 +75,13 @@ public class VeganDelightMod {
     public static void registerTrades() {
         platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
             (trader, random) -> new MerchantOffer(
-                new ItemCost(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
+                new ItemCost(VeganItems.SOYBEAN.value(), random.nextIntBetweenInclusive(16, 24)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 5, 0.05f
             ));
         platform.registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
             (trader, random) -> new MerchantOffer(
-                new ItemCost(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
+                new ItemCost(VeganItems.LEATHER_SUBSTITUTE.value(), random.nextIntBetweenInclusive(8, 16)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 15, 0.1f
             ));

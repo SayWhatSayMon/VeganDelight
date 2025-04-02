@@ -29,7 +29,7 @@ public class RatsCompat {
     static void registerSoymilkCheeseCauldron() {
         // copied from rats mod with little modification
         // https://github.com/AlexModGuy/Rats/blob/fcf305643c6055f37a6c05d803914bf1a2e0c75b/src/main/java/com/github/alexthe666/rats/registry/RatsCauldronRegistry.java#L27
-        CauldronInteraction.EMPTY.map().put(VeganItems.SOYMILK_BUCKET, (state, level, pos, player, hand, stack) -> {
+        CauldronInteraction.EMPTY.map().put(VeganItems.SOYMILK_BUCKET.value(), (state, level, pos, player, hand, stack) -> {
             if (!level.isClientSide()) {
                 player.awardStat(Stats.ITEM_USED.get(stack.getItem()));
                 player.setItemInHand(hand, ItemUtils.createFilledResult(stack, player, new ItemStack(Items.BUCKET)));

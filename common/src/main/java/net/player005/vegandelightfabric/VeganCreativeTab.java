@@ -8,7 +8,6 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.ItemLike;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,11 +15,11 @@ import java.util.List;
 
 public class VeganCreativeTab {
 
-    public static final List<ItemLike> allItemLike = new ArrayList<>();
-
-    static {
+    public static List<ItemLike> getAllItemLike() {
+        List<ItemLike> allItemLike = new ArrayList<>();
         Collections.addAll(allItemLike, VeganBlocks.allBlocks);
-        Collections.addAll(allItemLike, VeganItems.allItems);
+        Collections.addAll(allItemLike, VeganItems.getAllItems());
+        return allItemLike;
     }
 
     public static final ResourceKey<CreativeModeTab> VEGAN_ITEMS_KEY = ResourceKey.create(
@@ -33,10 +32,10 @@ public class VeganCreativeTab {
             BuiltInRegistries.CREATIVE_MODE_TAB,
             VEGAN_ITEMS_KEY,
             CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
-                .icon(VeganItems.SMOKED_TOFISH_ROLL::getDefaultInstance)
+                .icon(VeganItems.SMOKED_TOFISH_ROLL.value()::getDefaultInstance)
                 .title(Component.translatable("itemGroup.vegan_delight"))
                 .displayItems((parameters, output) -> {
-                    for (ItemLike item : allItemLike) {
+                    for (ItemLike item : getAllItemLike()) {
                         output.accept(item);
                     }
                 })

@@ -26,7 +26,6 @@ import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
-import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
