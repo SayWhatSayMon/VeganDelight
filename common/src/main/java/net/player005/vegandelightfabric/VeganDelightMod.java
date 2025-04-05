@@ -6,18 +6,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.player005.recipe_modification.api.RecipeFilter;
+import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.recipe_modification.api.RecipeModifier;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.labels.LabelUtils;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
-import net.player005.vegandelightfabric.recipe_manipulation.ModificationHelper;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeFilter;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeModifier;
-import org.jetbrains.annotations.NotNull;
 
 public class VeganDelightMod {
 
@@ -39,23 +36,17 @@ public class VeganDelightMod {
 
         registerBiomeModifers();
         registerTrades();
-        registerSubstitutes();
+        RecipeModification.onRecipeInit(r -> registerSubstitutes());
 
         platform.registerCompostables();
     }
 
     private static void registerSubstitutes() {
-        RecipeModification.registerModifier(new RecipeModifier() {
-            @Override
-            public @NotNull RecipeFilter getFilter() {
-                return RecipeFilter.acceptsIngredient(Items.LEATHER.getDefaultInstance());
-            }
-
-            @Override
-            public void apply(Recipe<?> recipe, ModificationHelper helper) {
-                helper.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE.value());
-            }
-        });
+        RecipeModification.registerModifier(
+            ResourceLocation.parse("vegandelight:leather_substitute"),
+            RecipeFilter.acceptsIngredient(Items.LEATHER.getDefaultInstance()),
+            RecipeModifier.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE.value())
+        );
     }
 
     private static void registerBiomeModifers() {

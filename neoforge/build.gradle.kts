@@ -6,6 +6,7 @@ dependencies {
     implementation(project.project(":common").sourceSets.getByName("main").output)
 
     implementation("maven.modrinth:farmers-delight:${rootProject.properties["fd_version"]}")
+    implementation("net.player005:RecipeModification:0.1.0:neoforge")
 }
 
 neoForge {

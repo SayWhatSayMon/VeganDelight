@@ -3,7 +3,6 @@ package net.player005.vegandelightfabric;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
 import net.fabricmc.loader.api.FabricLoader;
@@ -20,7 +19,6 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.client.VeganDelightClient;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -31,11 +29,6 @@ public class VeganDelightFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         VeganDelightMod.initialiseAll(new VeganDelightFabricPlatform());
-
-        ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeModification.init(server.getRecipeManager()));
-        ServerLifecycleEvents.END_DATA_PACK_RELOAD.register((server, resourceManager, success) ->
-            RecipeModification.init(server.getRecipeManager())
-        );
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {

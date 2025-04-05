@@ -17,11 +17,8 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
-import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -29,7 +26,6 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
-import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -47,11 +43,6 @@ public class VeganDelightNeo {
         VeganDelightNeo.eventBus = eventBus;
 
         VeganDelightMod.initialiseAll(new VDNeoforgePlatform());
-
-        NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event ->
-            RecipeModification.init(event.getServer().getRecipeManager()));
-
-        eventBus.addListener(FMLCommonSetupEvent.class, event -> RatsCompat.init());
     }
 
     @SubscribeEvent
