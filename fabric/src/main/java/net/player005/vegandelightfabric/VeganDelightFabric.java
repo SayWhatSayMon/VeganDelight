@@ -24,6 +24,7 @@ import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Supplier;
 
 public class VeganDelightFabric implements ModInitializer {
 
@@ -45,12 +46,12 @@ public class VeganDelightFabric implements ModInitializer {
         }
 
         @Override
-        public FlowingFluid registerFluids(String name, FluidProperties properties) {
+        public Supplier<FlowingFluid> registerFluids(String name, FluidProperties properties) {
             // we need to use some kind of references or java will complain
-            final var flowingRef = new AtomicReference<FlowingFluid>();
+            final AtomicReference<FlowingFluid> flowingRef = new AtomicReference<>();
             final var stillRef = new AtomicReference<FlowingFluid>();
 
-            final var flowing = Registry.register(
+            final FlowingFluid flowing = Registry.register(
                 BuiltInRegistries.FLUID,
                 ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                 new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
@@ -68,7 +69,7 @@ public class VeganDelightFabric implements ModInitializer {
                 VeganDelightClient.registerFluidRenderers(name, still, flowing);
             }
 
-            return flowing;
+            return flowingRef::get;
         }
 
         @Override

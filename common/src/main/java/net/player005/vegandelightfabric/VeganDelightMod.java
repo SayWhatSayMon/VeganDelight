@@ -9,7 +9,6 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
-import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.labels.LabelUtils;
@@ -24,12 +23,7 @@ public class VeganDelightMod {
 
     public static String modID = "vegandelight";
     @SuppressWarnings("NotNullFieldNotInitialized")
-    public static VeganDelightPlatform platform;
-
-    public static void registerCompostables() {
-        ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN.value(), 0.45f);
-        ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.value().asItem(), 0.65f);
-    }
+    private static VeganDelightPlatform platform;
 
     public static void initialiseAll(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
@@ -37,7 +31,7 @@ public class VeganDelightMod {
         VeganItems.initialise();
         VeganFluids.initialise();
         VeganBlocks.initialise();
-        VeganCreativeTab.register();
+        VeganCreativeTab.initialise();
         VeganDataComponents.initialise();
 
         RecipeModification.onRecipeInit(recipeManager -> LabelUtils.init());
@@ -45,11 +39,12 @@ public class VeganDelightMod {
 
         registerBiomeModifers();
         registerTrades();
-        registerCompostables();
         registerSubstitutes();
+
+        platform.registerCompostables();
     }
 
-    public static void registerSubstitutes() {
+    private static void registerSubstitutes() {
         RecipeModification.registerModifier(new RecipeModifier() {
             @Override
             public @NotNull RecipeFilter getFilter() {
@@ -63,27 +58,31 @@ public class VeganDelightMod {
         });
     }
 
-    public static void registerBiomeModifers() {
-        platform.registerBiomeModifier(0.4f, 0.9f,
-            platform.overworldBiomeTag(),
-            platform.undergroundBiomeTag(),
+    private static void registerBiomeModifers() {
+        getPlatform().registerBiomeModifier(0.4f, 0.9f,
+            getPlatform().overworldBiomeTag(),
+            getPlatform().undergroundBiomeTag(),
             GenerationStep.Decoration.VEGETAL_DECORATION,
             ResourceKey.create(Registries.PLACED_FEATURE, ResourceLocation.parse("vegandelight:patch_wild_soybean"))
         );
     }
 
-    public static void registerTrades() {
-        platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
+    private static void registerTrades() {
+        getPlatform().registerVillagerTrade(VillagerProfession.FARMER, 1,
             (trader, random) -> new MerchantOffer(
                 new ItemCost(VeganItems.SOYBEAN.value(), random.nextIntBetweenInclusive(16, 24)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 5, 0.05f
             ));
-        platform.registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
+        getPlatform().registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
             (trader, random) -> new MerchantOffer(
                 new ItemCost(VeganItems.LEATHER_SUBSTITUTE.value(), random.nextIntBetweenInclusive(8, 16)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 15, 0.1f
             ));
+    }
+
+    public static VeganDelightPlatform getPlatform() {
+        return platform;
     }
 }

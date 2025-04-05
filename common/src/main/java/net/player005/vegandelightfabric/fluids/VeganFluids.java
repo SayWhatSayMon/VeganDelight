@@ -1,11 +1,14 @@
 package net.player005.vegandelightfabric.fluids;
 
 import net.minecraft.world.level.material.FlowingFluid;
-import net.player005.vegandelightfabric.VeganItems;
 import net.player005.vegandelightfabric.VeganBlocks;
+import net.player005.vegandelightfabric.VeganItems;
 
-import static net.player005.vegandelightfabric.VeganDelightMod.platform;
+import java.util.function.Supplier;
 
+import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
+
+@SuppressWarnings("Convert2MethodRef")
 public class VeganFluids {
 
     public static final FluidProperties APPLESAUCE_PROPERTIES = new FluidProperties(
@@ -17,7 +20,7 @@ public class VeganFluids {
         2
     );
 
-    public static final FlowingFluid APPLESAUCE = platform.registerFluids("applesauce", APPLESAUCE_PROPERTIES);
+    public static final Supplier<FlowingFluid> APPLESAUCE = getPlatform().registerFluids("applesauce", APPLESAUCE_PROPERTIES);
 
     public static final FluidProperties SOYMILK_PROPERTIES = new FluidProperties(
         () -> VeganBlocks.SOYMILK.value(),
@@ -28,7 +31,7 @@ public class VeganFluids {
         5
     );
 
-    public static final FlowingFluid SOYMILK = platform.registerFluids("soymilk", SOYMILK_PROPERTIES);
+    public static final Supplier<FlowingFluid> SOYMILK = getPlatform().registerFluids("soymilk", SOYMILK_PROPERTIES);
 
     public static void initialise() { }
 }

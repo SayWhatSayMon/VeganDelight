@@ -1,7 +1,6 @@
 package net.player005.vegandelightfabric;
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
@@ -14,6 +13,8 @@ import net.player005.vegandelightfabric.fluids.VeganFluids;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
 import java.util.function.Supplier;
+
+import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
 public class VeganBlocks {
 
@@ -41,31 +42,31 @@ public class VeganBlocks {
     );
 
     public static final Holder<LiquidBlock> SOYMILK = register(
-        () -> new LiquidBlock(VeganFluids.SOYMILK, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
+        () -> new LiquidBlock(VeganFluids.SOYMILK.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
         "soymilk", false
     );
 
     public static final Holder<LiquidBlock> APPLESAUCE = register(
-        () -> new LiquidBlock(VeganFluids.APPLESAUCE, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
+        () -> new LiquidBlock(VeganFluids.APPLESAUCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
         "applesauce", false);
 
     public static <T extends Block> Holder<T> register(Supplier<T> block, String name, boolean registerItem) {
         ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
-
         assert id != null;
 
-        T blockInstance = block.get();
+        var holder = getPlatform().register(BuiltInRegistries.BLOCK, id, block);
 
-        if (registerItem) {
-            BlockItem blockItem = new BlockItem(blockInstance, new Item.Properties());
-            Registry.register(BuiltInRegistries.ITEM, id, blockItem);
-        }
+        if (registerItem)
+            getPlatform().register(BuiltInRegistries.ITEM, id, () -> new BlockItem(holder.value(), new Item.Properties()));
 
-        //noinspection unchecked
-        return (Holder<T>) Registry.registerForHolder(BuiltInRegistries.BLOCK, id, blockInstance);
+        return holder;
     }
 
-    public static void initialise() { }
+    public static Block[] getAllBlockItems() {
+        return new Block[] {
+            SOYBEAN_BAG.value(), WILD_SOYBEAN.value()
+        };
+    }
 
-    public static final Block[] allBlocks = {SOYBEAN_BAG.value(), WILD_SOYBEAN.value()};
+    static void initialise() { }
 }

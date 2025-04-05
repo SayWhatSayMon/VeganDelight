@@ -1,7 +1,6 @@
 package net.player005.vegandelightfabric;
 
 import net.minecraft.core.Holder;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.food.FoodProperties;
@@ -168,8 +167,8 @@ public class VeganItems {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelightMod.modID, id);
 
         assert itemID != null;
-        return Registry.registerForHolder(BuiltInRegistries.ITEM, itemID, item.get());
+        return VeganDelightMod.getPlatform().register(BuiltInRegistries.ITEM, itemID, item);
     }
 
-    public static void initialise() { }
+    static void initialise() { }
 }

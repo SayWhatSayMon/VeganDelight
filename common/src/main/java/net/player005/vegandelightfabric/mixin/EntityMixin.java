@@ -14,6 +14,6 @@ public abstract class EntityMixin {
 
     @Inject(method = "spawnAtLocation(Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/entity/item/ItemEntity;", at = @At("HEAD"))
     private void markEntityDroppedItemsAsNotVegan(ItemStack stack, CallbackInfoReturnable<ItemEntity> cir) {
-        stack.applyComponents(VeganDataComponents.setIsNotVegan);
+        stack.applyComponents(VeganDataComponents.setIsNotVegan.get());
     }
 }

@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric;
 
+import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -24,41 +25,31 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
-import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.recipe_manipulation.RecipeModification;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Supplier;
 
 @Mod("vegandelight")
 public class VeganDelightNeo {
 
     @SuppressWarnings("NotNullFieldNotInitialized")
-    public static IEventBus eventBus;
+    private static IEventBus eventBus;
 
     public VeganDelightNeo(@NotNull IEventBus eventBus) {
         VeganDelightNeo.eventBus = eventBus;
-        VeganDelightMod.platform = new VDNeoforgePlatform();
 
-        VeganDelightMod.registerBiomeModifers();
-        VeganDelightMod.registerTrades();
+        VeganDelightMod.initialiseAll(new VDNeoforgePlatform());
 
-        eventBus.<RegisterEvent>addListener(event -> {
-            event.register(Registries.BLOCK, helper -> VeganBlocks.initialise());
-            event.register(Registries.ITEM, helper -> VeganItems.initialise());
-            event.register(Registries.CREATIVE_MODE_TAB, helper -> VeganCreativeTab.register());
-            event.register(Registries.FLUID, helper -> VeganFluids.initialise());
-        });
-
-        NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event -> {
-            VeganDelightMod.registerSubstitutes();
-            RecipeModification.init(event.getServer().getRecipeManager());
-        });
+        NeoForge.EVENT_BUS.<ServerStartingEvent>addListener(event ->
+            RecipeModification.init(event.getServer().getRecipeManager()));
 
         eventBus.addListener(FMLCommonSetupEvent.class, event -> RatsCompat.init());
     }
@@ -79,6 +70,15 @@ public class VeganDelightNeo {
 
         public static final List<VillagerTrade> registeredTrades = new ArrayList<>();
 
+        @SuppressWarnings("unchecked")
+        @Override
+        public <V, T extends V> Holder<T> register(Registry<V> registry, ResourceKey<V> rk, Supplier<T> supplier) {
+            VeganDelightNeo.eventBus.<RegisterEvent>addListener(event ->
+                event.register((ResourceKey<? extends Registry<T>>) registry.key(), rk.location(), supplier)
+            );
+            return (Holder<T>) DeferredHolder.create(registry.key(), rk.location());
+        }
+
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
             return TagKey.create(Registries.BIOME, ResourceLocation.parse("c:underground"));
@@ -90,19 +90,19 @@ public class VeganDelightNeo {
             registeredTrades.add(new VillagerTrade(profession, level, itemListing));
         }
 
+        // biome modifiers for neoforge are registered in datapack via json files
         @Override
         public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
-                                          GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
-        }
+                                          GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) { }
 
         @Override
-        public FlowingFluid registerFluids(final String name, final @NotNull FluidProperties properties) {
+        public Supplier<FlowingFluid> registerFluids(final String name, final @NotNull FluidProperties properties) {
 
             var fluidType = createFluidType(name);
 
             // Necessary because java
-            var flowingRef = new AtomicReference<BaseFlowingFluid.Flowing>();
             var stillRef = new AtomicReference<BaseFlowingFluid.Source>();
+            var flowingRef = new AtomicReference<BaseFlowingFluid.Flowing>();
 
             var fluidProperties = new BaseFlowingFluid.Properties(() -> fluidType, stillRef::get, flowingRef::get)
                 .block(properties.block())
@@ -112,22 +112,28 @@ public class VeganDelightNeo {
                 .tickRate(properties.tickRate())
                 .slopeFindDistance(properties.slopeFindDistance());
 
-            flowingRef.set(new BaseFlowingFluid.Flowing(fluidProperties));
-            stillRef.set(new BaseFlowingFluid.Source(fluidProperties));
-
-            Registry.register(NeoForgeRegistries.FLUID_TYPES,
+            register(NeoForgeRegistries.FLUID_TYPES,
                 ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
-                fluidType);
+                () -> fluidType);
 
-            Registry.register(BuiltInRegistries.FLUID,
+            register(BuiltInRegistries.FLUID,
                 ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
-                stillRef.get());
-            Registry.register(BuiltInRegistries.FLUID,
+                () -> {
+                    flowingRef.set(new BaseFlowingFluid.Flowing(fluidProperties));
+                    return flowingRef.get();
+                });
+            register(BuiltInRegistries.FLUID,
                 ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
-                flowingRef.get());
+                () -> {
+                    stillRef.set(new BaseFlowingFluid.Source(fluidProperties));
+                    return stillRef.get();
+                });
 
-            return flowingRef.get();
+            return flowingRef::get;
         }
+
+        @Override
+        public void registerCompostables() { } // compostables are registered as a data map in datapack
 
         @Override
         public boolean isModLoaded(String name) {

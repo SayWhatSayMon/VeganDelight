@@ -25,7 +25,7 @@ public class LabelUtils {
     private static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
 
     public static VeganStatus isVegan(ItemStack itemStack) {
-        var component = itemStack.getComponents().get(VeganDataComponents.vegan);
+        var component = itemStack.getComponents().get(VeganDataComponents.vegan.value());
         if (component != null) return VeganStatus.fromBoolean(component);
 
         if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
@@ -84,8 +84,8 @@ public class LabelUtils {
     }
 
     private static boolean shouldRenderTooltip(ItemStack itemStack) {
-        return itemStack.has(VeganDataComponents.vegan) && !itemStack.is(VeganTags.vegan) &&
-            itemStack.getComponents().has(VeganDataComponents.containsSubstitutes);
+        return itemStack.has(VeganDataComponents.vegan.value()) && !itemStack.is(VeganTags.vegan) &&
+            itemStack.getComponents().has(VeganDataComponents.containsSubstitutes.value());
     }
 
     public static void addTooltipLines(ItemStack itemStack, List<Component> tooltip) {
@@ -132,12 +132,12 @@ public class LabelUtils {
         for (Ingredient ingredient : recipe.getIngredients()) {
             for (ItemStack item : ingredient.getItems()) {
                 if (isVegan(item) == VeganStatus.NOT_VEGAN) {
-                    result.applyComponents(VeganDataComponents.setIsNotVegan);
+                    result.applyComponents(VeganDataComponents.setIsNotVegan.get());
                     return;
                 }
             }
         }
-        result.applyComponents(VeganDataComponents.setIsVegan);
+        result.applyComponents(VeganDataComponents.setIsVegan.get());
     }
 
     @ApiStatus.Internal
@@ -145,12 +145,12 @@ public class LabelUtils {
         for (var i = 0; i < recipeInput.size(); i++) {
             var item = recipeInput.getItem(i);
             if (isVegan(item) == VeganStatus.NOT_VEGAN) {
-                result.applyComponents(VeganDataComponents.setIsNotVegan);
+                result.applyComponents(VeganDataComponents.setIsNotVegan.get());
             }
             if (item.is(VeganTags.vegan_alternative)) {
-                result.applyComponents(VeganDataComponents.setContainsSubstitutes);
+                result.applyComponents(VeganDataComponents.setContainsSubstitutes.get());
             }
         }
-        result.applyComponents(VeganDataComponents.setIsVegan);
+        result.applyComponents(VeganDataComponents.setIsVegan.get());
     }
 }

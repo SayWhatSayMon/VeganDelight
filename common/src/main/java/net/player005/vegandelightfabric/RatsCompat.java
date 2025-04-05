@@ -13,7 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.gameevent.GameEvent;
 
-import static net.player005.vegandelightfabric.VeganDelightMod.platform;
+import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
 public class RatsCompat {
 
@@ -23,7 +23,7 @@ public class RatsCompat {
     }
 
     public static boolean isRatsModInstalled() {
-        return platform.isModLoaded("rats");
+        return getPlatform().isModLoaded("rats");
     }
 
     static void registerSoymilkCheeseCauldron() {

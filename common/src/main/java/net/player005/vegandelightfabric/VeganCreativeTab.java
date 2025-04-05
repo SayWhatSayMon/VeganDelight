@@ -1,6 +1,5 @@
 package net.player005.vegandelightfabric;
 
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -13,11 +12,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
+
 public class VeganCreativeTab {
 
     public static List<ItemLike> getAllItemLike() {
         List<ItemLike> allItemLike = new ArrayList<>();
-        Collections.addAll(allItemLike, VeganBlocks.allBlocks);
+        Collections.addAll(allItemLike, VeganBlocks.getAllBlockItems());
         Collections.addAll(allItemLike, VeganItems.getAllItems());
         return allItemLike;
     }
@@ -27,11 +28,11 @@ public class VeganCreativeTab {
         ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_ingredients")
     );
 
-    public static void register() {
-        Registry.register(
+    static void initialise() {
+        getPlatform().register(
             BuiltInRegistries.CREATIVE_MODE_TAB,
             VEGAN_ITEMS_KEY,
-            CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
+            () -> CreativeModeTab.builder(CreativeModeTab.Row.TOP, 0)
                 .icon(VeganItems.SMOKED_TOFISH_ROLL.value()::getDefaultInstance)
                 .title(Component.translatable("itemGroup.vegan_delight"))
                 .displayItems((parameters, output) -> {
