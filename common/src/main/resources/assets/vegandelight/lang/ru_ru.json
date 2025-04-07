@@ -51,5 +51,35 @@
   "block.vegandelight.wild_soybean": "Дикая соя",
 
 
+  "vegandelight.advancement.cook_smoked_tofu.title": "Więcej gotowania",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Ugotuj plaster wędzonego tofu",
+  "vegandelight.advancement.cooked_tofish.title": "Jest mniej rybne",
+  "vegandelight.advancement.cooked_tofish.desc": "Ugotuj rybę z tofu",
+  "vegandelight.advancement.cook_tofu_slice.title": "Ugotować jeszcze raz?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Ugotuj plastry tofu",
+  "vegandelight.advancement.minced_tofu.title": "Jest jeszcze mniejsze",
+  "vegandelight.advancement.minced_tofu.desc": "Plasterek, plasterek tofu",
+  "vegandelight.advancement.soybean.title": "Dziwna fasola",
+  "vegandelight.advancement.soybean.desc": "Zdobądź swoją pierwszą soję",
+  "vegandelight.advancement.silken_tofu.title": "It's so glibbery",
+  "vegandelight.advancement.silken_tofu.desc": "Ugotuj mleko sojowe z solą i dodatkową wodą",
+  "vegandelight.advancement.smoked_tofish.title": "Jest jeszcze bardziej rybne",
+  "vegandelight.advancement.smoked_tofish.desc": "Wędzona ryba z tofu",
+  "vegandelight.advancement.smoked_tofu.title": "Palić",
+  "vegandelight.advancement.smoked_tofu.desc": "Podsmaż tofu",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Więcej krojenia",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Pokrój wędzone tofu",
+  "vegandelight.advancement.soymilk_bucket.title": "Dziwny płyn",
+  "vegandelight.advancement.soymilk_bucket.desc": "Ugotuj soję z wodą",
+  "vegandelight.advancement.tofish.title": "Jest rybopodobny",
+  "vegandelight.advancement.tofish.desc": "Craft tofu slices with kelp",
+  "vegandelight.advancement.tofu.title": "Nowy styl życia",
+  "vegandelight.advancement.tofu.desc": "Ugotuj mleko sojowe z solą",
+  "vegandelight.advancement.tofu_patty.title": "Czas na burgera",
+  "vegandelight.advancement.tofu_patty.desc": "Ugotuj mielone tofu",
+  "vegandelight.advancement.tofu_slices.title": "Pokrój w plastry",
+  "vegandelight.advancement.tofu_slices.desc": "Pokrój tofu",
+
+
   "itemGroup.vegan_delight": "Веганский Восторг"
 }

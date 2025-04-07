@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/smoked_tofu",
   "display": {
     "icon": {
-      "id": "vegandelight:smoked_tofu_slices"
+      "item": "vegandelight:smoked_tofu_slices"
     },
     "title": {
-      "text": "More slicing"
+      "translate": "vegandelight.advancement.smoked_tofu_slices.title",
+      "fallback": "More slicing"
     },
     "description": {
-      "text": "Slice a smoked tofu"
+      "translate": "vegandelight.advancement.smoked_tofu_slices.desc",
+      "fallback": "Slice a smoked tofu"
     },
     "frame": "task",
     "show_toast": true,

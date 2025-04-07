@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/tofu",
   "display": {
     "icon": {
-      "id": "vegandelight:smoked_tofu"
+      "item": "vegandelight:smoked_tofu"
     },
     "title": {
-      "text": "Smoke it"
+      "translate": "vegandelight.advancement.smoked_tofu.title",
+      "fallback": "Smoke it"
     },
     "description": {
-      "text": "Smoke a tofu"
+      "translate": "vegandelight.advancement.smoked_tofu.desc",
+      "fallback": "Smoke a tofu"
     },
     "frame": "task",
     "show_toast": true,

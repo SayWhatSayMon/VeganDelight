@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "id": "vegandelight:smoked_tofish"
+      "item": "vegandelight:smoked_tofish"
     },
     "title": {
-      "text": "It's even more fishy"
+      "translate": "vegandelight.advancement.smoked_tofish.title",
+      "fallback": "It's even more fishy"
     },
     "description": {
-      "text": "Smoke a tofish"
+      "translate": "vegandelight.advancement.smoked_tofish.desc",
+      "fallback": "Smoke a tofish"
     },
     "frame": "task",
     "show_toast": true,

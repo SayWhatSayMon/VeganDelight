@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/minced_tofu",
   "display": {
     "icon": {
-      "id": "vegandelight:tofu_patty"
+      "item": "vegandelight:tofu_patty"
     },
     "title": {
-      "text": "Burger time"
+      "translate": "vegandelight.advancement.tofu_patty.title",
+      "fallback": "Burger time"
     },
     "description": {
-      "text": "Cook minced tofu"
+      "translate": "vegandelight.advancement.tofu_patty.desc",
+      "fallback": "Cook minced tofu"
     },
     "frame": "task",
     "show_toast": true,
@@ -21,7 +23,7 @@
       "conditions": {
         "items": [
           {
-            "items": "vegandelight:tofu_patty"
+            "items": ["vegandelight:tofu_patty"]
           }
         ]
       }

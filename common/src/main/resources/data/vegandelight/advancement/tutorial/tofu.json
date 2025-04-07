@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/soymilk",
   "display": {
     "icon": {
-      "id": "vegandelight:tofu"
+      "item": "vegandelight:tofu"
     },
     "title": {
-      "text": "A new lifestyle"
+      "translate": "vegandelight.advancement.tofu.title",
+      "fallback": "A new lifestyle"
     },
     "description": {
-      "text": "Cook a soy milk with salt"
+      "translate": "vegandelight.advancement.tofu.desc",
+      "fallback": "Cook a soy milk with salt"
     },
     "frame": "task",
     "show_toast": true,

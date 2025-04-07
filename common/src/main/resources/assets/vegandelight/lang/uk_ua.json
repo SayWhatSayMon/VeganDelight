@@ -52,5 +52,35 @@
   "block.vegandelight.wild_soybean": "Дика соя",
 
 
+  "vegandelight.advancement.cook_smoked_tofu.title": "Більше готувати",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Приготуйте копчену скибочку тофу",
+  "vegandelight.advancement.cooked_tofish.title": "Він менш схожий на рибу",
+  "vegandelight.advancement.cooked_tofish.desc": "Приготуйте рибу з тофу",
+  "vegandelight.advancement.cook_tofu_slice.title": "Зварити ще раз?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Приготуйте скибочки тофу",
+  "vegandelight.advancement.minced_tofu.title": "Він ще менший",
+  "vegandelight.advancement.minced_tofu.desc": "Наріжте скибочку тофу",
+  "vegandelight.advancement.soybean.title": "Дивна квасоля",
+  "vegandelight.advancement.soybean.desc": "Отримайте свою першу сою",
+  "vegandelight.advancement.silken_tofu.title": "Це така балаканина",
+  "vegandelight.advancement.silken_tofu.desc": "Зварити соєве молоко з сіллю та додатковою водою",
+  "vegandelight.advancement.smoked_tofish.title": "Це ще більше схоже на рибу",
+  "vegandelight.advancement.smoked_tofish.desc": "Коптимо рибу тофу",
+  "vegandelight.advancement.smoked_tofu.title": "Покури",
+  "vegandelight.advancement.smoked_tofu.desc": "Куримо тофу",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Більше нарізки",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Наріжте копчений тофу",
+  "vegandelight.advancement.soymilk_bucket.title": "Дивна рідина",
+  "vegandelight.advancement.soymilk_bucket.desc": "Зварити соєві боби з водою",
+  "vegandelight.advancement.tofish.title": "Він схожий на рибу.",
+  "vegandelight.advancement.tofish.desc": "Крафтові скибочки тофу з ламінарією",
+  "vegandelight.advancement.tofu.title": "Новий стиль життя",
+  "vegandelight.advancement.tofu.desc": "Приготуйте соєве молоко з сіллю",
+  "vegandelight.advancement.tofu_patty.title": "Час бургерів",
+  "vegandelight.advancement.tofu_patty.desc": "Приготуйте фарш з тофу",
+  "vegandelight.advancement.tofu_slices.title": "Наріж його",
+  "vegandelight.advancement.tofu_slices.desc": "Наріжте тофу шматочками",
+
+
   "creativetab.vegan_tab": "Vegan Delight"
 }

@@ -2,13 +2,15 @@
   "parent": "vegandelight:tutorial/soymilk",
   "display": {
     "icon": {
-      "id": "vegandelight:silken_tofu"
+      "item": "vegandelight:silken_tofu"
     },
     "title": {
-      "text": "It's so glibbery"
+      "translate": "vegandelight.advancement.silken_tofu.title",
+      "fallback": "It's so glibbery"
     },
     "description": {
-      "text": "Cook a soy milk with salt and extra water"
+      "translate": "vegandelight.advancement.silken_tofu.desc",
+      "fallback": "Cook a soy milk with salt and extra water"
     },
     "frame": "task",
     "show_toast": true,

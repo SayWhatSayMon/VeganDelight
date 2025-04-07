@@ -52,5 +52,35 @@
   "block.vegandelight.wild_soybean": "Soja Silvestre",
 
 
+  "vegandelight.advancement.cook_smoked_tofu.title": "Más cocina",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Cocer una loncha de tofu ahumado",
+  "vegandelight.advancement.cooked_tofish.title": "Es menos parecido al pescado",
+  "vegandelight.advancement.cooked_tofish.desc": "Cocinar un pescado de tofu",
+  "vegandelight.advancement.cook_tofu_slice.title": "Cook it again?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "¿Cocinarlo otra vez?",
+  "vegandelight.advancement.minced_tofu.title": "Es aún más pequeño",
+  "vegandelight.advancement.minced_tofu.desc": "Rodaja, una rodaja de tofu",
+  "vegandelight.advancement.soybean.title": "Una alubia extraña",
+  "vegandelight.advancement.soybean.desc": "Consigue tu primera soja",
+  "vegandelight.advancement.silken_tofu.title": "Es tan glibbery",
+  "vegandelight.advancement.silken_tofu.desc": "Cocer una leche de soja con sal y agua extra",
+  "vegandelight.advancement.smoked_tofish.title": "Es aún más pescado como",
+  "vegandelight.advancement.smoked_tofish.desc": "Ahumar un pez de tofu",
+  "vegandelight.advancement.smoked_tofu.title": "Fúmatelo",
+  "vegandelight.advancement.smoked_tofu.desc": "Ahumar un tofu",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Más cortes",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Cortar un tofu ahumado",
+  "vegandelight.advancement.soymilk_bucket.title": "Un líquido extraño",
+  "vegandelight.advancement.soymilk_bucket.desc": "Cocer la soja con agua",
+  "vegandelight.advancement.tofish.title": "Es pescado como",
+  "vegandelight.advancement.tofish.desc": "Rodajas de tofu artesano con algas kelp",
+  "vegandelight.advancement.tofu.title": "Un nuevo estilo de vida",
+  "vegandelight.advancement.tofu.desc": "Cocer una leche de soja con sal",
+  "vegandelight.advancement.tofu_patty.title": "La hora de la hamburguesa",
+  "vegandelight.advancement.tofu_patty.desc": "Cocer tofu picado",
+  "vegandelight.advancement.tofu_slices.title": "Córtalo",
+  "vegandelight.advancement.tofu_slices.desc": "Cortar un tofu",
+
+
   "itemGroup.vegan_delight": "Vegan Delight"
 }

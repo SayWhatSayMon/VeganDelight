@@ -1,13 +1,15 @@
 {
   "display": {
     "icon": {
-      "id": "vegandelight:soybean"
+      "item": "vegandelight:soybean"
     },
     "title": {
-      "text": "A strange bean"
+      "translate": "vegandelight.advancement.soybean.title",
+      "fallback": "A strange bean"
     },
     "description": {
-      "text": "Get your first soybean"
+      "translate": "vegandelight.advancement.soybean.desc",
+      "fallback": "Get your first soybean"
     },
     "frame": "task",
     "show_toast": true,
@@ -32,8 +34,8 @@
   ],
   "rewards": {
     "recipes": [
-              "vegandelight:soymilk"
-            ],
+      "vegandelight:soymilk"
+    ],
     "experience": 100
   }
 }
