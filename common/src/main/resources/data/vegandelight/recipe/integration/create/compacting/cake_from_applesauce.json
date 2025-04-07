@@ -9,7 +9,7 @@
         },
         {
           "not": {
-            "type": "mod_loaded",
+            "condition": "mod_loaded",
             "modid": "createaddition"
           }
         }
