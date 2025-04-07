@@ -5,10 +5,12 @@
       "item": "vegandelight:minced_tofu"
     },
     "title": {
-      "text": "It's even smaller"
+      "translate": "vegandelight.advancement.minced_tofu.title",
+      "fallback": "It's even smaller"
     },
     "description": {
-      "text": "Slice a tofu slice"
+      "translate": "vegandelight.advancement.minced_tofu.desc",
+      "fallback": "Slice, a tofu slice"
     },
     "frame": "task",
     "show_toast": true,

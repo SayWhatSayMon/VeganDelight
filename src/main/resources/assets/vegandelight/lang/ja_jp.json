@@ -53,5 +53,35 @@
   "block.vegandelight.soybean_bag": "大豆袋",
   "block.vegandelight.wild_soybean": "野生の大豆",
 
-  "itemGroup.vegan_delight": "Vegan Delight"
+  "itemGroup.vegan_delight": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "より多くの料理",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "燻製豆腐のスライスを調理する",
+  "vegandelight.advancement.cooked_tofish.title": "魚っぽくない",
+  "vegandelight.advancement.cooked_tofish.desc": "豆腐の魚料理",
+  "vegandelight.advancement.cook_tofu_slice.title": "もう一度作る",
+  "vegandelight.advancement.cook_tofu_slice.desc": "豆腐スライスを調理する",
+  "vegandelight.advancement.minced_tofu.title": "さらに小さくなった",
+  "vegandelight.advancement.minced_tofu.desc": "豆腐のスライス",
+  "vegandelight.advancement.soybean.title": "奇妙な豆",
+  "vegandelight.advancement.soybean.desc": "最初の大豆を手に入れる",
+  "vegandelight.advancement.silken_tofu.title": "とても口がうまい",
+  "vegandelight.advancement.silken_tofu.desc": "豆乳を塩と余分な水で煮る",
+  "vegandelight.advancement.smoked_tofish.title": "もっと魚っぽい",
+  "vegandelight.advancement.smoked_tofish.desc": "豆腐の燻製",
+  "vegandelight.advancement.smoked_tofu.title": "吸う",
+  "vegandelight.advancement.smoked_tofu.desc": "豆腐を燻す",
+  "vegandelight.advancement.smoked_tofu_slices.title": "さらにスライス",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "燻製豆腐をスライスする",
+  "vegandelight.advancement.soymilk_bucket.title": "奇妙な液体",
+  "vegandelight.advancement.soymilk_bucket.desc": "大豆を水で煮る",
+  "vegandelight.advancement.tofish.title": "魚のようだ",
+  "vegandelight.advancement.tofish.desc": "クラフト豆腐の昆布和え",
+  "vegandelight.advancement.tofu.title": "新しいライフスタイル",
+  "vegandelight.advancement.tofu.desc": "豆乳を塩で煮る",
+  "vegandelight.advancement.tofu_patty.title": "バーガータイム",
+  "vegandelight.advancement.tofu_patty.desc": "豆腐のみじん切りを調理する",
+  "vegandelight.advancement.tofu_slices.title": "スライスする",
+  "vegandelight.advancement.tofu_slices.desc": "豆腐を切る"
 }

@@ -5,10 +5,12 @@
       "item": "vegandelight:cooked_tofish"
     },
     "title": {
-      "text": "It's less fishy"
+      "translate": "vegandelight.advancement.cooked_tofish.title",
+      "fallback": "It's less fishy"
     },
     "description": {
-      "text": "Cook a tofish"
+      "translate": "vegandelight.advancement.cooked_tofish.desc",
+      "fallback": "Cook a tofish"
     },
     "frame": "task",
     "show_toast": true,

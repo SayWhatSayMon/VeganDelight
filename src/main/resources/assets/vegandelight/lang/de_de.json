@@ -54,5 +54,35 @@
   "block.vegandelight.wild_soybean": "Wilde Sojabohne",
 
 
-  "itemGroup.vegan_delight": "Vegan Delight"
+  "itemGroup.vegan_delight": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "Noch mehr kochen",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Koche geräucherte Tofustücke",
+  "vegandelight.advancement.cooked_tofish.title": "Weniger fischig",
+  "vegandelight.advancement.cooked_tofish.desc": "Koche einen Tofisch",
+  "vegandelight.advancement.cook_tofu_slice.title": "Nochmal kochen?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Koche Tofustücke",
+  "vegandelight.advancement.minced_tofu.title": "Es wird immer kleiner",
+  "vegandelight.advancement.minced_tofu.desc": "Hacke ein Tofustück",
+  "vegandelight.advancement.soybean.title": "Seltsame Bohne",
+  "vegandelight.advancement.soybean.desc": "Sammle deine erste Sojabohne",
+  "vegandelight.advancement.silken_tofu.title": "Sooo glibschig",
+  "vegandelight.advancement.silken_tofu.desc": "Koche Sojamilch in Salzwasser",
+  "vegandelight.advancement.smoked_tofish.title": "Noch fischiger",
+  "vegandelight.advancement.smoked_tofish.desc": "Räuchere einen Tofisch",
+  "vegandelight.advancement.smoked_tofu.title": "Räucher mich",
+  "vegandelight.advancement.smoked_tofu.desc": "Räuchere einen Tofu",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Noch mehr schnippeln",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Schneide einen geräucherten Tofu",
+  "vegandelight.advancement.soymilk_bucket.title": "Seltsame Flüssigkeit",
+  "vegandelight.advancement.soymilk_bucket.desc": "Koche eine Sojabohne in Wasser",
+  "vegandelight.advancement.tofish.title": "Riecht nach Fisch",
+  "vegandelight.advancement.tofish.desc": "Kombiniere Tofustücke mit Seetang",
+  "vegandelight.advancement.tofu.title": "Ein neuer Lebensabschnitt",
+  "vegandelight.advancement.tofu.desc": "Koche Sojamilch mit Salz",
+  "vegandelight.advancement.tofu_patty.title": "Burger time",
+  "vegandelight.advancement.tofu_patty.desc": "Brate Tofu-Hack",
+  "vegandelight.advancement.tofu_slices.title": "Slice it",
+  "vegandelight.advancement.tofu_slices.desc": "Schneide einen Tofu"
 }

@@ -45,5 +45,35 @@
   "block.vegandelight.soybean_bag": "콩 자루",
   "block.vegandelight.wild_soybean": "야생 콩",
 
-  "creativetab.vegan_tab": "Vegan Delight"
+  "creativetab.vegan_tab": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "더 많은 요리",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "훈제 두부 슬라이스 요리하기",
+  "vegandelight.advancement.cooked_tofish.title": "생선 맛이 덜합니다",
+  "vegandelight.advancement.cooked_tofish.desc": "두부 생선 요리하기",
+  "vegandelight.advancement.cook_tofu_slice.title": "다시 요리할까요",
+  "vegandelight.advancement.cook_tofu_slice.desc": "두부 슬라이스 요리하기",
+  "vegandelight.advancement.minced_tofu.title": "더 작아졌습니다",
+  "vegandelight.advancement.minced_tofu.desc": "두부 슬라이스",
+  "vegandelight.advancement.soybean.title": "이상한 콩",
+  "vegandelight.advancement.soybean.desc": "첫 콩 섭취하기",
+  "vegandelight.advancement.silken_tofu.title": "너무 횡설수설합니다",
+  "vegandelight.advancement.silken_tofu.desc": "소금과 여분의 물로 두유를 끓입니다",
+  "vegandelight.advancement.smoked_tofish.title": "훨씬 더 물고기처럼",
+  "vegandelight.advancement.smoked_tofish.desc": "두부 생선 훈제",
+  "vegandelight.advancement.smoked_tofu.title": "스모크",
+  "vegandelight.advancement.smoked_tofu.desc": "두부 훈제",
+  "vegandelight.advancement.smoked_tofu_slices.title": "더 많은 슬라이싱",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "훈제 두부 슬라이스",
+  "vegandelight.advancement.soymilk_bucket.title": "이상한 액체",
+  "vegandelight.advancement.soymilk_bucket.desc": "콩을 물과 함께 익힙니다",
+  "vegandelight.advancement.tofish.title": "물고기처럼 생겼습니다",
+  "vegandelight.advancement.tofish.desc": "다시마로 두부 슬라이스 만들기",
+  "vegandelight.advancement.tofu.title": "새로운 라이프스타일",
+  "vegandelight.advancement.tofu.desc": "소금으로 두유를 조리합니다",
+  "vegandelight.advancement.tofu_patty.title": "버거 타임",
+  "vegandelight.advancement.tofu_patty.desc": "다진 두부 요리하기",
+  "vegandelight.advancement.tofu_slices.title": "슬라이스",
+  "vegandelight.advancement.tofu_slices.desc": "두부 슬라이스"
 }

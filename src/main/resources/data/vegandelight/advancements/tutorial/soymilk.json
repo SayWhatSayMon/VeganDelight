@@ -5,10 +5,12 @@
       "item": "vegandelight:soymilk_bucket"
     },
     "title": {
-      "text": "A strange liquid"
+      "translate": "vegandelight.advancement.soymilk_bucket.title",
+      "fallback": "A strange liquid"
     },
     "description": {
-      "text": "Cook the soybean with water"
+      "translate": "vegandelight.advancement.soymilk_bucket.desc",
+      "fallback": "Cook the soybean with water"
     },
     "frame": "task",
     "show_toast": true,

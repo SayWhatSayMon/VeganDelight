@@ -5,10 +5,12 @@
       "item": "vegandelight:cooked_smoked_tofu_slices"
     },
     "title": {
-      "text": "More cooking"
+      "translate": "vegandelight.advancement.cook_smoked_tofu.title",
+      "fallback": "More cooking"
     },
     "description": {
-      "text": "Cook a smoked tofu slice"
+      "translate": "vegandelight.advancement.cook_smoked_tofu.desc",
+      "fallback": "Cook a smoked tofu slice"
     },
     "frame": "task",
     "show_toast": true,

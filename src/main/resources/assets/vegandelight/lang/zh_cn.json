@@ -54,5 +54,35 @@
   "block.vegandelight.wild_soybean": "野生大豆",
 
 
-  "itemGroup.vegan_delight": "Vegan Delight"
+  "itemGroup.vegan_delight": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "更多烹饪",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "煮一块熏豆腐",
+  "vegandelight.advancement.cooked_tofish.title": "不那么像鱼",
+  "vegandelight.advancement.cooked_tofish.desc": "烹制豆腐鱼",
+  "vegandelight.advancement.cook_tofu_slice.title": "再煮一次",
+  "vegandelight.advancement.cook_tofu_slice.desc": "煮豆腐片",
+  "vegandelight.advancement.minced_tofu.title": "更小",
+  "vegandelight.advancement.minced_tofu.desc": "切一片豆腐",
+  "vegandelight.advancement.soybean.title": "一颗奇怪的豆子",
+  "vegandelight.advancement.soybean.desc": "获得第一颗大豆",
+  "vegandelight.advancement.silken_tofu.title": "太花言巧语了",
+  "vegandelight.advancement.silken_tofu.desc": "加盐和水煮豆浆",
+  "vegandelight.advancement.smoked_tofish.title": "更像鱼了",
+  "vegandelight.advancement.smoked_tofish.desc": "熏制豆腐鱼",
+  "vegandelight.advancement.smoked_tofu.title": "吸烟",
+  "vegandelight.advancement.smoked_tofu.desc": "熏豆腐",
+  "vegandelight.advancement.smoked_tofu_slices.title": "更多切片",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "熏豆腐切片",
+  "vegandelight.advancement.soymilk_bucket.title": "一种奇怪的液体",
+  "vegandelight.advancement.soymilk_bucket.desc": "用水煮黄豆",
+  "vegandelight.advancement.tofish.title": "像鱼一样",
+  "vegandelight.advancement.tofish.desc": "海带工艺豆腐片",
+  "vegandelight.advancement.tofu.title": "新的生活方式",
+  "vegandelight.advancement.tofu.desc": "煮豆浆加盐",
+  "vegandelight.advancement.tofu_patty.title": "汉堡时间",
+  "vegandelight.advancement.tofu_patty.desc": "煮豆腐",
+  "vegandelight.advancement.tofu_slices.title": "切片",
+  "vegandelight.advancement.tofu_slices.desc": "切片豆腐"
 }

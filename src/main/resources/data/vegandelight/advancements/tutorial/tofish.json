@@ -5,10 +5,12 @@
       "item": "vegandelight:tofish"
     },
     "title": {
-      "text": "It's fishy"
+      "translate": "vegandelight.advancement.tofish.title",
+      "fallback": "It's fishy"
     },
     "description": {
-      "text": "Craft tofu slices with kelp"
+      "translate": "vegandelight.advancement.tofish.desc",
+      "fallback": "Craft tofu slices with kelp"
     },
     "frame": "task",
     "show_toast": true,
