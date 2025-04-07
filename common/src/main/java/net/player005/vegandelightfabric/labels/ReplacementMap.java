@@ -50,7 +50,7 @@ public abstract class ReplacementMap {
     public static void addTooltipLines(Item item, List<Component> tooltip) {
         var replacedItem = replaces(item);
         if (replacedItem == null) return;
-        tooltip.add(1, Component.translatable("tooltip.vegan_delight.replaces",
+        tooltip.add(1, Component.translatable("tooltip.vegandelight.replaces",
             Component.translatable(replacedItem.getDescriptionId()).setStyle(itemNameStyle)
         ).setStyle(textStyle));
     }
