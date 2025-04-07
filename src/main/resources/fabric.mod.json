@@ -17,6 +17,9 @@
       "net.player005.vegandelightfabric.client.VeganDelightClient"
     ]
   },
+  "mixins": [
+    "vegandelight.fabric.mixins.json"
+  ],
   "accessWidener" : "vegandelight.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",

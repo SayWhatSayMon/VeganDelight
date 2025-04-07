@@ -54,6 +54,7 @@
   "block.vegandelight.wild_soybean": "Wild Soybean",
 
   "itemGroup.vegan_delight": "Vegan Delight",
+  "tooltip.vegandelight.replaces": "Can be used as a replacement for %s.",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "More cooking",
