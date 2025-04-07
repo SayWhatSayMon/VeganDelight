@@ -54,5 +54,35 @@
   "block.vegandelight.wild_soybean": "Dzika Soja",
 
 
-  "creativetab.vegan_tab": "Vegan Delight"
+  "creativetab.vegan_tab": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "Więcej gotowania",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Ugotuj plaster wędzonego tofu",
+  "vegandelight.advancement.cooked_tofish.title": "Jest mniej rybi",
+  "vegandelight.advancement.cooked_tofish.desc": "Ugotuj rybę z tofu",
+  "vegandelight.advancement.cook_tofu_slice.title": "Gotować jeszcze raz?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Ugotuj plastry tofu",
+  "vegandelight.advancement.minced_tofu.title": "Jest jeszcze mniejszy",
+  "vegandelight.advancement.minced_tofu.desc": "Pokrój plasterek tofu",
+  "vegandelight.advancement.soybean.title": "Dziwna fasola",
+  "vegandelight.advancement.soybean.desc": "Zdobądź swoją pierwszą soję",
+  "vegandelight.advancement.silken_tofu.title": "To takie glizdowate",
+  "vegandelight.advancement.silken_tofu.desc": "Ugotować mleko sojowe z solą i dodatkową wodą",
+  "vegandelight.advancement.smoked_tofish.title": "Jest jeszcze bardziej rybi",
+  "vegandelight.advancement.smoked_tofish.desc": "Wędzenie ryby z tofu",
+  "vegandelight.advancement.smoked_tofu.title": "Palić",
+  "vegandelight.advancement.smoked_tofu.desc": "Wędzenie tofu",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Więcej krojenia",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Pokrój wędzone tofu",
+  "vegandelight.advancement.soymilk_bucket.title": "Dziwny płyn",
+  "vegandelight.advancement.soymilk_bucket.desc": "Ugotować soję z wodą",
+  "vegandelight.advancement.tofish.title": "Przypomina rybę",
+  "vegandelight.advancement.tofish.desc": "Plastry tofu rzemieślniczego z wodorostami",
+  "vegandelight.advancement.tofu.title": "Nowy styl życia",
+  "vegandelight.advancement.tofu.desc": "Ugotować mleko sojowe z solą",
+  "vegandelight.advancement.tofu_patty.title": "Czas na burgera",
+  "vegandelight.advancement.tofu_patty.desc": "Ugotować mielone tofu",
+  "vegandelight.advancement.tofu_slices.title": "Pokrój",
+  "vegandelight.advancement.tofu_slices.desc": "Pokrój tofu"
 }

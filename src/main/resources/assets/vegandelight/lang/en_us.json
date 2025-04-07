@@ -54,5 +54,36 @@
   "block.vegandelight.wild_soybean": "Wild Soybean",
 
 
-  "creativetab.vegan_tab": "Vegan Delight"
+  "creativetab.vegan_tab": "Vegan Delight",
+  "itemGroup.vegan_delight": "Vegan Delight",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "More cooking",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Cook a smoked tofu slice",
+  "vegandelight.advancement.cooked_tofish.title": "It's less fishy",
+  "vegandelight.advancement.cooked_tofish.desc": "Cook a tofish",
+  "vegandelight.advancement.cook_tofu_slice.title": "Cook it again?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Cook tofu slices",
+  "vegandelight.advancement.minced_tofu.title": "It's even smaller",
+  "vegandelight.advancement.minced_tofu.desc": "Slice, a tofu slice",
+  "vegandelight.advancement.soybean.title": "A strange bean",
+  "vegandelight.advancement.soybean.desc": "Get your first soybean",
+  "vegandelight.advancement.silken_tofu.title": "It's so glibbery",
+  "vegandelight.advancement.silken_tofu.desc": "Cook a soy milk with salt and extra water",
+  "vegandelight.advancement.smoked_tofish.title": "It's even more fishy",
+  "vegandelight.advancement.smoked_tofish.desc": "Smoke a tofish",
+  "vegandelight.advancement.smoked_tofu.title": "Smoke it",
+  "vegandelight.advancement.smoked_tofu.desc": "Smoke a tofu",
+  "vegandelight.advancement.smoked_tofu_slices.title": "More slicing",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Slice a smoked tofu",
+  "vegandelight.advancement.soymilk_bucket.title": "A strange liquid",
+  "vegandelight.advancement.soymilk_bucket.desc": "Cook the soybean with water",
+  "vegandelight.advancement.tofish.title": "It's fishy",
+  "vegandelight.advancement.tofish.desc": "Craft tofu slices with kelp",
+  "vegandelight.advancement.tofu.title": "A new lifestyle",
+  "vegandelight.advancement.tofu.desc": "Cook a soy milk with salt",
+  "vegandelight.advancement.tofu_patty.title": "Burger time",
+  "vegandelight.advancement.tofu_patty.desc": "Cook minced tofu",
+  "vegandelight.advancement.tofu_slices.title": "Slice it",
+  "vegandelight.advancement.tofu_slices.desc": "Slice a tofu"
 }

@@ -5,10 +5,12 @@
       "item": "vegandelight:cooked_tofu_slices"
     },
     "title": {
-      "text": "Cook it again?"
+      "translate": "vegandelight.advancement.cook_tofu_slice.title",
+      "fallback": "Cook it again?"
     },
     "description": {
-      "text": "Cook tofu slices"
+      "translate": "vegandelight.advancement.cook_tofu_slice.desc",
+      "fallback": "Cook tofu slices"
     },
     "frame": "task",
     "show_toast": true,

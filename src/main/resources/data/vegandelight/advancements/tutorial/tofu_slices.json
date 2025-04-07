@@ -5,10 +5,12 @@
       "item": "vegandelight:tofu_slices"
     },
     "title": {
-      "text": "Slice it"
+      "translate": "vegandelight.advancement.tofu_slices.title",
+      "fallback": "Slice it"
     },
     "description": {
-      "text": "Slice a tofu"
+      "translate": "vegandelight.advancement.tofu_slices.desc",
+      "fallback": "Slice a tofu"
     },
     "frame": "task",
     "show_toast": true,
