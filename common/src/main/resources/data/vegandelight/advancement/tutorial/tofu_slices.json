@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/tofu",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu_slices"
+      "id": "vegandelight:tofu_slices"
     },
     "title": {
       "translate": "vegandelight.advancement.tofu_slices.title",

@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/smoked_tofu_slices",
   "display": {
     "icon": {
-      "item": "vegandelight:cooked_smoked_tofu_slices"
+      "id": "vegandelight:cooked_smoked_tofu_slices"
     },
     "title": {
       "translate": "vegandelight.advancement.cook_smoked_tofu.title",

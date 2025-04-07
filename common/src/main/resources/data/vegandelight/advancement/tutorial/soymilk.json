@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/root",
   "display": {
     "icon": {
-      "item": "vegandelight:soymilk_bucket"
+      "id": "vegandelight:soymilk_bucket"
     },
     "title": {
       "translate": "vegandelight.advancement.soymilk_bucket.title",

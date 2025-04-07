@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/soymilk",
   "display": {
     "icon": {
-      "item": "vegandelight:tofu"
+      "id": "vegandelight:tofu"
     },
     "title": {
       "translate": "vegandelight.advancement.tofu.title",

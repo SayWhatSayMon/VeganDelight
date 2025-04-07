@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "item": "vegandelight:cooked_tofish"
+      "id": "vegandelight:cooked_tofish"
     },
     "title": {
       "translate": "vegandelight.advancement.cooked_tofish.title",

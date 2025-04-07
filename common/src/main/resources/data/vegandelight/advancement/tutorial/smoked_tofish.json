@@ -2,7 +2,7 @@
   "parent": "vegandelight:tutorial/tofish",
   "display": {
     "icon": {
-      "item": "vegandelight:smoked_tofish"
+      "id": "vegandelight:smoked_tofish"
     },
     "title": {
       "translate": "vegandelight.advancement.smoked_tofish.title",
