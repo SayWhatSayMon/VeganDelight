@@ -39,25 +39,25 @@ public class VeganDelightMod {
 
     private static void registerBiomeModifers() {
         platform.registerBiomeModifier(0.4f, 0.9f,
-                platform.overworldBiomeTag(),
-                platform.undergroundBiomeTag(),
-                GenerationStep.Decoration.VEGETAL_DECORATION,
-                ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation("vegandelight:patch_wild_soybean"))
+            platform.overworldBiomeTag(),
+            platform.undergroundBiomeTag(),
+            GenerationStep.Decoration.VEGETAL_DECORATION,
+            ResourceKey.create(Registries.PLACED_FEATURE, new ResourceLocation("vegandelight:patch_wild_soybean"))
         );
     }
 
     private static void registerTrades() {
         platform.registerVillagerTrade(VillagerProfession.FARMER, 1,
-                (trader, random) -> new MerchantOffer(
-                        new ItemStack(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
-                        new ItemStack(Items.EMERALD, 1),
-                        12, 5, 0.05f
-                ));
+            (trader, random) -> new MerchantOffer(
+                new ItemStack(VeganItems.SOYBEAN, random.nextIntBetweenInclusive(16, 24)),
+                new ItemStack(Items.EMERALD, 1),
+                12, 5, 0.05f
+            ));
         platform.registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
-                (trader, random) -> new MerchantOffer(
-                        new ItemStack(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
-                        new ItemStack(Items.EMERALD, 1),
-                        12, 15, 0.1f
-                ));
+            (trader, random) -> new MerchantOffer(
+                new ItemStack(VeganItems.LEATHER_SUBSTITUTE, random.nextIntBetweenInclusive(8, 16)),
+                new ItemStack(Items.EMERALD, 1),
+                12, 15, 0.1f
+            ));
     }
 }

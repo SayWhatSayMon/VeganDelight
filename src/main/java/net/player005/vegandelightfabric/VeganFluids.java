@@ -13,35 +13,35 @@ import org.jetbrains.annotations.NotNull;
 public class VeganFluids {
 
     public static final SimpleFlowableFluid.Properties APPLESAUCE_FLUID_PROPERTIES =
-            new SimpleFlowableFluid
-                    .Properties(() -> VeganFluids.APPLESAUCE, () -> VeganFluids.FLOWING_APPLESAUCE)
-                    .blastResistance(100)
-                    .flowSpeed(2)
-                    .levelDecreasePerBlock(2)
-                    .tickRate(50)
-                    .bucket(() -> VeganItems.APPLESAUCE_BUCKET)
-                    .block(() -> (LiquidBlock) VeganBlocks.APPLESAUCE);
+        new SimpleFlowableFluid
+            .Properties(() -> VeganFluids.APPLESAUCE, () -> VeganFluids.FLOWING_APPLESAUCE)
+            .blastResistance(100)
+            .flowSpeed(2)
+            .levelDecreasePerBlock(2)
+            .tickRate(50)
+            .bucket(() -> VeganItems.APPLESAUCE_BUCKET)
+            .block(() -> (LiquidBlock) VeganBlocks.APPLESAUCE);
 
     public static final Fluid APPLESAUCE =
-            register(new SimpleFlowableFluid.Still(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "applesauce");
+        register(new SimpleFlowableFluid.Still(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "applesauce");
     public static final FlowingFluid FLOWING_APPLESAUCE = (FlowingFluid)
-            register(new SimpleFlowableFluid.Flowing(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "flowing_applesauce");
+        register(new SimpleFlowableFluid.Flowing(VeganFluids.APPLESAUCE_FLUID_PROPERTIES), "flowing_applesauce");
 
 
     public static final SimpleFlowableFluid.Properties SOYMILK_FLUID_PROPERTIES =
-            new SimpleFlowableFluid
-                    .Properties(() -> VeganFluids.SOYMILK, () -> VeganFluids.FLOWING_SOYMILK)
-                    .blastResistance(100)
-                    .flowSpeed(5)
-                    .levelDecreasePerBlock(1)
-                    .tickRate(5)
-                    .bucket(() -> VeganItems.SOYMILK_BUCKET)
-                    .block(() -> (LiquidBlock) VeganBlocks.SOYMILK);
+        new SimpleFlowableFluid
+            .Properties(() -> VeganFluids.SOYMILK, () -> VeganFluids.FLOWING_SOYMILK)
+            .blastResistance(100)
+            .flowSpeed(5)
+            .levelDecreasePerBlock(1)
+            .tickRate(5)
+            .bucket(() -> VeganItems.SOYMILK_BUCKET)
+            .block(() -> (LiquidBlock) VeganBlocks.SOYMILK);
 
     public static final Fluid SOYMILK =
-            register(new SimpleFlowableFluid.Still(VeganFluids.SOYMILK_FLUID_PROPERTIES), "soymilk");
+        register(new SimpleFlowableFluid.Still(VeganFluids.SOYMILK_FLUID_PROPERTIES), "soymilk");
     public static final FlowingFluid FLOWING_SOYMILK = (FlowingFluid)
-            register(new SimpleFlowableFluid.Flowing(VeganFluids.SOYMILK_FLUID_PROPERTIES), "flowing_soymilk");
+        register(new SimpleFlowableFluid.Flowing(VeganFluids.SOYMILK_FLUID_PROPERTIES), "flowing_soymilk");
 
 
     public static void initialise() {

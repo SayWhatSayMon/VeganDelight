@@ -30,6 +30,7 @@ public class VeganDelightFabric implements ModInitializer {
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
+
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
             return ConventionalBiomeTags.UNDERGROUND;
@@ -39,18 +40,18 @@ public class VeganDelightFabric implements ModInitializer {
         public void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
                                           GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) {
             BiomeModifications.addFeature(
-                    new ModBiomeModifiers.FDBiomeSelector(minTemp, maxTemp, allowed, denied),
-                    step, modifier);
+                new ModBiomeModifiers.FDBiomeSelector(minTemp, maxTemp, allowed, denied),
+                step, modifier);
         }
 
         @Override
         public CreativeModeTab registerItemTab(ItemStack icon, Component title, @NotNull ItemLike... items) {
             return FabricItemGroup.builder().icon(() -> icon).title(title)
-                    .displayItems((itemDisplayParameters, output) -> {
-                        for (@NotNull ItemLike item : items) {
-                            output.accept(item);
-                        }
-                    }).build();
+                .displayItems((itemDisplayParameters, output) -> {
+                    for (@NotNull ItemLike item : items) {
+                        output.accept(item);
+                    }
+                }).build();
         }
 
         @Override

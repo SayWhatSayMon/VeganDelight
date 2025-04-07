@@ -14,6 +14,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public interface VeganDelightPlatform {
+
     TagKey<Biome> undergroundBiomeTag();
 
     default TagKey<Biome> overworldBiomeTag() {
