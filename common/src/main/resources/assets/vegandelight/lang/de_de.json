@@ -83,5 +83,6 @@
   "vegandelight.advancement.tofu_slices.desc": "Schneide einen Tofu",
 
 
-  "itemGroup.vegan_delight": "Vegan Delight"
+  "itemGroup.vegan_delight": "Vegan Delight",
+  "tooltip.vegan_delight.replaces": "Kann in Rezepten als Ersatz für %s verwendet werden."
 }
