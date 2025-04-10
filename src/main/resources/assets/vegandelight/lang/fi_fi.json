@@ -1,0 +1,89 @@
+{
+  "item.vegandelight.tofu": "Tofu",
+  "item.vegandelight.silken_tofu": "Pehmeä tofu",
+  "item.vegandelight.minced_tofu": "Tofumurska",
+  "item.vegandelight.tofu_slices": "Tofusiivut",
+  "item.vegandelight.tofish": "Soikala",
+  "item.vegandelight.tofish_slices": "Soikalasiivut",
+  "item.vegandelight.tofish_roll": "Soikalasushi",
+  "item.vegandelight.tofu_patty": "Tofupihvi",
+
+
+  "item.vegandelight.smoked_tofu": "Savutofu",
+  "item.vegandelight.smoked_tofish": "Savusoikala",
+  "item.vegandelight.smoked_tofish_roll": "Savusoikalasushi",
+  "item.vegandelight.smoked_tofu_slices": "Savusoikalasiivut",
+
+
+  "item.vegandelight.cooked_tofu": "Paistettu tofu",
+  "item.vegandelight.cooked_tofu_slices": "Paisteut tofusiivut",
+  "item.vegandelight.cooked_tofish": "Paistettu soikala",
+  "item.vegandelight.raw_seitan": "Seitantaikina",
+  "item.vegandelight.cooked_seitan": "Seitankinkku",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Paistettu savutofu",
+  "item.vegandelight.cooked_smoked_tofish": "Paistettu savusoikala",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Paistetut savusoikalasiivut",
+
+
+  "item.vegandelight.salt": "Suola",
+  "item.vegandelight.soybean": "Soijapapu",
+  "fluid_type.vegandelight.soymilk": "Soijamaito",
+  "item.vegandelight.soymilk_bottle": "Soijamaitopullo",
+  "item.vegandelight.soymilk_bucket": "Soijamaitoämpäri",
+  "item.vegandelight.leather_substitute": "Tekonahka",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Poistaa yhden efektin",
+  "farmersdelight.tooltip.soymilk_bucket": "Poistaa yhden efektin",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Pasta kasvispyöryköillä",
+  "item.vegandelight.roasted_tofu_chops": "Tofukäristys",
+  "item.vegandelight.tofu_burger": "Kasvishampurilainen",
+  "item.vegandelight.tofu_sandwich": "Tofuleipä",
+
+
+  "item.vegandelight.applesauce": "Omenasose",
+  "item.vegandelight.applesauce_bucket": "Omenasoseämpäri",
+  "fluid_type.vegandelight.applesauce": "Omenasose",
+
+
+  "block.vegandelight.soybean_bag": "Säkki soijapapuja",
+  "block.vegandelight.wild_soybean": "Villisoija",
+
+
+  "creativetab.vegan_tab": "Vegaanin ilo",
+  "tooltip.vegandelight.replaces": "Voi käyttää korvaajana ainesosalle %s.",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "Lisää kokkailua",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Valmista savutofusiivuja",
+  "vegandelight.advancement.cooked_tofish.title": "Hyvä haisu",
+  "vegandelight.advancement.cooked_tofish.desc": "Valmista soikala",
+  "vegandelight.advancement.cook_tofu_slice.title": "Siivusta asiaa",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Valmista tofusiivuja",
+  "vegandelight.advancement.minced_tofu.title": "Vieläkin pienemmäksi!",
+  "vegandelight.advancement.minced_tofu.desc": "Valmista tofuviipaleita",
+  "vegandelight.advancement.soybean.title": "Kumma papu",
+  "vegandelight.advancement.soybean.desc": "Kerää ensimmäinen soijapapusi",
+  "vegandelight.advancement.silken_tofu.title": "Niin liukasta",
+  "vegandelight.advancement.silken_tofu.desc": "Keitä soijamaitoa suolassa ja vedessä",
+  "vegandelight.advancement.smoked_tofish.title": "Parempi haisu",
+  "vegandelight.advancement.smoked_tofish.desc": "Savusta soikalaa",
+  "vegandelight.advancement.smoked_tofu.title": "Savustusmestari",
+  "vegandelight.advancement.smoked_tofu.desc": "Savusta tofua",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Leikkaa lisää",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Leikkaa savutofua",
+  "vegandelight.advancement.soymilk_bucket.title": "Kumma neste",
+  "vegandelight.advancement.soymilk_bucket.desc": "Keitä soijapavut vedessä",
+  "vegandelight.advancement.tofish.title": "Kalavale",
+  "vegandelight.advancement.tofish.desc": "Yhdistä tofu ja merilevä",
+  "vegandelight.advancement.tofu.title": "Uusi elämäntyyli",
+  "vegandelight.advancement.tofu.desc": "Keitä soijamaitoa suolalla",
+  "vegandelight.advancement.tofu_patty.title": "Hamppariaika",
+  "vegandelight.advancement.tofu_patty.desc": "Valmista jauhetofu",
+  "vegandelight.advancement.tofu_slices.title": "Poikki ja pinoon",
+  "vegandelight.advancement.tofu_slices.desc": "Leikkaa tofua"
+}
