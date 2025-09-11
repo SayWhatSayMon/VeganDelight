@@ -7,7 +7,7 @@ plugins {
 repositories {
     maven { // FD refabricated
         name = "Greenhouse Maven"
-        url = uri("https://repo.greenhouse.house/releases/")
+        url = uri("https://maven.greenhouse.lgbt/releases/")
     }
 }
 

@@ -9,7 +9,7 @@ plugins {
 repositories {
     maven { // FD refabricated
         name = "Greenhouse Maven"
-        url = uri("https://repo.greenhouse.house/releases/")
+        url = uri("https://maven.greenhouse.lgbt/releases/")
     }
     // maven("https://mvn.devos.one/releases/") // Porting Lib // not officially released for 1.21 yet
     maven("https://repo.greenhouse.house/snapshots/") { // Temporary Porting Lib Fork for 1.21
