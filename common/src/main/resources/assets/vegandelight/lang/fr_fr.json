@@ -1,6 +1,6 @@
 {
   "itemGroup.vegan_delight": "Vegan Delight",
   "item.vegandelight.tofu": "Tofu",
-  "tooltip.vegan_delight.replaces": "peut être utilisé en remplacement du %s dans les recettes.",
+  "tooltip.vegandelight.replaces": "peut être utilisé en remplacement du %s.",
   "item.vegandelight.agave_syrup": "Bouteille de Sirop d'agave"
 }

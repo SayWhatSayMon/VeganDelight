@@ -13,7 +13,7 @@ import net.player005.recipe_modification.api.RecipeFilter;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.recipe_modification.api.RecipeModifier;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
-import net.player005.vegandelightfabric.labels.LabelUtils;
+import net.player005.vegandelightfabric.labels.VeganLabels;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
 
 public class VeganDelightMod {
@@ -31,7 +31,7 @@ public class VeganDelightMod {
         VeganCreativeTab.initialise();
         VeganDataComponents.initialise();
 
-        RecipeModification.onRecipeInit(recipeManager -> LabelUtils.init());
+        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.init());
         RatsCompat.init();
 
         registerBiomeModifers();

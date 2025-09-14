@@ -30,7 +30,7 @@ public abstract class ReplacementMap {
      * Registers the given item as a replacement for the other item, causing a tooltip to show on the replacement item.
      */
     public static void registerReplacement(Item replacement, Item original) {
-        map.put(original, replacement);
+        map.put(replacement, original);
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class ReplacementMap {
     public static void addTooltipLines(Item item, List<Component> tooltip) {
         var replacedItem = replaces(item);
         if (replacedItem == null) return;
-        tooltip.add(1, Component.translatable("tooltip.vegan_delight.replaces",
+        tooltip.add(1, Component.translatable("tooltip.vegandelight.replaces",
             Component.translatable(replacedItem.getDescriptionId()).setStyle(itemNameStyle)
         ).setStyle(textStyle));
     }

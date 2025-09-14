@@ -11,6 +11,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.recipe_modification.api.ResultItemModifier;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
@@ -20,19 +21,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LabelUtils {
+public class VeganLabels {
 
     private static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
-
-    public static VeganStatus isVegan(ItemStack itemStack) {
-        var component = itemStack.getComponents().get(VeganDataComponents.vegan.value());
-        if (component != null) return VeganStatus.fromBoolean(component);
-
-        if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
-        if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
-
-        return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
-    }
+    private static final ResultItemModifier resultModifier = (recipe, result_, recipeInput) -> {
+        var result = result_.copy();
+        if (recipeInput != null) modifyRecipeResult(recipeInput, result);
+        else modifyRecipeResult(recipe, result);
+        return result;
+    };
 
     @ApiStatus.Internal
     public static void init() {
@@ -44,6 +41,15 @@ public class LabelUtils {
             .info("Scanned {} items for vegan recipes in {}", BuiltInRegistries.ITEM.size(), timer);
     }
 
+    public static VeganStatus isVegan(ItemStack itemStack) {
+        if (itemStack.has(VeganDataComponents.is_not_vegan.value())) return VeganStatus.NOT_VEGAN;
+
+        if (itemStack.is(VeganTags.vegan)) return VeganStatus.VEGAN;
+        if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
+
+        return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
+    }
+
     private static VeganStatus scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
         alreadyTraversed.add(item);
         final var recipes = RecipeModification.getRecipesByResult(item);
@@ -52,13 +58,14 @@ public class LabelUtils {
         var hadNonVeganRecipes = false;
 
         for (RecipeHolder<?> recipeHolder : recipes) {
+            RecipeModification.registerRecipeResultModifier(recipeHolder.value(), resultModifier);
             if (recipeNotVegan(alreadyTraversed, recipeHolder.value())) hadNonVeganRecipes = true;
             else hadVeganRecipes = true;
         }
 
         var result = VeganStatus.VEGAN;
-        if (hadNonVeganRecipes) result = VeganStatus.NOT_VEGAN;
         if (hadVeganRecipes == hadNonVeganRecipes) result = VeganStatus.UNKNOWN;
+        if (hadNonVeganRecipes) result = VeganStatus.NOT_VEGAN;
 
         veganFromRecipes.put(item, result);
         return result;
@@ -84,8 +91,8 @@ public class LabelUtils {
     }
 
     private static boolean shouldRenderTooltip(ItemStack itemStack) {
-        return itemStack.has(VeganDataComponents.vegan.value()) && !itemStack.is(VeganTags.vegan) &&
-            itemStack.getComponents().has(VeganDataComponents.containsSubstitutes.value());
+        return !itemStack.has(VeganDataComponents.is_not_vegan.value()) && !itemStack.is(VeganTags.vegan) &&
+            itemStack.getComponents().has(VeganDataComponents.contains_substitutes.value());
     }
 
     public static void addTooltipLines(ItemStack itemStack, List<Component> tooltip) {
@@ -98,27 +105,8 @@ public class LabelUtils {
         ));
     }
 
-    public static void addTooltipLinesDebug(ItemStack itemStack, List<Component> tooltip) {
-        tooltip.add(1, Component.literal("Vegan: " + isVegan(itemStack).name()).setStyle(
-            Style.EMPTY
-                .withColor(0x008c44)
-                .withItalic(true)
-                .withBold(true)
-        ));
-        tooltip.add(2, Component.literal("Show label: " + shouldRenderTooltip(itemStack)));
-    }
-
     public enum VeganStatus {
         VEGAN, NOT_VEGAN, UNKNOWN;
-
-        @Nullable
-        public Boolean toOptionalBoolean() {
-            return switch (this) {
-                case VEGAN -> true;
-                case NOT_VEGAN -> false;
-                case UNKNOWN -> null;
-            };
-        }
 
         public static VeganStatus fromBoolean(@Nullable Boolean bool) {
             if (bool == null) return UNKNOWN;
@@ -127,8 +115,7 @@ public class LabelUtils {
         }
     }
 
-    @ApiStatus.Internal
-    public static void modifyRecipeResult(Recipe<?> recipe, ItemStack result) {
+    private static void modifyRecipeResult(Recipe<?> recipe, ItemStack result) {
         for (Ingredient ingredient : recipe.getIngredients()) {
             for (ItemStack item : ingredient.getItems()) {
                 if (isVegan(item) == VeganStatus.NOT_VEGAN) {
@@ -137,11 +124,9 @@ public class LabelUtils {
                 }
             }
         }
-        result.applyComponents(VeganDataComponents.setIsVegan.get());
     }
 
-    @ApiStatus.Internal
-    public static void modifyRecipeResult(RecipeInput recipeInput, ItemStack result) {
+    private static void modifyRecipeResult(RecipeInput recipeInput, ItemStack result) {
         for (var i = 0; i < recipeInput.size(); i++) {
             var item = recipeInput.getItem(i);
             if (isVegan(item) == VeganStatus.NOT_VEGAN) {
@@ -151,6 +136,5 @@ public class LabelUtils {
                 result.applyComponents(VeganDataComponents.setContainsSubstitutes.get());
             }
         }
-        result.applyComponents(VeganDataComponents.setIsVegan.get());
     }
 }
