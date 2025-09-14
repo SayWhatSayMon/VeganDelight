@@ -10,7 +10,7 @@ repositories {
     }
     maven {
         name = "Greenhouse Maven"
-        url = 'https://repo.greenhouse.house/releases/'
+        url = 'https://maven.greenhouse.lgbt/releases/'
     }
     maven { url "https://mvn.devos.one/releases/" } // Porting Lib
     maven {
