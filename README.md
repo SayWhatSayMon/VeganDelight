@@ -2,6 +2,10 @@
   <img src="https://media.forgecdn.net/attachments/description/928290/description_5c0e8448-1bea-4a65-978a-b330c8488514.png" />
 </p>
 
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/vegan-delight?style=for-the-badge&logo=modrinth)
+![CurseForge Downloads](https://img.shields.io/curseforge/dt/928290?style=for-the-badge&logo=curseforge)
+![GitHub Issues](https://img.shields.io/github/issues/SayWhatSayMon/VeganDelight?style=for-the-badge&logo=github)
+
 Description:
 ------------
 
