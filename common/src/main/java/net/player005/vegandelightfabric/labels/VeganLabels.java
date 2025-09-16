@@ -58,7 +58,7 @@ public class VeganLabels {
         var hadNonVeganRecipes = false;
 
         for (RecipeHolder<?> recipeHolder : recipes) {
-            RecipeModification.registerRecipeResultModifier(recipeHolder.value(), resultModifier);
+            RecipeModification.modifyResultItem(recipeHolder.value(), resultModifier);
             if (recipeNotVegan(alreadyTraversed, recipeHolder.value())) hadNonVeganRecipes = true;
             else hadVeganRecipes = true;
         }

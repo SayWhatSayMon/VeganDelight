@@ -24,7 +24,7 @@ dependencies {
     compileOnly("net.fabricmc:sponge-mixin:0.15.3+mixin.0.8.7")
     modImplementation("net.fabricmc:fabric-loader:${rootProject.properties["fabric_loader_version"]}")
 
-    modCompileOnly("net.player005:RecipeModification:0.1.0")
+    modCompileOnly("maven.modrinth:recipe-modification:${rootProject.properties["recipemod_version"]}-fabric")
 
     modCompileOnly("vectorwing:FarmersDelight:${rootProject.properties["fdrf_version"]}") {
         isTransitive = false

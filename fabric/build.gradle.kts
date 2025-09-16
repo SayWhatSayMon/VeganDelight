@@ -44,7 +44,7 @@ dependencies {
     modImplementation("vectorwing:FarmersDelight:${rootProject.properties["fdrf_version"]}") {
         exclude("net.fabricmc")
     }
-    modImplementation("net.player005:RecipeModification:0.1.0:fabric")
+    modImplementation("maven.modrinth:recipe-modification:${rootProject.properties["recipemod_version"]}-fabric")
 }
 
 loom {
