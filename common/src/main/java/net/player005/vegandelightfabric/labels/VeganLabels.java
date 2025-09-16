@@ -13,7 +13,6 @@ import net.minecraft.world.item.crafting.RecipeInput;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.recipe_modification.api.ResultItemModifier;
 import org.jetbrains.annotations.ApiStatus;
-import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
@@ -24,8 +23,7 @@ import java.util.Map;
 public class VeganLabels {
 
     private static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
-    private static final ResultItemModifier resultModifier = (recipe, result_, recipeInput) -> {
-        var result = result_.copy();
+    private static final ResultItemModifier resultModifier = (recipe, result, recipeInput) -> {
         if (recipeInput != null) modifyRecipeResult(recipeInput, result);
         else modifyRecipeResult(recipe, result);
         return result;
@@ -50,7 +48,7 @@ public class VeganLabels {
         return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
     }
 
-    private static VeganStatus scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
+    private static void scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
         alreadyTraversed.add(item);
         final var recipes = RecipeModification.getRecipesByResult(item);
 
@@ -68,7 +66,6 @@ public class VeganLabels {
         if (hadNonVeganRecipes) result = VeganStatus.NOT_VEGAN;
 
         veganFromRecipes.put(item, result);
-        return result;
     }
 
     private static boolean recipeNotVegan(List<Item> alreadyTraversed, Recipe<?> recipe) {
@@ -79,7 +76,8 @@ public class VeganLabels {
                 if (vegan == VeganStatus.UNKNOWN) {
                     var unknownItem = itemStack.getItem();
                     if (!alreadyTraversed.contains(unknownItem))
-                        vegan = scanRecipesRecursively(unknownItem, alreadyTraversed);
+                        scanRecipesRecursively(unknownItem, alreadyTraversed);
+                    vegan = veganFromRecipes.getOrDefault(unknownItem, VeganStatus.UNKNOWN);
                 }
 
                 if (vegan == VeganStatus.NOT_VEGAN) {
@@ -106,13 +104,7 @@ public class VeganLabels {
     }
 
     public enum VeganStatus {
-        VEGAN, NOT_VEGAN, UNKNOWN;
-
-        public static VeganStatus fromBoolean(@Nullable Boolean bool) {
-            if (bool == null) return UNKNOWN;
-            if (bool) return VEGAN;
-            else return NOT_VEGAN;
-        }
+        VEGAN, NOT_VEGAN, UNKNOWN
     }
 
     private static void modifyRecipeResult(Recipe<?> recipe, ItemStack result) {
