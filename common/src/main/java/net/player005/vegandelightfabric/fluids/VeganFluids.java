@@ -33,5 +33,5 @@ public class VeganFluids {
 
     public static final Supplier<FlowingFluid> SOYMILK = getPlatform().registerFluids("soymilk", SOYMILK_PROPERTIES);
 
-    public static void initialise() { }
+    public static void initialize() { }
 }

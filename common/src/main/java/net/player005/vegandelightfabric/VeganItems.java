@@ -7,7 +7,6 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
-import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 import vectorwing.farmersdelight.common.item.MilkBottleItem;
@@ -163,12 +162,12 @@ public class VeganItems {
         };
     }
 
-    public static @NotNull Holder<Item> register(String id, Supplier<Item> item) {
+    public static Holder<Item> register(String id, Supplier<Item> item) {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelightMod.modID, id);
 
         assert itemID != null;
         return VeganDelightMod.getPlatform().register(BuiltInRegistries.ITEM, itemID, item);
     }
 
-    static void initialise() { }
+    static void initialize() { }
 }

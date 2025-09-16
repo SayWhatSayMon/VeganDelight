@@ -13,10 +13,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
 import net.player005.vegandelightfabric.client.VeganDelightClient;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
@@ -28,7 +30,7 @@ public class VeganDelightFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        VeganDelightMod.initialiseAll(new VeganDelightFabricPlatform());
+        VeganDelightMod.initializeAll(new VeganDelightFabricPlatform());
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {

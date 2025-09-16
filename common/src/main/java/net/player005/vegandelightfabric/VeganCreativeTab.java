@@ -28,7 +28,7 @@ public class VeganCreativeTab {
         ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_ingredients")
     );
 
-    static void initialise() {
+    static void initialize() {
         getPlatform().register(
             BuiltInRegistries.CREATIVE_MODE_TAB,
             VEGAN_ITEMS_KEY,

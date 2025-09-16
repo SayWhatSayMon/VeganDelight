@@ -68,5 +68,5 @@ public class VeganBlocks {
         };
     }
 
-    static void initialise() { }
+    static void initialize() { }
 }

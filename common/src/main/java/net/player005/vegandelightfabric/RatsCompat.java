@@ -17,7 +17,7 @@ import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
 public class RatsCompat {
 
-    static void init() {
+    static void initialize() {
         if (isRatsModInstalled())
             registerSoymilkCheeseCauldron();
     }

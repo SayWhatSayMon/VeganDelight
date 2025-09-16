@@ -22,21 +22,23 @@ public class VeganDelightMod {
     @SuppressWarnings("NotNullFieldNotInitialized")
     private static VeganDelightPlatform platform;
 
-    public static void initialiseAll(VeganDelightPlatform platform) {
+    public static void initializeAll(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
 
-        VeganItems.initialise();
-        VeganFluids.initialise();
-        VeganBlocks.initialise();
-        VeganCreativeTab.initialise();
-        VeganDataComponents.initialise();
+        VeganItems.initialize();
+        VeganFluids.initialize();
+        VeganBlocks.initialize();
+        VeganCreativeTab.initialize();
+        VeganDataComponents.initialize();
 
-        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.init());
-        RatsCompat.init();
+        RecipeModification.onRecipeInit(recipeManager -> {
+            VeganLabels.initialize();
+            registerSubstitutes();
+        });
+        RatsCompat.initialize();
 
         registerBiomeModifers();
         registerTrades();
-        RecipeModification.onRecipeInit(r -> registerSubstitutes());
 
         platform.registerCompostables();
     }

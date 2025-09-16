@@ -44,5 +44,5 @@ public class VeganDataComponents {
     public static final Supplier<DataComponentPatch> setContainsSubstitutes =
         Lazy.lazy(() -> DataComponentPatch.builder().set(contains_substitutes.value(), Unit.INSTANCE).build());
 
-    public static void initialise() { }
+    public static void initialize() { }
 }

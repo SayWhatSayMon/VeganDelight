@@ -1,7 +1,9 @@
 package net.player005.vegandelightfabric;
 
+import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -9,24 +11,30 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
+import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
+import net.neoforged.neoforge.fluids.SimpleFluidContent;
+import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStackSimple;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,10 +47,10 @@ public class VeganDelightNeo {
     @SuppressWarnings("NotNullFieldNotInitialized")
     private static IEventBus eventBus;
 
-    public VeganDelightNeo(@NotNull IEventBus eventBus) {
+    public VeganDelightNeo(IEventBus eventBus) {
         VeganDelightNeo.eventBus = eventBus;
 
-        VeganDelightMod.initialiseAll(new VDNeoforgePlatform());
+        VeganDelightMod.initializeAll(new VDNeoforgePlatform());
     }
 
     @SubscribeEvent
@@ -87,7 +95,7 @@ public class VeganDelightNeo {
                                           GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier) { }
 
         @Override
-        public Supplier<FlowingFluid> registerFluids(final String name, final @NotNull FluidProperties properties) {
+        public Supplier<FlowingFluid> registerFluids(final String name, final FluidProperties properties) {
 
             var fluidType = createFluidType(name);
 
@@ -133,7 +141,7 @@ public class VeganDelightNeo {
 
     }
 
-    private static @NotNull FluidType createFluidType(String name) {
+    private static FluidType createFluidType(String name) {
         var properties = FluidType.Properties.create();
         var fluidType = new FluidType(properties);
 

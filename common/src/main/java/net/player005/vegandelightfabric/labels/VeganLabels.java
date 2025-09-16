@@ -1,7 +1,6 @@
 package net.player005.vegandelightfabric.labels;
 
 import com.google.common.base.Stopwatch;
-import net.minecraft.Util;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -30,7 +29,7 @@ public class VeganLabels {
     };
 
     @ApiStatus.Internal
-    public static void init() {
+    public static void initialize() {
         var timer = Stopwatch.createStarted();
         for (Item item : BuiltInRegistries.ITEM) {
             scanRecipesRecursively(item, new ArrayList<>(BuiltInRegistries.ITEM.size()));
