@@ -5,23 +5,11 @@
     "#c:foods/fruit",
     "#c:foods/vegetable",
     "#c:foods/berry",
-    "#c:foods/soymilk",
-    "#c:stones",
-    "#c:cobblestones",
-    "#c:obsidians",
 
     "#minecraft:sand",
     "#minecraft:dirt",
     "#minecraft:saplings",
-    "#minecraft:planks",
     "#minecraft:logs",
-    "#minecraft:wooden_buttons",
-    "#minecraft:wooden_doors",
-    "#minecraft:wooden_fences",
-    "#minecraft:wooden_pressure_plates",
-    "#minecraft:wooden_slabs",
-    "#minecraft:wooden_stairs",
-    "#minecraft:wooden_trapdoors",
     "#minecraft:flowers",
 
     "#vegandelight:vegan_alternative"
