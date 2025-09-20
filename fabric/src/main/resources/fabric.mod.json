@@ -11,7 +11,7 @@
       "net.player005.vegandelightfabric.fabric.VeganDelightFabric"
     ],
     "client": [
-      "net.player005.vegandelightfabric.client.VeganDelightClient"
+      "net.player005.vegandelightfabric.fabric.client.VeganDelightClient"
     ]
   },
   "mixins": [
