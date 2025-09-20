@@ -5,6 +5,10 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBiomeTags;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidStorage;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.fluid.base.EmptyItemFluidStorage;
+import net.fabricmc.fabric.api.transfer.v1.fluid.base.FullItemFluidStorage;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
@@ -15,6 +19,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -38,8 +43,14 @@ public class VeganDelightFabric implements ModInitializer {
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {
 
         @Override
-        public void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid, int millibuckets) {
-            // TODO
+        public void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid,
+                                      int millibuckets) {
+            var fluidVariant = FluidVariant.of(fluid.get());
+            FluidStorage.ITEM.registerForItems((itemStack, context) ->
+                new FullItemFluidStorage(context, empty.value(), fluidVariant, millibuckets * 81L), item.value());
+            FluidStorage.combinedItemApiProvider(Items.BUCKET).register(context -> new EmptyItemFluidStorage(
+                context, item.value(), fluid.get(), millibuckets * 81L
+            ));
         }
 
         @Override
