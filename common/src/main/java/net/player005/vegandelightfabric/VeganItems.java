@@ -7,11 +7,14 @@ import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.player005.vegandelightfabric.fluids.VeganFluids;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 import java.util.function.Supplier;
+
+import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
 public class VeganItems {
 
@@ -110,15 +113,16 @@ public class VeganItems {
         () -> new Item(new Item.Properties()));
 
     public static final Holder<Item> SOYMILK_BUCKET = register("soymilk_bucket",
-        () -> new MilkBottleItem(
+        () -> new DrinkableItem(
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
         )
     );
 
     public static final Holder<Item> SOYMILK_BOTTLE = register("soymilk_bottle",
-        () -> new MilkBottleItem(new Item.Properties()
-            .craftRemainder(Items.GLASS_BOTTLE)
-            .stacksTo(16)));
+        () -> new DrinkableItem(
+            new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+        )
+    );
 
     public static final Holder<Item> SOYBEAN = register("soybean",
         () -> new ItemNameBlockItem(VeganBlocks.SOYBEAN_CROP.value(),
@@ -131,7 +135,8 @@ public class VeganItems {
         () -> new Item(new Item.Properties()));
 
     public static final Holder<Item> APPLESAUCE = register("applesauce",
-        () -> new ConsumableItem(new Item.Properties().food(new FoodProperties.Builder()
+        () -> new ConsumableItem(new Item.Properties()
+            .food(new FoodProperties.Builder()
                 .nutrition(2)
                 .saturationModifier(0.4f)
                 .build())
@@ -166,8 +171,23 @@ public class VeganItems {
         ResourceLocation itemID = ResourceLocation.tryBuild(VeganDelightMod.modID, id);
 
         assert itemID != null;
-        return VeganDelightMod.getPlatform().register(BuiltInRegistries.ITEM, itemID, item);
+        return getPlatform().register(BuiltInRegistries.ITEM, itemID, item);
     }
 
-    static void initialize() { }
+    static void initialize() {
+        registerBucket(SOYMILK_BUCKET, VeganFluids.SOYMILK);
+        registerBottle(SOYMILK_BOTTLE, VeganFluids.SOYMILK);
+        registerBucket(APPLESAUCE_BUCKET, VeganFluids.APPLESAUCE);
+        registerBowl(APPLESAUCE, VeganFluids.APPLESAUCE);
+    }
+
+    private static void registerBucket(Holder<Item> item, Supplier<FlowingFluid> fluid) {
+        getPlatform().registerFluidTank(item, Holder.direct(Items.BUCKET), fluid, 1000);
+    }
+    private static void registerBottle(Holder<Item> item, Supplier<FlowingFluid> fluid) {
+        getPlatform().registerFluidTank(item, Holder.direct(Items.GLASS_BOTTLE), fluid, 250);
+    }
+    private static void registerBowl(Holder<Item> item, Supplier<FlowingFluid> fluid) {
+        getPlatform().registerFluidTank(item, Holder.direct(Items.BOWL), fluid, 250);
+    }
 }

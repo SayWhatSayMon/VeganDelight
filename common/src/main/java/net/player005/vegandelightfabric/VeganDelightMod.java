@@ -25,8 +25,8 @@ public class VeganDelightMod {
     public static void initializeAll(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
 
-        VeganItems.initialize();
         VeganFluids.initialize();
+        VeganItems.initialize();
         VeganBlocks.initialize();
         VeganCreativeTab.initialize();
         VeganDataComponents.initialize();

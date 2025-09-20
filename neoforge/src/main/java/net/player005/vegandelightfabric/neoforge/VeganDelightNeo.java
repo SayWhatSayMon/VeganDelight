@@ -1,4 +1,4 @@
-package net.player005.vegandelightfabric;
+package net.player005.vegandelightfabric.neoforge;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
@@ -16,7 +16,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -34,6 +33,8 @@ import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStackS
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
+import net.player005.vegandelightfabric.VeganDelightMod;
+import net.player005.vegandelightfabric.VeganDelightPlatform;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 
 import java.util.ArrayList;
@@ -76,6 +77,15 @@ public class VeganDelightNeo {
                 event.register((ResourceKey<? extends Registry<T>>) registry.key(), rk.location(), supplier)
             );
             return (Holder<T>) DeferredHolder.create(registry.key(), rk.location());
+        }
+
+        @Override
+        public void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid, int millibuckets) {
+            VeganDelightNeo.eventBus.<RegisterCapabilitiesEvent>addListener(e -> e.registerItem(
+                Capabilities.FluidHandler.ITEM,
+                (s, v) -> new FluidHandlerItemStackSimple.SwapEmpty(() -> DataComponentType.<SimpleFluidContent>builder().persistent(Codec.unit(SimpleFluidContent.copyOf(new FluidStack(fluid.get(), millibuckets)))).build(), item.value().getDefaultInstance(), empty.value().getDefaultInstance(), millibuckets),
+                item.value())
+            );
         }
 
         @Override
