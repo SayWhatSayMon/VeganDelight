@@ -1,4 +1,4 @@
-package net.player005.vegandelightfabric;
+package net.player005.vegandelightfabric.fabric;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.ModInitializer;
@@ -13,13 +13,13 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.minecraft.world.level.material.Fluid;
-import net.player005.vegandelightfabric.client.VeganDelightClient;
+import net.player005.vegandelightfabric.VeganDelightMod;
+import net.player005.vegandelightfabric.VeganDelightPlatform;
+import net.player005.vegandelightfabric.fabric.client.VeganDelightClient;
 import net.player005.vegandelightfabric.fluids.FluidProperties;
 import vectorwing.farmersdelight.common.registry.ModBiomeModifiers;
 

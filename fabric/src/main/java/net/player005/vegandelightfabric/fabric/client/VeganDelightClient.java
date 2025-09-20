@@ -1,4 +1,4 @@
-package net.player005.vegandelightfabric.client;
+package net.player005.vegandelightfabric.fabric.client;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -7,7 +7,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.material.FlowingFluid;
-import net.player005.vegandelightfabric.SimpleFlowableFluid;
+import net.player005.vegandelightfabric.fabric.SimpleFlowableFluid;
 import net.player005.vegandelightfabric.VeganBlocks;
 import net.player005.vegandelightfabric.VeganDelightMod;
 

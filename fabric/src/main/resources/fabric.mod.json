@@ -8,7 +8,7 @@
   "icon": "assets/vegandelight/icon.png",
   "entrypoints": {
     "main": [
-      "net.player005.vegandelightfabric.VeganDelightFabric"
+      "net.player005.vegandelightfabric.fabric.VeganDelightFabric"
     ],
     "client": [
       "net.player005.vegandelightfabric.client.VeganDelightClient"

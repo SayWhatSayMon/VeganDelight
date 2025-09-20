@@ -1,7 +1,7 @@
 // This class was copied from porting lib (https://github.com/Fabricators-of-Create/Porting-Lib)
 // and is licensed under LGPL v2.1
 
-package net.player005.vegandelightfabric;
+package net.player005.vegandelightfabric.fabric;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
