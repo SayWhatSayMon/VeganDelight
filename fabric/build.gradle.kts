@@ -48,6 +48,9 @@ dependencies {
 }
 
 loom {
+    mixin {
+        useLegacyMixinAp = false
+    }
     runs {
         val vmArgs = arrayOf("-XX:+UseZGC", "-XX:+IgnoreUnrecognizedVMOptions", "-XX:+AllowEnhancedClassRedefinition", "-Xms500M", "-Xmx2G")
         named("client") {
