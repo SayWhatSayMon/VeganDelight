@@ -1,9 +1,7 @@
 package net.player005.vegandelightfabric.neoforge;
 
-import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -12,6 +10,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -26,10 +25,7 @@ import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtension
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.fluids.BaseFlowingFluid;
-import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.FluidType;
-import net.neoforged.neoforge.fluids.SimpleFluidContent;
-import net.neoforged.neoforge.fluids.capability.templates.FluidHandlerItemStackSimple;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -80,11 +76,17 @@ public class VeganDelightNeo {
         }
 
         @Override
-        public void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid, int millibuckets) {
+        public void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid,
+                                      int millibuckets) {
             VeganDelightNeo.eventBus.<RegisterCapabilitiesEvent>addListener(e -> e.registerItem(
                 Capabilities.FluidHandler.ITEM,
-                (s, v) -> new FluidHandlerItemStackSimple.SwapEmpty(() -> DataComponentType.<SimpleFluidContent>builder().persistent(Codec.unit(SimpleFluidContent.copyOf(new FluidStack(fluid.get(), millibuckets)))).build(), item.value().getDefaultInstance(), empty.value().getDefaultInstance(), millibuckets),
+                (stack, __) -> new VeganFluidHandler(stack, empty.value(), true, fluid.get(), millibuckets),
                 item.value())
+            );
+            VeganDelightNeo.eventBus.<RegisterCapabilitiesEvent>addListener(e -> e.registerItem(
+                Capabilities.FluidHandler.ITEM,
+                (stack, __) -> new VeganFluidHandler(new ItemStack(item), empty.value(), false, fluid.get(), millibuckets),
+                empty.value())
             );
         }
 
