@@ -28,9 +28,17 @@ public class VeganDelightMod {
         registerBiomeModifers();
         registerTrades();
         registerRecipeModifiers();
+        registerFluidHandlers();
 
         ComposterBlock.COMPOSTABLES.put(VeganItems.SOYBEAN, 0.45f);
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.asItem(), 0.65f);
+    }
+
+    private static void registerFluidHandlers() {
+        platform.registerFluidHandler(VeganItems.SOYMILK_BUCKET, Items.BUCKET, VeganFluids.SOYMILK, 1000);
+        platform.registerFluidHandler(VeganItems.SOYMILK_BOTTLE, Items.GLASS_BOTTLE, VeganFluids.SOYMILK, 250);
+        platform.registerFluidHandler(VeganItems.APPLESAUCE_BUCKET, Items.BUCKET, VeganFluids.APPLESAUCE, 1000);
+        platform.registerFluidHandler(VeganItems.APPLESAUCE, Items.BOWL, VeganFluids.APPLESAUCE, 250);
     }
 
     private static void registerRecipeModifiers() {

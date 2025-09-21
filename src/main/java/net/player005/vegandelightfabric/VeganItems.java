@@ -6,13 +6,16 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.Level;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.item.MilkBottleItem;
+import vectorwing.farmersdelight.common.item.DrinkableItem;
 
 public class VeganItems {
 
@@ -123,16 +126,33 @@ public class VeganItems {
         new Item(new Item.Properties()));
 
     public static final Item SOYMILK_BUCKET = register("soymilk_bucket",
-        new BucketItem(
-            VeganFluids.SOYMILK,
+        new DrinkableItem(
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
-        )
+        ) {
+            @Override
+            public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                for (MobEffectInstance effect : consumer.getActiveEffects()) {
+                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
+                        consumer.removeEffect(effect.getEffect());
+                    }
+                }
+            }
+        }
     );
 
     public static final Item SOYMILK_BOTTLE = register("soymilk_bottle",
-        new MilkBottleItem(new Item.Properties()
+        new DrinkableItem(new Item.Properties()
             .craftRemainder(Items.GLASS_BOTTLE)
-            .stacksTo(16)));
+            .stacksTo(16)) {
+            @Override
+            public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                for (MobEffectInstance effect : consumer.getActiveEffects()) {
+                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
+                        consumer.removeEffect(effect.getEffect());
+                    }
+                }
+            }
+        });
 
     public static final Item SOYBEAN = register("soybean",
         new ItemNameBlockItem(VeganBlocks.SOYBEAN_CROP,
@@ -152,8 +172,7 @@ public class VeganItems {
             .craftRemainder(Items.BOWL)
             .stacksTo(16)));
     public static final Item APPLESAUCE_BUCKET = register("applesauce_bucket",
-        new BucketItem(
-            VeganFluids.APPLESAUCE,
+        new DrinkableItem(
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
         )
     );

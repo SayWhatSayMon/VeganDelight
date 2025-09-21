@@ -7,11 +7,13 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.minecraft.world.level.material.Fluid;
 
 public interface VeganDelightPlatform {
 
@@ -27,4 +29,6 @@ public interface VeganDelightPlatform {
 
     void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
                                GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier);
+
+    void registerFluidHandler(Item full, Item empty, Fluid fluid, int millibuckets);
 }
