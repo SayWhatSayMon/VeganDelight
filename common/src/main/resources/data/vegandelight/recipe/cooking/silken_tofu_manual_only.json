@@ -3,7 +3,7 @@
   "container": {
     "id": "minecraft:bowl"
   },
-  "cookingtime": 200,
+  "cookingtime": 150,
   "experience": 1.0,
   "recipe_book_tab": "meals",
   "ingredients": [
@@ -14,7 +14,7 @@
       "tag": "c:salt"
     },
     {
-      "item": "minecraft:water_bucket"
+      "item": "minecraft:potion"
     }
   ],
   "result": {
