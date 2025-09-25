@@ -11,13 +11,14 @@
       "item": "minecraft:bowl"
     },
     {
+      "type": "fluid_stack",
       "fluid": "vegandelight:applesauce_fluid",
       "amount": "250_millibuckets"
     }
   ],
   "results": [
     {
-      "item": "vegandelight:applesauce"
+      "id": "vegandelight:applesauce"
     }
   ]
 }

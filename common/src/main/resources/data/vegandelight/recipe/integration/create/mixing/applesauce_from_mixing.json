@@ -14,13 +14,14 @@
       "item": "minecraft:sugar"
     },
     {
+      "type": "fluid_stack",
       "fluid": "minecraft:water",
       "amount": "250_millibuckets"
     }
   ],
   "results": [
     {
-      "fluid": "vegandelight:applesauce_fluid",
+      "id": "vegandelight:applesauce_fluid",
       "amount": "250_millibuckets"
     }
   ]

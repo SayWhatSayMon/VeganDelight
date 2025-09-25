@@ -11,13 +11,14 @@
       "item": "minecraft:glass_bottle"
     },
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "type": "fluid_stack",
+      "fluid": "vegandelight:soymilk",
       "amount": "250_millibuckets"
     }
   ],
   "results": [
     {
-      "item": "vegandelight:soymilk_bottle"
+      "id": "vegandelight:soymilk_bottle"
     }
   ]
 }

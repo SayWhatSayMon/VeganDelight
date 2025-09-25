@@ -29,6 +29,7 @@
 
   "item.vegandelight.salt": "Suola",
   "item.vegandelight.soybean": "Soijapapu",
+  "block.vegandelight.soymilk": "Soijamaito",
   "fluid_type.vegandelight.soymilk": "Soijamaito",
   "item.vegandelight.soymilk_bottle": "Soijamaitopullo",
   "item.vegandelight.soymilk_bucket": "Soijamaitoämpäri",
@@ -47,14 +48,15 @@
 
   "item.vegandelight.applesauce": "Omenasose",
   "item.vegandelight.applesauce_bucket": "Omenasoseämpäri",
-  "fluid_type.vegandelight.applesauce": "Omenasose",
+  "block.vegandelight.applesauce_fluid": "Omenasose",
+  "fluid_type.vegandelight.applesauce_fluid": "Omenasose",
 
 
   "block.vegandelight.soybean_bag": "Säkki soijapapuja",
   "block.vegandelight.wild_soybean": "Villisoija",
 
 
-  "creativetab.vegan_tab": "Vegaanin ilo",
+  "itemGroup.vegan_delight": "Vegaanin ilo",
   "tooltip.vegandelight.replaces": "Voi käyttää korvaajana ainesosalle %s.",
 
 

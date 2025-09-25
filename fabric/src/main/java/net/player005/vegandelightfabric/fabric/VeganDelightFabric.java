@@ -82,7 +82,7 @@ public class VeganDelightFabric implements ModInitializer {
                 VeganDelightClient.registerFluidRenderers(name, still, flowing);
             }
 
-            return flowingRef::get;
+            return stillRef::get;
         }
 
         @Override

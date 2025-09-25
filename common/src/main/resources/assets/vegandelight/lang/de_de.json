@@ -28,6 +28,7 @@
   "item.vegandelight.salt": "Salz",
   "item.vegandelight.soybean": "Sojabohne",
   "block.vegandelight.soymilk": "Sojamilch",
+  "fluid_type.vegandelight.soymilk": "Sojamilch",
   "item.vegandelight.soymilk_bottle": "Sojamilchflasche",
   "item.vegandelight.soymilk_bucket": "Eimer mit Sojamilch",
   "item.vegandelight.leather_substitute": "Lederimitat",
@@ -46,7 +47,8 @@
 
   "item.vegandelight.applesauce": "Apfelmus",
   "item.vegandelight.applesauce_bucket": "Eimer mit Apfelmus",
-  "block.vegandelight.applesauce": "Apfelmus",
+  "block.vegandelight.applesauce_fluid": "Apfelmus",
+  "fluid_type.vegandelight.applesauce_fluid": "Apfelmus",
 
 
   "block.vegandelight.soybean_bag": "Sack mit Sojabohnen",

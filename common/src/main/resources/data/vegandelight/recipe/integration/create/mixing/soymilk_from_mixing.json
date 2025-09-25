@@ -11,13 +11,14 @@
       "tag": "c:crops/soybeans"
     },
     {
+      "type": "fluid_stack",
       "fluid": "minecraft:water",
       "amount": "250_millibuckets"
     }
   ],
   "results": [
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "id": "vegandelight:soymilk",
       "amount": "250_millibuckets"
     }
   ]

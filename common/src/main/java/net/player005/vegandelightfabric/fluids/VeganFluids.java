@@ -20,7 +20,8 @@ public class VeganFluids {
         2
     );
 
-    public static final Supplier<FlowingFluid> APPLESAUCE = getPlatform().registerFluids("applesauce", APPLESAUCE_PROPERTIES);
+    public static final Supplier<FlowingFluid> APPLESAUCE = getPlatform().registerFluids("applesauce_fluid",
+        APPLESAUCE_PROPERTIES);
 
     public static final FluidProperties SOYMILK_PROPERTIES = new FluidProperties(
         () -> VeganBlocks.SOYMILK.value(),
@@ -31,7 +32,8 @@ public class VeganFluids {
         5
     );
 
-    public static final Supplier<FlowingFluid> SOYMILK = getPlatform().registerFluids("soymilk", SOYMILK_PROPERTIES);
+    public static final Supplier<FlowingFluid> SOYMILK = getPlatform().registerFluids("soymilk",
+        SOYMILK_PROPERTIES);
 
     public static void initialize() { }
 }

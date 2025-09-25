@@ -48,7 +48,7 @@ public class VeganBlocks {
 
     public static final Holder<LiquidBlock> APPLESAUCE = register(
         () -> new LiquidBlock(VeganFluids.APPLESAUCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
-        "applesauce", false);
+        "applesauce_fluid", false);
 
     public static <T extends Block> Holder<T> register(Supplier<T> block, String name, boolean registerItem) {
         ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);

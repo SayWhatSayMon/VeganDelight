@@ -13,10 +13,10 @@
   ],
   "results": [
     {
-      "item": "minecraft:glass_bottle"
+      "id": "minecraft:glass_bottle"
     },
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "id": "vegandelight:soymilk",
       "amount": "250_millibuckets"
     }
   ]

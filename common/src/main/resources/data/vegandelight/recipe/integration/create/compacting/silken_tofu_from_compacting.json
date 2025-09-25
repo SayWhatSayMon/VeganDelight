@@ -16,11 +16,13 @@
       }
     ],
     {
+      "type": "fluid_stack",
       "fluid": "minecraft:water",
       "amount": "250_millibuckets"
     },
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "type": "fluid_stack",
+      "fluid": "vegandelight:soymilk",
       "amount": "250_millibuckets"
     },
     {
@@ -29,7 +31,7 @@
   ],
   "results": [
     {
-      "item": "vegandelight:silken_tofu"
+      "id": "vegandelight:silken_tofu"
     }
   ]
 }

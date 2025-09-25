@@ -19,7 +19,7 @@
   ],
   "results": [
     {
-      "fluid": "create:honey",
+      "id": "create:honey",
       "amount": "250_millibuckets"
     }
   ]

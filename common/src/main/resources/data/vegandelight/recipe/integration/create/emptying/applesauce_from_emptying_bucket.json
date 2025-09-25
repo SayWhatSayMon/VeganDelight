@@ -13,10 +13,10 @@
   ],
   "results": [
     {
-      "item": "minecraft:bucket"
+      "id": "minecraft:bucket"
     },
     {
-      "fluid": "vegandelight:applesauce_fluid",
+      "id": "vegandelight:applesauce_fluid",
       "amount": "1000_millibuckets"
     }
   ]

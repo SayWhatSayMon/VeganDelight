@@ -19,7 +19,8 @@
   "type": "create:compacting",
   "ingredients": [
     {
-      "fluidTag": "c:egg",
+      "type": "fluid_tag",
+      "fluid_tag": "c:egg",
       "amount": "250_millibuckets"
     },
     {
@@ -38,13 +39,14 @@
       "tag": "neoforge:flour/wheat"
     },
     {
-      "fluidTag": "c:milk",
+      "type": "fluid_tag",
+      "fluid_tag": "c:milk",
       "amount": "1000_millibuckets"
     }
   ],
   "results": [
     {
-      "item": "minecraft:cake"
+      "id": "minecraft:cake"
     }
   ]
 }

@@ -8,7 +8,8 @@
   "type": "create:mixing",
   "ingredients": [
     {
-      "fluidTag": "c:egg",
+      "type": "fluid_tag",
+      "fluid_tag": "c:egg",
       "amount": "1000_millibuckets"
     },
     {
@@ -23,7 +24,7 @@
   ],
   "results": [
     {
-      "item": "farmersdelight:wheat_dough",
+      "id": "farmersdelight:wheat_dough",
       "count": 3
     }
   ]

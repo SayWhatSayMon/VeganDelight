@@ -16,13 +16,14 @@
       }
     ],
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "type": "fluid_stack",
+      "fluid": "vegandelight:soymilk",
       "amount": "250_millibuckets"
     }
   ],
   "results": [
     {
-      "item": "vegandelight:tofu"
+      "id": "vegandelight:tofu"
     }
   ]
 }

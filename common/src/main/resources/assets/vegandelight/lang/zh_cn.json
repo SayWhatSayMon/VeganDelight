@@ -28,6 +28,7 @@
   "item.vegandelight.salt": "盐",
   "item.vegandelight.soybean": "大豆",
   "block.vegandelight.soymilk": "豆浆",
+  "fluid_type.vegandelight.soymilk": "豆浆",
   "item.vegandelight.soymilk_bottle": "豆浆瓶",
   "item.vegandelight.soymilk_bucket": "豆浆桶",
 
@@ -45,7 +46,8 @@
 
   "item.vegandelight.applesauce": "苹果酱",
   "item.vegandelight.applesauce_bucket": "苹果酱桶",
-  "block.vegandelight.applesauce": "苹果酱",
+  "block.vegandelight.applesauce_fluid": "苹果酱",
+  "fluid_type.vegandelight.applesauce_fluid": "苹果酱",
 
 
   "block.vegandelight.soybean_bag": "大豆袋",

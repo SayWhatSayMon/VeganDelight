@@ -23,6 +23,7 @@
 
   "item.vegandelight.salt": "소금",
   "item.vegandelight.soybean": "콩",
+  "block.vegandelight.soymilk": "두유",
   "fluid_type.vegandelight.soymilk": "두유",
   "item.vegandelight.soymilk_bottle": "두유 병",
   "item.vegandelight.soymilk_bucket": "두유 양동이",
@@ -38,7 +39,8 @@
 
   "item.vegandelight.applesauce": "사과 소스",
   "item.vegandelight.applesauce_bucket": "사과 소스 양동이",
-  "fluid_type.vegandelight.applesauce": "사과 소스",
+  "block.vegandelight.applesauce_fluid": "사과 소스",
+  "fluid_type.vegandelight.applesauce_fluid": "사과 소스",
 
   "block.vegandelight.soybean_bag": "콩 자루",
   "block.vegandelight.wild_soybean": "야생 콩",

@@ -14,6 +14,7 @@
   "type": "create:compacting",
   "ingredients": [
     {
+      "type": "fluid_stack",
       "fluid": "vegandelight:applesauce_fluid",
       "amount": "250_millibuckets"
     },
@@ -26,7 +27,7 @@
   ],
   "results": [
     {
-      "item": "create:blaze_cake_base"
+      "id": "create:blaze_cake_base"
     }
   ]
 }

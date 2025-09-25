@@ -11,13 +11,14 @@
       "item": "minecraft:bucket"
     },
     {
-      "fluid": "vegandelight:soymilk_fluid",
+      "type": "fluid_stack",
+      "fluid": "vegandelight:soymilk",
       "amount": "1000_millibuckets"
     }
   ],
   "results": [
     {
-      "item": "vegandelight:soymilk_bucket"
+      "id": "vegandelight:soymilk_bucket"
     }
   ]
 }

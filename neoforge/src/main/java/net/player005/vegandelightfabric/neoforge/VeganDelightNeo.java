@@ -140,7 +140,7 @@ public class VeganDelightNeo {
                     return stillRef.get();
                 });
 
-            return flowingRef::get;
+            return stillRef::get;
         }
 
         @Override
