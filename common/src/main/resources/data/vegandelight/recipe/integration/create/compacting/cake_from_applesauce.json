@@ -30,13 +30,13 @@
       "item": "minecraft:sugar"
     },
     {
-      "tag": "neoforge:flour/wheat"
+      "tag": "c:flours/wheat"
     },
     {
-      "tag": "neoforge:flour/wheat"
+      "tag": "c:flours/wheat"
     },
     {
-      "tag": "neoforge:flour/wheat"
+      "tag": "c:flours/wheat"
     },
     {
       "type": "fluid_tag",
