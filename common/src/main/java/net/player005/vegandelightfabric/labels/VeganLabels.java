@@ -128,7 +128,7 @@ public class VeganLabels {
                 result.applyComponents(VeganDataComponents.setContainsSubstitutes.get());
             }
         }
-        if (!result.has(VeganDataComponents.is_vegan.value()))
+        if (!result.has(VeganDataComponents.is_vegan.value()) && isVegan(result) != VeganStatus.VEGAN)
             result.applyComponents(VeganDataComponents.setIsVegan.get());
     }
 }
