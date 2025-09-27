@@ -21,6 +21,7 @@
   "depends": {
     "minecraft": "${mc_versions_fabric}",
     "farmersdelight": "*",
-    "fabric": "*"
+    "fabric": "*",
+    "recipe_modification": "${recipemod_version}"
   }
 }

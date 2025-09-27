@@ -96,7 +96,7 @@ tasks {
         val properties =
             listOf(
                 "mc_versions_fabric", "mod_version", "mod_id", "mod_name",
-                "mod_description", "mod_authors", "mod_license"
+                "mod_description", "mod_authors", "mod_license", "recipemod_version"
             )
 
         val map = mutableMapOf<String, String>()

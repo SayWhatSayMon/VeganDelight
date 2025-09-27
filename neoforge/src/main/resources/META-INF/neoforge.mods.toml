@@ -21,6 +21,16 @@ modId = "neoforge"
 type = "required"
 versionRange = "${neo_loader_version_range}"
 
+[[dependencies.${mod_id}]]
+modId = "farmersdelight"
+type = "required"
+versionRange = "*"
+
+[[dependencies.${mod_id}]]
+modId = "recipe_modification"
+type = "required"
+versionRange = "[${recipemod_version}]"
+
 # Specify additional dependencies like this:
 #[[dependencies.${mod_id}]]
 #modId = "my_dependency_mod"
