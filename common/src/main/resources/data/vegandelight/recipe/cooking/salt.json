@@ -1,6 +1,6 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 200,
+  "cookingtime": 250,
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
