@@ -10,7 +10,7 @@
     {
       "type": "fluid_tag",
       "fluid_tag": "c:egg",
-      "amount": "1000_millibuckets"
+      "amount": "250_millibuckets"
     },
     {
       "tag": "c:flours/wheat"
