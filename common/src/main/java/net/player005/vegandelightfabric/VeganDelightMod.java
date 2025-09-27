@@ -9,12 +9,10 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.ItemCost;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.levelgen.GenerationStep;
-import net.player005.recipe_modification.api.RecipeFilter;
 import net.player005.recipe_modification.api.RecipeModification;
-import net.player005.recipe_modification.api.RecipeModifier;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
-import net.player005.vegandelightfabric.labels.VeganLabels;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
+import net.player005.vegandelightfabric.labels.VeganLabels;
 
 public class VeganDelightMod {
 
@@ -31,27 +29,16 @@ public class VeganDelightMod {
         VeganCreativeTab.initialize();
         VeganDataComponents.initialize();
 
-        RecipeModification.onRecipeInit(recipeManager -> {
-            VeganLabels.initialize();
-            registerSubstitutes();
-        });
+        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
         RatsCompat.initialize();
 
-        registerBiomeModifers();
+        registerBiomeModifiers();
         registerTrades();
 
         platform.registerCompostables();
     }
 
-    private static void registerSubstitutes() {
-        RecipeModification.registerModifier(
-            ResourceLocation.parse("vegandelight:leather_substitute"),
-            RecipeFilter.acceptsIngredient(Items.LEATHER.getDefaultInstance()),
-            RecipeModifier.addAlternative(Items.LEATHER, VeganItems.LEATHER_SUBSTITUTE.value())
-        );
-    }
-
-    private static void registerBiomeModifers() {
+    private static void registerBiomeModifiers() {
         getPlatform().registerBiomeModifier(0.4f, 0.9f,
             getPlatform().overworldBiomeTag(),
             getPlatform().undergroundBiomeTag(),
