@@ -3,16 +3,12 @@ package net.player005.vegandelightfabric.labels;
 import com.mojang.datafixers.util.Unit;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
-import net.minecraft.core.component.DataComponentPatch;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
 import net.player005.vegandelightfabric.VeganDelightMod;
-import org.apache.logging.log4j.util.Lazy;
-
-import java.util.function.Supplier;
 
 import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
@@ -35,14 +31,6 @@ public class VeganDataComponents {
             .networkSynchronized(StreamCodec.unit(Unit.INSTANCE))
             .build()
     );
-
-    public static final Supplier<DataComponentPatch> setIsVegan =
-        Lazy.lazy(() -> DataComponentPatch.builder().set(is_vegan.value(), true).build());
-    public static final Supplier<DataComponentPatch> setIsNotVegan =
-        Lazy.lazy(() -> DataComponentPatch.builder().set(is_vegan.value(), false).build());
-
-    public static final Supplier<DataComponentPatch> setContainsSubstitutes =
-        Lazy.lazy(() -> DataComponentPatch.builder().set(contains_substitutes.value(), Unit.INSTANCE).build());
 
     public static void initialize() { }
 }

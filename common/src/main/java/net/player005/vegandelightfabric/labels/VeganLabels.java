@@ -1,6 +1,7 @@
 package net.player005.vegandelightfabric.labels;
 
 import com.google.common.base.Stopwatch;
+import com.mojang.datafixers.util.Unit;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
@@ -45,6 +46,14 @@ public class VeganLabels {
         if (itemStack.is(VeganTags.not_vegan)) return VeganStatus.NOT_VEGAN;
 
         return veganFromRecipes.getOrDefault(itemStack.getItem(), VeganStatus.UNKNOWN);
+    }
+
+    public static void set(ItemStack stack, VeganStatus status) {
+        if (isVegan(stack) == status) return;
+        if (status == VeganStatus.UNKNOWN) return;
+
+        var statusBool = status == VeganStatus.VEGAN;
+        stack.set(VeganDataComponents.is_vegan.value(), statusBool);
     }
 
     private static void scanRecipesRecursively(final Item item, final List<Item> alreadyTraversed) {
@@ -119,16 +128,13 @@ public class VeganLabels {
         for (var i = 0; i < recipeInput.size(); i++) {
             var item = recipeInput.getItem(i);
             if (isVegan(item) == VeganStatus.NOT_VEGAN) {
-                result.applyComponents(VeganDataComponents.setIsNotVegan.get());
+                set(result, VeganStatus.NOT_VEGAN);
             }
-            if (item.is(VeganTags.vegan_alternative)) {
-                result.applyComponents(VeganDataComponents.setContainsSubstitutes.get());
-            }
-            if (item.has(VeganDataComponents.contains_substitutes.value())) {
-                result.applyComponents(VeganDataComponents.setContainsSubstitutes.get());
+            if (item.is(VeganTags.vegan_alternative) || item.has(VeganDataComponents.contains_substitutes.value())) {
+                result.set(VeganDataComponents.contains_substitutes.value(), Unit.INSTANCE);
             }
         }
-        if (!result.has(VeganDataComponents.is_vegan.value()) && isVegan(result) != VeganStatus.VEGAN)
-            result.applyComponents(VeganDataComponents.setIsVegan.get());
+        if (!result.has(VeganDataComponents.is_vegan.value()))
+            set(result, VeganStatus.VEGAN);
     }
 }
