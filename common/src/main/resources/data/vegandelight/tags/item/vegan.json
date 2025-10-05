@@ -6,12 +6,7 @@
     "#c:foods/vegetable",
     "#c:foods/berry",
 
-    "#minecraft:sand",
-    "#minecraft:dirt",
-    "#minecraft:saplings",
-    "#minecraft:logs",
-    "#minecraft:flowers",
-
-    "#vegandelight:vegan_alternative"
+    "#vegandelight:vegan_alternative",
+    "minecraft:bread"
   ]
 }

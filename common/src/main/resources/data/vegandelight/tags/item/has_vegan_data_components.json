@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#c:foods",
+    "#c:animal_foods",
+    "#c:drinks",
+    "#c:potions",
+    "#vegandelight:not_vegan",
+    "#vegandelight:vegan",
+    "minecraft:sugar"
+  ]
+}

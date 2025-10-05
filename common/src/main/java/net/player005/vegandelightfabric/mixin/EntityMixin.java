@@ -13,8 +13,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public abstract class EntityMixin {
 
+    @SuppressWarnings("ConstantValue")
     @Inject(method = "spawnAtLocation(Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/item/ItemEntity;", at = @At("HEAD"))
     private void markEntityDroppedItemsAsNotVegan(ItemStack stack, float offsetY, CallbackInfoReturnable<ItemEntity> cir) {
-        if (!((Object) this instanceof Player)) VeganLabels.set(stack, VeganLabels.VeganStatus.NOT_VEGAN);
+        if (!((Object) this instanceof Player))
+            VeganLabels.setIsVegan(stack, false);
     }
 }

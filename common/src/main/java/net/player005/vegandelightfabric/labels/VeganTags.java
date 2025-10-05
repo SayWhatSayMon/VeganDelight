@@ -8,12 +8,15 @@ import net.player005.vegandelightfabric.VeganDelightMod;
 
 public class VeganTags {
 
-    public static final TagKey<Item> vegan_alternative = TagKey.create(Registries.ITEM,
-        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan_alternative"));
+    public static final TagKey<Item> SHOULD_HAVE_DATA_COMPONENTS_ADDED = get("has_vegan_data_components");
 
-    public static final TagKey<Item> vegan = TagKey.create(Registries.ITEM,
-        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "vegan"));
+    public static final TagKey<Item> VEGAN_ALTERNATIVE = get("vegan_alternative");
 
-    public static final TagKey<Item> not_vegan = TagKey.create(Registries.ITEM,
-        ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "not_vegan"));
+    public static final TagKey<Item> VEGAN = get("vegan");
+
+    public static final TagKey<Item> NOT_VEGAN = get("not_vegan");
+
+    private static TagKey<Item> get(String name) {
+        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name));
+    }
 }
