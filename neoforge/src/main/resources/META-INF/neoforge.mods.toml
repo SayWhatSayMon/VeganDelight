@@ -29,7 +29,7 @@ versionRange = "*"
 [[dependencies.${mod_id}]]
 modId = "recipe_modification"
 type = "required"
-versionRange = "[${recipemod_version}]"
+versionRange = "[${recipemod_version},)"
 
 # Specify additional dependencies like this:
 #[[dependencies.${mod_id}]]
