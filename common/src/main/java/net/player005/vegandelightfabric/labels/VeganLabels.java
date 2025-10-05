@@ -26,6 +26,8 @@ public class VeganLabels {
 
     private static final Map<Item, VeganStatus> veganFromRecipes = new HashMap<>();
 
+    private static boolean debugMode = false;
+
     @ApiStatus.Internal
     public static void initialize() {
         RecipeModification.registerGlobalResultModifier((recipe, result, recipeInput) -> {
@@ -134,7 +136,6 @@ public class VeganLabels {
                     .withItalic(true)
             ));
         }
-        var debugMode = true;
 
         if (debugMode) {
             tooltip.add(1, Component.literal("Result: " + isVegan(stack).name()));
