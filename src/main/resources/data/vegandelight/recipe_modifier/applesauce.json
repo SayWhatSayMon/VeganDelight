@@ -1,0 +1,39 @@
+{
+  "target_recipes": {
+    "type": "or",
+    "filters": [
+      {
+        "type": "result_item_predicate",
+        "predicate": {
+          "item": "#vegandelight:can_use_applesauce_as_egg"
+        }
+      },
+      {
+        "type": "and",
+        "filters": [
+          {
+            "type": "accepting_ingredient",
+            "item": {
+              "id": "sugar"
+            }
+          },
+          {
+            "type": "accepting_ingredient",
+            "item": {
+              "id": "milk_bucket"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "modifiers": [
+    {
+      "type": "add_alternative",
+      "ingredients": "minecraft:egg",
+      "alternative": {
+        "item": "vegandelight:applesauce"
+      }
+    }
+  ]
+}
