@@ -108,18 +108,6 @@ public class VeganItems {
             .saturationMod(0.4f)
             .build())));
 
-    public static final Item RAW_SEITAN = register("raw_seitan",
-        new Item(new Item.Properties().food(new FoodProperties.Builder()
-            .nutrition(2)
-            .saturationMod(0.1f)
-            .build())));
-
-    public static final Item COOKED_SEITAN = register("cooked_seitan",
-        new Item(new Item.Properties().food(new FoodProperties.Builder()
-            .nutrition(2)
-            .saturationMod(0.1f)
-            .build())));
-
 
     // INGREDIENTS
     public static final Item SALT = register("salt",
@@ -180,7 +168,7 @@ public class VeganItems {
     public static ItemLike[] all = {
         VeganBlocks.SOYBEAN_BAG, VeganBlocks.WILD_SOYBEAN, SILKEN_TOFU, TOFU, TOFU_SLICES, COOKED_TOFU,
         COOKED_TOFU_SLICES, SMOKED_TOFU, SMOKED_TOFU_SLICES, COOKED_SMOKED_TOFU, COOKED_SMOKED_TOFU_SLICES,
-        RAW_SEITAN, COOKED_SEITAN, MINCED_TOFU, TOFU_PATTY, TOFISH, COOKED_TOFISH, SMOKED_TOFISH,
+         MINCED_TOFU, TOFU_PATTY, TOFISH, COOKED_TOFISH, SMOKED_TOFISH,
         COOKED_SMOKED_TOFISH, TOFISH_ROLL, SMOKED_TOFISH_ROLL, SOYMILK_BUCKET, SOYMILK_BOTTLE, SOYBEAN, SALT,
         APPLESAUCE, APPLESAUCE_BUCKET, LEATHER_SUBSTITUTE
     };
