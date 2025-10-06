@@ -2,7 +2,6 @@ package net.player005.vegandelightfabric;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBiomeTags;
@@ -32,8 +31,6 @@ public class VeganDelightFabric implements ModInitializer {
     @Override
     public void onInitialize() {
         VeganDelightMod.initialize(new VeganDelightFabricPlatform());
-
-        ServerLifecycleEvents.SERVER_STARTED.register(server -> RecipeManipulation.load(server.getRecipeManager()));
     }
 
     public static class VeganDelightFabricPlatform implements VeganDelightPlatform {

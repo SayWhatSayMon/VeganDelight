@@ -1,0 +1,12 @@
+{
+  "target_recipes": "*",
+  "modifiers": [
+    {
+      "type": "add_alternative",
+      "ingredients": "farmersdelight:cod_roll",
+      "alternative": {
+        "item": "vegandelight:tofish_roll"
+      }
+    }
+  ]
+}

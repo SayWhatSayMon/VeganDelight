@@ -25,6 +25,12 @@ repositories {
             excludeGroup "io.github.fabricators_of_create"
         }
     }
+    maven {
+        url "https://api.modrinth.com/maven" // Reach Entity Attributes (Required by Porting Lib)
+        content {
+            includeGroup "maven.modrinth"
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +45,7 @@ dependencies {
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modImplementation "maven.modrinth:recipe-modification:${project.recipemod_version}"
     modImplementation("vectorwing:FarmersDelight:${project.fdrf_version}") {
         exclude(group: "net.fabricmc")
     }

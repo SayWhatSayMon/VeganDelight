@@ -1,0 +1,12 @@
+{
+  "target_recipes": "*",
+  "modifiers": [
+    {
+      "type": "add_alternative",
+      "ingredients": "farmersdelight:salmon_roll",
+      "alternative": {
+        "item": "vegandelight:smoked_tofish_roll"
+      }
+    }
+  ]
+}

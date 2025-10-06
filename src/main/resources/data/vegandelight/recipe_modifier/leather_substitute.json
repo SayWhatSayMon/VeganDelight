@@ -1,0 +1,12 @@
+{
+  "target_recipes": "*",
+  "modifiers": [
+    {
+      "type": "add_alternative",
+      "ingredients": "minecraft:leather",
+      "alternative": {
+        "item": "vegandelight:leather_substitute"
+      }
+    }
+  ]
+}
