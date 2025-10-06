@@ -1,28 +1,48 @@
 package de.chrisimo.vegandelight;
 
+import com.google.common.collect.Multimap;
+import com.google.common.collect.MultimapBuilder;
 import de.chrisimo.vegandelight.item.ModItems;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.jetbrains.annotations.ApiStatus;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
+import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Contains a map of which items are used to replace which.
  */
 public abstract class ReplacementMap {
 
-    private static final Map<Item, Item> map = new HashMap<>();
+    private static final Multimap<Item, Item> map = MultimapBuilder.hashKeys().arrayListValues().build();
 
     static {
         registerReplacement(ModItems.LEATHER_SUBSTITUTE.get(), Items.LEATHER);
         registerReplacement(ModItems.SOYMILK_BUCKET.get(), Items.MILK_BUCKET);
         registerReplacement(ModItems.SOYMILK_BOTTLE.get(), vectorwing.farmersdelight.common.registry.ModItems.MILK_BOTTLE.get());
+        registerReplacement(ModItems.SILKEN_TOFU.get(), Items.EGG);
+        registerReplacement(ModItems.MINCED_TOFU.get(),
+            vectorwing.farmersdelight.common.registry.ModItems.MINCED_BEEF.get());
+        registerReplacement(ModItems.TOFU_PATTY.get(), vectorwing.farmersdelight.common.registry.ModItems.BEEF_PATTY.get());
+
+        registerReplacement(ModItems.TOFISH.get(), Items.COD);
+        registerReplacement(ModItems.SMOKED_TOFISH.get(), Items.SALMON);
+        registerReplacement(ModItems.COOKED_TOFISH.get(), Items.COOKED_COD);
+        registerReplacement(ModItems.COOKED_SMOKED_TOFISH.get(), Items.COOKED_SALMON);
+        registerReplacement(ModItems.TOFISH_ROLL.get(), vectorwing.farmersdelight.common.registry.ModItems.COD_ROLL.get());
+        registerReplacement(ModItems.SMOKED_TOFISH_ROLL.get(),
+            vectorwing.farmersdelight.common.registry.ModItems.SALMON_ROLL.get());
+
+        registerReplacement(ModItems.TOFU_SLICES.get(), Items.MUTTON);
+        registerReplacement(ModItems.TOFU_SLICES.get(), Items.CHICKEN);
+        registerReplacement(ModItems.SMOKED_TOFU_SLICES.get(), Items.PORKCHOP);
+        registerReplacement(ModItems.COOKED_TOFU_SLICES.get(), Items.COOKED_MUTTON);
+        registerReplacement(ModItems.COOKED_TOFU_SLICES.get(), Items.COOKED_CHICKEN);
+        registerReplacement(ModItems.COOKED_SMOKED_TOFU_SLICES.get(), Items.COOKED_PORKCHOP);
     }
 
     /**
@@ -33,10 +53,10 @@ public abstract class ReplacementMap {
     }
 
     /**
-     * Returns the item that can be replaced using the given item, or null if the given item isn't registered as a
-     * replacement
+     * Returns the items that can be replaced using the given item,
+     * empty if the given item doesn't replace anything
      */
-    public static @Nullable Item replaces(Item item) {
+    public static Collection<Item> replaces(Item item) {
         return map.get(item);
     }
 
@@ -48,9 +68,18 @@ public abstract class ReplacementMap {
     @ApiStatus.Internal
     public static void addTooltipLines(Item item, List<Component> tooltip) {
         var replacedItem = replaces(item);
-        if (replacedItem == null) return;
+        if (replacedItem.isEmpty()) return;
+        var nameList = createItemList(replacedItem);
         tooltip.add(1, Component.translatable("tooltip.vegandelight.replaces",
-            Component.translatable(replacedItem.getDescriptionId()).setStyle(itemNameStyle)
+            nameList.setStyle(itemNameStyle)
         ).setStyle(textStyle));
+    }
+
+    private static MutableComponent createItemList(Collection<Item> items) {
+        var nameList = Component.empty();
+        var iter = items.iterator();
+        nameList.append(Component.translatable(iter.next().getDescriptionId()));
+        iter.forEachRemaining(it -> nameList.append(", ").append(Component.translatable(it.getDescriptionId())));
+        return nameList;
     }
 }
