@@ -11,6 +11,6 @@
     }
   ],
   "tool": {
-    "item": "minecraft:potion"
+    "tag": "minecraft:water_bottle"
   }
 }
