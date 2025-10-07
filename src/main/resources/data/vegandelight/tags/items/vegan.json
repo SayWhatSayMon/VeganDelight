@@ -1,9 +1,9 @@
 {
   "values": [
-    "#c:crops",
-    "#c:seeds",
-    "#c:foods/vegetables",
-    "#c:foods/berries",
+    "#forge:crops",
+    "#forge:seeds",
+    "#forge:vegetables",
+    "#forge:berries",
 
     "#vegandelight:vegan_alternative",
     "minecraft:bread"

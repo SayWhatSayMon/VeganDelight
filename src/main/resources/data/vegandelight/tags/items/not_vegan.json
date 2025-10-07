@@ -1,13 +1,13 @@
 {
   "values": [
-    "#c:foods/raw_meats",
-    "#c:foods/cooked_meats",
-    "#c:foods/raw_fishes",
-    "#c:foods/cooked_fishes",
-    "#c:eggs",
-    "#c:foods/milk_bucket",
-    "#c:leather",
-    "#c:feathers",
+    "#forge:raw_meat",
+    "#forge:cooked_meat",
+    "#forge:raw_fishes",
+    "#forge:cooked_fishes",
+    "#forge:eggs",
+    "#forge:milk",
+    "#forge:leather",
+    "#forge:feathers",
 
     "#minecraft:wool",
     "#minecraft:wool_carpets",

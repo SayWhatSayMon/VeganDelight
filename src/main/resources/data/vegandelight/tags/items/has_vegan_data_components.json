@@ -1,8 +1,12 @@
 {
   "values": [
-    "#c:foods",
-    "#c:potions",
-    "#c:eggs",
+    "#forge:raw_meat",
+    "#forge:cooked_meat",
+    "#forge:raw_fishes",
+    "#forge:cooked_fishes",
+    "#forge:eggs",
+    "#forge:milk",
+    "#forge:eggs",
     "#vegandelight:vegan",
     "minecraft:sugar"
   ]
