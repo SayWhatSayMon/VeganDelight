@@ -6,6 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
+import net.player005.vegandelightfabric.labels.VeganLabels;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,6 +22,7 @@ public abstract class ItemStackMixin {
 
     @Inject(method = "getTooltipLines", at = @At("RETURN"))
     public void injectTooltips(Player pPlayer, TooltipFlag pIsAdvanced, CallbackInfoReturnable<List<Component>> cir) {
+        VeganLabels.addTooltipLines((ItemStack) (Object) this, cir.getReturnValue());
         ReplacementMap.addTooltipLines(getItem(), cir.getReturnValue());
     }
 }

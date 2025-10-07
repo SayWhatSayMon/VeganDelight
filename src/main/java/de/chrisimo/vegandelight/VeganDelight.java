@@ -20,6 +20,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.vegandelightfabric.labels.VeganLabels;
 
 import java.util.List;
 
@@ -39,6 +41,8 @@ public class VeganDelight
         ModBlocks.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+
+        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

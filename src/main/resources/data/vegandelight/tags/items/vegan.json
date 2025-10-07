@@ -1,0 +1,11 @@
+{
+  "values": [
+    "#c:crops",
+    "#c:seeds",
+    "#c:foods/vegetables",
+    "#c:foods/berries",
+
+    "#vegandelight:vegan_alternative",
+    "minecraft:bread"
+  ]
+}
