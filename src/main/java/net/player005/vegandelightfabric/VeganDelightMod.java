@@ -9,7 +9,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.vegandelightfabric.blocks.VeganBlocks;
+import net.player005.vegandelightfabric.labels.VeganLabels;
 
 public class VeganDelightMod {
 
@@ -22,6 +24,7 @@ public class VeganDelightMod {
         VeganItems.initialize();
         VeganFluids.initialise();
         VeganBlocks.initialise();
+        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
 
         RatsCompat.initialise();
 
