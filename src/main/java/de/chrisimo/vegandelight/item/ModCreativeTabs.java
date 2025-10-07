@@ -37,8 +37,6 @@ public class ModCreativeTabs {
                         pOutput.accept(ModItems.COOKED_SMOKED_TOFISH.get());
                         pOutput.accept(ModItems.TOFISH_ROLL.get());
                         pOutput.accept(ModItems.SMOKED_TOFISH_ROLL.get());
-                        pOutput.accept(ModItems.RAW_SEITAN.get());
-                        pOutput.accept(ModItems.COOKED_SEITAN.get());
                         pOutput.accept(ModItems.SOYMILK_BUCKET.get());
                         pOutput.accept(ModItems.SOYMILK_BOTTLE.get());
                         pOutput.accept(ModItems.SOYBEAN.get());
