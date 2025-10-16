@@ -139,7 +139,7 @@ public class ModItems {
 
             @Override
             public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-                return new VeganFluidHandler(new ItemStack(SOYMILK_BUCKET.get()), Items.BUCKET, true,
+                return new VeganFluidHandler(SOYMILK_BUCKET.get(), Items.BUCKET, true,
                     ModFluids.SOYMILK_FLUID.get(), 1000);
             }
         });
@@ -160,7 +160,7 @@ public class ModItems {
 
             @Override
             public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-                return new VeganFluidHandler(new ItemStack(SOYMILK_BOTTLE.get()), Items.GLASS_BOTTLE, true,
+                return new VeganFluidHandler(SOYMILK_BOTTLE.get(), Items.GLASS_BOTTLE, true,
                     ModFluids.SOYMILK_FLUID.get(), 250);
             }
         });
@@ -184,7 +184,7 @@ public class ModItems {
             .stacksTo(16)) {
             @Override
             public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-                return new VeganFluidHandler(new ItemStack(APPLESAUCE.get()), Items.BOWL, true,
+                return new VeganFluidHandler(APPLESAUCE.get(), Items.BOWL, true,
                     ModFluids.APPLESAUCE_FLUID.get(), 250);
             }
         });
@@ -198,7 +198,7 @@ public class ModItems {
             .stacksTo(1)) {
             @Override
             public ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-                return new VeganFluidHandler(new ItemStack(APPLESAUCE_BUCKET.get()), Items.BUCKET, true,
+                return new VeganFluidHandler(APPLESAUCE_BUCKET.get(), Items.BUCKET, true,
                     ModFluids.APPLESAUCE_FLUID.get(), 250);
             }
         });

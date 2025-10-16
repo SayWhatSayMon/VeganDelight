@@ -22,15 +22,15 @@ import org.jetbrains.annotations.Nullable;
 public final class VeganFluidHandler implements IFluidHandlerItem, ICapabilityProvider {
 
     private ItemStack current;
-    private final ItemStack full;
+    private final Item full;
     private final Item empty;
     private final FluidStack fluidStack;
     private final FluidType type;
     private final int capacity;
 
-    public VeganFluidHandler(ItemStack full, Item empty, boolean defaultFull, Fluid fluid, int capacity) {
+    public VeganFluidHandler(Item full, Item empty, boolean defaultFull, Fluid fluid, int capacity) {
         if (defaultFull) {
-            current = full.copy();
+            current = new ItemStack(full);
             fluidStack = new FluidStack(fluid, capacity);
         } else {
             current = new ItemStack(empty);
@@ -74,7 +74,7 @@ public final class VeganFluidHandler implements IFluidHandlerItem, ICapabilityPr
         }
 
         if (action.execute()) {
-            current = full.copy();
+            current = new ItemStack(full);
         }
 
         return capacity;
