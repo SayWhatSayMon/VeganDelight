@@ -6,6 +6,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
@@ -16,6 +17,8 @@ import net.player005.vegandelightfabric.blocks.VeganBlocks;
 import org.jetbrains.annotations.NotNull;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+
+import java.util.ArrayList;
 
 public class VeganItems {
 
@@ -119,10 +122,14 @@ public class VeganItems {
         ) {
             @Override
             public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                var toRemove = new ArrayList<MobEffect>();
                 for (MobEffectInstance effect : consumer.getActiveEffects()) {
                     if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
-                        consumer.removeEffect(effect.getEffect());
+                        toRemove.add(effect.getEffect());
                     }
+                }
+                for (var effect : toRemove) {
+                    consumer.removeEffect(effect);
                 }
             }
         }
@@ -134,10 +141,14 @@ public class VeganItems {
             .stacksTo(16)) {
             @Override
             public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                var toRemove = new ArrayList<MobEffect>();
                 for (MobEffectInstance effect : consumer.getActiveEffects()) {
                     if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
-                        consumer.removeEffect(effect.getEffect());
+                        toRemove.add(effect.getEffect());
                     }
+                }
+                for (var effect : toRemove) {
+                    consumer.removeEffect(effect);
                 }
             }
         });
