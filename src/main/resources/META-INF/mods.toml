@@ -57,6 +57,13 @@ description='''${mod_description}'''
     ordering="NONE"
     side="BOTH"
 [[dependencies.vegandelight]]
+modId="recipe_modification"
+mandatory=true
+# This version range declares a minimum of the current minecraft version up to but not including the next major version
+versionRange="*"
+ordering="NONE"
+side="BOTH"
+[[dependencies.vegandelight]]
 modId="farmersdelight"
 mandatory=true
 versionRange="[1.2.3,)"
