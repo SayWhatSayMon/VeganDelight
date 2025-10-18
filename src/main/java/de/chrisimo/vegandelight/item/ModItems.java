@@ -4,6 +4,7 @@ import de.chrisimo.vegandelight.VeganDelight;
 import de.chrisimo.vegandelight.block.ModBlocks;
 import de.chrisimo.vegandelight.fluid.ModFluids;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
@@ -12,9 +13,7 @@ import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.event.entity.living.MobEffectEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -23,6 +22,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+
+import java.util.ArrayList;
 
 public class ModItems {
 
@@ -129,11 +130,14 @@ public class ModItems {
             .stacksTo(1)) {
             @Override
             public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                var toRemove = new ArrayList<MobEffect>();
                 for (MobEffectInstance effect : consumer.getActiveEffects()) {
-                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance()) &&
-                        !MinecraftForge.EVENT_BUS.post(new MobEffectEvent.Remove(consumer, effect))) {
-                        consumer.removeEffect(effect.getEffect());
+                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
+                        toRemove.add(effect.getEffect());
                     }
+                }
+                for (var effect : toRemove) {
+                    consumer.removeEffect(effect);
                 }
             }
 
@@ -150,11 +154,14 @@ public class ModItems {
             .stacksTo(16)) {
             @Override
             public void affectConsumer(@NotNull ItemStack stack, @NotNull Level level, @NotNull LivingEntity consumer) {
+                var toRemove = new ArrayList<MobEffect>();
                 for (MobEffectInstance effect : consumer.getActiveEffects()) {
-                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance()) &&
-                        !MinecraftForge.EVENT_BUS.post(new MobEffectEvent.Remove(consumer, effect))) {
-                        consumer.removeEffect(effect.getEffect());
+                    if (effect.isCurativeItem(Items.MILK_BUCKET.getDefaultInstance())) {
+                        toRemove.add(effect.getEffect());
                     }
+                }
+                for (var effect : toRemove) {
+                    consumer.removeEffect(effect);
                 }
             }
 
