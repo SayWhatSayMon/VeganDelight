@@ -23,6 +23,7 @@
   "accessWidener" : "vegandelight.accesswidener",
   "depends": {
     "fabricloader": ">=${loader_version}",
+    "recipe_modification": "*",
     "fabric": "*",
     "farmersdelight": "*",
     "minecraft": "${minecraft_version}"
