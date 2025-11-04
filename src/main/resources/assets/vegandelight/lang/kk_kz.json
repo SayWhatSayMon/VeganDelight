@@ -1,0 +1,87 @@
+{
+  "item.vegandelight.tofu": "Тофу",
+  "item.vegandelight.silken_tofu": "Жұмсақ тофу",
+  "item.vegandelight.minced_tofu": "Туралған тофу",
+  "item.vegandelight.tofu_slices": "Тофу тілімдері",
+  "item.vegandelight.tofish": "Тофиш",
+  "item.vegandelight.tofish_slices": "Тофиш тілімдері",
+  "item.vegandelight.tofish_roll": "Тофиш орамасы",
+  "item.vegandelight.tofu_patty": "Тофу котлеті",
+
+
+  "item.vegandelight.smoked_tofu": "Сүрленген тофу",
+  "item.vegandelight.smoked_tofish": "Сүрленген тофиш",
+  "item.vegandelight.smoked_tofish_roll": "Сүрленген тофиш орамасы",
+  "item.vegandelight.smoked_tofu_slices": "Сүрленген тофу тілімдері",
+
+
+  "item.vegandelight.cooked_tofu": "Піскен тофу",
+  "item.vegandelight.cooked_tofu_slices": "Піскен тофу тілімдері",
+  "item.vegandelight.cooked_tofish": "Піскен тофиш",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Піскен сүрленген тофу",
+  "item.vegandelight.cooked_smoked_tofish": "Піскен сүрленген тофиш",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Піскен сүрленген тофу тілімдері",
+
+
+  "item.vegandelight.salt": "Тұз",
+  "item.vegandelight.soybean": "Соя бұршағы",
+  "fluid_type.vegandelight.soymilk": "Соя сүті",
+  "item.vegandelight.soymilk_bottle": "Соя сүті бөтелкесі",
+  "item.vegandelight.soymilk_bucket": "Соя сүті шелегі",
+  "item.vegandelight.leather_substitute": "Былғары орынбасары",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "1 әсерді тазартады",
+  "farmersdelight.tooltip.soymilk_bucket": "1 әсерді тазартады",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Тофу доппен кеспе",
+  "item.vegandelight.roasted_tofu_chops": "Қуырылған тофу сүбесі",
+  "item.vegandelight.tofu_burger": "Тофу бургері",
+  "item.vegandelight.tofu_sandwich": "Тофу сэндвич",
+
+
+  "item.vegandelight.applesauce": "Алма тұздығы",
+  "item.vegandelight.applesauce_bucket": "Алма тұздығы шелегі",
+  "fluid_type.vegandelight.applesauce": "Алма тұздығы",
+
+
+  "block.vegandelight.soybean_bag": "Соя бұршағы қабы",
+  "block.vegandelight.wild_soybean": "Жабайы соя",
+
+
+  "creativetab.vegan_tab": "Веган қуанышы",
+  "tooltip.vegandelight.replaces": "%s орнына қолдануға болады.",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "Тағы да пісіру",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Сүрленген тофу тілімін пісір",
+  "vegandelight.advancement.cooked_tofish.title": "Иісін ай!",
+  "vegandelight.advancement.cooked_tofish.desc": "Тофишті пісір",
+  "vegandelight.advancement.cook_tofu_slice.title": "Тағы пісіреміз бе?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Тофу тілімдерін пісір",
+  "vegandelight.advancement.minced_tofu.title": "Одан да кішірек",
+  "vegandelight.advancement.minced_tofu.desc": "Тофу тілімін тура",
+  "vegandelight.advancement.soybean.title": "Ерекше бұршақ",
+  "vegandelight.advancement.soybean.desc": "Алғашқы соя бұршағыңды ал",
+  "vegandelight.advancement.silken_tofu.title": "Тым жұмсақ",
+  "vegandelight.advancement.silken_tofu.desc": "Соя сүтін тұз бен қосымша сумен пісір",
+  "vegandelight.advancement.smoked_tofish.title": "Балық иісі күшейді",
+  "vegandelight.advancement.smoked_tofish.desc": "Тофишті сүрле",
+  "vegandelight.advancement.smoked_tofu.title": "Сүрлеу уақыты",
+  "vegandelight.advancement.smoked_tofu.desc": "Тофуны сүрле",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Тағы да турау",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Сүрленген тофуны тура",
+  "vegandelight.advancement.soymilk_bucket.title": "Ерекше сұйықтық",
+  "vegandelight.advancement.soymilk_bucket.desc": "Соя бұршағын сумен пісір",
+  "vegandelight.advancement.tofish.title": "Балық иісі бар",
+  "vegandelight.advancement.tofish.desc": "Тофу тілімін ламинариямен қос",
+  "vegandelight.advancement.tofu.title": "Жаңа өмір салты",
+  "vegandelight.advancement.tofu.desc": "Соя сүтін тұзбен пісір",
+  "vegandelight.advancement.tofu_patty.title": "Бургер уақыты",
+  "vegandelight.advancement.tofu_patty.desc": "Туралған тофуны пісір",
+  "vegandelight.advancement.tofu_slices.title": "Турау уақыты",
+  "vegandelight.advancement.tofu_slices.desc": "Тофуны тура"
+}
