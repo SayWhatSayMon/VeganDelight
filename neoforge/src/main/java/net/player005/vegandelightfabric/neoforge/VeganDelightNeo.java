@@ -10,7 +10,6 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -82,11 +81,6 @@ public class VeganDelightNeo {
                 Capabilities.FluidHandler.ITEM,
                 (stack, __) -> new VeganFluidHandler(stack, empty.value(), true, fluid.get(), millibuckets),
                 item.value())
-            );
-            VeganDelightNeo.eventBus.<RegisterCapabilitiesEvent>addListener(e -> e.registerItem(
-                Capabilities.FluidHandler.ITEM,
-                (stack, __) -> new VeganFluidHandler(new ItemStack(item), empty.value(), false, fluid.get(), millibuckets),
-                empty.value())
             );
         }
 
