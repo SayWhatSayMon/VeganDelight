@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 150,
   "experience": 0.35,
-  "ingredient": {
-    "item": "vegandelight:cooked_tofu"
-  },
+  "ingredient": "vegandelight:cooked_tofu",
   "result": {
     "id": "vegandelight:cooked_smoked_tofu"
   }

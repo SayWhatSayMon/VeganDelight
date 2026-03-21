@@ -4,7 +4,7 @@
     "filters": [
       {
         "type": "result_item_is",
-        "items": "#vegandelight:can_use_applesauce_as_egg"
+        "item": "#vegandelight:can_use_applesauce_as_egg"
       },
       {
         "type": "and",
@@ -12,13 +12,13 @@
           {
             "type": "accepting_ingredient",
             "item": {
-              "id": "sugar"
+              "id": "minecraft:sugar"
             }
           },
           {
             "type": "accepting_ingredient",
             "item": {
-              "id": "milk_bucket"
+              "id": "minecraft:milk_bucket"
             }
           }
         ]
@@ -29,9 +29,7 @@
     {
       "type": "add_alternative",
       "ingredients": "minecraft:egg",
-      "alternative": {
-        "item": "vegandelight:applesauce"
-      }
+      "alternative": "vegandelight:applesauce"
     }
   ]
 }

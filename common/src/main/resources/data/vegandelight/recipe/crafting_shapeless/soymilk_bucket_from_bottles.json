@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "building",
   "ingredients": [
-    {
-      "item": "minecraft:bucket"
-    },
-    {
-      "item": "vegandelight:soymilk_bottle"
-    },
-    {
-      "item": "vegandelight:soymilk_bottle"
-    },
-    {
-      "item": "vegandelight:soymilk_bottle"
-    },
-    {
-      "item": "vegandelight:soymilk_bottle"
-    }
+    "minecraft:bucket",
+    "vegandelight:soymilk_bottle",
+    "vegandelight:soymilk_bottle",
+    "vegandelight:soymilk_bottle",
+    "vegandelight:soymilk_bottle"
   ],
   "result": {
     "id": "vegandelight:soymilk_bucket"

@@ -7,9 +7,7 @@
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
-    {
-      "tag": "c:crops/soybeans"
-    }
+    "#c:crops/soybeans"
   ],
   "result": {
     "id": "vegandelight:soymilk_bucket"

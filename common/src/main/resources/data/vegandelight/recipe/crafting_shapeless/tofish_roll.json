@@ -2,15 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "vegandelight:tofish"
-    },
-    {
-      "item": "vegandelight:tofish"
-    },
-    {
-      "item": "farmersdelight:cooked_rice"
-    }
+    "vegandelight:tofish",
+    "vegandelight:tofish",
+    "farmersdelight:cooked_rice"
   ],
   "result": {
     "count": 2,

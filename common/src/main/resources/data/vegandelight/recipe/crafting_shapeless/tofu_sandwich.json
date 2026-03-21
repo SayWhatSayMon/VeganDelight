@@ -2,18 +2,10 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:foods/bread"
-    },
-    {
-      "item": "vegandelight:cooked_smoked_tofu_slices"
-    },
-    {
-      "tag": "c:foods/cabbage"
-    },
-    {
-      "tag": "c:crops/tomato"
-    }
+    "#c:foods/bread",
+    "vegandelight:cooked_smoked_tofu_slices",
+    "#c:foods/cabbage",
+    "#c:crops/tomato"
   ],
   "result": {
     "id": "farmersdelight:bacon_sandwich"

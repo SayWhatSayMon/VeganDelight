@@ -4,15 +4,9 @@
   "experience": 1.0,
   "recipe_book_tab": "meals",
   "ingredients": [
-    {
-      "item": "vegandelight:minced_tofu"
-    },
-    {
-      "tag": "c:foods/pasta"
-    },
-    {
-      "item": "farmersdelight:tomato_sauce"
-    }
+    "vegandelight:minced_tofu",
+    "#c:foods/pasta",
+    "farmersdelight:tomato_sauce"
   ],
   "result": {
     "id": "farmersdelight:pasta_with_meatballs"

@@ -22,6 +22,6 @@
     "minecraft": "${mc_versions_fabric}",
     "farmersdelight": "*",
     "fabric": "*",
-    "recipe_modification": ">=${recipemod_version}"
+    "recipe_modification": "=${recipemod_version}"
   }
 }

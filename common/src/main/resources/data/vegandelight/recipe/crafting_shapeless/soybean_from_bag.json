@@ -2,9 +2,7 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "vegandelight:soybean_bag"
-    }
+    "vegandelight:soybean_bag"
   ],
   "result": {
     "count": 9,

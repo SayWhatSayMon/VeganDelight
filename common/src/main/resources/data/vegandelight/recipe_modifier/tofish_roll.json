@@ -4,9 +4,7 @@
     {
       "type": "add_alternative",
       "ingredients": "farmersdelight:cod_roll",
-      "alternative": {
-        "item": "vegandelight:tofish_roll"
-      }
+      "alternative": "vegandelight:tofish_roll"
     }
   ]
 }

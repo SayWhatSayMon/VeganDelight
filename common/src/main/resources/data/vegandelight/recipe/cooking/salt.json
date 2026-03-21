@@ -4,9 +4,7 @@
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:water_bucket"
-    }
+    "minecraft:water_bucket"
   ],
   "result": {
     "count": 2,

@@ -4,9 +4,7 @@
     {
       "type": "add_alternative",
       "ingredients": "minecraft:leather",
-      "alternative": {
-        "item": "vegandelight:leather_substitute"
-      }
+      "alternative": "vegandelight:leather_substitute"
     }
   ]
 }
