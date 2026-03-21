@@ -1,14 +1,13 @@
 package net.player005.vegandelightfabric.labels;
 
 import com.google.common.base.Stopwatch;
-import com.mojang.datafixers.util.Unit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
@@ -56,7 +55,7 @@ public class VeganLabels {
 
     public static void setIsVegan(ItemStack stack, boolean isVegan) {
         var isFood = stack.is(VeganTags.SHOULD_HAVE_DATA_COMPONENTS_ADDED) ||
-            stack.getUseAnimation() == UseAnim.EAT || stack.getUseAnimation() == UseAnim.DRINK;
+            stack.getUseAnimation() == ItemUseAnimation.EAT || stack.getUseAnimation() == ItemUseAnimation.DRINK;
 
         if (!isFood && !stack.has(VeganDataComponents.contains_substitutes.value())) return;
 
@@ -96,12 +95,13 @@ public class VeganLabels {
     }
 
     private static boolean recipeNotVegan(List<Item> alreadyTraversed, Recipe<?> recipe) {
-        for (var ingredient : recipe.getIngredients()) {
+        for (var ingredient : recipe.placementInfo().ingredients()) {
 
             var nonVeganItems = 0;
             var total = 0;
 
-            for (var itemStack : ingredient.getItems()) {
+            for (var itemHolder : ingredient.items().toList()) {
+                var itemStack = new ItemStack(itemHolder);
                 if (itemStack.is(VeganTags.VEGAN_ALTERNATIVE))
                     continue;
                 var vegan = isVegan(itemStack);
@@ -116,6 +116,8 @@ public class VeganLabels {
                 if (vegan == VeganStatus.NOT_VEGAN) nonVeganItems++;
                 total++;
             }
+            if (total == 0)
+                continue;
             if ((float) nonVeganItems / total >= 0.5f)
                 return true;
         }
@@ -169,7 +171,7 @@ public class VeganLabels {
                 vegan = false;
             }
             if (item.is(VeganTags.VEGAN_ALTERNATIVE) || item.has(VeganDataComponents.contains_substitutes.value())) {
-                result.set(VeganDataComponents.contains_substitutes.value(), Unit.INSTANCE);
+                result.set(VeganDataComponents.contains_substitutes.value(), true);
             }
         }
         setIsVegan(result, vegan);

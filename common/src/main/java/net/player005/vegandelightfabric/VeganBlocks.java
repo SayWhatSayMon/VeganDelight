@@ -2,7 +2,9 @@ package net.player005.vegandelightfabric;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -12,52 +14,57 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 import static net.player005.vegandelightfabric.VeganDelightMod.getPlatform;
 
 public class VeganBlocks {
 
     public static final Holder<Block> SOYBEAN_CROP =
-        register(() -> new CropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)) {
+        register(props -> new CropBlock(props) {
             @Override
             protected ItemLike getBaseSeedId() {
                 return VeganItems.SOYBEAN.value();
             }
-        }, "soybean_crop", false);
+        }, "soybean_crop", false, BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT));
 
     public static final Holder<Block> WILD_SOYBEAN = register(
-        () -> new WildCropBlock(MobEffects.DAMAGE_BOOST, 12, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)),
-        "wild_soybean", true
+        props -> new WildCropBlock(MobEffects.STRENGTH, 12, props),
+        "wild_soybean", true, BlockBehaviour.Properties.ofFullCopy(Blocks.ALLIUM)
     );
 
     public static final Holder<Block> POTTED_WILD_SOYBEAN = register(
-        () -> new FlowerPotBlock(WILD_SOYBEAN.value(), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)),
-        "potted_wild_soybean", false
+        props -> new FlowerPotBlock(WILD_SOYBEAN.value(), props),
+        "potted_wild_soybean", false, BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ALLIUM)
     );
 
     public static final Holder<Block> SOYBEAN_BAG = register(
-        () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)),
-        "soybean_bag", true
+        Block::new,
+        "soybean_bag", true, BlockBehaviour.Properties.ofFullCopy(Blocks.WHITE_WOOL)
     );
 
     public static final Holder<LiquidBlock> SOYMILK = register(
-        () -> new LiquidBlock(VeganFluids.SOYMILK.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
-        "soymilk", false
+        props -> new LiquidBlock(VeganFluids.SOYMILK.get(), props) { },
+        "soymilk", false, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)
     );
 
     public static final Holder<LiquidBlock> APPLESAUCE = register(
-        () -> new LiquidBlock(VeganFluids.APPLESAUCE.get(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER)) { },
-        "applesauce_fluid", false);
+        props -> new LiquidBlock(VeganFluids.APPLESAUCE.get(), props) { },
+        "applesauce_fluid", false, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER));
 
-    public static <T extends Block> Holder<T> register(Supplier<T> block, String name, boolean registerItem) {
-        ResourceLocation id = ResourceLocation.tryBuild(VeganDelightMod.modID, name);
+    public static <T extends Block> Holder<T> register(Function<BlockBehaviour.Properties, T> blockFactory, String name,
+                                                       boolean registerItem, BlockBehaviour.Properties baseProperties) {
+        Identifier id = Identifier.tryBuild(VeganDelightMod.modID, name);
         assert id != null;
+        ResourceKey<Block> blockKey = ResourceKey.create(Registries.BLOCK, id);
 
-        var holder = getPlatform().register(BuiltInRegistries.BLOCK, id, block);
+        var holder = getPlatform().register(BuiltInRegistries.BLOCK, blockKey, () -> blockFactory.apply(baseProperties.setId(blockKey)));
 
-        if (registerItem)
-            getPlatform().register(BuiltInRegistries.ITEM, id, () -> new BlockItem(holder.value(), new Item.Properties()));
+        if (registerItem) {
+            ResourceKey<Item> itemKey = ResourceKey.create(Registries.ITEM, id);
+            getPlatform().register(BuiltInRegistries.ITEM, itemKey, () ->
+                new BlockItem(holder.value(), new Item.Properties().setId(itemKey).useBlockDescriptionPrefix()));
+        }
 
         return holder;
     }

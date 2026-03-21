@@ -5,7 +5,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
@@ -86,7 +86,7 @@ public class VeganDelightNeo {
 
         @Override
         public TagKey<Biome> undergroundBiomeTag() {
-            return TagKey.create(Registries.BIOME, ResourceLocation.parse("c:underground"));
+            return TagKey.create(Registries.BIOME, Identifier.parse("c:underground"));
         }
 
         @Override
@@ -118,17 +118,17 @@ public class VeganDelightNeo {
                 .slopeFindDistance(properties.slopeFindDistance());
 
             register(NeoForgeRegistries.FLUID_TYPES,
-                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                Identifier.fromNamespaceAndPath(VeganDelightMod.modID, name),
                 () -> fluidType);
 
             register(BuiltInRegistries.FLUID,
-                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                Identifier.fromNamespaceAndPath(VeganDelightMod.modID, name),
                 () -> {
                     flowingRef.set(new BaseFlowingFluid.Flowing(fluidProperties));
                     return flowingRef.get();
                 });
             register(BuiltInRegistries.FLUID,
-                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
+                Identifier.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                 () -> {
                     stillRef.set(new BaseFlowingFluid.Source(fluidProperties));
                     return stillRef.get();
@@ -153,13 +153,13 @@ public class VeganDelightNeo {
 
         var clientFluidExtensions = new IClientFluidTypeExtensions() {
             @Override
-            public ResourceLocation getStillTexture() {
-                return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still");
+            public Identifier getStillTexture() {
+                return Identifier.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_still");
             }
 
             @Override
-            public ResourceLocation getFlowingTexture() {
-                return ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing");
+            public Identifier getFlowingTexture() {
+                return Identifier.fromNamespaceAndPath(VeganDelightMod.modID, "block/" + name + "_flowing");
             }
         };
         VeganDelightNeo.eventBus.<RegisterClientExtensionsEvent>addListener(event -> event.registerFluidType(clientFluidExtensions, fluidType));

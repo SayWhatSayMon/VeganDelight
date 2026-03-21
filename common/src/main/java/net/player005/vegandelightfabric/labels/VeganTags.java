@@ -1,7 +1,7 @@
 package net.player005.vegandelightfabric.labels;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.player005.vegandelightfabric.VeganDelightMod;
@@ -17,6 +17,6 @@ public class VeganTags {
     public static final TagKey<Item> NOT_VEGAN = get("not_vegan");
 
     private static TagKey<Item> get(String name) {
-        return TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name));
+        return TagKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(VeganDelightMod.modID, name));
     }
 }
