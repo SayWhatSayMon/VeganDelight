@@ -7,24 +7,18 @@
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:cactus"
-    },
-    {
-      "item": "minecraft:cactus"
-    },
-    {
-      "item": "minecraft:cactus"
-    }
+    "minecraft:cactus",
+    "minecraft:cactus",
+    "minecraft:cactus"
   ],
   "result": {
     "id": "minecraft:honey_bottle",
     "components": {
       "vegandelight:is_vegan": true,
-      "vegandelight:contains_substitutes": {},
-      "minecraft:item_name": "{\"translate\":\"item.vegandelight.agave_syrup\"}",
+      "vegandelight:contains_substitutes": true,
+      "minecraft:item_name": {"translate": "item.vegandelight.agave_syrup"},
       "minecraft:lore": [
-        "{\"translate\": \"tooltip.vegandelight.replaces\", \"italic\": true, \"color\":\"dark_gray\", \"with\": [{\"translate\": \"item.minecraft.honey_bottle\", \"color\":\"gray\", \"italic\": true}]}"
+        {"translate": "tooltip.vegandelight.replaces", "italic": true, "color":"dark_gray", "with": [{"translate": "item.minecraft.honey_bottle", "color":"gray", "italic": true}]}
       ]
     }
   }
