@@ -3,6 +3,8 @@
 */runs/
 */build/
 */.gradle/
+build/
+.gradle/
 
 .idea/
 piskel/
