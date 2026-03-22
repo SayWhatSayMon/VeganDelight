@@ -1,12 +1,15 @@
 package net.player005.vegandelightfabric;
 
 import net.minecraft.core.Holder;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
@@ -114,14 +117,14 @@ public class VeganItems {
         props -> new Item(props));
 
     public static final Holder<Item> SOYMILK_BUCKET = register("soymilk_bucket",
-        props -> new VeganDrinkableItem(
-            props.craftRemainder(Items.BUCKET).stacksTo(1)
+        props -> new ConsumableItem(
+            drinkItem(props, Items.BUCKET, 1)
         )
     );
 
     public static final Holder<Item> SOYMILK_BOTTLE = register("soymilk_bottle",
-        props -> new VeganDrinkableItem(
-            props.craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
+        props -> new ConsumableItem(
+            drinkItem(props, Items.GLASS_BOTTLE, 16)
         )
     );
 
@@ -144,14 +147,16 @@ public class VeganItems {
             .craftRemainder(Items.BOWL)
             .stacksTo(16)));
     public static final Holder<Item> APPLESAUCE_BUCKET = register("applesauce_bucket",
-        props -> new VeganDrinkableItem(
-            props
-                .food(new FoodProperties.Builder()
+        props -> new ConsumableItem(
+            drinkItem(
+                props,
+                new FoodProperties.Builder()
                     .nutrition(2)
                     .saturationModifier(0.4f)
-                    .build())
-                .craftRemainder(Items.BUCKET)
-                .stacksTo(1)
+                    .build(),
+                Items.BUCKET,
+                1
+            )
         )
     );
 
@@ -195,5 +200,20 @@ public class VeganItems {
     }
     private static void registerBowl(Holder<Item> item, Supplier<FlowingFluid> fluid) {
         getPlatform().registerFluidTank(item, Holder.direct(Items.BOWL), fluid, 250);
+    }
+
+    private static Item.Properties drinkItem(Item.Properties props, Item container, int stackSize) {
+        return props
+            .component(DataComponents.CONSUMABLE, Consumables.DEFAULT_DRINK)
+            .craftRemainder(container)
+            .stacksTo(stackSize);
+    }
+
+    private static Item.Properties drinkItem(Item.Properties props, FoodProperties food, Item container, int stackSize) {
+        Consumable consumable = Consumables.defaultDrink().build();
+        return props
+            .food(food, consumable)
+            .craftRemainder(container)
+            .stacksTo(stackSize);
     }
 }
