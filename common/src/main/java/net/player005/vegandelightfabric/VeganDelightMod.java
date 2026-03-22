@@ -50,13 +50,13 @@ public class VeganDelightMod {
     private static void registerTrades() {
         getPlatform().registerVillagerTrade(VillagerProfession.FARMER, 1,
             (level, trader, random) -> new MerchantOffer(
-                new ItemCost(VeganItems.SOYBEAN.value(), random.nextInt(24 - 16 + 1) + 16),
+                new ItemCost(VeganItems.SOYBEAN.value(), random.nextIntBetweenInclusive(16, 24)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 5, 0.05f
             ));
         getPlatform().registerVillagerTrade(VillagerProfession.LEATHERWORKER, 4,
             (level, trader, random) -> new MerchantOffer(
-                new ItemCost(VeganItems.LEATHER_SUBSTITUTE.value(), random.nextInt(16 - 8 + 1) + 8),
+                new ItemCost(VeganItems.LEATHER_SUBSTITUTE.value(), random.nextIntBetweenInclusive(8, 16)),
                 new ItemStack(Items.EMERALD, 1),
                 12, 15, 0.1f
             ));
