@@ -21,11 +21,9 @@ public abstract class CuttingBoardBlockEntityMixin {
     public void captureVeganStatus(ItemStack tool, Player player, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stored = getStoredItem();
         Boolean isVegan = stored.get(VeganDataComponents.is_vegan.value());
-        // contains_substitutes means item was crafted with vegan alternatives → treat as vegan
         if (isVegan == null && stored.has(VeganDataComponents.contains_substitutes.value())) {
             isVegan = true;
         }
-        // Fall back to recipe/tag scan for items like apple pie where setIsVegan skips UNKNOWN items
         if (isVegan == null) {
             var status = VeganLabels.isVegan(stored);
             if (status == VeganLabels.VeganStatus.VEGAN) isVegan = true;

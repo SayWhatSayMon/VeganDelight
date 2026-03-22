@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric.mixin;
 
+import net.minecraft.util.Unit;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
@@ -22,7 +23,7 @@ public class CuttingBoardRecipeMixin {
         for (ItemStack result : cir.getReturnValue()) {
             if (isVegan) result.set(VeganDataComponents.is_vegan.value(), true);
             if (Boolean.TRUE.equals(hasSubstitutes))
-                result.set(VeganDataComponents.contains_substitutes.value(), true);
+                result.set(VeganDataComponents.contains_substitutes.value(), Unit.INSTANCE);
         }
     }
 }

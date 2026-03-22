@@ -1,10 +1,12 @@
 package net.player005.vegandelightfabric.labels;
 
+import net.minecraft.util.Unit;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.Identifier;
 import net.player005.vegandelightfabric.VeganDelightMod;
 
@@ -21,12 +23,12 @@ public class VeganDataComponents {
             .build()
     );
 
-    public static final Holder<DataComponentType<Boolean>> contains_substitutes = getPlatform().register(
+    public static final Holder<DataComponentType<Unit>> contains_substitutes = getPlatform().register(
         BuiltInRegistries.DATA_COMPONENT_TYPE,
         Identifier.fromNamespaceAndPath(VeganDelightMod.modID, "contains_substitutes"),
-        () -> DataComponentType.<Boolean>builder()
-            .persistent(Codec.BOOL)
-            .networkSynchronized(ByteBufCodecs.BOOL)
+        () -> DataComponentType.<Unit>builder()
+            .persistent(Unit.CODEC)
+            .networkSynchronized(Unit.STREAM_CODEC)
             .build()
     );
 

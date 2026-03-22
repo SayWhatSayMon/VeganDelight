@@ -1,6 +1,7 @@
 package net.player005.vegandelightfabric.labels;
 
 import com.google.common.base.Stopwatch;
+import net.minecraft.util.Unit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
@@ -171,7 +172,7 @@ public class VeganLabels {
                 vegan = false;
             }
             if (item.is(VeganTags.VEGAN_ALTERNATIVE) || item.has(VeganDataComponents.contains_substitutes.value())) {
-                result.set(VeganDataComponents.contains_substitutes.value(), true);
+                result.set(VeganDataComponents.contains_substitutes.value(), Unit.INSTANCE);
             }
         }
         setIsVegan(result, vegan);
