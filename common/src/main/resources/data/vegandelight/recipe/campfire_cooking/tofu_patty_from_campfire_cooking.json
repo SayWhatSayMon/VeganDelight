@@ -3,9 +3,7 @@
   "category": "food",
   "cookingtime": 600,
   "experience": 0.35,
-  "ingredient": {
-    "item": "vegandelight:minced_tofu"
-  },
+  "ingredient": "vegandelight:minced_tofu",
   "result": {
     "id": "vegandelight:tofu_patty"
   }

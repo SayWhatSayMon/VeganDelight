@@ -4,15 +4,9 @@
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
-    {
-      "tag": "c:mushrooms"
-    },
-    {
-      "item": "farmersdelight:straw"
-    },
-    {
-      "item": "farmersdelight:tree_bark"
-    }
+    "#c:mushrooms",
+    "farmersdelight:straw",
+    "farmersdelight:tree_bark"
   ],
   "result": {
     "id": "vegandelight:leather_substitute"

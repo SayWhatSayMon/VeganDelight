@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "vegandelight:tofu_slices"
-    },
-    {
-      "item": "minecraft:kelp"
-    }
+    "vegandelight:tofu_slices",
+    "minecraft:kelp"
   ],
   "result": {
     "id": "vegandelight:tofish"

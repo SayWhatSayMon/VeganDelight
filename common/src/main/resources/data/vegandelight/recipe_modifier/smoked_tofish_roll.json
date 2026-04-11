@@ -4,9 +4,7 @@
     {
       "type": "add_alternative",
       "ingredients": "farmersdelight:salmon_roll",
-      "alternative": {
-        "item": "vegandelight:smoked_tofish_roll"
-      }
+      "alternative": "vegandelight:smoked_tofish_roll"
     }
   ]
 }

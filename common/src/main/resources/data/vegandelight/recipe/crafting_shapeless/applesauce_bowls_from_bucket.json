@@ -2,21 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "vegandelight:applesauce_bucket"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "minecraft:bowl"
-    }
+    "vegandelight:applesauce_bucket",
+    "minecraft:bowl",
+    "minecraft:bowl",
+    "minecraft:bowl",
+    "minecraft:bowl"
   ],
   "result": {
     "id": "vegandelight:applesauce",

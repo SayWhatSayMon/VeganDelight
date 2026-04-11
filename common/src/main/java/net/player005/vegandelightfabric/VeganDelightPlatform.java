@@ -3,11 +3,11 @@ package net.player005.vegandelightfabric;
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.npc.VillagerProfession;
-import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.ComposterBlock;
@@ -25,13 +25,12 @@ public interface VeganDelightPlatform {
         ComposterBlock.COMPOSTABLES.put(VeganBlocks.WILD_SOYBEAN.value().asItem(), 0.65f);
     }
 
-    default <V, T extends V> Holder<T> register(Registry<V> registry, ResourceLocation rl, Supplier<T> supplier) {
+    default <V, T extends V> Holder<T> register(Registry<V> registry, Identifier rl, Supplier<T> supplier) {
         return register(registry, ResourceKey.create(registry.key(), rl), supplier);
     }
 
-    @SuppressWarnings("unchecked")
     default <V, T extends V> Holder<T> register(Registry<V> registry, ResourceKey<V> rk, Supplier<T> supplier) {
-        return (Holder<T>) Registry.registerForHolder(registry, rk, supplier.get());
+        return Registry.registerForHolder(registry, rk, supplier.get());
     }
 
     void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid, int millibuckets);
@@ -42,7 +41,7 @@ public interface VeganDelightPlatform {
         return BiomeTags.IS_OVERWORLD;
     }
 
-    void registerVillagerTrade(VillagerProfession profession, int level, VillagerTrades.ItemListing itemListing);
+    void registerVillagerTrade(ResourceKey<VillagerProfession> profession, int level, VillagerTrades.ItemListing itemListing);
 
     void registerBiomeModifier(float minTemp, float maxTemp, TagKey<Biome> allowed, TagKey<Biome> denied,
                                GenerationStep.Decoration step, ResourceKey<PlacedFeature> modifier);

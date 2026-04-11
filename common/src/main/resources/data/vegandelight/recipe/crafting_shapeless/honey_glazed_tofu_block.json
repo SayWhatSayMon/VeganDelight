@@ -2,33 +2,15 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "tag": "c:foods/berry"
-    },
-    {
-      "item": "minecraft:honey_bottle"
-    },
-    {
-      "tag": "c:foods/berry"
-    },
-    {
-      "tag": "c:foods/berry"
-    },
-    {
-      "item": "vegandelight:smoked_tofu"
-    },
-    {
-      "tag": "c:foods/berry"
-    },
-    {
-      "item": "farmersdelight:cooked_rice"
-    },
-    {
-      "item": "minecraft:bowl"
-    },
-    {
-      "item": "farmersdelight:cooked_rice"
-    }
+    "#c:foods/berry",
+    "minecraft:honey_bottle",
+    "#c:foods/berry",
+    "#c:foods/berry",
+    "vegandelight:smoked_tofu",
+    "#c:foods/berry",
+    "farmersdelight:cooked_rice",
+    "minecraft:bowl",
+    "farmersdelight:cooked_rice"
   ],
   "result": {
     "id": "farmersdelight:honey_glazed_ham_block"

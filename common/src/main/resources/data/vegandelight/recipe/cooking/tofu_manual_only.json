@@ -4,12 +4,8 @@
   "experience": 1.0,
   "recipe_book_tab": "meals",
   "ingredients": [
-    {
-      "tag": "c:foods/soymilk"
-    },
-    {
-      "tag": "c:salt"
-    }
+    "#c:foods/soymilk",
+    "#c:salt"
   ],
   "result": {
     "id": "vegandelight:tofu"

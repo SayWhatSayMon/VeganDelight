@@ -14,10 +14,10 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.npc.VillagerProfession;
-import net.minecraft.world.entity.npc.VillagerTrades;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.biome.Biome;
@@ -66,14 +66,14 @@ public class VeganDelightFabric implements ModInitializer {
 
             final FlowingFluid flowing = Registry.register(
                 BuiltInRegistries.FLUID,
-                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
+                Identifier.fromNamespaceAndPath(VeganDelightMod.modID, "flowing_" + name),
                 new SimpleFlowableFluid.Flowing(properties, flowingRef::get, stillRef::get)
             );
             flowingRef.set(flowing);
 
             final var still = Registry.register(
                 BuiltInRegistries.FLUID,
-                ResourceLocation.fromNamespaceAndPath(VeganDelightMod.modID, name),
+                Identifier.fromNamespaceAndPath(VeganDelightMod.modID, name),
                 new SimpleFlowableFluid.Still(properties, flowingRef::get, stillRef::get)
             );
             stillRef.set(still);
@@ -99,7 +99,7 @@ public class VeganDelightFabric implements ModInitializer {
         }
 
         @Override
-        public void registerVillagerTrade(VillagerProfession profession, int level,
+        public void registerVillagerTrade(ResourceKey<VillagerProfession> profession, int level,
                                           VillagerTrades.ItemListing itemListing) {
             TradeOfferHelper.registerVillagerOffers(profession, level, (factories) -> factories.add(itemListing));
         }

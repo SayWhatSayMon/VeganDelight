@@ -4,9 +4,7 @@
     {
       "type": "add_alternative",
       "ingredients": "farmersdelight:beef_patty",
-      "alternative": {
-        "item": "vegandelight:tofu_patty"
-      }
+      "alternative": "vegandelight:tofu_patty"
     }
   ]
 }

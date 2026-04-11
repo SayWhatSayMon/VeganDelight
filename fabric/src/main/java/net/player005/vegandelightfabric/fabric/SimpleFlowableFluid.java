@@ -5,6 +5,7 @@ package net.player005.vegandelightfabric.fabric;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
@@ -63,7 +64,7 @@ public abstract class SimpleFlowableFluid extends FlowingFluid {
     }
 
     @Override
-    protected boolean canConvertToSource(@NotNull Level level) {
+    protected boolean canConvertToSource(@NotNull ServerLevel level) {
         return false;
     }
 
