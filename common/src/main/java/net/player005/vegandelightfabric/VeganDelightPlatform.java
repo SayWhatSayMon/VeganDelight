@@ -29,9 +29,8 @@ public interface VeganDelightPlatform {
         return register(registry, ResourceKey.create(registry.key(), rl), supplier);
     }
 
-    @SuppressWarnings("unchecked")
     default <V, T extends V> Holder<T> register(Registry<V> registry, ResourceKey<V> rk, Supplier<T> supplier) {
-        return (Holder<T>) Registry.registerForHolder(registry, rk, supplier.get());
+        return Registry.registerForHolder(registry, rk, supplier.get());
     }
 
     void registerFluidTank(Holder<Item> item, Holder<Item> empty, Supplier<FlowingFluid> fluid, int millibuckets);
