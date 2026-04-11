@@ -12,8 +12,9 @@ import vectorwing.farmersdelight.refabricated.inventory.RecipeWrapper;
 
 @Mixin(CookingPotRecipe.class)
 public class CookingPotRecipeMixin {
+    @SuppressWarnings("UnstableApiUsage")
     @Inject(method = "assemble", at = @At("RETURN"), cancellable = true)
-    public void onAssemble(RecipeWrapper recipeWrapper, HolderLookup.Provider registries, CallbackInfoReturnable<ItemStack> cir) {
-        cir.setReturnValue(RecipeModification.getRecipeResult((CookingPotRecipe)(Object)this, cir.getReturnValue(), recipeWrapper));
+    public void onAssemble(RecipeWrapper inv, HolderLookup.Provider provider, CallbackInfoReturnable<ItemStack> cir) {
+        cir.setReturnValue(RecipeModification.getRecipeResult((CookingPotRecipe)(Object)this, cir.getReturnValue(), inv));
     }
 }

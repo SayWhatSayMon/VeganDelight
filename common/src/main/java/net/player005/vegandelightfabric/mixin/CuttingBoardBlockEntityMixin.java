@@ -18,25 +18,18 @@ public abstract class CuttingBoardBlockEntityMixin {
     @Shadow public abstract ItemStack getStoredItem();
 
     @Inject(method = "processStoredItemUsingTool", at = @At("HEAD"))
-    public void captureVeganStatus(ItemStack tool, Player player, CallbackInfoReturnable<Boolean> cir) {
+    public void captureVeganStatus(ItemStack toolStack, Player player, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stored = getStoredItem();
-        Boolean isVegan = stored.get(VeganDataComponents.is_vegan.value());
-        if (isVegan == null && stored.has(VeganDataComponents.contains_substitutes.value())) {
-            isVegan = true;
-        }
-        if (isVegan == null) {
-            var status = VeganLabels.isVegan(stored);
-            if (status == VeganLabels.VeganStatus.VEGAN) isVegan = true;
-        }
-        CuttingBoardContext.inputIsVegan.set(isVegan);
+        VeganLabels.VeganStatus isVegan = VeganLabels.isVegan(stored);
+        CuttingBoardContext.inputStatus.set(isVegan);
         CuttingBoardContext.inputHasSubstitutes.set(
-            stored.has(VeganDataComponents.contains_substitutes.value()) ? true : null
+            stored.has(VeganDataComponents.contains_substitutes.value())
         );
     }
 
     @Inject(method = "processStoredItemUsingTool", at = @At("RETURN"))
-    public void clearVeganStatus(ItemStack tool, Player player, CallbackInfoReturnable<Boolean> cir) {
-        CuttingBoardContext.inputIsVegan.remove();
+    public void clearVeganStatus(ItemStack toolStack, Player player, CallbackInfoReturnable<Boolean> cir) {
+        CuttingBoardContext.inputStatus.remove();
         CuttingBoardContext.inputHasSubstitutes.remove();
     }
 }
