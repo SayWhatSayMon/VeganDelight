@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -22,6 +23,8 @@ public class VeganDelightMod {
 
     public static void initializeAll(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
+
+        MidnightConfig.init(modID, VeganConfig.class);
 
         VeganFluids.initialize();
         VeganItems.initialize();

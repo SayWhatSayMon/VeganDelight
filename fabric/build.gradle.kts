@@ -3,7 +3,7 @@
 import net.fabricmc.loom.task.RemapJarTask
 
 plugins {
-    id("fabric-loom") version "1.10-SNAPSHOT"
+    id("fabric-loom") version "1.13-SNAPSHOT"
 }
 
 repositories {
@@ -45,6 +45,10 @@ dependencies {
         exclude("net.fabricmc")
     }
     modImplementation("maven.modrinth:recipe-modification:${rootProject.properties["recipemod_version"]}-fabric")
+
+    val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-fabric"
+    modImplementation(midnightlib)
+    include(midnightlib)
 }
 
 loom {

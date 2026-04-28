@@ -1,7 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
 plugins {
-    id("fabric-loom") version ("1.10-SNAPSHOT")
+    id("fabric-loom") version ("1.13-SNAPSHOT")
 }
 
 repositories {
@@ -29,6 +29,10 @@ dependencies {
     modCompileOnly("vectorwing:FarmersDelight:${rootProject.properties["fdrf_version"]}") {
         isTransitive = false
     }
+
+    val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-fabric"
+    modImplementation(midnightlib)
+    include(midnightlib)
 }
 
 loom {

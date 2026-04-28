@@ -1,7 +1,7 @@
 plugins {
     id("java")
     id("idea")
-    id("fabric-loom") version "1.10-SNAPSHOT" apply false
+    id("fabric-loom") version "1.13-SNAPSHOT" apply false
 }
 
 subprojects {
@@ -38,6 +38,8 @@ subprojects {
                 includeGroup("org.parchmentmc.data")
             }
         }
+        maven("https://maven.midnightdust.eu/releases") // Midnight Config
+        maven("https://maven.terraformersmc.com/") // Mod menu, dependency of Midnight config
     }
 
     // tell idea to download sources and javadocs when importing
