@@ -7,6 +7,10 @@ dependencies {
 
     implementation("maven.modrinth:farmers-delight:${rootProject.properties["fd_version"]}")
     implementation("maven.modrinth:recipe-modification:${rootProject.properties["recipemod_version"]}-neoforge")
+
+    val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-neoforge"
+    implementation(midnightlib)
+    jarJar(midnightlib)
 }
 
 neoForge {

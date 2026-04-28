@@ -87,5 +87,13 @@
 
 
   "itemGroup.vegan_delight": "Vegan Delight",
-  "tooltip.vegandelight.replaces": "Can be used as a replacement for %s."
+  "tooltip.vegandelight.replaces": "Can be used as a replacement for %s.",
+
+  "vegandelight.midnightconfig.title": "Vegan Delight",
+  "vegandelight.midnightconfig.dataComponentExplanation": "Vegan Delight can use Minecraft's data component system to keep track of which items are vegan and which aren't. You can choose which items are assigned these components. Keep in mind that items that have different components are not stackable, meaning vegan items won't be stackable with non-vegan ones. By default, only food items are affected by this. Note that the data components are required for the labels (see below) to work correctly.",
+  "vegandelight.midnightconfig.markEntityDroppedItemsAsNonVegan": "Mark all entity-dropped items as non-vegan?",
+  "vegandelight.midnightconfig.useComponents": "Which items should use data components to differentiate vegan/non-vegan items?",
+  "vegandelight.midnightconfig.labelExplanation": "Vegan Delight can show a 'Vegan' or 'Not Vegan' label on items. You can choose which items have these labels. 'ONLY_WHEN_REPLACEMENT_USED' means items that were crafted using a substitute, like soymilk instead of cows milk, will show a vegan label. 'ONLY_EXCEPTIONS' means all items that should normally be vegan, but for some reason aren't vegan, will show a non-vegan label.",
+  "vegandelight.midnightconfig.veganLabelMode": "Which items should Display the 'Vegan' label?",
+  "vegandelight.midnightconfig.notVeganLabelMode": "Which items should Display the 'Not Vegan' label?"
 }

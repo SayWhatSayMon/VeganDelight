@@ -1,13 +1,14 @@
 {
   "type": "farmersdelight:cooking",
-  "cookingtime": 150,
-  "experience": 1.0,
+  "cookingtime": 250,
+  "experience": 4.0,
   "recipe_book_tab": "meals",
   "ingredients": [
     "#c:foods/soymilk",
     "#c:salt"
   ],
   "result": {
-    "id": "vegandelight:tofu"
+    "id": "vegandelight:tofu",
+    "count": 4
   }
 }

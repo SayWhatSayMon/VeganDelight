@@ -29,6 +29,10 @@ dependencies {
     modCompileOnly("vectorwing:FarmersDelight:${rootProject.properties["fdrf_version"]}") {
         isTransitive = false
     }
+
+    val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-fabric"
+    modImplementation(midnightlib)
+    include(midnightlib)
 }
 
 loom {

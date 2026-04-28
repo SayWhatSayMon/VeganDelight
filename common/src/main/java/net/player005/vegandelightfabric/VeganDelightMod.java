@@ -1,5 +1,6 @@
 package net.player005.vegandelightfabric;
 
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
-import net.player005.vegandelightfabric.labels.VeganLabels;
+import net.player005.vegandelightfabric.labels.VeganItemDetection;
 
 public class VeganDelightMod {
 
@@ -23,13 +24,15 @@ public class VeganDelightMod {
     public static void initializeAll(VeganDelightPlatform platform) {
         VeganDelightMod.platform = platform;
 
+        MidnightConfig.init(modID, VeganConfig.class);
+
         VeganFluids.initialize();
         VeganItems.initialize();
         VeganBlocks.initialize();
         VeganCreativeTab.initialize();
         VeganDataComponents.initialize();
 
-        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
+        RecipeModification.onRecipeInit(recipeManager -> VeganItemDetection.initialize());
         RatsCompat.initialize();
 
         registerBiomeModifiers();

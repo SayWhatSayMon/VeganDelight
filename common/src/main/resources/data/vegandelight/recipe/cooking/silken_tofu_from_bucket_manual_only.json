@@ -3,15 +3,16 @@
   "container": {
     "id": "minecraft:bowl"
   },
-  "cookingtime": 150,
-  "experience": 1.0,
+  "cookingtime": 200,
+  "experience": 4.0,
   "recipe_book_tab": "meals",
   "ingredients": [
     "#c:foods/soymilk",
     "#c:salt",
-    "minecraft:potion"
+    "minecraft:water_bucket"
   ],
   "result": {
-    "id": "vegandelight:silken_tofu"
+    "id": "vegandelight:silken_tofu",
+    "count": 4
   }
 }

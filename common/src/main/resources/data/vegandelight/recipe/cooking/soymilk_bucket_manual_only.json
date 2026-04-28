@@ -3,10 +3,13 @@
   "container": {
     "id": "minecraft:bucket"
   },
-  "cookingtime": 150,
+  "cookingtime": 200,
   "experience": 1.0,
   "recipe_book_tab": "misc",
   "ingredients": [
+    "#c:crops/soybeans",
+    "#c:crops/soybeans",
+    "#c:crops/soybeans",
     "#c:crops/soybeans"
   ],
   "result": {

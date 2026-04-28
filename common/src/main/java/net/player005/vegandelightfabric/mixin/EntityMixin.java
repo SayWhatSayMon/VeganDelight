@@ -5,7 +5,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
-import net.player005.vegandelightfabric.labels.VeganLabels;
+import net.player005.vegandelightfabric.labels.VeganDataComponents;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -18,6 +18,6 @@ public abstract class EntityMixin {
     @Inject(method = "spawnAtLocation(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/item/ItemStack;F)Lnet/minecraft/world/entity/item/ItemEntity;", at = @At("HEAD"))
     private void markEntityDroppedItemsAsNotVegan(ServerLevel level, ItemStack stack, float offsetY, CallbackInfoReturnable<ItemEntity> cir) {
         if (!((Object) this instanceof Player))
-            VeganLabels.setIsVegan(stack, false);
+            VeganDataComponents.setIsVegan(stack, false);
     }
 }

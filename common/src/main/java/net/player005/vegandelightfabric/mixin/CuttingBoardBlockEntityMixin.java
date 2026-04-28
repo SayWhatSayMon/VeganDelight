@@ -4,6 +4,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.player005.vegandelightfabric.labels.CuttingBoardContext;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
+import net.player005.vegandelightfabric.labels.VeganItemDetection;
 import net.player005.vegandelightfabric.labels.VeganLabels;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -20,7 +21,7 @@ public abstract class CuttingBoardBlockEntityMixin {
     @Inject(method = "processStoredItemUsingTool", at = @At("HEAD"))
     public void captureVeganStatus(ItemStack toolStack, Player player, CallbackInfoReturnable<Boolean> cir) {
         ItemStack stored = getStoredItem();
-        VeganLabels.VeganStatus isVegan = VeganLabels.isVegan(stored);
+        VeganItemDetection.VeganStatus isVegan = VeganItemDetection.isVegan(stored);
         CuttingBoardContext.inputStatus.set(isVegan);
         CuttingBoardContext.inputHasSubstitutes.set(
             stored.has(VeganDataComponents.contains_substitutes.value())

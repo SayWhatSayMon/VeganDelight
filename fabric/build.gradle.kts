@@ -45,6 +45,10 @@ dependencies {
         exclude("net.fabricmc")
     }
     modImplementation("maven.modrinth:recipe-modification:${rootProject.properties["recipemod_version"]}-fabric")
+
+    val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-fabric"
+    modImplementation(midnightlib)
+    include(midnightlib)
 }
 
 loom {

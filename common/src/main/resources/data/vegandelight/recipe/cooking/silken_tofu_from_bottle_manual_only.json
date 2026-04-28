@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl"
+  },
+  "cookingtime": 150,
+  "experience": 1.0,
+  "recipe_book_tab": "meals",
+  "ingredients": [
+    "#c:drinks/soymilk",
+    "#c:salt",
+    "minecraft:potion"
+  ],
+  "result": {
+    "id": "vegandelight:silken_tofu"
+  }
+}
