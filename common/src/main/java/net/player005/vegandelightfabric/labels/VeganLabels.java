@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeInput;
 import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.vegandelightfabric.VeganConfig;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
@@ -30,6 +31,10 @@ public class VeganLabels {
 
     @ApiStatus.Internal
     public static void initialize() {
+        if (VeganConfig.useComponents == VeganConfig.DataComponentUsageMode.NONE) {
+            return;
+        }
+
         RecipeModification.registerGlobalResultModifier((recipe, result, recipeInput) -> {
             if (recipeInput != null) modifyRecipeResult(recipeInput, result);
             return result;
