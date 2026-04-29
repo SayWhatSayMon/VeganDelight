@@ -9,6 +9,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.MilkBottleItem;
 
 import java.util.function.Supplier;
 
@@ -111,13 +112,13 @@ public class VeganItems {
         () -> new Item(new Item.Properties()));
 
     public static final Holder<Item> SOYMILK_BUCKET = register("soymilk_bucket",
-        () -> new DrinkableItem(
+        () -> new MilkBucketItem(
             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)
         )
     );
 
     public static final Holder<Item> SOYMILK_BOTTLE = register("soymilk_bottle",
-        () -> new DrinkableItem(
+        () -> new MilkBottleItem(
             new Item.Properties().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)
         )
     );
