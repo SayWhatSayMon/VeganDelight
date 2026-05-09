@@ -60,6 +60,10 @@ public class VeganLabels {
     }
 
     public static void setIsVegan(ItemStack stack, boolean isVegan) {
+        if (VeganConfig.useComponents == VeganConfig.DataComponentUsageMode.NONE) {
+            return;
+        }
+
         var isFood = stack.is(VeganTags.SHOULD_HAVE_DATA_COMPONENTS_ADDED) ||
             stack.getUseAnimation() == UseAnim.EAT || stack.getUseAnimation() == UseAnim.DRINK;
 
