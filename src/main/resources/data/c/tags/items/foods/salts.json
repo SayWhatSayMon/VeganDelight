@@ -1,5 +1,7 @@
 {
   "values": [
-    "vegandelight:salt"
+    "vegandelight:salt",
+    "meadow:alpine_salt",
+    "compatdelight:salt"
   ]
 }
