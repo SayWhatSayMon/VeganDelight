@@ -13,7 +13,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.vegandelightfabric.fluids.VeganFluids;
 import net.player005.vegandelightfabric.labels.VeganDataComponents;
-import net.player005.vegandelightfabric.labels.VeganLabels;
+import net.player005.vegandelightfabric.labels.VeganItemDetection;
 
 public class VeganDelightMod {
 
@@ -32,7 +32,7 @@ public class VeganDelightMod {
         VeganCreativeTab.initialize();
         VeganDataComponents.initialize();
 
-        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
+        RecipeModification.onRecipeInit(recipeManager -> VeganItemDetection.initialize());
         RatsCompat.initialize();
 
         registerBiomeModifiers();

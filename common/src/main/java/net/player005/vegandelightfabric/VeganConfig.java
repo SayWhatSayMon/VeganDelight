@@ -12,6 +12,8 @@ public class VeganConfig extends MidnightConfig {
 
     @Entry(category = LABELS) public static DataComponentUsageMode useComponents = DataComponentUsageMode.ONLY_FOODS;
 
+    @Entry(category = LABELS) public static boolean markEntityDroppedItemsAsNonVegan = false;
+
     @Comment(category = LABELS) public static Comment spacer3;
     @Comment(category = LABELS) public static Comment labelExplanation;
     @Comment(category = LABELS) public static Comment spacer4;
