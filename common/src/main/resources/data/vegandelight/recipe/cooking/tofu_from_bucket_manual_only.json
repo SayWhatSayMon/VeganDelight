@@ -1,10 +1,7 @@
 {
   "type": "farmersdelight:cooking",
-  "container": {
-    "id": "minecraft:bowl"
-  },
-  "cookingtime": 150,
-  "experience": 1.0,
+  "cookingtime": 250,
+  "experience": 4.0,
   "recipe_book_tab": "meals",
   "ingredients": [
     {
@@ -12,12 +9,10 @@
     },
     {
       "tag": "c:salt"
-    },
-    {
-      "item": "minecraft:potion"
     }
   ],
   "result": {
-    "id": "vegandelight:silken_tofu"
+    "id": "vegandelight:tofu",
+    "count": 4
   }
 }

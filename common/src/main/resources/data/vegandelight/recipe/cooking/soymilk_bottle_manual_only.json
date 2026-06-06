@@ -1,0 +1,17 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:glass_bottle"
+  },
+  "cookingtime": 150,
+  "experience": 0.25,
+  "recipe_book_tab": "misc",
+  "ingredients": [
+    {
+      "tag": "c:crops/soybeans"
+    }
+  ],
+  "result": {
+    "id": "vegandelight:soymilk_bottle"
+  }
+}
