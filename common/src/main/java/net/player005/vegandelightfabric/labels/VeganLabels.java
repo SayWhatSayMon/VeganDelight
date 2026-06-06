@@ -29,8 +29,8 @@ public class VeganLabels {
 
     private static boolean shouldShowNonVeganTooltip(ItemStack stack) {
         return switch (VeganConfig.notVeganLabelMode) {
-            case ALL_NON_VEGAN_FOODS -> VeganDataComponents.isFoodRelated(stack);
             case ALL_NON_VEGAN_ITEMS -> true;
+            case ALL_NON_VEGAN_FOODS -> VeganDataComponents.isFoodRelated(stack);
             case ONLY_EXCEPTIONS -> stack.has(VeganDataComponents.is_vegan.value());
             case NONE -> false;
         };
@@ -39,6 +39,7 @@ public class VeganLabels {
     private static boolean shouldShowVeganTooltip(ItemStack stack) {
         return switch (VeganConfig.veganLabelMode) {
             case ALL_VEGAN_ITEMS -> true;
+            case ALL_VEGAN_FOODS -> VeganDataComponents.isFoodRelated(stack);
             case ONLY_WHEN_REPLACEMENT_USED -> stack.has(VeganDataComponents.contains_substitutes.value())
                 && !stack.is(VeganTags.VEGAN_ALTERNATIVE);
             case NONE -> false;
@@ -58,7 +59,8 @@ public class VeganLabels {
         if (!debugMode) return;
 
         tooltip.add(1, Component.literal("Result: " + VeganItemDetection.isVegan(stack).name()));
-        tooltip.add(1, Component.literal("Default from recipes: " + VeganItemDetection.veganFromRecipes.get(stack.getItem())));
+        tooltip.add(1,
+            Component.literal("Default from recipes: " + VeganItemDetection.veganFromRecipes.get(stack.getItem())));
         tooltip.add(1, Component.literal("Component: " + stack.get(VeganDataComponents.is_vegan.value())));
     }
 

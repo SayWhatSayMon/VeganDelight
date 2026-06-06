@@ -27,7 +27,7 @@ public class VeganConfig extends MidnightConfig {
     }
 
     public enum VeganLabelMode {
-        ALL_VEGAN_ITEMS, ONLY_WHEN_REPLACEMENT_USED, NONE
+        ALL_VEGAN_ITEMS, ALL_VEGAN_FOODS, ONLY_WHEN_REPLACEMENT_USED, NONE
     }
 
     public enum NotVeganLabelMode {
