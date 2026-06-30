@@ -1,0 +1,87 @@
+{
+  "item.vegandelight.tofu": "Tofu",
+  "item.vegandelight.silken_tofu": "Selymes tofu",
+  "item.vegandelight.minced_tofu": "Darált tofu",
+  "item.vegandelight.tofu_slices": "Tofuszeletek",
+  "item.vegandelight.tofish": "Tofuhal",
+  "item.vegandelight.tofish_slices": "Tofuhalszeletek",
+  "item.vegandelight.tofish_roll": "Tofuhaltekercs",
+  "item.vegandelight.tofu_patty": "Tofufasírt",
+
+
+  "item.vegandelight.smoked_tofu": "Füstölt tofu",
+  "item.vegandelight.smoked_tofish": "Füstölt tofuhal",
+  "item.vegandelight.smoked_tofish_roll": "Füstölt tofuhaltekercs",
+  "item.vegandelight.smoked_tofu_slices": "Füstölt tofuszeletek",
+
+
+  "item.vegandelight.cooked_tofu": "Sült tofu",
+  "item.vegandelight.cooked_tofu_slices": "Sült tofuszeletek",
+  "item.vegandelight.cooked_tofish": "Sült tofuhal",
+
+
+  "item.vegandelight.cooked_smoked_tofu": "Sült füstölt tofu",
+  "item.vegandelight.cooked_smoked_tofish": "Sült füstölt tofuhal",
+  "item.vegandelight.cooked_smoked_tofu_slices": "Sült füstölt tofuszeletek",
+
+
+  "item.vegandelight.salt": "Só",
+  "item.vegandelight.soybean": "Szójabab",
+  "fluid_type.vegandelight.soymilk": "Szójatej",
+  "item.vegandelight.soymilk_bottle": "Szójatejes üveg",
+  "item.vegandelight.soymilk_bucket": "Szójatejes vödör",
+  "item.vegandelight.leather_substitute": "Bőrhelyettesítő",
+
+
+  "farmersdelight.tooltip.soymilk_bottle": "Eltávolít 1 hatást",
+  "farmersdelight.tooltip.soymilk_bucket": "Eltávolít 1 hatást",
+
+
+  "item.vegandelight.pasta_with_tofuballs": "Tészta tofugolyókkal",
+  "item.vegandelight.roasted_tofu_chops": "Pirított tofuszeletek",
+  "item.vegandelight.tofu_burger": "Tofuburger",
+  "item.vegandelight.tofu_sandwich": "Tofuszendvics",
+
+
+  "item.vegandelight.applesauce": "Almaszósz",
+  "item.vegandelight.applesauce_bucket": "Almaszózos vödör",
+  "fluid_type.vegandelight.applesauce": "Almaszósz",
+
+
+  "block.vegandelight.soybean_bag": "Szójababos zsák",
+  "block.vegandelight.wild_soybean": "Vadszójabab",
+
+
+  "creativetab.vegan_tab": "Vegan Delight",
+  "tooltip.vegandelight.replaces": "%s helyettesítésére használható.",
+
+
+  "vegandelight.advancement.cook_smoked_tofu.title": "Még egy kis sütés",
+  "vegandelight.advancement.cook_smoked_tofu.desc": "Süss egy füstölt tofuszeletet",
+  "vegandelight.advancement.cooked_tofish.title": "Kevésbé halas",
+  "vegandelight.advancement.cooked_tofish.desc": "Süss egy tofuhalat",
+  "vegandelight.advancement.cook_tofu_slice.title": "Megint megsütöd?",
+  "vegandelight.advancement.cook_tofu_slice.desc": "Süss tofuszeleteket",
+  "vegandelight.advancement.minced_tofu.title": "Még kisebb",
+  "vegandelight.advancement.minced_tofu.desc": "Szeletelj fel egy tofuszeletet",
+  "vegandelight.advancement.soybean.title": "Egy furcsa bab",
+  "vegandelight.advancement.soybean.desc": "Szerezd meg az első szójababodat",
+  "vegandelight.advancement.silken_tofu.title": "Olyan selymes",
+  "vegandelight.advancement.silken_tofu.desc": "Főzz szójatejet sóval és extra vízzel",
+  "vegandelight.advancement.smoked_tofish.title": "Még halasabb",
+  "vegandelight.advancement.smoked_tofish.desc": "Füstölj egy tofuhalat",
+  "vegandelight.advancement.smoked_tofu.title": "Füstöld meg",
+  "vegandelight.advancement.smoked_tofu.desc": "Füstölj egy tofut",
+  "vegandelight.advancement.smoked_tofu_slices.title": "Még több szeletelés",
+  "vegandelight.advancement.smoked_tofu_slices.desc": "Vágj fel egy füstölt tofut",
+  "vegandelight.advancement.soymilk_bucket.title": "Egy furcsa folyadék",
+  "vegandelight.advancement.soymilk_bucket.desc": "Főzz meg szójababot vízzel",
+  "vegandelight.advancement.tofish.title": "Halas",
+  "vegandelight.advancement.tofish.desc": "Készíts tofuszeleteket hínárral",
+  "vegandelight.advancement.tofu.title": "Egy új életmód",
+  "vegandelight.advancement.tofu.desc": "Főzz szójatejet sóval",
+  "vegandelight.advancement.tofu_patty.title": "Ideje burgerezni",
+  "vegandelight.advancement.tofu_patty.desc": "Süss darált tofut",
+  "vegandelight.advancement.tofu_slices.title": "Vágd fel",
+  "vegandelight.advancement.tofu_slices.desc": "Vágj fel egy tofut"
+}
