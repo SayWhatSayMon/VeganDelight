@@ -58,8 +58,8 @@ public class VeganDataComponents {
 
     public static boolean shouldUseVeganComponents(ItemStack stack) {
         return switch (VeganConfig.useComponents) {
-            case ONLY_FOODS -> isFoodRelated(stack) || stack.has(contains_substitutes.value());
             case ALL_ITEMS -> true;
+            case ONLY_FOODS -> isFoodRelated(stack) || stack.has(contains_substitutes.value());
             case NONE -> false;
         };
     }
