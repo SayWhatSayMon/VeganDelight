@@ -8,6 +8,15 @@
   "ingredients": [
     {
       "tag": "c:crops/soybeans"
+    },
+    {
+      "tag": "c:crops/soybeans"
+    },
+    {
+      "tag": "c:crops/soybeans"
+    },
+    {
+      "tag": "c:crops/soybeans"
     }
   ],
   "recipe_book_tab": "meals",
