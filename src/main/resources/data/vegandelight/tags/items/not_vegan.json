@@ -20,6 +20,8 @@
     "minecraft:rabbit_hide",
     "minecraft:honeycomb",
     "minecraft:honey_bottle",
-    "minecraft:spider_eye"
+    "minecraft:spider_eye",
+    "minecraft:rabbit",
+    "minecraft:cooked_rabbit"
   ]
 }
