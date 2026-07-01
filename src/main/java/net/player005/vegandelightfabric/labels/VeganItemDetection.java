@@ -105,7 +105,7 @@ public class VeganItemDetection {
                 vegan = false;
             }
             if (stack.is(VeganTags.VEGAN_ALTERNATIVE) || VeganNBT.containsSubstitute(stack)) {
-                VeganNBT.setContainsSubstitute(stack);
+                VeganNBT.setContainsSubstitute(result);
             }
         }
         VeganNBT.setIsVegan(result, vegan);
