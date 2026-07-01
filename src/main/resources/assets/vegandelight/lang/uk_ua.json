@@ -28,6 +28,7 @@
   "item.vegandelight.salt": "Сіль",
   "item.vegandelight.soybean": "Соєві боби",
   "fluid_type.vegandelight.soymilk": "Соєве молоко",
+  "block.vegandelight.soymilk": "Соєве молоко",
   "item.vegandelight.soymilk_bottle": "Пляшка соєвого молока",
   "item.vegandelight.soymilk_bucket": "Відро соєвого молока",
   "item.vegandelight.leather_substitute": "Замінник шкіри",
@@ -50,9 +51,6 @@
 
   "block.vegandelight.soybean_bag": "Мішок соєвих бобів",
   "block.vegandelight.wild_soybean": "Дика соя",
-
-
-  "creativetab.vegan_tab": "Vegan Delight",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "Більше готувати",
@@ -82,5 +80,8 @@
   "vegandelight.advancement.tofu_patty.title": "Час бургерів",
   "vegandelight.advancement.tofu_patty.desc": "Приготуйте фарш з тофу",
   "vegandelight.advancement.tofu_slices.title": "Наріж його",
-  "vegandelight.advancement.tofu_slices.desc": "Наріжте тофу шматочками"
+  "vegandelight.advancement.tofu_slices.desc": "Наріжте тофу шматочками",
+
+
+  "creativetab.vegan_tab": "Vegan Delight"
 }

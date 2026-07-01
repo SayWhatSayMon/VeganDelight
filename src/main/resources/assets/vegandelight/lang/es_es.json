@@ -28,6 +28,7 @@
   "item.vegandelight.salt": "Sal",
   "item.vegandelight.soybean": "Soja",
   "block.vegandelight.soymilk": "Leche de Soja",
+  "fluid_type.vegandelight.soymilk": "Leche de Soja",
   "item.vegandelight.soymilk_bottle": "Frasco de Leche de Soja",
   "item.vegandelight.soymilk_bucket": "Cubo de Leche de Soja",
   "item.vegandelight.leather_substitute": "Sucedáneo de Cuero",
@@ -50,9 +51,6 @@
 
   "block.vegandelight.soybean_bag": "Bolsa de Soja",
   "block.vegandelight.wild_soybean": "Soja Silvestre",
-
-
-  "itemGroup.vegan_delight": "Vegan Delight",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "Más cocina",
@@ -82,5 +80,8 @@
   "vegandelight.advancement.tofu_patty.title": "La hora de la hamburguesa",
   "vegandelight.advancement.tofu_patty.desc": "Cocer tofu picado",
   "vegandelight.advancement.tofu_slices.title": "Córtalo",
-  "vegandelight.advancement.tofu_slices.desc": "Cortar un tofu"
+  "vegandelight.advancement.tofu_slices.desc": "Cortar un tofu",
+
+
+  "itemGroup.vegan_delight": "Vegan Delight"
 }

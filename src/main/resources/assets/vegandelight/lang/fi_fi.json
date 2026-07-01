@@ -29,6 +29,7 @@
 
   "item.vegandelight.salt": "Suola",
   "item.vegandelight.soybean": "Soijapapu",
+  "block.vegandelight.soymilk": "Soijamaito",
   "fluid_type.vegandelight.soymilk": "Soijamaito",
   "item.vegandelight.soymilk_bottle": "Soijamaitopullo",
   "item.vegandelight.soymilk_bucket": "Soijamaitoämpäri",
@@ -54,7 +55,7 @@
   "block.vegandelight.wild_soybean": "Villisoija",
 
 
-  "creativetab.vegan_tab": "Vegaanin ilo",
+  "itemGroup.vegan_delight": "Vegaanin ilo",
   "tooltip.vegandelight.replaces": "Voi käyttää korvaajana ainesosalle %s.",
 
 

@@ -23,6 +23,7 @@
 
   "item.vegandelight.salt": "소금",
   "item.vegandelight.soybean": "콩",
+  "block.vegandelight.soymilk": "두유",
   "fluid_type.vegandelight.soymilk": "두유",
   "item.vegandelight.soymilk_bottle": "두유 병",
   "item.vegandelight.soymilk_bucket": "두유 양동이",
@@ -42,8 +43,6 @@
 
   "block.vegandelight.soybean_bag": "콩 자루",
   "block.vegandelight.wild_soybean": "야생 콩",
-
-  "creativetab.vegan_tab": "Vegan Delight",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "더 많은 요리",
@@ -73,5 +72,7 @@
   "vegandelight.advancement.tofu_patty.title": "버거 타임",
   "vegandelight.advancement.tofu_patty.desc": "다진 두부 요리하기",
   "vegandelight.advancement.tofu_slices.title": "슬라이스",
-  "vegandelight.advancement.tofu_slices.desc": "두부 슬라이스"
+  "vegandelight.advancement.tofu_slices.desc": "두부 슬라이스",
+
+  "creativetab.vegan_tab": "Vegan Delight"
 }

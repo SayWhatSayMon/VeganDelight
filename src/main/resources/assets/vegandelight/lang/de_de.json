@@ -28,9 +28,11 @@
   "item.vegandelight.salt": "Salz",
   "item.vegandelight.soybean": "Sojabohne",
   "block.vegandelight.soymilk": "Sojamilch",
+  "fluid_type.vegandelight.soymilk": "Sojamilch",
   "item.vegandelight.soymilk_bottle": "Sojamilchflasche",
   "item.vegandelight.soymilk_bucket": "Eimer mit Sojamilch",
   "item.vegandelight.leather_substitute": "Lederimitat",
+  "item.vegandelight.agave_syrup": "Flasche mit Agavendicksaft",
 
 
   "farmersdelight.tooltip.soymilk_bottle": "Löscht einen Statuseffekt",
@@ -50,10 +52,6 @@
 
   "block.vegandelight.soybean_bag": "Sack mit Sojabohnen",
   "block.vegandelight.wild_soybean": "Wilde Sojabohne",
-
-
-  "itemGroup.vegan_delight": "Vegan Delight",
-  "tooltip.vegandelight.replaces": "Kann als Ersatz für %s verwendet werden.",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "Noch mehr kochen",
@@ -83,5 +81,9 @@
   "vegandelight.advancement.tofu_patty.title": "Burger time",
   "vegandelight.advancement.tofu_patty.desc": "Brate Tofu-Hack",
   "vegandelight.advancement.tofu_slices.title": "Slice it",
-  "vegandelight.advancement.tofu_slices.desc": "Schneide einen Tofu"
+  "vegandelight.advancement.tofu_slices.desc": "Schneide einen Tofu",
+
+
+  "itemGroup.vegan_delight": "Vegan Delight",
+  "tooltip.vegandelight.replaces": "Kann als Ersatz für %s verwendet werden."
 }

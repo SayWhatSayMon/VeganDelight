@@ -1,5 +1,5 @@
 plugins {
-    id 'fabric-loom' version '1.10-SNAPSHOT'
+    id 'fabric-loom' version '1.15-SNAPSHOT'
     id 'maven-publish'
 }
 
@@ -31,6 +31,13 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        url = "https://maven.midnightdust.eu/releases"
+    }
+    maven {
+        name = "Terraformers"
+        url = "https://maven.terraformersmc.com/"
+    }
 }
 
 dependencies {
@@ -49,6 +56,7 @@ dependencies {
     modImplementation("vectorwing:FarmersDelight:${project.fdrf_version}") {
         exclude(group: "net.fabricmc")
     }
+    modImplementation include ("eu.midnightdust:midnightlib:${project.midnightlib_version}")
 }
 
 version = project.mod_version
