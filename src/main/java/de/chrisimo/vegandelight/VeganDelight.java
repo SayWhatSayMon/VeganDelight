@@ -23,6 +23,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.vegandelightfabric.VeganConfig;
+import net.player005.vegandelightfabric.labels.VeganItemDetection;
 import net.player005.vegandelightfabric.labels.VeganLabels;
 
 import java.util.List;
@@ -45,7 +46,7 @@ public class VeganDelight
         ModFluids.register(modEventBus);
         MidnightConfig.init(MODID, VeganConfig.class);
 
-        RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
+        RecipeModification.onRecipeInit(recipeManager -> VeganItemDetection.initialize());
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

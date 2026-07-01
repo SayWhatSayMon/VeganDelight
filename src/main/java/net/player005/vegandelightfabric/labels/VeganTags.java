@@ -8,8 +8,6 @@ import net.minecraft.world.item.Item;
 
 public class VeganTags {
 
-    public static final TagKey<Item> SHOULD_HAVE_DATA_COMPONENTS_ADDED = get("has_vegan_data_components");
-
     public static final TagKey<Item> VEGAN_ALTERNATIVE = get("vegan_alternative");
 
     public static final TagKey<Item> VEGAN = get("vegan");
