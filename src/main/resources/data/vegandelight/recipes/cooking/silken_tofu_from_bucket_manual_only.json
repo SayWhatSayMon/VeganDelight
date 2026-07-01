@@ -4,14 +4,11 @@
     "item": "minecraft:bowl"
   },
   "cookingtime": 200,
-  "experience": 1.0,
+  "experience": 4.0,
   "ingredients": [
     [
       {
         "item": "vegandelight:soymilk_bucket"
-      },
-      {
-        "item": "vegandelight:soymilk_bottle"
       }
     ],
     [
@@ -30,6 +27,7 @@
   ],
   "recipe_book_tab": "meals",
   "result": {
-    "item": "vegandelight:silken_tofu"
+    "item": "vegandelight:silken_tofu",
+    "count": 4
   }
 }

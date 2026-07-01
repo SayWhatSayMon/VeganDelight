@@ -1,0 +1,25 @@
+{
+  "type": "farmersdelight:cooking",
+  "cookingtime": 250,
+  "experience": 4.0,
+  "ingredients": [
+    [
+      {
+        "item": "vegandelight:soymilk_bucket"
+      }
+    ],
+    [
+      {
+        "tag": "forge:salts"
+      },
+      {
+        "tag": "forge:salt"
+      }
+    ]
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "item": "vegandelight:tofu",
+    "count": 4
+  }
+}

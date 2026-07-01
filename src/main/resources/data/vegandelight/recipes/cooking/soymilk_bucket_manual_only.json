@@ -8,6 +8,15 @@
   "ingredients": [
     {
       "tag": "forge:crops/soybean"
+    },
+    {
+      "tag": "forge:crops/soybeans"
+    },
+    {
+      "tag": "forge:crops/soybeans"
+    },
+    {
+      "tag": "forge:crops/soybeans"
     }
   ],
   "recipe_book_tab": "meals",
