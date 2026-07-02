@@ -59,8 +59,9 @@ public abstract class VeganNBT {
     }
 
     public static boolean shouldUseVeganComponents(ItemStack stack) {
+        if (VeganConfig.alwaysUseComponentsWhenSubstitutesIncluded && containsSubstitute(stack)) return true;
         return switch (VeganConfig.useComponents) {
-            case ONLY_FOODS -> isFoodRelated(stack) || containsSubstitute(stack);
+            case ONLY_FOODS -> isFoodRelated(stack);
             case ALL_ITEMS -> true;
             case NONE -> false;
         };

@@ -85,5 +85,15 @@
 
 
   "itemGroup.vegan_delight": "Vegan Delight",
-  "tooltip.vegandelight.replaces": "Kann als Ersatz für %s verwendet werden."
+  "tooltip.vegandelight.replaces": "Kann als Ersatz für %s verwendet werden.",
+
+
+  "vegandelight.midnightconfig.title": "Vegan Delight",
+  "vegandelight.midnightconfig.dataComponentExplanation": "Vegan Delight kann sich mithilfe von Minecraft's data-component-System merken, welche Item-Stacks vegan sind und welche nicht. Du kannst wählen, bei welchen Items das gemacht wird. Beachte, dass Items mit unterschiedlichen Components nicht gestackt werden können, also auch vegane und nicht-vegane Items vom gleichen Typ. Standardmäßig sind davon nur Essensitems betroffen. Die data components werden jedoch benötigt, damit das Label-System (siehe unten) korrekt funktioniert.",
+  "vegandelight.midnightconfig.markEntityDroppedItemsAsNonVegan": "Alle Items, die von einer Entity gedroppt wurden, als nicht-vegan markieren?",
+  "vegandelight.midnightconfig.useComponents": "Bei welchen items sollte mithilfe von data components gespeichert werden, ob sie vegan sind?",
+  "vegandelight.midnightconfig.alwaysUseComponentsWhenSubstitutesIncluded": "Immer components nutzen, wenn Ersatzprodukte verwendet werden?",
+  "vegandelight.midnightconfig.labelExplanation": "Vegan Delight kann ein entsprechendes 'Vegan'- oder 'Not Vegan'-Label anzeigen. Du kannst wählen, bei welchen Items das gemacht wird. Standardmäßig wird bei allen Item Stacks, die mithilfe von Ersatzprodukten, z.B. Tofu statt Fleisch, hergestellt wurden, das 'Vegan'-Label angezeigt, während das 'Not Vegan'-Label bei Items angezeigt wird, die normalerweise vegan sein sollten, es aber nicht sind.",
+  "vegandelight.midnightconfig.veganLabelMode": "Welche Items sollten das 'Vegan'-Label anzeigen?",
+  "vegandelight.midnightconfig.notVeganLabelMode": "Welche Items sollten das 'Not Vegan'-Label anzeigen?"
 }

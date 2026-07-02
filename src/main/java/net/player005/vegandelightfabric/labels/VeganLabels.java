@@ -40,7 +40,7 @@ public class VeganLabels {
         return switch (VeganConfig.veganLabelMode) {
             case ALL_VEGAN_ITEMS -> true;
             case ALL_VEGAN_FOODS -> VeganNBT.isFoodRelated(stack);
-            case ONLY_WHEN_REPLACEMENT_USED -> VeganNBT.containsSubstitute(stack)
+            case CRAFTED_USING_SUBSTITUTE -> VeganNBT.containsSubstitute(stack)
                 && !stack.is(VeganTags.VEGAN_ALTERNATIVE);
             case NONE -> false;
         };

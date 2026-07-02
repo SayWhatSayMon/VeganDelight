@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.vegandelightfabric.VeganConfig;
 import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.Nullable;
 import org.slf4j.LoggerFactory;
@@ -105,7 +106,8 @@ public class VeganItemDetection {
                 vegan = false;
             }
             if (stack.is(VeganTags.VEGAN_ALTERNATIVE) || VeganNBT.containsSubstitute(stack)) {
-                VeganNBT.setContainsSubstitute(result);
+                if (VeganConfig.alwaysUseComponentsWhenSubstitutesIncluded || VeganNBT.shouldUseVeganComponents(stack))
+                    VeganNBT.setContainsSubstitute(result);
             }
         }
         VeganNBT.setIsVegan(result, vegan);

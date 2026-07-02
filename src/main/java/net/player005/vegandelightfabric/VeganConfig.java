@@ -12,13 +12,15 @@ public class VeganConfig extends MidnightConfig {
 
     @Entry(category = LABELS) public static DataComponentUsageMode useComponents = DataComponentUsageMode.ONLY_FOODS;
 
+    @Entry(category = LABELS) public static boolean alwaysUseComponentsWhenSubstitutesIncluded = true;
+
     @Entry(category = LABELS) public static boolean markEntityDroppedItemsAsNonVegan = false;
 
     @Comment(category = LABELS) public static Comment spacer3;
     @Comment(category = LABELS) public static Comment labelExplanation;
     @Comment(category = LABELS) public static Comment spacer4;
 
-    @Entry(category = LABELS) public static VeganLabelMode veganLabelMode = VeganLabelMode.ONLY_WHEN_REPLACEMENT_USED;
+    @Entry(category = LABELS) public static VeganLabelMode veganLabelMode = VeganLabelMode.CRAFTED_USING_SUBSTITUTE;
 
     @Entry(category = LABELS) public static NotVeganLabelMode notVeganLabelMode = NotVeganLabelMode.ONLY_EXCEPTIONS;
 
@@ -27,7 +29,7 @@ public class VeganConfig extends MidnightConfig {
     }
 
     public enum VeganLabelMode {
-        ALL_VEGAN_ITEMS, ALL_VEGAN_FOODS, ONLY_WHEN_REPLACEMENT_USED, NONE
+        ALL_VEGAN_ITEMS, ALL_VEGAN_FOODS, CRAFTED_USING_SUBSTITUTE, NONE
     }
 
     public enum NotVeganLabelMode {
