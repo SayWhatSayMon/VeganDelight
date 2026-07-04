@@ -24,7 +24,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.player005.recipe_modification.api.RecipeModification;
 import net.player005.vegandelightfabric.VeganConfig;
 import net.player005.vegandelightfabric.labels.VeganItemDetection;
-import net.player005.vegandelightfabric.labels.VeganLabels;
 
 import java.util.List;
 

@@ -2,7 +2,7 @@ package net.player005.vegandelightfabric;
 
 import eu.midnightdust.lib.config.MidnightConfig;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "CanBeFinal"})
 public class VeganConfig extends MidnightConfig {
     public static final String LABELS = "labels";
 

@@ -3,7 +3,6 @@ package de.chrisimo.vegandelight.block;
 import de.chrisimo.vegandelight.VeganDelight;
 import de.chrisimo.vegandelight.block.custom.SoybeanCropBlock;
 import de.chrisimo.vegandelight.item.ModItems;
-import de.chrisimo.vegandelight.fluid.ModFluids;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
