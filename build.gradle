@@ -1,5 +1,4 @@
 plugins {
-    id 'eclipse'
     id 'idea'
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '[6.0,6.2)'
@@ -153,6 +152,9 @@ repositories {
             includeGroup "maven.modrinth"
         }
     }
+    maven {
+        url = "https://maven.midnightdust.eu/releases"
+    }
 }
 
 dependencies {
@@ -165,6 +167,7 @@ dependencies {
 
     implementation fg.deobf("maven.modrinth:farmers-delight:${fd_version}")
     implementation fg.deobf("maven.modrinth:recipe-modification:${project.recipemod_version}")
+    implementation fg.deobf("eu.midnightdust:midnightlib:${project.midnightlib_version}")
 
     // compile against the JEI API but do not include it at runtime
     //deobfProvided "mezz.jei:jei_1.20.1:15.2.0.27:api"

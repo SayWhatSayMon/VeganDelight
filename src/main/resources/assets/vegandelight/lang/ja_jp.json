@@ -27,6 +27,7 @@
 
   "item.vegandelight.salt": "塩",
   "item.vegandelight.soybean": "大豆",
+  "block.vegandelight.soymilk": "豆乳",
   "fluid_type.vegandelight.soymilk": "豆乳",
   "item.vegandelight.soymilk_bottle": "豆乳入り瓶",
   "item.vegandelight.soymilk_bucket": "豆乳入りバケツ",
@@ -46,8 +47,6 @@
 
   "block.vegandelight.soybean_bag": "大豆袋",
   "block.vegandelight.wild_soybean": "野生の大豆",
-
-  "creativetab.vegan_tab": "Vegan Delight",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "より多くの料理",
@@ -77,5 +76,7 @@
   "vegandelight.advancement.tofu_patty.title": "バーガータイム",
   "vegandelight.advancement.tofu_patty.desc": "豆腐のみじん切りを調理する",
   "vegandelight.advancement.tofu_slices.title": "スライスする",
-  "vegandelight.advancement.tofu_slices.desc": "豆腐を切る"
+  "vegandelight.advancement.tofu_slices.desc": "豆腐を切る",
+
+  "creativetab.vegan_tab": "Vegan Delight"
 }

@@ -27,6 +27,7 @@
 
   "item.vegandelight.salt": "Sól",
   "item.vegandelight.soybean": "Soja",
+  "block.vegandelight.soymilk": "Mleka Sojowego",
   "fluid_type.vegandelight.soymilk": "Mleka Sojowego",
   "item.vegandelight.soymilk_bottle": "Butelka Mleka Sojowego",
   "item.vegandelight.soymilk_bucket": "Wiadro Mleka Sojowego",
@@ -50,9 +51,6 @@
 
   "block.vegandelight.soybean_bag": "Torba Soi",
   "block.vegandelight.wild_soybean": "Dzika Soja",
-
-
-  "creativetab.vegan_tab": "Vegan Delight",
 
 
   "vegandelight.advancement.cook_smoked_tofu.title": "Więcej gotowania",
@@ -82,5 +80,8 @@
   "vegandelight.advancement.tofu_patty.title": "Czas na burgera",
   "vegandelight.advancement.tofu_patty.desc": "Ugotować mielone tofu",
   "vegandelight.advancement.tofu_slices.title": "Pokrój",
-  "vegandelight.advancement.tofu_slices.desc": "Pokrój tofu"
+  "vegandelight.advancement.tofu_slices.desc": "Pokrój tofu",
+
+
+  "creativetab.vegan_tab": "Vegan Delight"
 }

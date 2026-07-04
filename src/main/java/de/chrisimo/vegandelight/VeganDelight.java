@@ -5,6 +5,7 @@ import de.chrisimo.vegandelight.fluid.ModFluidTypes;
 import de.chrisimo.vegandelight.fluid.ModFluids;
 import de.chrisimo.vegandelight.item.ModCreativeTabs;
 import de.chrisimo.vegandelight.item.ModItems;
+import eu.midnightdust.lib.config.MidnightConfig;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.ItemStack;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.player005.recipe_modification.api.RecipeModification;
+import net.player005.vegandelightfabric.VeganConfig;
 import net.player005.vegandelightfabric.labels.VeganLabels;
 
 import java.util.List;
@@ -41,6 +43,7 @@ public class VeganDelight
         ModBlocks.register(modEventBus);
         ModFluidTypes.register(modEventBus);
         ModFluids.register(modEventBus);
+        MidnightConfig.init(MODID, VeganConfig.class);
 
         RecipeModification.onRecipeInit(recipeManager -> VeganLabels.initialize());
 
