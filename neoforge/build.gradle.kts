@@ -10,6 +10,7 @@ dependencies {
 
     val midnightlib = "eu.midnightdust:midnightlib:${rootProject.properties["midnight_version"]}-neoforge"
     implementation(midnightlib)
+    jarJar(midnightlib)
 }
 
 neoForge {
