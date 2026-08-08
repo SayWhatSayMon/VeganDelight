@@ -157,6 +157,8 @@ repositories {
     }
 }
 
+def midnightlib = fg.deobf("eu.midnightdust:midnightlib:${project.midnightlib_version}")
+
 dependencies {
     // Specify the version of Minecraft to use.
     // Any artifact can be supplied so long as it has a "userdev" classifier artifact and is a compatible patcher artifact.
@@ -167,7 +169,9 @@ dependencies {
 
     implementation fg.deobf("maven.modrinth:farmers-delight:${fd_version}")
     implementation fg.deobf("maven.modrinth:recipe-modification:${project.recipemod_version}")
-    implementation fg.deobf("eu.midnightdust:midnightlib:${project.midnightlib_version}")
+    implementation midnightlib
+    // Bundle midnightlib in the final mod jar as a Forge jar-in-jar dependency.
+    jarJar(midnightlib)
 
     // compile against the JEI API but do not include it at runtime
     //deobfProvided "mezz.jei:jei_1.20.1:15.2.0.27:api"
@@ -181,6 +185,14 @@ dependencies {
     runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     annotationProcessor("org.spongepowered:mixin:0.8.5:processor")
+}
+
+// ForgeGradle's JarJar metadata parser does not accept the '+' in MidnightLib's
+// Maven version, so use a valid Maven range for selection and pin the actual
+// artifact version used by Gradle.
+jarJar {
+    ranged midnightlib, '[1.9.2,2.0.0)'
+    pin midnightlib, project.midnightlib_version
 }
 
 mixin {
@@ -209,6 +221,9 @@ tasks.named('processResources', ProcessResources).configure {
 
 // Example for how to get properties into the manifest for reading at runtime.
 tasks.named('jar', Jar).configure {
+    // The bundled JarJar artifact is the only distributable jar.
+    enabled = false
+
     manifest {
         attributes([
                 'Specification-Title'     : mod_id,
@@ -221,8 +236,13 @@ tasks.named('jar', Jar).configure {
         ])
     }
 
-    // This is the preferred method to reobfuscate your jar file
-    finalizedBy 'reobfJar'
+}
+
+// ForgeGradle adds reobfJar to the build lifecycle even when jar is disabled.
+tasks.configureEach {
+    if (name == 'reobfJar') {
+        enabled = false
+    }
 }
 
 // However if you are in a multi-project build, dev time needs unobfed jar files, so you can delay the obfuscation until publishing by doing:
