@@ -47,7 +47,7 @@ jobs:
           curseforge-id: 928290
           curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
-          files: build/libs/!(*-@(dev|sources|all)).jar
+          files: build/libs/*.jar
 
           version-type: release
           loaders: forge
